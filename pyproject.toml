@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "ia"
+version = "0.1.0"
+description = ""
+authors = ["Pablo Hernández <17086478+Hadronomy@users.noreply.github.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+typer = "^0.12.5"
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.8.0"
+pre-commit = "^3.8.0"
+twine = "^5.1.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+ia = "ia.__main__:main"
