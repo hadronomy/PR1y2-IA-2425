@@ -9,7 +9,7 @@ def run():
     """
     Configure and execute the CLI.
     """
-    app = typer.Typer()
+    app = typer.Typer(pretty_exceptions_show_locals=False)
     app.command()(main)
     app(prog_name="ia")
 
