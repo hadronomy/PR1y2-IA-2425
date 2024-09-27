@@ -7,7 +7,9 @@ def run():
     """
     Configure and execute the CLI.
     """
-    typer.run(rootCmd)
+    app = typer.Typer()
+    app.command()(rootCmd)
+    app(prog_name="ia")
 
 
 def rootCmd(algorithm: TraversalAlgorithm = TraversalAlgorithm.dfs):
