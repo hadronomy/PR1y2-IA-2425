@@ -28,11 +28,16 @@ class TraversalResult:
     ):
         """Initialize the result.
 
-        Args:
-            history (AlgorithmHistory): The history of the algorithm
-            visited (dict[int, bool]): The visited nodes
-            path (list[int]): The resulting path
-            cost (int): The cost of the
+        Parameters
+        ----------
+        history: AlgorithmHistory
+                The history of the algorithm
+        visited: dict[int, bool]
+                The visited nodes
+        path: list[int]
+                The resulting path
+        cost: int
+                The cost of the path
 
         """
         self.history = history
