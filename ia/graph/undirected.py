@@ -26,7 +26,7 @@ class UndirectedGraph:
         self.weights[(start, end)] = weight
         self.weights[(end, start)] = weight
 
-    def remove_edge(self, start: int, end: int, weight: int = 1) -> None:
+    def remove_edge(self, start: int, end: int) -> None:
         """
         Remove an edge from the graph
         """
