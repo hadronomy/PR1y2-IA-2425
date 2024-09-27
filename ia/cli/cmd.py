@@ -27,9 +27,20 @@ def version_callback(value: bool):
 
 
 def main(
-    algorithm: Annotated[TraversalAlgorithm, typer.Option()],
+    algorithm: Annotated[
+        TraversalAlgorithm,
+        typer.Option(
+            help="Traversal algorithm to use.",
+        ),
+    ],
     version: Annotated[
-        Optional[bool], typer.Option("--version", "-v", callback=version_callback)
+        Optional[bool],
+        typer.Option(
+            "--version",
+            "-v",
+            callback=version_callback,
+            help="Print the program version.",
+        ),
     ] = None,
 ):
     """Traverse the graph using the specified algorithm."""
