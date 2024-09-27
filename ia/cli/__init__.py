@@ -1,3 +1,4 @@
+from typing import Annotated
 import typer
 
 from ia.graph import UndirectedGraph, TraversalAlgorithm
@@ -12,7 +13,7 @@ def run():
     app(prog_name="ia")
 
 
-def rootCmd(algorithm: TraversalAlgorithm = TraversalAlgorithm.dfs):
+def rootCmd(algorithm: Annotated[TraversalAlgorithm, typer.Option()]):
     """
     Traverse the graph using the specified algorithm.
     """
