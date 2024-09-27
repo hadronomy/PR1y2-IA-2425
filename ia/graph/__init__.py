@@ -1,3 +1,4 @@
+from enum import Enum
 from typing import Literal
 
 
@@ -28,12 +29,19 @@ class AlgorithmHistory:
         return iter(self.history)
 
 
+class TraversalAlgorithm(str, Enum):
+    """
+    Traversal algorithm class
+    """
+
+    dfs = "dfs"
+    bfs = "bfs"
+
+
 class UndirectedGraph:
     """
     Undirected graph class
     """
-
-    MODE = Literal["dfs", "bfs"]
 
     def __init__(self):
         self.graph = {}
@@ -209,7 +217,9 @@ class UndirectedGraph:
             )
         return history
 
-    def traverse(self, *, start: int, end: int, algorithm: MODE) -> dict[int, bool]:
+    def traverse(
+        self, *, start: int, end: int, algorithm: TraversalAlgorithm
+    ) -> dict[int, bool]:
         """
         Traverse the graph
         """

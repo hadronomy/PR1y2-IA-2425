@@ -1,6 +1,6 @@
 import typer
 
-from ia.graph import UndirectedGraph
+from ia.graph import UndirectedGraph, TraversalAlgorithm
 
 
 def run():
@@ -10,7 +10,7 @@ def run():
     typer.run(rootCmd)
 
 
-def rootCmd(algorithm: str = "bfs"):
+def rootCmd(algorithm: TraversalAlgorithm = TraversalAlgorithm.dfs):
     """
     Traverse the graph using the specified algorithm.
     """
