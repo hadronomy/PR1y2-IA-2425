@@ -1,5 +1,10 @@
+import typer
+
+from ia import cli
+
+
 def main():
-    print("Hello, world!")
+    cli.run()
 
 
 if __name__ == "__main__":
