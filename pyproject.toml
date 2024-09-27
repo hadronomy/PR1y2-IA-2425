@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "ia"
 version = "0.1.0"
-description = ""
+description = "A simple CLI for tinkering with graph algorithms"
 authors = ["Pablo Hernández <17086478+Hadronomy@users.noreply.github.com>"]
 license = "MIT"
 readme = "README.md"
@@ -20,4 +20,4 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
-ia = "ia.__main__:main"
+ia = "ia.main:main"

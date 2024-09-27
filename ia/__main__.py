@@ -1,9 +1,4 @@
-from ia import cli
-
-
-def main():
-    cli.run()
-
+from .main import main
 
 if __name__ == "__main__":
     main()
