@@ -1,4 +1,6 @@
-from typing import Annotated
+from importlib.metadata import version
+
+from typing import Annotated, Optional
 import typer
 
 from ia.graph import UndirectedGraph
@@ -14,7 +16,21 @@ def run():
     app(prog_name="ia")
 
 
-def main(algorithm: Annotated[TraversalAlgorithm, typer.Option()]):
+def version_callback(value: bool):
+    """
+    Print the version.
+    """
+    if value:
+        print(f"ia version {version('ia')}")
+        raise typer.Exit()
+
+
+def main(
+    algorithm: Annotated[TraversalAlgorithm, typer.Option()],
+    version: Annotated[
+        Optional[bool], typer.Option("--version", "-v", callback=version_callback)
+    ] = None,
+):
     """
     Traverse the graph using the specified algorithm.
     """
