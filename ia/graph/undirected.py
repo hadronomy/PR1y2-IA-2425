@@ -139,6 +139,12 @@ class UndirectedGraph:
         history.add_step({"generated": generated.copy(), "inspected": inspected.copy()})
         while stack:
             current = stack.pop()
+            if current == end:
+                inspected.append(current)
+                history.add_step(
+                    {"generated": generated.copy(), "inspected": inspected.copy()}
+                )
+                break
             for neighbor in self.graph[current]:
                 if not visited[neighbor]:
                     visited[neighbor] = True
