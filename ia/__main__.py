@@ -1,5 +1,3 @@
-import typer
-
 from ia import cli
 
 

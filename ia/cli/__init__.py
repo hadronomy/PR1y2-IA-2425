@@ -19,8 +19,8 @@ def rootCmd(algorithm: TraversalAlgorithm = TraversalAlgorithm.dfs):
     graph.add_edge(2, 3)
     graph.add_edge(3, 4)
     graph.add_edge(4, 1)
-    start = 1;
-    end = 4;
+    start = 1
+    end = 4
     divider = "-" * 30
     print(divider)
     print(f"Number of nodes: {len(graph.get_vertices())}")
