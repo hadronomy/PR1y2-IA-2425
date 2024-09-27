@@ -47,9 +47,14 @@ def main(
     print(f"Number of edges: {len(graph.get_edges())}")
     print(f"Origin vertex: {1}")
     print(f"Destination vertex: {4}")
-    for i, step in enumerate(graph.traverse(start=start, end=end, algorithm=algorithm)):
+    result = graph.traverse(start=start, end=end, algorithm=algorithm)
+    for i, step in enumerate(result.history):
         print(divider)
         print(f"Iteration {i + 1}")
         print(f"Generated nodes: {", ".join(str(i) for i in step["generated"])}")
         print(f"Inspected nodes: {", ".join(str(i) for i in step["inspected"])}")
+    print(divider)
+    print(f"Path: {" -> ".join(str(i) for i in result.path)}")
+    print(divider)
+    print(f"Cost: {result.cost}")
     print(divider)

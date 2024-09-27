@@ -1,5 +1,5 @@
 from .history import AlgorithmHistory
-from .algorithm import TraversalAlgorithm
+from .algorithm import TraversalAlgorithm, TraversalResult
 
 
 class UndirectedGraph:
@@ -127,13 +127,13 @@ class UndirectedGraph:
 
     def dfs(
         self, start: int, end: int, visited: dict[int, bool] = {}
-    ) -> AlgorithmHistory:
+    ) -> TraversalResult:
         """
         Depth-first search
         """
         history = AlgorithmHistory()
-        inspected = []
         generated = [start]
+        inspected = []
         visited[start] = True
         stack = [start]
         history.add_step({"generated": generated.copy(), "inspected": inspected.copy()})
@@ -148,17 +148,17 @@ class UndirectedGraph:
             history.add_step(
                 {"generated": generated.copy(), "inspected": inspected.copy()}
             )
-        return history
+        return TraversalResult(history, visited, list(inspected), 0)
 
     def bfs(
         self, start: int, end: int, visited: dict[int, bool] = {}
-    ) -> AlgorithmHistory:
+    ) -> TraversalResult:
         """
         Breadth-first search
         """
         history = AlgorithmHistory()
-        inspected = []
         generated = [start]
+        inspected = []
         visited[start] = True
         queue = [start]
         history.add_step({"generated": generated.copy(), "inspected": inspected.copy()})
@@ -179,11 +179,11 @@ class UndirectedGraph:
             history.add_step(
                 {"generated": generated.copy(), "inspected": inspected.copy()}
             )
-        return history
+        return TraversalResult(history, visited, list(inspected), 0)
 
     def traverse(
         self, *, start: int, end: int, algorithm: TraversalAlgorithm
-    ) -> dict[int, bool]:
+    ) -> TraversalResult:
         """
         Traverse the graph
         """
