@@ -1,3 +1,3 @@
 """Graph traversal algorithms"""
 
-from .graph import UndirectedGraph, TraversalAlgorithm
+from . import graph as graph
