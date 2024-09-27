@@ -1,5 +1,7 @@
 from enum import Enum
 
+from rich import inspect
+
 from .history import AlgorithmHistory
 
 
@@ -32,4 +34,27 @@ class TraversalResult:
         self.cost = cost
 
     def __str__(self) -> str:
-        return f"Path: {self.path}, Cost: {self.cost}, Visited: {self.visited_nodes}"
+        return f"Path: {self.path}, Cost: {self.cost}, Visited: {self.visited}"
+
+
+def graph_path_cost(path: list[int], weights: dict[tuple[int, int], int]) -> int:
+    """
+    Calculate the cost from a path using the weights
+    of the graph
+    """
+    cost = 0
+    for i in range(1, len(path)):
+        cost += weights[(path[i - 1], path[i])]
+    return cost
+
+
+def graph_path_from_predecessors(predecessors: dict[int, int], end: int) -> list[int]:
+    """
+    Get the path from the predecessors
+    """
+    path = []
+    current = end
+    while current is not None:
+        path.insert(0, current)
+        current = predecessors[current]
+    return path

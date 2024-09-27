@@ -1,5 +1,11 @@
+from rich import inspect
 from .history import AlgorithmHistory
-from .algorithm import TraversalAlgorithm, TraversalResult
+from .algorithm import (
+    TraversalAlgorithm,
+    TraversalResult,
+    graph_path_cost,
+    graph_path_from_predecessors,
+)
 
 
 class UndirectedGraph:
@@ -136,6 +142,7 @@ class UndirectedGraph:
         inspected = []
         visited[start] = True
         stack = [start]
+        predecessors = {start: None}
         history.add_step({"generated": generated.copy(), "inspected": inspected.copy()})
         while stack:
             current = stack.pop()
@@ -150,11 +157,15 @@ class UndirectedGraph:
                     visited[neighbor] = True
                     generated.append(neighbor)
                     stack.append(neighbor)
+                    predecessors[neighbor] = current
             inspected.append(current)
             history.add_step(
                 {"generated": generated.copy(), "inspected": inspected.copy()}
             )
-        return TraversalResult(history, visited, list(inspected), 0)
+        path = graph_path_from_predecessors(predecessors, end)
+        return TraversalResult(
+            history, visited, path, graph_path_cost(path, self.weights)
+        )
 
     def bfs(
         self, start: int, end: int, visited: dict[int, bool] = {}
@@ -167,6 +178,7 @@ class UndirectedGraph:
         inspected = []
         visited[start] = True
         queue = [start]
+        predecessors = {start: None}
         history.add_step({"generated": generated.copy(), "inspected": inspected.copy()})
         while queue:
             current = queue.pop(0)
@@ -181,11 +193,15 @@ class UndirectedGraph:
                     visited[neighbor] = True
                     generated.append(neighbor)
                     queue.append(neighbor)
+                    predecessors[neighbor] = current
             inspected.append(current)
             history.add_step(
                 {"generated": generated.copy(), "inspected": inspected.copy()}
             )
-        return TraversalResult(history, visited, list(inspected), 0)
+        path = graph_path_from_predecessors(predecessors, end)
+        return TraversalResult(
+            history, visited, path, graph_path_cost(path, self.weights)
+        )
 
     def traverse(
         self, *, start: int, end: int, algorithm: TraversalAlgorithm
@@ -193,7 +209,7 @@ class UndirectedGraph:
         """
         Traverse the graph
         """
-        visited = {v: False for v in self.get_vertices()}
+        visited = {v: False for v in self.vertices()}
         if algorithm == "dfs":
             return self.dfs(start, end, visited)
         elif algorithm == "bfs":

@@ -36,14 +36,14 @@ def main(
     """
     graph = UndirectedGraph()
     graph.add_edge(1, 2)
-    graph.add_edge(2, 3)
-    graph.add_edge(3, 4)
-    graph.add_edge(4, 1)
-    start = 1
+    graph.add_edge(2, 3, weight=10)
+    graph.add_edge(3, 4, weight=5)
+    graph.add_edge(4, 1, weight=3)
+    start = 2
     end = 4
     divider = "-" * 30
     print(divider)
-    print(f"Number of nodes: {len(graph.get_vertices())}")
+    print(f"Number of nodes: {len(graph.vertices())}")
     print(f"Number of edges: {len(graph.edges())}")
     print(f"Origin vertex: {1}")
     print(f"Destination vertex: {4}")
