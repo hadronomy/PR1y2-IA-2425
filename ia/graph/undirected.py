@@ -19,7 +19,7 @@ class UndirectedGraph:
 
     # Getters / Setters
 
-    def add_edge(self, start: int, end: int, weight: int = 1) -> None:
+    def add_edge(self, start: int, end: int, *, weight: int = 1) -> None:
         """
         Add an edge to the graph
         """
@@ -132,7 +132,7 @@ class UndirectedGraph:
     # TODO: Take weights into account
 
     def dfs(
-        self, start: int, end: int, visited: dict[int, bool] = {}
+        self, *, start: int, end: int, visited: dict[int, bool] = {}
     ) -> TraversalResult:
         """
         Depth-first search
@@ -168,7 +168,7 @@ class UndirectedGraph:
         )
 
     def bfs(
-        self, start: int, end: int, visited: dict[int, bool] = {}
+        self, *, start: int, end: int, visited: dict[int, bool] = {}
     ) -> TraversalResult:
         """
         Breadth-first search
@@ -211,7 +211,7 @@ class UndirectedGraph:
         """
         visited = {v: False for v in self.vertices()}
         if algorithm == "dfs":
-            return self.dfs(start, end, visited)
+            return self.dfs(start=start, end=end, visited=visited)
         elif algorithm == "bfs":
-            return self.bfs(start, end, visited)
+            return self.bfs(start=start, end=end, visited=visited)
         raise TypeError(f"Invalid algorithm {algorithm}")
