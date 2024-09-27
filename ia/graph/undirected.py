@@ -1,4 +1,3 @@
-from rich import inspect
 from .history import AlgorithmHistory
 from .algorithm import (
     TraversalAlgorithm,

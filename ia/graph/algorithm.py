@@ -1,6 +1,5 @@
 from enum import Enum
 
-from rich import inspect
 
 from .history import AlgorithmHistory
 
