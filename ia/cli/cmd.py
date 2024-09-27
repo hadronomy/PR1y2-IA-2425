@@ -4,8 +4,8 @@ Contains the different commands available.
 """
 
 from importlib.metadata import version
-
 from typing import Annotated, Optional
+
 import typer
 
 from ia.graph import UndirectedGraph

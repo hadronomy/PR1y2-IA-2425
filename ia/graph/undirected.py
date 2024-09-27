@@ -4,13 +4,13 @@ Contains the UndirectedGraph class.
 
 """
 
-from .history import AlgorithmHistory
 from .algorithm import (
     TraversalAlgorithm,
     TraversalResult,
     graph_path_cost,
     graph_path_from_predecessors,
 )
+from .history import AlgorithmHistory
 
 
 class UndirectedGraph:
@@ -112,9 +112,11 @@ class UndirectedGraph:
     # TODO: Take weights into account
 
     def dfs(
-        self, *, start: int, end: int, visited: dict[int, bool] = {}
+        self, *, start: int, end: int, visited: dict[int, bool] = None
     ) -> TraversalResult:
         """Depth-first search."""
+        if visited is None:
+            visited = {}
         history = AlgorithmHistory()
         generated = [start]
         inspected = []
@@ -146,9 +148,11 @@ class UndirectedGraph:
         )
 
     def bfs(
-        self, *, start: int, end: int, visited: dict[int, bool] = {}
+        self, *, start: int, end: int, visited: dict[int, bool] = None
     ) -> TraversalResult:
         """Breadth-first search."""
+        if visited is None:
+            visited = {}
         history = AlgorithmHistory()
         generated = [start]
         inspected = []
