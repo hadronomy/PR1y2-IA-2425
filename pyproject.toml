@@ -11,9 +11,9 @@ python = "^3.12"
 typer = "^0.12.5"
 
 [tool.poetry.group.dev.dependencies]
-black = "^24.8.0"
 pre-commit = "^3.8.0"
 twine = "^5.1.1"
+ruff = "^0.6.8"
 
 [build-system]
 requires = ["poetry-core"]
@@ -21,3 +21,6 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
 ia = "ia.main:main"
+
+[tool.ruff.lint.isort]
+known-third-party = ["typer", "click"]
