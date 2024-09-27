@@ -3,11 +3,11 @@
 Contains the different commands available.
 """
 
-from importlib.metadata import version
 from typing import Annotated, Optional
 
 import typer
 
+from ia import __version__
 from ia.graph import UndirectedGraph
 from ia.graph.algorithm import TraversalAlgorithm
 
@@ -22,7 +22,7 @@ def run():
 def version_callback(value: bool):
     """Print the version."""
     if value:
-        print(f"ia version {version('ia')}")
+        print(f"ia version {__version__}")
         raise typer.Exit()
 
 
