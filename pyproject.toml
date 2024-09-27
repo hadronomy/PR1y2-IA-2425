@@ -36,3 +36,4 @@ extend-select = [
   "UP", # pyupgrade
   "D",  # pydocstyle
 ]
+ignore = ["D203", "D213"]
