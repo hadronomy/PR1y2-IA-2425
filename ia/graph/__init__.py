@@ -228,16 +228,3 @@ class UndirectedGraph:
         elif algorithm == "bfs":
             return self.bfs(start, end, visited)
         raise TypeError(f"Invalid algorithm {algorithm}")
-
-    # Comparators
-
-    def is_cyclic(self) -> bool:
-        """
-        Check if the graph is cyclic
-        """
-        visited = {v: False for v in self.get_vertices()}
-        for v in self.get_vertices():
-            if not visited[v]:
-                if self.isCyclicUtil(v, visited, -1):
-                    return True
-        return False
