@@ -24,3 +24,9 @@ ia = "ia.main:main"
 
 [tool.ruff.lint.isort]
 known-third-party = ["typer", "click"]
+
+[tool.ruff.lint]
+extend-select = [
+  "UP", # pyupgrade
+  "D",  # pydocstyle
+]

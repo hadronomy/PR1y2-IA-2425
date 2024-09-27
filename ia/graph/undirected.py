@@ -1,3 +1,9 @@
+"""Undirected graph module.
+
+Contains the UndirectedGraph class.
+
+"""
+
 from .history import AlgorithmHistory
 from .algorithm import (
     TraversalAlgorithm,
@@ -8,20 +14,17 @@ from .algorithm import (
 
 
 class UndirectedGraph:
-    """
-    Undirected graph class
-    """
+    """Undirected graph class."""
 
     def __init__(self):
+        """Initialize the graph."""
         self.graph = {}
         self.weights = {}
 
     # Getters / Setters
 
     def add_edge(self, start: int, end: int, *, weight: int = 1) -> None:
-        """
-        Add an edge to the graph
-        """
+        """Add an edge to the graph."""
         if start not in self.graph:
             self.graph[start] = []
         if end not in self.graph:
@@ -32,18 +35,14 @@ class UndirectedGraph:
         self.weights[(end, start)] = weight
 
     def remove_edge(self, start: int, end: int) -> None:
-        """
-        Remove an edge from the graph
-        """
+        """Remove an edge from the graph."""
         self.graph[start].remove(end)
         self.graph[end].remove(start)
         del self.weights[(start, end)]
         del self.weights[(end, start)]
 
     def remove_vertex(self, start: int) -> None:
-        """
-        Remove a vertex from the graph
-        """
+        """Remove a vertex from the graph."""
         del self.graph[start]
         for u in self.graph:
             if start in self.graph[u]:
@@ -52,21 +51,15 @@ class UndirectedGraph:
                 del self.weights[(start, u)]
 
     def vertices(self) -> list[int]:
-        """
-        Get the vertices of the graph
-        """
+        """Get the vertices of the graph."""
         return list(self.graph.keys())
 
     def weights(self) -> dict[tuple[int, int], int]:
-        """
-        Get the weights of the graph
-        """
+        """Get the weights of the graph."""
         return self.weights
 
     def edges(self) -> list[tuple[int, int]]:
-        """
-        Get the edges of the graph
-        """
+        """Get the edges of the graph."""
         edges = []
         for start in self.graph:
             for end in self.graph[start]:
@@ -75,21 +68,15 @@ class UndirectedGraph:
         return edges
 
     def neighbors(self, start: int) -> list[int]:
-        """
-        Get the neighbors of a vertex
-        """
+        """Get the neighbors of a vertex."""
         return self.graph[start]
 
     def degree(self, start: int) -> int:
-        """
-        Get the degree of a vertex
-        """
+        """Get the degree of a vertex."""
         return len(self.graph[start])
 
     def adjacency_matrix(self) -> list[list[int]]:
-        """
-        Get the adjacency matrix of the graph
-        """
+        """Get the adjacency matrix of the graph."""
         vertices = self.get_vertices()
         n = len(vertices)
         matrix = [[0 for _ in range(n)] for _ in range(n)]
@@ -100,15 +87,11 @@ class UndirectedGraph:
         return matrix
 
     def adjacency_list(self) -> dict[int, list[int]]:
-        """
-        Get the adjacency list of the graph
-        """
+        """Get the adjacency list of the graph."""
         return self.graph
 
     def incidence_matrix(self) -> list[list[int]]:
-        """
-        Get the incidence matrix of the graph
-        """
+        """Get the incidence matrix of the graph."""
         vertices = self.get_vertices()
         edges = self.edges()
         n = len(vertices)
@@ -121,9 +104,7 @@ class UndirectedGraph:
         return matrix
 
     def incidence_list(self) -> dict[int, list[int]]:
-        """
-        Get the incidence list of the graph
-        """
+        """Get the incidence list of the graph."""
         edges = self.edges()
         return {i: edges[i] for i in range(len(edges))}
 
@@ -133,9 +114,7 @@ class UndirectedGraph:
     def dfs(
         self, *, start: int, end: int, visited: dict[int, bool] = {}
     ) -> TraversalResult:
-        """
-        Depth-first search
-        """
+        """Depth-first search."""
         history = AlgorithmHistory()
         generated = [start]
         inspected = []
@@ -169,9 +148,7 @@ class UndirectedGraph:
     def bfs(
         self, *, start: int, end: int, visited: dict[int, bool] = {}
     ) -> TraversalResult:
-        """
-        Breadth-first search
-        """
+        """Breadth-first search."""
         history = AlgorithmHistory()
         generated = [start]
         inspected = []
@@ -205,9 +182,7 @@ class UndirectedGraph:
     def traverse(
         self, *, start: int, end: int, algorithm: TraversalAlgorithm
     ) -> TraversalResult:
-        """
-        Traverse the graph
-        """
+        """Traverse the graph."""
         visited = {v: False for v in self.vertices()}
         if algorithm == "dfs":
             return self.dfs(start=start, end=end, visited=visited)

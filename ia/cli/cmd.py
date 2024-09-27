@@ -1,3 +1,8 @@
+"""cmd module.
+
+Contains the different commands available.
+"""
+
 from importlib.metadata import version
 
 from typing import Annotated, Optional
@@ -8,18 +13,14 @@ from ia.graph.algorithm import TraversalAlgorithm
 
 
 def run():
-    """
-    Configure and execute the CLI.
-    """
+    """Configure and execute the CLI."""
     app = typer.Typer(pretty_exceptions_show_locals=False)
     app.command()(main)
     app(prog_name="ia")
 
 
 def version_callback(value: bool):
-    """
-    Print the version.
-    """
+    """Print the version."""
     if value:
         print(f"ia version {version('ia')}")
         raise typer.Exit()
@@ -31,9 +32,7 @@ def main(
         Optional[bool], typer.Option("--version", "-v", callback=version_callback)
     ] = None,
 ):
-    """
-    Traverse the graph using the specified algorithm.
-    """
+    """Traverse the graph using the specified algorithm."""
     graph = UndirectedGraph()
     graph.add_edge(1, 2)
     graph.add_edge(2, 3, weight=10)
