@@ -44,7 +44,7 @@ def main(
     divider = "-" * 30
     print(divider)
     print(f"Number of nodes: {len(graph.get_vertices())}")
-    print(f"Number of edges: {len(graph.get_edges())}")
+    print(f"Number of edges: {len(graph.edges())}")
     print(f"Origin vertex: {1}")
     print(f"Destination vertex: {4}")
     result = graph.traverse(start=start, end=end, algorithm=algorithm)

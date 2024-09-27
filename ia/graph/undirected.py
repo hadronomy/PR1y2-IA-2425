@@ -46,19 +46,19 @@ class UndirectedGraph:
                 del self.weights[(u, start)]
                 del self.weights[(start, u)]
 
-    def get_vertices(self) -> list[int]:
+    def vertices(self) -> list[int]:
         """
         Get the vertices of the graph
         """
         return list(self.graph.keys())
 
-    def get_weights(self) -> dict[tuple[int, int], int]:
+    def weights(self) -> dict[tuple[int, int], int]:
         """
         Get the weights of the graph
         """
         return self.weights
 
-    def get_edges(self) -> list[tuple[int, int]]:
+    def edges(self) -> list[tuple[int, int]]:
         """
         Get the edges of the graph
         """
@@ -69,19 +69,19 @@ class UndirectedGraph:
                     edges.append((start, end))
         return edges
 
-    def get_neighbors(self, start: int) -> list[int]:
+    def neighbors(self, start: int) -> list[int]:
         """
         Get the neighbors of a vertex
         """
         return self.graph[start]
 
-    def get_degree(self, start: int) -> int:
+    def degree(self, start: int) -> int:
         """
         Get the degree of a vertex
         """
         return len(self.graph[start])
 
-    def get_adjacency_matrix(self) -> list[list[int]]:
+    def adjacency_matrix(self) -> list[list[int]]:
         """
         Get the adjacency matrix of the graph
         """
@@ -94,18 +94,18 @@ class UndirectedGraph:
                     matrix[i][j] = 1
         return matrix
 
-    def get_adjacency_list(self) -> dict[int, list[int]]:
+    def adjacency_list(self) -> dict[int, list[int]]:
         """
         Get the adjacency list of the graph
         """
         return self.graph
 
-    def get_incidence_matrix(self) -> list[list[int]]:
+    def incidence_matrix(self) -> list[list[int]]:
         """
         Get the incidence matrix of the graph
         """
         vertices = self.get_vertices()
-        edges = self.get_edges()
+        edges = self.edges()
         n = len(vertices)
         m = len(edges)
         matrix = [[0 for _ in range(m)] for _ in range(n)]
@@ -115,11 +115,11 @@ class UndirectedGraph:
                     matrix[i][j] = 1
         return matrix
 
-    def get_incidence_list(self) -> dict[int, list[int]]:
+    def incidence_list(self) -> dict[int, list[int]]:
         """
         Get the incidence list of the graph
         """
-        edges = self.get_edges()
+        edges = self.edges()
         return {i: edges[i] for i in range(len(edges))}
 
     # Algorithms
