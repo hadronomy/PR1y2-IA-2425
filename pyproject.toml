@@ -37,3 +37,6 @@ extend-select = [
   "D",  # pydocstyle
 ]
 ignore = ["D203", "D213"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "numpy"
