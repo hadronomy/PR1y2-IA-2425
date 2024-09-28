@@ -27,6 +27,24 @@ def version_callback(value: bool):
         raise typer.Exit()
 
 
+def wrap_text(text, width):
+    """Wrap text to a specified width.
+
+    Parameters
+    ----------
+        text: str
+            The text to wrap.
+        width: str
+            The width to wrap the text to.
+
+    Returns
+    -------
+        str: The wrapped text.
+
+    """
+    return "\n".join(wrap(text, width=width))
+
+
 def main(
     algorithm: Annotated[
         TraversalAlgorithm,
@@ -64,25 +82,22 @@ def main(
         print(divider)
         print(f"Iteration {i + 1}")
         print(
-            "\n".join(
-                wrap(
-                    f"Generated nodes: {", ".join(str(i) for i in step["generated"])}",
-                    width=width,
-                ),
+            wrap_text(
+                f"Generated nodes: {", ".join(str(i) for i in step["generated"])}",
+                width,
             )
         )
         print(
-            "\n".join(
-                wrap(
-                    f"Inspected nodes: {", ".join(str(i) for i in step["inspected"])}",
-                    width=width,
-                ),
+            wrap_text(
+                f"Inspected nodes: {", ".join(str(i) for i in step["inspected"])}",
+                width,
             )
         )
     print(divider)
     print(
-        "\n".join(
-            wrap(f"Path: {" -> ".join(str(i) for i in result.path)}", width=width - 3)
+        wrap_text(
+            f"Path: {" -> ".join(str(i) for i in result.path)}",
+            width - 3,
         )
     )
     print(divider)
