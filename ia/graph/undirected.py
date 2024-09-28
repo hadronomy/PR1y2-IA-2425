@@ -142,6 +142,8 @@ class UndirectedGraph:
             history.add_step(
                 {"generated": generated.copy(), "inspected": inspected.copy()}
             )
+        if end not in predecessors:
+            return TraversalResult(history, visited, [], -1)
         path = graph_path_from_predecessors(predecessors, end)
         return TraversalResult(
             history, visited, path, graph_path_cost(path, self.weights)
@@ -178,6 +180,8 @@ class UndirectedGraph:
             history.add_step(
                 {"generated": generated.copy(), "inspected": inspected.copy()}
             )
+        if end not in predecessors:
+            return TraversalResult(history, visited, [], -1)
         path = graph_path_from_predecessors(predecessors, end)
         return TraversalResult(
             history, visited, path, graph_path_cost(path, self.weights)
