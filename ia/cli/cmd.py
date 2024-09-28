@@ -3,6 +3,7 @@
 Contains the different commands available.
 """
 
+from textwrap import wrap
 from typing import Annotated, Optional
 
 import typer
@@ -51,7 +52,8 @@ def main(
     graph.add_edge(4, 1, weight=3)
     start = 2
     end = 4
-    divider = "-" * 30
+    width = 30
+    divider = "-" * width
     print(divider)
     print(f"Number of nodes: {len(graph.vertices())}")
     print(f"Number of edges: {len(graph.edges())}")
@@ -61,10 +63,28 @@ def main(
     for i, step in enumerate(result.history):
         print(divider)
         print(f"Iteration {i + 1}")
-        print(f"Generated nodes: {", ".join(str(i) for i in step["generated"])}")
-        print(f"Inspected nodes: {", ".join(str(i) for i in step["inspected"])}")
+        print(
+            "\n".join(
+                wrap(
+                    f"Generated nodes: {", ".join(str(i) for i in step["generated"])}",
+                    width=width,
+                ),
+            )
+        )
+        print(
+            "\n".join(
+                wrap(
+                    f"Inspected nodes: {", ".join(str(i) for i in step["inspected"])}",
+                    width=width,
+                ),
+            )
+        )
     print(divider)
-    print(f"Path: {" -> ".join(str(i) for i in result.path)}")
+    print(
+        "\n".join(
+            wrap(f"Path: {" -> ".join(str(i) for i in result.path)}", width=width - 3)
+        )
+    )
     print(divider)
     print(f"Cost: {result.cost}")
     print(divider)
