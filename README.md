@@ -1,5 +1,6 @@
 <div align="center">
-  <img src="/.github/images/github-header-image.webp" alt="GitHub Header Image" />
+  <img src="/.github/images/github-header-image.webp#gh-dark-mode-only" alt="GitHub Header Image" width="auto" />
+  <img src="/.github/images/github-header-image-light.webp#gh-light-mode-only" alt="GitHub Header Image" width="auto" />
   
   <!-- Badges -->
   <p></p> 
