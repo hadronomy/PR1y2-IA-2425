@@ -1,0 +1,26 @@
+------------------------------
+Number of nodes: 3
+Number of edges: 2
+Origin vertex: 1
+Destination vertex: 3
+------------------------------
+Iteration 1
+Generated nodes: 1
+Inspected nodes:
+------------------------------
+Iteration 2
+Generated nodes: 1, 2
+Inspected nodes: 1
+------------------------------
+Iteration 3
+Generated nodes: 1, 2, 3
+Inspected nodes: 1, 2
+------------------------------
+Iteration 4
+Generated nodes: 1, 2, 3
+Inspected nodes: 1, 2, 3
+------------------------------
+Path: 1 -> 2 -> 3
+------------------------------
+Cost: 1.5
+------------------------------

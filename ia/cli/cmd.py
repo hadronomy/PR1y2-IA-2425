@@ -10,6 +10,7 @@ from typing import Annotated, Optional, TextIO
 
 import typer
 from rich.console import Console
+from rich.text import Text
 
 from ia import __version__
 from ia.graph import UndirectedGraph
@@ -121,16 +122,16 @@ def print_result(
     """Print the result of the traversal."""
     console = Console(file=file)
     width = 30
-    divider = "-" * width
+    divider = Text("-" * width, style="grey30")
     console.print(divider)
-    console.print(f"Number of nodes: {len(graph.vertices())}")
-    console.print(f"Number of edges: {len(graph.edges())}")
-    console.print(f"Origin vertex: {start}")
-    console.print(f"Destination vertex: {end}")
+    console.print(f"Number of nodes: {len(graph.vertices())}", style="green bold")
+    console.print(f"Number of edges: {len(graph.edges())}", style="green bold")
+    console.print(f"Origin vertex: {start}", style="blue bold")
+    console.print(f"Destination vertex: {end}", style="yellow bold")
     result = graph.traverse(start=start, end=end, algorithm=algorithm)
     for i, step in enumerate(result.history):
         console.print(divider)
-        console.print(f"Iteration {i + 1}")
+        console.print(Text(f"Iteration {i + 1}", style="red bold"))
         console.print(
             wrap_text(
                 f"Generated nodes: {", ".join(str(i) for i in step["generated"])}",
@@ -145,11 +146,12 @@ def print_result(
         )
     console.print(divider)
     console.print(
+        Text("Path:", style="bold"),
         wrap_text(
-            f"Path: {" -> ".join(str(i) for i in result.path)}",
+            f"{" -> ".join(str(i) for i in result.path)}",
             width - 3,
-        )
+        ),
     )
     console.print(divider)
-    console.print(f"Cost: {result.cost}")
+    console.print(Text("Cost:", style="bold"), f"{result.cost}")
     console.print(divider)
