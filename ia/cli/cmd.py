@@ -125,8 +125,8 @@ def print_result(
     console.print(divider)
     console.print(f"Number of nodes: {len(graph.vertices())}")
     console.print(f"Number of edges: {len(graph.edges())}")
-    console.print(f"Origin vertex: {1}")
-    console.print(f"Destination vertex: {4}")
+    console.print(f"Origin vertex: {start}")
+    console.print(f"Destination vertex: {end}")
     result = graph.traverse(start=start, end=end, algorithm=algorithm)
     for i, step in enumerate(result.history):
         console.print(divider)
