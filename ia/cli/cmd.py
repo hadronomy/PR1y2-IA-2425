@@ -3,11 +3,13 @@
 Contains the different commands available.
 """
 
+import sys
 from pathlib import Path
 from textwrap import wrap
-from typing import Annotated, Optional
+from typing import Annotated, Optional, TextIO
 
 import typer
+from rich.console import Console
 
 from ia import __version__
 from ia.graph import UndirectedGraph
@@ -84,14 +86,11 @@ def main(
     ] = None,
 ):
     """Traverse the graph using the specified algorithm."""
+    graph = None
     with open(input_path) as input_file:
         graph = parse_and_transform(input_file.read())
-        if output_path is not None:
-            with open(output_path, "w") as output_file:
-                raise NotImplementedError("Not implemented yet.")
-                graph = parse_and_transform(output_file.read())
-                return
-    print_result(graph, start, end, algorithm)
+    output_stream = sys.stdout if output_path is None else open(output_path, "w")
+    print_result(graph, start, end, algorithm, file=output_stream)
 
 
 def wrap_text(text, width):
@@ -113,39 +112,44 @@ def wrap_text(text, width):
 
 
 def print_result(
-    graph: UndirectedGraph, start: int, end: int, algorithm: TraversalAlgorithm
+    graph: UndirectedGraph,
+    start: int,
+    end: int,
+    algorithm: TraversalAlgorithm,
+    file: TextIO = sys.stdout,
 ):
     """Print the result of the traversal."""
+    console = Console(file=file)
     width = 30
     divider = "-" * width
-    print(divider)
-    print(f"Number of nodes: {len(graph.vertices())}")
-    print(f"Number of edges: {len(graph.edges())}")
-    print(f"Origin vertex: {1}")
-    print(f"Destination vertex: {4}")
+    console.print(divider)
+    console.print(f"Number of nodes: {len(graph.vertices())}")
+    console.print(f"Number of edges: {len(graph.edges())}")
+    console.print(f"Origin vertex: {1}")
+    console.print(f"Destination vertex: {4}")
     result = graph.traverse(start=start, end=end, algorithm=algorithm)
     for i, step in enumerate(result.history):
-        print(divider)
-        print(f"Iteration {i + 1}")
-        print(
+        console.print(divider)
+        console.print(f"Iteration {i + 1}")
+        console.print(
             wrap_text(
                 f"Generated nodes: {", ".join(str(i) for i in step["generated"])}",
                 width,
             )
         )
-        print(
+        console.print(
             wrap_text(
                 f"Inspected nodes: {", ".join(str(i) for i in step["inspected"])}",
                 width,
             )
         )
-    print(divider)
-    print(
+    console.print(divider)
+    console.print(
         wrap_text(
             f"Path: {" -> ".join(str(i) for i in result.path)}",
             width - 3,
         )
     )
-    print(divider)
-    print(f"Cost: {result.cost}")
-    print(divider)
+    console.print(divider)
+    console.print(f"Cost: {result.cost}")
+    console.print(divider)
