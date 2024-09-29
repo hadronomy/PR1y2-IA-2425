@@ -29,63 +29,6 @@ def version_callback(value: bool):
         raise typer.Exit()
 
 
-def wrap_text(text, width):
-    """Wrap text to a specified width.
-
-    Parameters
-    ----------
-        text: str
-            The text to wrap.
-        width: str
-            The width to wrap the text to.
-
-    Returns
-    -------
-        str: The wrapped text.
-
-    """
-    return "\n".join(wrap(text, width=width))
-
-
-def print_result(
-    graph: UndirectedGraph, start: int, end: int, algorithm: TraversalAlgorithm
-):
-    """Print the result of the traversal."""
-    width = 30
-    divider = "-" * width
-    print(divider)
-    print(f"Number of nodes: {len(graph.vertices())}")
-    print(f"Number of edges: {len(graph.edges())}")
-    print(f"Origin vertex: {1}")
-    print(f"Destination vertex: {4}")
-    result = graph.traverse(start=start, end=end, algorithm=algorithm)
-    for i, step in enumerate(result.history):
-        print(divider)
-        print(f"Iteration {i + 1}")
-        print(
-            wrap_text(
-                f"Generated nodes: {", ".join(str(i) for i in step["generated"])}",
-                width,
-            )
-        )
-        print(
-            wrap_text(
-                f"Inspected nodes: {", ".join(str(i) for i in step["inspected"])}",
-                width,
-            )
-        )
-    print(divider)
-    print(
-        wrap_text(
-            f"Path: {" -> ".join(str(i) for i in result.path)}",
-            width - 3,
-        )
-    )
-    print(divider)
-    print(f"Cost: {result.cost}")
-    print(divider)
-
-
 def main(
     input_path: Annotated[
         Path,
@@ -149,3 +92,60 @@ def main(
                 graph = parse_and_transform(output_file.read())
                 return
     print_result(graph, start, end, algorithm)
+
+
+def wrap_text(text, width):
+    """Wrap text to a specified width.
+
+    Parameters
+    ----------
+        text: str
+            The text to wrap.
+        width: str
+            The width to wrap the text to.
+
+    Returns
+    -------
+        str: The wrapped text.
+
+    """
+    return "\n".join(wrap(text, width=width))
+
+
+def print_result(
+    graph: UndirectedGraph, start: int, end: int, algorithm: TraversalAlgorithm
+):
+    """Print the result of the traversal."""
+    width = 30
+    divider = "-" * width
+    print(divider)
+    print(f"Number of nodes: {len(graph.vertices())}")
+    print(f"Number of edges: {len(graph.edges())}")
+    print(f"Origin vertex: {1}")
+    print(f"Destination vertex: {4}")
+    result = graph.traverse(start=start, end=end, algorithm=algorithm)
+    for i, step in enumerate(result.history):
+        print(divider)
+        print(f"Iteration {i + 1}")
+        print(
+            wrap_text(
+                f"Generated nodes: {", ".join(str(i) for i in step["generated"])}",
+                width,
+            )
+        )
+        print(
+            wrap_text(
+                f"Inspected nodes: {", ".join(str(i) for i in step["inspected"])}",
+                width,
+            )
+        )
+    print(divider)
+    print(
+        wrap_text(
+            f"Path: {" -> ".join(str(i) for i in result.path)}",
+            width - 3,
+        )
+    )
+    print(divider)
+    print(f"Cost: {result.cost}")
+    print(divider)
