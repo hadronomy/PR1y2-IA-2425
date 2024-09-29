@@ -9,6 +9,7 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.12"
 typer = "^0.12.5"
+lark = "^1.2.2"
 
 [tool.poetry.group.dev.dependencies]
 pre-commit = "^3.8.0"
@@ -25,6 +26,9 @@ ia = "ia.main:main"
 
 [tool.ruff.lint.isort]
 known-third-party = ["typer", "click"]
+
+[tool.ruff]
+exclude = ["generated_*.py"]
 
 [tool.ruff.lint]
 extend-select = [

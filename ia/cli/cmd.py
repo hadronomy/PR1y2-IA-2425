@@ -3,6 +3,7 @@
 Contains the different commands available.
 """
 
+from pathlib import Path
 from textwrap import wrap
 from typing import Annotated, Optional
 
@@ -11,6 +12,7 @@ import typer
 from ia import __version__
 from ia.graph import UndirectedGraph
 from ia.graph.algorithm import TraversalAlgorithm
+from ia.parser.graph.undirected import parse_and_transform
 
 
 def run():
@@ -45,31 +47,10 @@ def wrap_text(text, width):
     return "\n".join(wrap(text, width=width))
 
 
-def main(
-    algorithm: Annotated[
-        TraversalAlgorithm,
-        typer.Option(
-            help="Traversal algorithm to use.",
-        ),
-    ],
-    version: Annotated[
-        Optional[bool],
-        typer.Option(
-            "--version",
-            "-v",
-            callback=version_callback,
-            help="Print the program version.",
-        ),
-    ] = None,
+def print_result(
+    graph: UndirectedGraph, start: int, end: int, algorithm: TraversalAlgorithm
 ):
-    """Traverse the graph using the specified algorithm."""
-    graph = UndirectedGraph()
-    graph.add_edge(1, 2)
-    graph.add_edge(2, 3, weight=10)
-    graph.add_edge(3, 4, weight=5)
-    graph.add_edge(4, 1, weight=3)
-    start = 2
-    end = 4
+    """Print the result of the traversal."""
     width = 30
     divider = "-" * width
     print(divider)
@@ -103,3 +84,68 @@ def main(
     print(divider)
     print(f"Cost: {result.cost}")
     print(divider)
+
+
+def main(
+    input_path: Annotated[
+        Path,
+        typer.Argument(
+            help="The path to the file containing the graph.",
+            exists=True,
+            file_okay=True,
+            dir_okay=False,
+            readable=True,
+            resolve_path=True,
+        ),
+    ],
+    algorithm: Annotated[
+        TraversalAlgorithm,
+        typer.Option(
+            help="Traversal algorithm to use.",
+        ),
+    ],
+    start: Annotated[
+        int,
+        typer.Option(
+            "--start",
+            "-s",
+            help="The starting vertex.",
+        ),
+    ],
+    end: Annotated[
+        int,
+        typer.Option(
+            "--end",
+            "-e",
+            help="The ending vertex.",
+        ),
+    ],
+    output_path: Annotated[
+        Optional[Path],
+        typer.Option(
+            "--output",
+            "-o",
+            help="The path to the file to write the output to.",
+            writable=True,
+            resolve_path=True,
+        ),
+    ] = None,
+    version: Annotated[
+        Optional[bool],
+        typer.Option(
+            "--version",
+            "-v",
+            callback=version_callback,
+            help="Print the program version.",
+        ),
+    ] = None,
+):
+    """Traverse the graph using the specified algorithm."""
+    with open(input_path) as input_file:
+        graph = parse_and_transform(input_file.read())
+        if output_path is not None:
+            with open(output_path, "w") as output_file:
+                raise NotImplementedError("Not implemented yet.")
+                graph = parse_and_transform(output_file.read())
+                return
+    print_result(graph, start, end, algorithm)

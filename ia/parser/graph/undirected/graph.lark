@@ -1,0 +1,19 @@
+?start: graph
+
+graph: NODE_AMOUNT NEWLINE edge_weights
+edge_weights: weight (NEWLINE weight+)* NEWLINE*
+weight: FLOAT
+      | UNDEFINED
+
+NODE_AMOUNT: INT
+
+UNDEFINED: "-1"
+COMMENT: /#.*/
+
+%import common.FLOAT
+%import common.INT
+%import common.WS
+%import common.NEWLINE
+
+%ignore WS
+%ignore COMMENT
