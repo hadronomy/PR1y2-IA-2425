@@ -2,7 +2,6 @@
 
 from typing import Callable, Optional
 
-from rich import inspect
 from rich.console import Console
 
 from ia.graph import UndirectedGraph
