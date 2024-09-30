@@ -2,6 +2,7 @@
 
 from typing import Callable, Optional
 
+from rich import inspect
 from rich.console import Console
 
 from ia.graph import UndirectedGraph
@@ -20,6 +21,10 @@ from .generated_parser import (
 class UndirectedGraphTransformer(Transformer):
     """Transforms a parse tree into an undirected graph."""
 
+    def NO_ZERO(self, children):
+        """Return the first child node if it is not zero."""
+        return children[0]
+
     def NODE_AMOUNT(self, children):
         """
         Convert the first child node to an integer representing the node amount.
@@ -34,7 +39,7 @@ class UndirectedGraphTransformer(Transformer):
         -------
           int: The integer value of the first child node.
         """
-        return int(children[0])
+        return int(children.value)
 
     def WS(self, children):
         """
@@ -104,10 +109,11 @@ class UndirectedGraphTransformer(Transformer):
         graph = UndirectedGraph()
         node_amount = children[0]
         weights = children[1]
-        if node_amount * 2 != len(weights):
+        expected_amount = (node_amount * (node_amount - 1)) // 2
+        if expected_amount != len(weights):
             raise UnexpectedInput(
                 f"""the number of weights({len(weights)}) \
-must be twice the number of nodes({node_amount})."""
+with a node amount of {node_amount} must be equal to {expected_amount}"""
             )
         weight_index = 0
         for i in range(1, node_amount):
