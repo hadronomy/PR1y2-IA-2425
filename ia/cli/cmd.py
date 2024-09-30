@@ -87,9 +87,13 @@ def main(
     ] = None,
 ):
     """Traverse the graph using the specified algorithm."""
+    console = Console()
     graph = None
     with open(input_path) as input_file:
         graph = parse_and_transform(input_file.read())
+        if graph is None:
+            console.print("\nFailed to parse the graph.", style="red bold")
+            raise typer.Exit(1)
     output_stream = sys.stdout if output_path is None else open(output_path, "w")
     print_result(graph, start, end, algorithm, file=output_stream)
 
