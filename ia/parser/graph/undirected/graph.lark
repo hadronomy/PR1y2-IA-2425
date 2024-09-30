@@ -12,8 +12,9 @@ UNDEFINED: "-1"
 COMMENT: /#.*/
 
 %import common.FLOAT
-%import common.WS
 %import common.NEWLINE
+
+WS: /\s/
 
 %ignore COMMENT
 %ignore WS
