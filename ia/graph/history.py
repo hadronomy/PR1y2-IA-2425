@@ -1,5 +1,7 @@
 """History class for the algorithms."""
 
+from copy import deepcopy
+
 
 class AlgorithmHistory:
     """Algorithm history class."""
@@ -8,9 +10,9 @@ class AlgorithmHistory:
         """Initialize the history."""
         self.history = []
 
-    def add_step(self, step: dict) -> None:
+    def add_step(self, **kargs) -> None:
         """Add a step to the history."""
-        self.history.append(step)
+        self.history.append(deepcopy(kargs))
 
     def get_history(self) -> list[dict]:
         """Get the history."""

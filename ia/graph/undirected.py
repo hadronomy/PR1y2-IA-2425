@@ -123,14 +123,12 @@ class UndirectedGraph:
         visited[start] = True
         stack = [start]
         predecessors = {start: None}
-        history.add_step({"generated": generated.copy(), "inspected": inspected.copy()})
+        history.add_step(generated=generated, inspected=inspected)
         while stack:
             current = stack.pop()
             if current == end:
                 inspected.append(current)
-                history.add_step(
-                    {"generated": generated.copy(), "inspected": inspected.copy()}
-                )
+                history.add_step(generated=generated, inspected=inspected)
                 break
             for neighbor in self.graph[current]:
                 if not visited[neighbor]:
@@ -139,9 +137,7 @@ class UndirectedGraph:
                     stack.append(neighbor)
                     predecessors[neighbor] = current
             inspected.append(current)
-            history.add_step(
-                {"generated": generated.copy(), "inspected": inspected.copy()}
-            )
+            history.add_step(generated=generated, inspected=inspected)
         if end not in predecessors:
             return TraversalResult(history, visited, [], -1)
         path = graph_path_from_predecessors(predecessors, end)
@@ -161,14 +157,12 @@ class UndirectedGraph:
         visited[start] = True
         queue = [start]
         predecessors = {start: None}
-        history.add_step({"generated": generated.copy(), "inspected": inspected.copy()})
+        history.add_step(generated=generated, inspected=inspected)
         while queue:
             current = queue.pop(0)
             if current == end:
                 inspected.append(current)
-                history.add_step(
-                    {"generated": generated.copy(), "inspected": inspected.copy()}
-                )
+                history.add_step(generated=generated, inspected=inspected)
                 break
             for neighbor in self.graph[current]:
                 if not visited[neighbor]:
@@ -177,9 +171,7 @@ class UndirectedGraph:
                     queue.append(neighbor)
                     predecessors[neighbor] = current
             inspected.append(current)
-            history.add_step(
-                {"generated": generated.copy(), "inspected": inspected.copy()}
-            )
+            history.add_step(generated=generated, inspected=inspected)
         if end not in predecessors:
             return TraversalResult(history, visited, [], -1)
         path = graph_path_from_predecessors(predecessors, end)
