@@ -1,7 +1,4 @@
-"""Graph module.
-
-Contains the classes and functions related to graphs.
-"""
+"""Graph data structures and algorithms."""
 
 from . import algorithm as algorithm
 from .history import AlgorithmHistory as AlgorithmHistory
