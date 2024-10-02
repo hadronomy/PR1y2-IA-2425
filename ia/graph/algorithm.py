@@ -22,7 +22,6 @@ class TraversalResult:
     def __init__(
         self,
         history: AlgorithmHistory,
-        visited: dict[int, bool],
         path: list[int],
         cost: int,
     ):
@@ -41,13 +40,12 @@ class TraversalResult:
 
         """
         self.history = history
-        self.visited = visited
         self.path = path
         self.cost = cost
 
     def __str__(self) -> str:
         """Return the result as a string."""
-        return f"Path: {self.path}, Cost: {self.cost}, Visited: {self.visited}"
+        return f"Path: {self.path}, Cost: {self.cost}"
 
 
 def graph_path_cost(path: list[int], weights: dict[tuple[int, int], int]) -> int:

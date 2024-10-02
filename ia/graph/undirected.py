@@ -108,9 +108,6 @@ class UndirectedGraph:
         edges = self.edges()
         return {i: edges[i] for i in range(len(edges))}
 
-    # Algorithms
-    # TODO: Take weights into account
-
     def dfs(
         self, *, start: int, end: int, visited: dict[int, bool] = None
     ) -> TraversalResult:
@@ -139,11 +136,9 @@ class UndirectedGraph:
             inspected.append(current)
             history.add_step(generated=generated, inspected=inspected)
         if end not in predecessors:
-            return TraversalResult(history, visited, [], -1)
+            return TraversalResult(history, [], -1)
         path = graph_path_from_predecessors(predecessors, end)
-        return TraversalResult(
-            history, visited, path, graph_path_cost(path, self.weights)
-        )
+        return TraversalResult(history, path, graph_path_cost(path, self.weights))
 
     def bfs(
         self, *, start: int, end: int, visited: dict[int, bool] = None
@@ -173,11 +168,9 @@ class UndirectedGraph:
             inspected.append(current)
             history.add_step(generated=generated, inspected=inspected)
         if end not in predecessors:
-            return TraversalResult(history, visited, [], -1)
+            return TraversalResult(history, [], -1)
         path = graph_path_from_predecessors(predecessors, end)
-        return TraversalResult(
-            history, visited, path, graph_path_cost(path, self.weights)
-        )
+        return TraversalResult(history, path, graph_path_cost(path, self.weights))
 
     def traverse(
         self, *, start: int, end: int, algorithm: TraversalAlgorithm
