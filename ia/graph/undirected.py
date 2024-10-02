@@ -18,41 +18,41 @@ class UndirectedGraph:
 
     def __init__(self):
         """Initialize the graph."""
-        self.graph = {}
+        self.adjacency = {}
         self.weights = {}
 
     # Getters / Setters
 
     def add_edge(self, start: int, end: int, *, weight: int = 1) -> None:
         """Add an edge to the graph."""
-        if start not in self.graph:
-            self.graph[start] = []
-        if end not in self.graph:
-            self.graph[end] = []
-        self.graph[start].append(end)
-        self.graph[end].append(start)
+        if start not in self.adjacency:
+            self.adjacency[start] = []
+        if end not in self.adjacency:
+            self.adjacency[end] = []
+        self.adjacency[start].append(end)
+        self.adjacency[end].append(start)
         self.weights[(start, end)] = weight
         self.weights[(end, start)] = weight
 
     def remove_edge(self, start: int, end: int) -> None:
         """Remove an edge from the graph."""
-        self.graph[start].remove(end)
-        self.graph[end].remove(start)
+        self.adjacency[start].remove(end)
+        self.adjacency[end].remove(start)
         del self.weights[(start, end)]
         del self.weights[(end, start)]
 
     def remove_vertex(self, start: int) -> None:
         """Remove a vertex from the graph."""
-        del self.graph[start]
-        for u in self.graph:
-            if start in self.graph[u]:
-                self.graph[u].remove(start)
+        del self.adjacency[start]
+        for u in self.adjacency:
+            if start in self.adjacency[u]:
+                self.adjacency[u].remove(start)
                 del self.weights[(u, start)]
                 del self.weights[(start, u)]
 
     def vertices(self) -> list[int]:
         """Get the vertices of the graph."""
-        return list(self.graph.keys())
+        return list(self.adjacency.keys())
 
     def weights(self) -> dict[tuple[int, int], int]:
         """Get the weights of the graph."""
@@ -61,19 +61,19 @@ class UndirectedGraph:
     def edges(self) -> list[tuple[int, int]]:
         """Get the edges of the graph."""
         edges = []
-        for start in self.graph:
-            for end in self.graph[start]:
+        for start in self.adjacency:
+            for end in self.adjacency[start]:
                 if (end, start) not in edges:
                     edges.append((start, end))
         return edges
 
     def neighbors(self, start: int) -> list[int]:
         """Get the neighbors of a vertex."""
-        return self.graph[start]
+        return self.adjacency[start]
 
     def degree(self, start: int) -> int:
         """Get the degree of a vertex."""
-        return len(self.graph[start])
+        return len(self.adjacency[start])
 
     def adjacency_matrix(self) -> list[list[int]]:
         """Get the adjacency matrix of the graph."""
@@ -82,13 +82,13 @@ class UndirectedGraph:
         matrix = [[0 for _ in range(n)] for _ in range(n)]
         for i in range(n):
             for j in range(n):
-                if vertices[i] in self.graph[vertices[j]]:
+                if vertices[i] in self.adjacency[vertices[j]]:
                     matrix[i][j] = 1
         return matrix
 
     def adjacency_list(self) -> dict[int, list[int]]:
         """Get the adjacency list of the graph."""
-        return self.graph
+        return self.adjacency
 
     def incidence_matrix(self) -> list[list[int]]:
         """Get the incidence matrix of the graph."""
@@ -130,7 +130,7 @@ class UndirectedGraph:
                 inspected.append(current)
                 history.add_step(generated=generated, inspected=inspected)
                 break
-            for neighbor in self.graph[current]:
+            for neighbor in self.adjacency[current]:
                 if not visited[neighbor]:
                     visited[neighbor] = True
                     generated.append(neighbor)
@@ -164,7 +164,7 @@ class UndirectedGraph:
                 inspected.append(current)
                 history.add_step(generated=generated, inspected=inspected)
                 break
-            for neighbor in self.graph[current]:
+            for neighbor in self.adjacency[current]:
                 if not visited[neighbor]:
                     visited[neighbor] = True
                     generated.append(neighbor)
