@@ -182,3 +182,15 @@ class UndirectedGraph:
         elif algorithm == "bfs":
             return self.bfs(start=start, end=end, visited=visited)
         raise TypeError(f"Invalid algorithm {algorithm}")
+
+    def to_networkx(self):
+        """Convert the graph to a NetworkX graph."""
+        import networkx as nx
+
+        graph = nx.Graph()
+        for start in self.adjacency:
+            for end in self.adjacency[start]:
+                graph.add_node(start, label=start)
+                graph.add_node(end, label=end)
+                graph.add_edge(start, end, weight=self.weights[(start, end)])
+        return graph

@@ -21,7 +21,8 @@ from ia.parser.graph.undirected import parse_and_transform
 def run():
     """Configure and execute the CLI."""
     app = typer.Typer(pretty_exceptions_show_locals=False)
-    app.command()(main)
+    app.command("uninformed")(main)
+    app.command("preview")(preview)
     app(prog_name="ia")
 
 
@@ -85,6 +86,14 @@ def main(
             help="Print the program version.",
         ),
     ] = None,
+    preview: Annotated[
+        Optional[bool],
+        typer.Option(
+            "--preview",
+            "-p",
+            help="Render a graph preview.",
+        ),
+    ] = None,
 ):
     """Traverse the graph using the specified algorithm."""
     console = Console()
@@ -96,6 +105,37 @@ def main(
             raise typer.Exit(1)
     output_stream = sys.stdout if output_path is None else open(output_path, "w")
     print_result(graph, start, end, algorithm, file=output_stream)
+
+
+def preview(
+    input_path: Annotated[
+        Path,
+        typer.Argument(
+            help="The path to the file containing the graph.",
+            exists=True,
+            file_okay=True,
+            dir_okay=False,
+            readable=True,
+            resolve_path=True,
+        ),
+    ],
+):
+    """Render a graph preview."""
+    console = Console()
+    graph = None
+    with open(input_path) as input_file:
+        graph = parse_and_transform(input_file.read())
+        if graph is None:
+            console.print("\nFailed to parse the graph.", style="red bold")
+            raise typer.Exit(1)
+    import matplotlib.pyplot as plt
+    import networkx as nx
+
+    nx_graph = graph.to_networkx()
+    plt.figure()
+    plt.title("Graph preview")
+    nx.draw_spring(nx_graph, with_labels=True, node_color="skyblue", node_size=500)
+    plt.show()
 
 
 def wrap_text(text, width):
