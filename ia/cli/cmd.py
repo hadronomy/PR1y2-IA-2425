@@ -21,7 +21,7 @@ from ia.parser.graph.undirected import parse_and_transform
 def run():
     """Configure and execute the CLI."""
     app = typer.Typer(pretty_exceptions_show_locals=False)
-    app.command("uninformed")(main)
+    app.command("uninformed")(uninformed)
     app.command("preview")(preview)
     app(prog_name="ia")
 
@@ -33,7 +33,7 @@ def version_callback(value: bool):
         raise typer.Exit()
 
 
-def main(
+def uninformed(
     input_path: Annotated[
         Path,
         typer.Argument(
