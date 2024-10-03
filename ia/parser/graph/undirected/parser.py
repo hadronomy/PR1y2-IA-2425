@@ -24,6 +24,10 @@ class UndirectedGraphTransformer(Transformer):
         """Return the first child node if it is not zero."""
         return children[0]
 
+    def INT(self, children):
+        """Convert the first child node to an integer."""
+        return int(children[0])
+
     def NODE_AMOUNT(self, children):
         """
         Convert the first child node to an integer representing the node amount.

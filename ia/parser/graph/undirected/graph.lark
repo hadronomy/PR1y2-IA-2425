@@ -3,14 +3,16 @@
 graph: NODE_AMOUNT edge_weights
 edge_weights: (NEWLINE weight)+ NEWLINE*
 weight: FLOAT
+      | INT
       | UNDEFINED
 
 NODE_AMOUNT: NO_ZERO
 
-NO_ZERO: /[0-9][1-9]*/
-UNDEFINED: /-1(.0+)?/
+NO_ZERO: /[0-9]+/
+UNDEFINED: /-1([.,]0+)?/
 COMMENT: /#.*/
 
+%import common.INT
 %import common.FLOAT
 %import common.NEWLINE
 
