@@ -91,7 +91,7 @@ def uninformed(
         typer.Option(
             "--preview",
             "-p",
-            help="Render a graph preview.",
+            help="Render the generated tree.",
         ),
     ] = None,
 ):
