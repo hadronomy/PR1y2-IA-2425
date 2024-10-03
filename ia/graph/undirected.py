@@ -123,13 +123,13 @@ class UndirectedGraph:
         history.add_step(generated=generated, inspected=inspected)
         while stack:
             current = stack.pop()
+            visited[current] = True
             if current == end:
                 inspected.append(current)
                 history.add_step(generated=generated, inspected=inspected)
                 break
             for neighbor in self.adjacency[current]:
                 if not visited[neighbor]:
-                    visited[neighbor] = True
                     generated.append(neighbor)
                     stack.append(neighbor)
                     predecessors[neighbor] = current
