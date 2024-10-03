@@ -133,7 +133,8 @@ def preview(
 
     nx_graph = graph.to_networkx()
     plt.figure()
-    plt.title("Graph preview")
+    plt.suptitle(f"Graph preview - {input_path.name}")
+    plt.title("by @hadronomy")
     nx.draw_spring(nx_graph, with_labels=True, node_color="skyblue", node_size=500)
     plt.show()
 
