@@ -132,10 +132,23 @@ def preview(
     import networkx as nx
 
     nx_graph = graph.to_networkx()
-    plt.figure()
-    plt.suptitle(f"Graph preview - {input_path.name}")
-    plt.title("by @hadronomy")
-    nx.draw_spring(nx_graph, with_labels=True, node_color="skyblue", node_size=500)
+
+    pos = nx.nx_agraph.graphviz_layout(nx_graph, prog="dot")
+
+    plt.figure(figsize=(10, 10))
+    plt.suptitle("Graph preview\nby @hadronomy")
+    plt.title(f"{input_path.name}")
+    plt.axis("off")
+    plt.tight_layout()
+
+    nx.draw_networkx_nodes(
+        nx_graph, pos, node_color="white", edgecolors="black", node_size=700
+    )
+    nx.draw_networkx_edges(nx_graph, pos, edge_color="black", width=5)
+    nx.draw_networkx_labels(nx_graph, pos, font_size=15, font_family="sans-serif")
+    edge_labels = nx.get_edge_attributes(nx_graph, "weight")
+    nx.draw_networkx_edge_labels(nx_graph, pos, edge_labels)
+
     plt.show()
 
 
