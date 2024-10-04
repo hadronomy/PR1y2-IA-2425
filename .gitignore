@@ -4,3 +4,4 @@ dist
 .ruff_cache
 out*.txt
 *.dist
+*.bin
