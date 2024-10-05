@@ -3,22 +3,22 @@
 Based of `bigtree` python package.
 """
 
+from __future__ import annotations
+
 import copy
 import heapq
-from typing import List, Optional, TypeVar
-
-T = TypeVar("T", bound="BaseNode")
+from typing import TypeVar
 
 
 class BaseNode:
     """BaseNode extends any Python class to a graph node."""
 
     def __init__(
-        self, parent: Optional[T] = None, children: Optional[List[T]] = None, **kwargs
+        self, parent: T | None = None, children: list[T] | None = None, **kwargs
     ):
         """Initialize the node."""
-        self.__parent: Optional[T] = None
-        self.__children: List[T] = []
+        self.__parent: T | None = None
+        self.__children: list[T] = []
         if children is None:
             children = []
         self.parent = parent
@@ -30,12 +30,12 @@ class BaseNode:
         self.__dict__.update(kwargs)
 
     @property
-    def parent(self) -> Optional[T]:
+    def parent(self) -> T | None:
         """Get the parent node.
 
         Returns
         -------
-            Optional[T]: The parent node.
+            T | None: The parent node.
         """
         return self.__parent
 
@@ -126,3 +126,6 @@ class BaseNode:
             new_parent (T): The parent node.
         """  # noqa: D401
         pass
+
+
+T = TypeVar("T", bound=BaseNode)
