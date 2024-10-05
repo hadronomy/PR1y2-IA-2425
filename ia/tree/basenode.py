@@ -54,6 +54,7 @@ class BaseNode:
         current_parent = self.parent
         current_child_idx = None
 
+        self.__pre_assign_parent(new_parent)
         try:
             if current_parent is not None:
                 if not any(child is self for child in current_parent.children):
@@ -64,7 +65,7 @@ class BaseNode:
             self.__parent = new_parent
             if new_parent is not None:
                 new_parent.__children.append(self)
-
+            self.__post_assign_parent(new_parent)
         except Exception as error_info:
             if new_parent is not None:
                 new_parent.__children.remove(self)
