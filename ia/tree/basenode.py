@@ -7,7 +7,8 @@ from __future__ import annotations
 
 import copy
 import heapq
-from typing import Iterable, TypeVar
+from collections.abc import Iterable
+from typing import TypeVar
 
 
 class BaseNode:
