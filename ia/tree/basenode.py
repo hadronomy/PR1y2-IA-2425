@@ -22,7 +22,8 @@ class BaseNode:
         self.__children: list[T] = []
         if children is None:
             children = []
-        self.parent = parent
+        if parent is not None:
+            self.parent = parent
         self.children = children
         if "parents" in kwargs:
             raise AttributeError(
@@ -82,10 +83,8 @@ class BaseNode:
     def __check_parent_type(new_parent: T) -> None:
         if not isinstance(new_parent, BaseNode) or new_parent is None:
             raise TypeError(
-                f"""\
-                Parent must be of type BaseNode or NoneType, got {type(new_parent)}\
-                instead.\
-                """
+                f"""Parent must be of type BaseNode or NoneType, got {type(new_parent)}\
+ instead."""
             )
 
     def __check_parent_loop(self, new_parent: T) -> None:
@@ -96,7 +95,7 @@ class BaseNode:
             new_parent (T): The parent node.
         """
         if new_parent is not None:
-            if self in new_parent.parents:
+            if self is new_parent.parent:
                 if new_parent is self:
                     raise ValueError("Cannot set parent to self.")
                 if any(

@@ -72,8 +72,8 @@ def print_tree(
             attribute_str = (
                 f" {attribute_bracket_open}{attribute_str}{attribute_bracket_close}"
             )
-        node_str = f"{_node.name}{attribute_str}"
-        print(f"{pre_str}{node_str}{fill_str}", **kargs)
+        node_str = f"{_node.node_name}{attribute_str}"
+        print(f"{pre_str}{fill_str}{node_str}", **kargs)
 
 
 def yield_tree(
@@ -86,7 +86,7 @@ def yield_tree(
     tree = get_subtree(tree)
 
     if isinstance(style, str):
-        avaidable_styles = ExportConstants.HPRINT_STYLES
+        avaidable_styles = ExportConstants.PRINT_STYLES
         style_stem, style_branch, style_strem_final = avaidable_styles[style]
     elif isinstance(style, list) and len(list(style)) != 3:
         raise ValueError("Style must be a string or list of 3 strings.")
@@ -106,7 +106,7 @@ def yield_tree(
             node_depth = _node.depth - initial_depth
 
             if _node.right_sibling:
-                unclosed_depth.discard(node_depth)
+                unclosed_depth.add(node_depth)
                 fill_str = style_branch
             else:
                 if node_depth in unclosed_depth:
@@ -114,10 +114,10 @@ def yield_tree(
                 fill_str = style_strem_final
 
             pre_str = ""
-            for _depth in range(node_depth):
+            for _depth in range(1, node_depth):
                 if _depth in unclosed_depth:
-                    pre_str += gap_str
+                    pre_str += style_stem
                 else:
-                    pre_str += style_strem_final
+                    pre_str += gap_str
 
         yield pre_str, fill_str, _node

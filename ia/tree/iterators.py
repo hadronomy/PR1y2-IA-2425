@@ -24,5 +24,6 @@ def preorder_iter(
         (Iterable[NodeT])
     """
     if tree and (not max_depth or not tree.get_attribute("depth") > max_depth):
+        yield tree
         for child in tree.children:
             yield from preorder_iter(child, max_depth)
