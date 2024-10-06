@@ -23,7 +23,17 @@ def run():
     """Configure and execute the CLI."""
     app = typer.Typer(pretty_exceptions_show_locals=False)
     app.command("uninformed")(uninformed)
-    app.command("preview")(preview)
+    # This callback is needed to force typer to use
+    # subcommands even when there is only one command.
+    app.callback()(lambda: None)
+
+    try:
+        import matplotlib.pyplot as plt  # type: ignore # noqa: F401
+        import networkx as nx  # type: ignore # noqa: F401
+
+        app.command("preview")(preview)
+    except ImportError:
+        pass
     app(prog_name="ia")
 
 
