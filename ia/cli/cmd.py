@@ -164,8 +164,8 @@ def preview(
         if graph is None:
             console.print("\nFailed to parse the graph.", style="red bold")
             raise typer.Exit(1)
-    import matplotlib.pyplot as plt
-    import networkx as nx
+    import matplotlib.pyplot as plt  # type: ignore
+    import networkx as nx  # type: ignore
 
     nx_graph = graph.to_networkx()
 

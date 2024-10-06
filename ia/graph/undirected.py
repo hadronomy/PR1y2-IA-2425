@@ -195,7 +195,7 @@ class UndirectedGraph:
 
     def to_networkx(self):
         """Convert the graph to a NetworkX graph."""
-        import networkx as nx
+        import networkx as nx  # type: ignore
 
         graph = nx.Graph()
         for start in self.adjacency:
