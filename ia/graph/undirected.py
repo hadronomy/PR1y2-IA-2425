@@ -166,11 +166,11 @@ class UndirectedGraph:
         tree_root = Node(start, id=start)
         generated = [tree_root.id]
         inspected = []
-        stack = [tree_root]
+        queue = [tree_root]
         history.add_step(generated=generated, inspected=inspected)
         current = None
-        while stack:
-            current = stack.pop(0)
+        while queue:
+            current = queue.pop(0)
             if current.id == end:
                 inspected.append(current.id)
                 history.add_step(generated=generated, inspected=inspected)
@@ -182,7 +182,7 @@ class UndirectedGraph:
                 and neighbor is not current
             ]
             generated.extend(new_generated)
-            stack.extend(
+            queue.extend(
                 [
                     Node(successor, parent=current, id=successor)
                     for successor in new_generated
