@@ -6,7 +6,7 @@ Contains the different commands available.
 import sys
 from pathlib import Path
 from textwrap import wrap
-from typing import Annotated, Optional, TextIO
+from typing import Annotated, TextIO
 
 import typer
 from rich.console import Console
@@ -16,7 +16,6 @@ from ia import __version__
 from ia.graph import UndirectedGraph
 from ia.graph.algorithm import TraversalAlgorithm, TraversalResult
 from ia.parser.graph.undirected import parse_and_transform
-from ia.tree.node import Node
 from ia.tree.utils import print_tree
 
 
@@ -70,7 +69,7 @@ def uninformed(
         ),
     ],
     output_path: Annotated[
-        Optional[Path],
+        Path | None,
         typer.Option(
             "--output",
             "-o",
@@ -80,7 +79,7 @@ def uninformed(
         ),
     ] = None,
     version: Annotated[
-        Optional[bool],
+        bool | None,
         typer.Option(
             "--version",
             "-v",
@@ -89,7 +88,7 @@ def uninformed(
         ),
     ] = None,
     preview: Annotated[
-        Optional[bool],
+        bool | None,
         typer.Option(
             "--preview",
             "-p",

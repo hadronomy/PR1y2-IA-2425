@@ -10,7 +10,6 @@ from .algorithm import (
     TraversalAlgorithm,
     TraversalResult,
     graph_path_cost,
-    graph_path_from_predecessors,
 )
 from .history import AlgorithmHistory
 
