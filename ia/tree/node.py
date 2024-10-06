@@ -72,11 +72,11 @@ class Node(BaseNode):
         )
 
     def __pre_assign_parent(self, new_parent: T) -> None:
-        """Custom method to check before attaching a parent."""
+        """Custom method to check before attaching a parent."""  # noqa: D401
         pass
 
     def __pre_assign_children(self, new_children: list[T]) -> None:
-        """Custom method to check before attaching children."""
+        """Custom method to check before attaching children."""  # noqa: D401
         pass
 
     def _BaseNode__pre_assign_parent(self: T, new_parent: T) -> None:
@@ -93,8 +93,8 @@ class Node(BaseNode):
                 for child in new_parent.children
             ):
                 raise ValueError(
-                    f"Duplicate node with the same path\n.",
-                    f"There exist a node with the same path: {self.path_name}{new_parent.separator}{self.node_name}",
+                    "Duplicate node with the same path\n.",
+                    f"There exist a node with the same path: {self.path_name}{new_parent.separator}{self.node_name}",  # noqa: E501
                 )
 
     def _BaseNode__pre_assign_children(self: T, new_children: list[T]) -> None:
@@ -114,7 +114,7 @@ class Node(BaseNode):
                 [f"{self.path_name}{self.separator}{name}" for name in duplicate_names]
             )
             raise ValueError(
-                f"Duplicate nodes with the same path\n.",
+                "Duplicate nodes with the same path\n.",
                 f"There exist nodes with the same path: {duplicate_names_str}",
             )
 

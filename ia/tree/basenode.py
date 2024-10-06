@@ -82,8 +82,8 @@ class BaseNode:
     def __check_parent_type(new_parent: T) -> None:
         if not (isinstance(new_parent, BaseNode) or new_parent is None):
             raise TypeError(
-                f"""Parent must be of type BaseNode or NoneType, got {type(new_parent)}\
- instead."""
+                "Parent must be of type BaseNode or NoneType,",
+                f"got {type(new_parent)} instead.",
             )
 
     def __check_parent_loop(self, new_parent: T) -> None:
@@ -196,8 +196,8 @@ class BaseNode:
             and not isinstance(new_children, set)
         ):
             raise TypeError(
-                f"""Expect children to be List or Tuple or Set type, \
-received input type {type(new_children)}"""
+                "Expect children to be List or Tuple or Set type, ",
+                f"received input type {type(new_children)}",
             )
 
     def __check_children_loop(self, new_children: list[T] | tuple[T] | set[T]) -> None:
@@ -211,10 +211,8 @@ received input type {type(new_children)}"""
         for new_child in new_children:
             if not isinstance(new_child, BaseNode):
                 raise TypeError(
-                    f"""\
-                    Children must be of type BaseNode, got {type(new_child)}\
-                    instead.\
-                    """
+                    f"Children must be of type BaseNode, got {type(new_child)}",
+                    "instead.",
                 )
             if new_child is self:
                 raise ValueError("Node cannot be child of itself.")
