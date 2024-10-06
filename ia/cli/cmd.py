@@ -95,6 +95,14 @@ def uninformed(
             help="Render the generated tree.",
         ),
     ] = None,
+    force: Annotated[
+        bool | None,
+        typer.Option(
+            "--force",
+            "-f",
+            help="Force the execution of the command.",
+        ),
+    ] = None,
 ):
     """Traverse the graph using the specified algorithm."""
     console = Console()
@@ -105,6 +113,20 @@ def uninformed(
             console.print("\nFailed to parse the graph.", style="red bold")
             raise typer.Exit(1)
     output_stream = sys.stdout if output_path is None else open(output_path, "w")
+
+    if start not in graph.vertices():
+        console.print(f"\nStart vertex {start} not in the graph.", style="red bold")
+        if force:
+            console.print(
+                "Cannot force execution with invalid start node.", style="yellow bold"
+            )
+        raise typer.Exit(1)
+    if end not in graph.vertices():
+        console.print(f"\nEnd vertex {end} not in the graph.", style="red bold")
+        if not force:
+            raise typer.Exit(1)
+        console.print("Forcing execution with invalid end node.", style="yellow bold")
+
     result = graph.traverse(start=start, end=end, algorithm=algorithm)
     print_result(graph, start, end, algorithm, result, file=output_stream)
     if preview:
