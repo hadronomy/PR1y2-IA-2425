@@ -50,42 +50,55 @@ pipx install ia-0.1.0-py3-none-any.whl
 
 To ensure the appropriate environment is set up, we use [Poetry](https://python-poetry.org/).
 
-1. Install Poetry
+#### 1. Install Poetry
 
-  ```bash
-  pipx install poetry
-  ```
+```bash
+pipx install poetry
+```
 
-2. Clone the repository and navigate to the project directory
+#### 2. Clone the repository and navigate to the project directory
 
-  ```bash
-  git clone git@github.com:hadronomy/PR1-IA-2425.git
-  cd PR1-IA-2425
-  ```
+```bash
+git clone git@github.com:hadronomy/PR1-IA-2425.git
+cd PR1-IA-2425
+```
 
-3. Install the dependencies and create a virtual environment
+#### 3. Install the dependencies and create a virtual environment
 
-  ```bash
-  poetry install
-  ```
+```bash
+poetry install
+```
 
-4. Activate the virtual environment
+#### 4. Activate the virtual environment
 
-  ```bash
-  poetry shell
-  ```
+```bash
+poetry shell
+```
+or
 
-5. Run the application
+```bash
+python -m ia --help
+```
 
-  ```bash
-  ia --help
-  ```
+#### 5. Run the application
 
-  or
+```bash
+ia --help
+```
 
-  ```bash
-  python -m ia --help
-  ```
+### With installation
+
+#### Run the application
+
+```bash
+ia --help
+```
+
+or
+
+```bash
+python -m ia --help
+```
 
 ## License
 
