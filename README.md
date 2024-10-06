@@ -46,7 +46,13 @@ pipx install ia-0.1.0-py3-none-any.whl
 
 ## Usage
 
+<details>
+<summary>
+
 ### Without installation
+
+</summary>
+
 
 To ensure the appropriate environment is set up, we use [Poetry](https://python-poetry.org/).
 
@@ -74,11 +80,6 @@ poetry install
 ```bash
 poetry shell
 ```
-or
-
-```bash
-python -m ia --help
-```
 
 #### 5. Run the application
 
@@ -86,7 +87,19 @@ python -m ia --help
 ia --help
 ```
 
+or
+
+```bash
+python -m ia --help
+```
+</details>
+
+<details>
+<summary>
+
 ### With installation
+
+</summary>
 
 #### Run the application
 
@@ -99,6 +112,8 @@ or
 ```bash
 python -m ia --help
 ```
+
+</details>
 
 ## License
 
