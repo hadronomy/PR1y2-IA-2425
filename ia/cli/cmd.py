@@ -15,7 +15,7 @@ from rich.text import Text
 from ia import __version__
 from ia.graph import UndirectedGraph
 from ia.graph.algorithm import TraversalAlgorithm, TraversalResult
-from ia.parser.graph.undirected import parse_and_transform
+from ia.graph.parser import parse_and_transform
 from ia.tree.utils import print_tree
 
 
