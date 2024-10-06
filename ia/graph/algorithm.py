@@ -1,10 +1,9 @@
 """Graph traversal algorithms related classes and functions."""
 
 from enum import Enum
+from copy import deepcopy
 
 from ia.tree.node import Node
-
-from .history import AlgorithmHistory
 
 
 class TraversalAlgorithm(str, Enum):
@@ -12,6 +11,30 @@ class TraversalAlgorithm(str, Enum):
 
     dfs = "dfs"
     bfs = "bfs"
+
+
+class AlgorithmHistory:
+    """Algorithm history class."""
+
+    def __init__(self):
+        """Initialize the history."""
+        self.history = []
+
+    def add_step(self, **kargs) -> None:
+        """Add a step to the history."""
+        self.history.append(deepcopy(kargs))
+
+    def get_history(self) -> list[dict]:
+        """Get the history."""
+        return self.history
+
+    def __str__(self) -> str:
+        """Return the history as a string."""
+        return str(self.history)
+
+    def __iter__(self):
+        """Iterate over the history."""
+        return iter(self.history)
 
 
 class TraversalResult:

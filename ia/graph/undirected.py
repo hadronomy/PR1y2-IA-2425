@@ -7,11 +7,11 @@ Contains the UndirectedGraph class.
 from ia.tree.node import Node
 
 from .algorithm import (
+    AlgorithmHistory,
     TraversalAlgorithm,
     TraversalResult,
     graph_path_cost,
 )
-from .history import AlgorithmHistory
 
 
 class UndirectedGraph:
