@@ -31,14 +31,60 @@ See the [docs](/docs/README.pdf) pdf for more information.
 
 ## Installation
 
+Download the latest release from the [releases](https://github.com/hadronomy/PR1-IA-2425/releases/latest) page.
+Or proceed if you have the wheel file.
+
 ```bash
-# TODO
+pip install ia-0.1.0-py3-none-any.whl
+```
+
+or
+
+```bash
+pipx install ia-0.1.0-py3-none-any.whl
 ```
 
 ## Usage
 
+### Without installation
+
+To ensure the appropriate environment is set up, we use [Poetry](https://python-poetry.org/).
+
+Install Poetry:
+
 ```bash
-# TODO
+pipx install poetry
+```
+
+Clone the repository and navigate to the project directory:
+
+```bash
+git clone git@github.com:hadronomy/PR1-IA-2425.git
+cd PR1-IA-2425
+```
+
+Install the dependencies and create a virtual environment:
+
+```bash
+poetry install
+```
+
+Activate the virtual environment:
+
+```bash
+poetry shell
+```
+
+Run the application:
+
+```bash
+ia --help
+```
+
+or
+
+```bash
+python -m ia --help
 ```
 
 ## License
