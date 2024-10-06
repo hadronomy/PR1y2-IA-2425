@@ -254,7 +254,7 @@ class BaseNode:
 
         Returns
         -------
-            list[T]: The ancestors nodes.
+            Iterable[Self]: The ancestors nodes.
         """
         node = self.parent
         while node is not None:
@@ -267,7 +267,7 @@ class BaseNode:
 
         Returns
         -------
-            list[T]: The descendants nodes.
+            Iterable[T]: The descendants nodes.
         """
         # TODO: Implement custom iterators
         pass
@@ -278,7 +278,7 @@ class BaseNode:
 
         Returns
         -------
-            list[T]: The leaves nodes.
+            Iterable[T]: The leaves nodes.
         """
         # TODO: Implement custom iterators
         pass
@@ -331,12 +331,13 @@ class BaseNode:
 
         Returns
         -------
-            list[T]: The node path.
+            Iterable[T]: The node path.
         """
         # TODO: Check if this works properly
         if self.parent is None:
             return [self]
-        return tuple(self.ancestors) + (self,)
+        ancestors = [self] + list(self.ancestors)
+        return tuple(reversed(ancestors))
 
     @property
     def is_root(self) -> bool:

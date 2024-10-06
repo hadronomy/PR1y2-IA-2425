@@ -19,7 +19,7 @@ class Node(BaseNode):
 
     def __init__(self, name: str = "", separator: str = "/", **kargs: any):
         self.name = name
-        self._sep = separator
+        self._separator = separator
         super().__init__(**kargs)
         if not self.node_name:
             raise ValueError("Node name is required.")
@@ -33,7 +33,7 @@ class Node(BaseNode):
             (str)
         """
         if self.parent is None:
-            return self._sep
+            return self._separator
         return self.parent.sep
 
     @separator.setter
@@ -44,7 +44,7 @@ class Node(BaseNode):
         ----------
             value : (str)
         """
-        self.root._sep = value
+        self.root._separator = value
 
     @property
     def node_name(self) -> str:
@@ -66,7 +66,9 @@ class Node(BaseNode):
         """
         ancestors = [self] + list(self.ancestors)
         separator = ancestors[-1].separator
-        return separator + separator.join([str(node.name) for node in ancestors])
+        return separator + separator.join(
+            [str(node.name) for node in reversed(ancestors)]
+        )
 
     def __getitem__(self, child_name: str) -> Node:
         """Get child node by name.
@@ -90,9 +92,7 @@ class Node(BaseNode):
         """
         class_name = self.__class__.__name__
         node_dict = self.describe(exclude_prefix="_", exclude_attributes=["name"])
-        node_description = ", ".join(
-            [f"{key}={value}" for key, value in node_dict.items()]
-        )
+        node_description = ", ".join([f"{key}={value}" for key, value in node_dict])
         return f"{class_name}({self.path_name}, {node_description})"
 
 

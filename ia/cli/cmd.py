@@ -14,7 +14,7 @@ from rich.text import Text
 
 from ia import __version__
 from ia.graph import UndirectedGraph
-from ia.graph.algorithm import TraversalAlgorithm
+from ia.graph.algorithm import TraversalAlgorithm, TraversalResult
 from ia.parser.graph.undirected import parse_and_transform
 from ia.tree.node import Node
 from ia.tree.utils import print_tree
@@ -106,7 +106,10 @@ def uninformed(
             console.print("\nFailed to parse the graph.", style="red bold")
             raise typer.Exit(1)
     output_stream = sys.stdout if output_path is None else open(output_path, "w")
-    print_result(graph, start, end, algorithm, file=output_stream)
+    result = graph.traverse(start=start, end=end, algorithm=algorithm)
+    print_result(graph, start, end, algorithm, result, file=output_stream)
+    if preview:
+        print_tree(result.tree)
 
 
 def preview(
@@ -177,6 +180,7 @@ def print_result(
     start: int,
     end: int,
     algorithm: TraversalAlgorithm,
+    result: TraversalResult,
     file: TextIO = sys.stdout,
 ):
     """Print the result of the traversal."""
@@ -188,7 +192,6 @@ def print_result(
     console.print(f"Number of edges: {len(graph.edges())}", style="green bold")
     console.print(f"Origin vertex: {start}", style="blue bold")
     console.print(f"Destination vertex: {end}", style="yellow bold")
-    result = graph.traverse(start=start, end=end, algorithm=algorithm)
     for i, step in enumerate(result.history):
         console.print(divider)
         console.print(Text(f"Iteration {i + 1}", style="red bold"))

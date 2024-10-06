@@ -2,6 +2,8 @@
 
 from enum import Enum
 
+from ia.tree.node import Node
+
 from .history import AlgorithmHistory
 
 
@@ -24,6 +26,7 @@ class TraversalResult:
         history: AlgorithmHistory,
         path: list[int],
         cost: int,
+        tree: Node | None = None,
     ):
         """Initialize the result.
 
@@ -42,6 +45,7 @@ class TraversalResult:
         self.history = history
         self.path = path
         self.cost = cost
+        self.tree = tree
 
     def __str__(self) -> str:
         """Return the result as a string."""
