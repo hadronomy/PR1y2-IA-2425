@@ -216,7 +216,7 @@ def print_result(
 ):
     """Print the result of the traversal."""
     console = Console(file=file)
-    width = 30
+    width = 35
     divider = Text("-" * width, style="grey30")
     console.print(divider)
     console.print(f"Number of nodes: {len(graph.vertices)}", style="green bold")
@@ -243,7 +243,7 @@ def print_result(
         Text("Path:", style="bold"),
         wrap_text(
             f"{" -> ".join(str(i) for i in result.path)}",
-            width - 3,
+            width - 5,
         ),
     )
     console.print(divider)
