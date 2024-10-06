@@ -7,7 +7,7 @@
 
 [remote.github]
 owner = "hadronomy"
-repo = "PR3-CyA-2425"
+repo = "PR1-IA-2425"
 
 [changelog]
 # template for the changelog header
@@ -69,7 +69,7 @@ footer = """
 trim = true
 # postprocessors
 postprocessors = [
-  { pattern = '<REPO>', replace = "https://github.com/hadronomy/PR3-CyA-2425" }, # replace repository URL
+  { pattern = '<REPO>', replace = "https://github.com/hadronomy/PR1-IA-2425" }, # replace repository URL
 ]
 # render body even when there are no releases to process
 # render_always = true
