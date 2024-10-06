@@ -333,7 +333,6 @@ class BaseNode:
         -------
             Iterable[T]: The node path.
         """
-        # TODO: Check if this works properly
         if self.parent is None:
             return [self]
         ancestors = [self] + list(self.ancestors)
