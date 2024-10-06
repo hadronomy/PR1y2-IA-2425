@@ -1,6 +1,6 @@
 """Contains the definition of the parser for the graph language."""
 
-from typing import Callable, Optional
+from collections.abc import Callable
 
 from rich.console import Console
 
@@ -134,7 +134,7 @@ undirected_graph_parser = Lark_StandAlone()
 def parse_and_transform(
     input: str,
     start: str | None = None,
-    on_error: "Optional[Callable[[UnexpectedInput], bool]]" = None,
+    on_error: "Callable[[UnexpectedInput], bool] | None" = None,
 ) -> UndirectedGraph:
     """Parse and transform the given text."""
     on_error = on_error or on_parse_error

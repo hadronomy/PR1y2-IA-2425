@@ -6,7 +6,7 @@ Contains the different commands available.
 import sys
 from pathlib import Path
 from textwrap import wrap
-from typing import Annotated, Optional, TextIO
+from typing import Annotated, TextIO
 
 import typer
 from rich.console import Console
@@ -14,8 +14,9 @@ from rich.text import Text
 
 from ia import __version__
 from ia.graph import UndirectedGraph
-from ia.graph.algorithm import TraversalAlgorithm
+from ia.graph.algorithm import TraversalAlgorithm, TraversalResult
 from ia.parser.graph.undirected import parse_and_transform
+from ia.tree.utils import print_tree
 
 
 def run():
@@ -68,7 +69,7 @@ def uninformed(
         ),
     ],
     output_path: Annotated[
-        Optional[Path],
+        Path | None,
         typer.Option(
             "--output",
             "-o",
@@ -78,7 +79,7 @@ def uninformed(
         ),
     ] = None,
     version: Annotated[
-        Optional[bool],
+        bool | None,
         typer.Option(
             "--version",
             "-v",
@@ -87,11 +88,19 @@ def uninformed(
         ),
     ] = None,
     preview: Annotated[
-        Optional[bool],
+        bool | None,
         typer.Option(
             "--preview",
             "-p",
             help="Render the generated tree.",
+        ),
+    ] = None,
+    force: Annotated[
+        bool | None,
+        typer.Option(
+            "--force",
+            "-f",
+            help="Force the execution of the command.",
         ),
     ] = None,
 ):
@@ -104,7 +113,24 @@ def uninformed(
             console.print("\nFailed to parse the graph.", style="red bold")
             raise typer.Exit(1)
     output_stream = sys.stdout if output_path is None else open(output_path, "w")
-    print_result(graph, start, end, algorithm, file=output_stream)
+
+    if start not in graph.vertices():
+        console.print(f"\nStart vertex {start} not in the graph.", style="red bold")
+        if force:
+            console.print(
+                "Cannot force execution with invalid start node.", style="yellow bold"
+            )
+        raise typer.Exit(1)
+    if end not in graph.vertices():
+        console.print(f"\nEnd vertex {end} not in the graph.", style="red bold")
+        if not force:
+            raise typer.Exit(1)
+        console.print("Forcing execution with invalid end node.", style="yellow bold")
+
+    result = graph.traverse(start=start, end=end, algorithm=algorithm)
+    print_result(graph, start, end, algorithm, result, file=output_stream)
+    if preview:
+        print_tree(result.tree)
 
 
 def preview(
@@ -175,6 +201,7 @@ def print_result(
     start: int,
     end: int,
     algorithm: TraversalAlgorithm,
+    result: TraversalResult,
     file: TextIO = sys.stdout,
 ):
     """Print the result of the traversal."""
@@ -186,7 +213,6 @@ def print_result(
     console.print(f"Number of edges: {len(graph.edges())}", style="green bold")
     console.print(f"Origin vertex: {start}", style="blue bold")
     console.print(f"Destination vertex: {end}", style="yellow bold")
-    result = graph.traverse(start=start, end=end, algorithm=algorithm)
     for i, step in enumerate(result.history):
         console.print(divider)
         console.print(Text(f"Iteration {i + 1}", style="red bold"))

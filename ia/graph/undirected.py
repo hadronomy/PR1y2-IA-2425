@@ -4,11 +4,12 @@ Contains the UndirectedGraph class.
 
 """
 
+from ia.tree.node import Node
+
 from .algorithm import (
     TraversalAlgorithm,
     TraversalResult,
     graph_path_cost,
-    graph_path_from_predecessors,
 )
 from .history import AlgorithmHistory
 
@@ -108,79 +109,88 @@ class UndirectedGraph:
         edges = self.edges()
         return {i: edges[i] for i in range(len(edges))}
 
-    def dfs(
-        self, *, start: int, end: int, visited: dict[int, bool] = None
-    ) -> TraversalResult:
+    def dfs(self, *, start: int, end: int) -> TraversalResult:
         """Depth-first search."""
-        if visited is None:
-            visited = {}
         history = AlgorithmHistory()
-        generated = [start]
+        tree_root = Node(start, id=start)
+        generated = [tree_root.id]
         inspected = []
-        visited[start] = True
-        stack = [start]
-        predecessors = {start: None}
+        stack = [tree_root]
         history.add_step(generated=generated, inspected=inspected)
+        current = None
         while stack:
             current = stack.pop()
-            visited[current] = True
-            if current == end:
-                inspected.append(current)
+            if current.id == end:
+                inspected.append(current.id)
                 history.add_step(generated=generated, inspected=inspected)
                 break
-            for neighbor in self.adjacency[current]:
-                if not visited[neighbor]:
-                    generated.append(neighbor)
-                    stack.append(neighbor)
-                    predecessors[neighbor] = current
-            inspected.append(current)
+            new_generated = [
+                neighbor
+                for neighbor in self.adjacency[current.id]
+                if neighbor not in [ancestor.id for ancestor in current.ancestors]
+                and neighbor is not current
+            ]
+            generated.extend(new_generated)
+            stack.extend(
+                [
+                    Node(successor, parent=current, id=successor)
+                    for successor in reversed(new_generated)
+                ]
+            )
+            inspected.append(current.id)
             history.add_step(generated=generated, inspected=inspected)
-        if end not in predecessors:
-            return TraversalResult(history, [], -1)
-        path = graph_path_from_predecessors(predecessors, end)
-        return TraversalResult(history, path, graph_path_cost(path, self.weights))
+        if current.id != end:
+            return TraversalResult(history, [], -1, tree=tree_root)
+        path = [ancestor.id for ancestor in current.node_path]
+        return TraversalResult(
+            history, path, graph_path_cost(path, self.weights), tree=tree_root
+        )
 
-    def bfs(
-        self, *, start: int, end: int, visited: dict[int, bool] = None
-    ) -> TraversalResult:
+    def bfs(self, *, start: int, end: int) -> TraversalResult:
         """Breadth-first search."""
-        if visited is None:
-            visited = {}
         history = AlgorithmHistory()
-        generated = [start]
+        tree_root = Node(start, id=start)
+        generated = [tree_root.id]
         inspected = []
-        visited[start] = True
-        queue = [start]
-        predecessors = {start: None}
+        stack = [tree_root]
         history.add_step(generated=generated, inspected=inspected)
-        while queue:
-            current = queue.pop(0)
-            if current == end:
-                inspected.append(current)
+        current = None
+        while stack:
+            current = stack.pop(0)
+            if current.id == end:
+                inspected.append(current.id)
                 history.add_step(generated=generated, inspected=inspected)
                 break
-            for neighbor in self.adjacency[current]:
-                if not visited[neighbor]:
-                    visited[neighbor] = True
-                    generated.append(neighbor)
-                    queue.append(neighbor)
-                    predecessors[neighbor] = current
-            inspected.append(current)
+            new_generated = [
+                neighbor
+                for neighbor in self.adjacency[current.id]
+                if neighbor not in [ancestor.id for ancestor in current.ancestors]
+                and neighbor is not current
+            ]
+            generated.extend(new_generated)
+            stack.extend(
+                [
+                    Node(successor, parent=current, id=successor)
+                    for successor in new_generated
+                ]
+            )
+            inspected.append(current.id)
             history.add_step(generated=generated, inspected=inspected)
-        if end not in predecessors:
-            return TraversalResult(history, [], -1)
-        path = graph_path_from_predecessors(predecessors, end)
-        return TraversalResult(history, path, graph_path_cost(path, self.weights))
+        if current.id != end:
+            return TraversalResult(history, [], -1, tree=tree_root)
+        path = [ancestor.id for ancestor in current.node_path]
+        return TraversalResult(
+            history, path, graph_path_cost(path, self.weights), tree=tree_root
+        )
 
     def traverse(
         self, *, start: int, end: int, algorithm: TraversalAlgorithm
     ) -> TraversalResult:
         """Traverse the graph."""
-        visited = {v: False for v in self.vertices()}
         if algorithm == "dfs":
-            return self.dfs(start=start, end=end, visited=visited)
+            return self.dfs(start=start, end=end)
         elif algorithm == "bfs":
-            return self.bfs(start=start, end=end, visited=visited)
+            return self.bfs(start=start, end=end)
         raise TypeError(f"Invalid algorithm {algorithm}")
 
     def to_networkx(self):
