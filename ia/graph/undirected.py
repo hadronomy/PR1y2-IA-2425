@@ -42,14 +42,14 @@ class UndirectedGraph:
         del self.weights[(start, end)]
         del self.weights[(end, start)]
 
-    def remove_vertex(self, start: int) -> None:
+    def remove_vertex(self, vertex: int) -> None:
         """Remove a vertex from the graph."""
-        del self.adjacency[start]
+        del self.adjacency[vertex]
         for u in self.adjacency:
-            if start in self.adjacency[u]:
-                self.adjacency[u].remove(start)
-                del self.weights[(u, start)]
-                del self.weights[(start, u)]
+            if vertex in self.adjacency[u]:
+                self.adjacency[u].remove(vertex)
+                del self.weights[(u, vertex)]
+                del self.weights[(vertex, u)]
 
     def vertices(self) -> list[int]:
         """Get the vertices of the graph."""
@@ -68,13 +68,13 @@ class UndirectedGraph:
                     edges.append((start, end))
         return edges
 
-    def neighbors(self, start: int) -> list[int]:
+    def neighbors(self, vertex: int) -> list[int]:
         """Get the neighbors of a vertex."""
-        return self.adjacency[start]
+        return self.adjacency[vertex]
 
-    def degree(self, start: int) -> int:
+    def degree(self, vertex: int) -> int:
         """Get the degree of a vertex."""
-        return len(self.adjacency[start])
+        return len(self.adjacency[vertex])
 
     def adjacency_matrix(self) -> list[list[int]]:
         """Get the adjacency matrix of the graph."""
