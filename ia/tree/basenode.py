@@ -22,8 +22,7 @@ class BaseNode:
         self.__children: list[T] = []
         if children is None:
             children = []
-        if parent is not None:
-            self.parent = parent
+        self.parent = parent
         self.children = children
         if "parents" in kwargs:
             raise AttributeError(
@@ -81,7 +80,7 @@ class BaseNode:
 
     @staticmethod
     def __check_parent_type(new_parent: T) -> None:
-        if not isinstance(new_parent, BaseNode) or new_parent is None:
+        if not (isinstance(new_parent, BaseNode) or new_parent is None):
             raise TypeError(
                 f"""Parent must be of type BaseNode or NoneType, got {type(new_parent)}\
  instead."""
@@ -197,8 +196,8 @@ class BaseNode:
             and not isinstance(new_children, set)
         ):
             raise TypeError(
-                f"""Expect children to be List or Tuple or Set type,\
-                received input type {type(new_children)}"""
+                f"""Expect children to be List or Tuple or Set type, \
+received input type {type(new_children)}"""
             )
 
     def __check_children_loop(self, new_children: list[T] | tuple[T] | set[T]) -> None:
