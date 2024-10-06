@@ -70,7 +70,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         if: github.ref_type == 'tag'
         with:
-          name: "Release ${{ github.ref_name }}"
+          name: "${{ github.ref_name }}"
           body: "${{ needs.generate-changelog.outputs.release_body }}"
           files: |
             dist/*
