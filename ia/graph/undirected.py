@@ -141,7 +141,7 @@ class UndirectedGraph:
             inspected.append(current.id)
             history.add_step(generated=generated, inspected=inspected)
         if current.id != end:
-            return TraversalResult(history, [], -1)
+            return TraversalResult(history, [], -1, tree=tree_root)
         path = [ancestor.id for ancestor in current.node_path]
         return TraversalResult(
             history, path, graph_path_cost(path, self.weights), tree=tree_root
