@@ -124,14 +124,14 @@ def uninformed(
             raise typer.Exit(1)
     output_stream = sys.stdout if output_path is None else open(output_path, "w")
 
-    if start not in graph.vertices():
+    if start not in graph.vertices:
         console.print(f"\nStart vertex {start} not in the graph.", style="red bold")
         if force:
             console.print(
                 "Cannot force execution with invalid start node.", style="yellow bold"
             )
         raise typer.Exit(1)
-    if end not in graph.vertices():
+    if end not in graph.vertices:
         console.print(f"\nEnd vertex {end} not in the graph.", style="red bold")
         if not force:
             raise typer.Exit(1)
@@ -219,8 +219,8 @@ def print_result(
     width = 30
     divider = Text("-" * width, style="grey30")
     console.print(divider)
-    console.print(f"Number of nodes: {len(graph.vertices())}", style="green bold")
-    console.print(f"Number of edges: {len(graph.edges())}", style="green bold")
+    console.print(f"Number of nodes: {len(graph.vertices)}", style="green bold")
+    console.print(f"Number of edges: {len(graph.edges)}", style="green bold")
     console.print(f"Origin vertex: {start}", style="blue bold")
     console.print(f"Destination vertex: {end}", style="yellow bold")
     for i, step in enumerate(result.history):

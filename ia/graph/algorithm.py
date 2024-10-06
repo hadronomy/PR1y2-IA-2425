@@ -81,13 +81,3 @@ def graph_path_cost(path: list[int], weights: dict[tuple[int, int], int]) -> int
     for i in range(1, len(path)):
         cost += weights[(path[i - 1], path[i])]
     return cost
-
-
-def graph_path_from_predecessors(predecessors: dict[int, int], end: int) -> list[int]:
-    """Get the path from the predecessors."""
-    path = []
-    current = end
-    while current is not None:
-        path.insert(0, current)
-        current = predecessors[current]
-    return path

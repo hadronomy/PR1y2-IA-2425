@@ -19,82 +19,68 @@ class UndirectedGraph:
 
     def __init__(self):
         """Initialize the graph."""
-        self.adjacency = {}
-        self.weights = {}
+        self.__adjacency = {}
+        self.__weights = {}
 
     # Getters / Setters
 
-    def add_edge(self, start: int, end: int, *, weight: int = 1) -> None:
-        """Add an edge to the graph."""
-        if start not in self.adjacency:
-            self.adjacency[start] = []
-        if end not in self.adjacency:
-            self.adjacency[end] = []
-        self.adjacency[start].append(end)
-        self.adjacency[end].append(start)
-        self.weights[(start, end)] = weight
-        self.weights[(end, start)] = weight
+    @property
+    def adjacency(self) -> dict[int, list[int]]:
+        """Get the adjacency list of the graph."""
+        return self.__adjacency
 
-    def remove_edge(self, start: int, end: int) -> None:
-        """Remove an edge from the graph."""
-        self.adjacency[start].remove(end)
-        self.adjacency[end].remove(start)
-        del self.weights[(start, end)]
-        del self.weights[(end, start)]
-
-    def remove_vertex(self, vertex: int) -> None:
-        """Remove a vertex from the graph."""
-        del self.adjacency[vertex]
-        for u in self.adjacency:
-            if vertex in self.adjacency[u]:
-                self.adjacency[u].remove(vertex)
-                del self.weights[(u, vertex)]
-                del self.weights[(vertex, u)]
-
-    def vertices(self) -> list[int]:
-        """Get the vertices of the graph."""
-        return list(self.adjacency.keys())
-
+    @property
     def weights(self) -> dict[tuple[int, int], int]:
         """Get the weights of the graph."""
-        return self.weights
+        return self.__weights
 
-    def edges(self) -> list[tuple[int, int]]:
-        """Get the edges of the graph."""
-        edges = []
-        for start in self.adjacency:
-            for end in self.adjacency[start]:
-                if (end, start) not in edges:
-                    edges.append((start, end))
-        return edges
-
-    def neighbors(self, vertex: int) -> list[int]:
-        """Get the neighbors of a vertex."""
-        return self.adjacency[vertex]
-
-    def degree(self, vertex: int) -> int:
-        """Get the degree of a vertex."""
-        return len(self.adjacency[vertex])
-
+    @property
     def adjacency_matrix(self) -> list[list[int]]:
         """Get the adjacency matrix of the graph."""
-        vertices = self.get_vertices()
+        vertices = self.vertices
         n = len(vertices)
         matrix = [[0 for _ in range(n)] for _ in range(n)]
         for i in range(n):
             for j in range(n):
-                if vertices[i] in self.adjacency[vertices[j]]:
+                if vertices[i] in self.__adjacency[vertices[j]]:
                     matrix[i][j] = 1
         return matrix
 
+    @property
     def adjacency_list(self) -> dict[int, list[int]]:
         """Get the adjacency list of the graph."""
-        return self.adjacency
+        return self.__adjacency
 
+    @property
+    def vertices(self) -> list[int]:
+        """Get the vertices of the graph."""
+        return list(self.__adjacency.keys())
+
+    @property
+    def edges(self) -> list[tuple[int, int]]:
+        """Get the edges of the graph."""
+        edges = []
+        for start in self.__adjacency:
+            for end in self.__adjacency[start]:
+                if (end, start) not in edges:
+                    edges.append((start, end))
+        return edges
+
+    @property
+    def neighbors(self, vertex: int) -> list[int]:
+        """Get the neighbors of a vertex."""
+        return self.__adjacency[vertex]
+
+    @property
+    def degree(self, vertex: int) -> int:
+        """Get the degree of a vertex."""
+        return len(self.__adjacency[vertex])
+
+    @property
     def incidence_matrix(self) -> list[list[int]]:
         """Get the incidence matrix of the graph."""
-        vertices = self.get_vertices()
-        edges = self.edges()
+        vertices = self.vertices
+        edges = self.edges
         n = len(vertices)
         m = len(edges)
         matrix = [[0 for _ in range(m)] for _ in range(n)]
@@ -104,10 +90,38 @@ class UndirectedGraph:
                     matrix[i][j] = 1
         return matrix
 
+    @property
     def incidence_list(self) -> dict[int, list[int]]:
         """Get the incidence list of the graph."""
-        edges = self.edges()
+        edges = self.edges
         return {i: edges[i] for i in range(len(edges))}
+
+    def add_edge(self, start: int, end: int, *, weight: int = 1) -> None:
+        """Add an edge to the graph."""
+        if start not in self.__adjacency:
+            self.__adjacency[start] = []
+        if end not in self.__adjacency:
+            self.__adjacency[end] = []
+        self.__adjacency[start].append(end)
+        self.__adjacency[end].append(start)
+        self.__weights[(start, end)] = weight
+        self.__weights[(end, start)] = weight
+
+    def remove_edge(self, start: int, end: int) -> None:
+        """Remove an edge from the graph."""
+        self.__adjacency[start].remove(end)
+        self.__adjacency[end].remove(start)
+        del self.__weights[(start, end)]
+        del self.__weights[(end, start)]
+
+    def remove_vertex(self, vertex: int) -> None:
+        """Remove a vertex from the graph."""
+        del self.__adjacency[vertex]
+        for u in self.__adjacency:
+            if vertex in self.__adjacency[u]:
+                self.__adjacency[u].remove(vertex)
+                del self.__weights[(u, vertex)]
+                del self.__weights[(vertex, u)]
 
     def dfs(self, *, start: int, end: int) -> TraversalResult:
         """Depth-first search."""
