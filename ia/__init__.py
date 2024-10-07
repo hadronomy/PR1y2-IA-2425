@@ -1,5 +1,7 @@
 """Graph traversal algorithms."""
 
-__version__ = "0.1.0"
+import importlib.metadata
+
+__version__ = importlib.metadata.version("ia")
 
 from . import graph as graph
