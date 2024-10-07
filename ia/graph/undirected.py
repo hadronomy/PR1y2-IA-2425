@@ -130,12 +130,12 @@ class UndirectedGraph:
         *,
         start: int,
         end: int,
-        sort_inspected: Callable[[list[int]], list[int]] = None,
+        sort_generated: Callable[[list[int]], list[int]] = None,
     ) -> TraversalResult:
         """Depth-first search."""
-        if sort_inspected is None:
+        if sort_generated is None:
 
-            def sort_inspected(_generated):
+            def sort_generated(_generated):
                 return reversed(_generated)
 
         history = AlgorithmHistory()
@@ -161,7 +161,7 @@ class UndirectedGraph:
             stack.extend(
                 [
                     Node(successor, parent=current, id=successor)
-                    for successor in sort_inspected(new_generated)
+                    for successor in sort_generated(new_generated)
                 ]
             )
             inspected.append(current.id)
@@ -178,12 +178,12 @@ class UndirectedGraph:
         *,
         start: int,
         end: int,
-        sort_inspected: Callable[[list[int]], list[int]] = None,
+        sort_generated: Callable[[list[int]], list[int]] = None,
     ) -> TraversalResult:
         """Breadth-first search."""
-        if sort_inspected is None:
+        if sort_generated is None:
 
-            def sort_inspected(_generated):
+            def sort_generated(_generated):
                 return _generated
 
         history = AlgorithmHistory()
@@ -209,7 +209,7 @@ class UndirectedGraph:
             queue.extend(
                 [
                     Node(successor, parent=current, id=successor)
-                    for successor in sort_inspected(new_generated)
+                    for successor in sort_generated(new_generated)
                 ]
             )
             inspected.append(current.id)
