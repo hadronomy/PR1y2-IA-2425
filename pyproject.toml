@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "ia"
-version = "0.1.0"
+version = "0.2.0"
 description = "A simple CLI for tinkering with graph algorithms"
 authors = ["Pablo Hernández <17086478+Hadronomy@users.noreply.github.com>"]
 license = "MIT"
