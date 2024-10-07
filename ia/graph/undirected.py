@@ -4,6 +4,8 @@ Contains the UndirectedGraph class.
 
 """
 
+from collections.abc import Callable
+
 from ia.tree.node import Node
 
 from .algorithm import (
@@ -123,8 +125,19 @@ class UndirectedGraph:
                 del self.__weights[(u, vertex)]
                 del self.__weights[(vertex, u)]
 
-    def dfs(self, *, start: int, end: int) -> TraversalResult:
+    def dfs(
+        self,
+        *,
+        start: int,
+        end: int,
+        sort_inspected: Callable[[list[int]], list[int]] = None,
+    ) -> TraversalResult:
         """Depth-first search."""
+        if sort_inspected is None:
+
+            def sort_inspected(_generated):
+                return reversed(_generated)
+
         history = AlgorithmHistory()
         tree_root = Node(start, id=start)
         generated = [tree_root.id]
@@ -148,7 +161,7 @@ class UndirectedGraph:
             stack.extend(
                 [
                     Node(successor, parent=current, id=successor)
-                    for successor in reversed(new_generated)
+                    for successor in sort_inspected(new_generated)
                 ]
             )
             inspected.append(current.id)
@@ -160,8 +173,19 @@ class UndirectedGraph:
             history, path, graph_path_cost(path, self.weights), tree=tree_root
         )
 
-    def bfs(self, *, start: int, end: int) -> TraversalResult:
+    def bfs(
+        self,
+        *,
+        start: int,
+        end: int,
+        sort_inspected: Callable[[list[int]], list[int]] = None,
+    ) -> TraversalResult:
         """Breadth-first search."""
+        if sort_inspected is None:
+
+            def sort_inspected(_generated):
+                return _generated
+
         history = AlgorithmHistory()
         tree_root = Node(start, id=start)
         generated = [tree_root.id]
@@ -185,7 +209,7 @@ class UndirectedGraph:
             queue.extend(
                 [
                     Node(successor, parent=current, id=successor)
-                    for successor in new_generated
+                    for successor in sort_inspected(new_generated)
                 ]
             )
             inspected.append(current.id)
