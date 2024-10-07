@@ -181,6 +181,8 @@ class UndirectedGraph:
         sort_generated: Callable[[list[int]], list[int]] = None,
     ) -> TraversalResult:
         """Breadth-first search."""
+        import random
+
         if sort_generated is None:
 
             def sort_generated(_generated):
@@ -190,10 +192,36 @@ class UndirectedGraph:
         tree_root = Node(start, id=start)
         generated = [tree_root.id]
         inspected = []
-        queue = [tree_root]
+        queue = []
+        secondary_queue = []
+        history.add_step(generated=generated, inspected=inspected)
+        current = tree_root
+        adjacency_copy = self.adjacency[current.id].copy()
+        random.shuffle(adjacency_copy)
+        new_generated = [
+            neighbor
+            for neighbor in adjacency_copy
+            if neighbor not in [ancestor.id for ancestor in current.ancestors]
+            and neighbor is not current
+        ]
+        new_generated_copy = new_generated.copy()
+        new_generated_copy.sort()
+        generated.extend(new_generated_copy)
+        secondary_queue.extend(
+            [
+                Node(successor, parent=current, id=successor)
+                for successor in sort_generated(new_generated)
+            ]
+        )
+        queue.append(secondary_queue.pop(0))
+        inspected.append(current.id)
         history.add_step(generated=generated, inspected=inspected)
         current = None
-        while queue:
+        while queue or secondary_queue:
+            if not queue:
+                queue = secondary_queue
+                secondary_queue = []
+                continue
             current = queue.pop(0)
             if current.id == end:
                 inspected.append(current.id)
