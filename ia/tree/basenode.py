@@ -10,6 +10,8 @@ import heapq
 from collections.abc import Iterable
 from typing import TypeVar
 
+from . import iterators
+
 
 class BaseNode:
     """BaseNode extends any Python class to a graph node."""
@@ -266,8 +268,9 @@ class BaseNode:
         -------
             Iterable[T]: The descendants nodes.
         """
-        # TODO: Implement custom iterators
-        pass
+        yield from iterators.preorder_iter(
+            self, filter_contidition=lambda _node: _node != self
+        )
 
     @property
     def leaves(self: T) -> Iterable[T]:
@@ -277,8 +280,9 @@ class BaseNode:
         -------
             Iterable[T]: The leaves nodes.
         """
-        # TODO: Implement custom iterators
-        pass
+        yield from iterators.preorder_iter(
+            self, filter_contidition=lambda _node: _node.is_leaf
+        )
 
     @property
     def siblings(self: T) -> Iterable[T]:
