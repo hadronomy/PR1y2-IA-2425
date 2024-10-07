@@ -1,7 +1,7 @@
 """Graph traversal algorithms related classes and functions."""
 
-from enum import Enum
 from copy import deepcopy
+from enum import Enum
 
 from ia.tree.node import Node
 
