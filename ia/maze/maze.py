@@ -31,12 +31,14 @@ class Maze(Matrix):
 
     def print(self) -> str:
         """Print the maze as a string."""
-        top_border = "╭" + "─" * self.cols * 2 + "╮"
+        top_border = "".join(f"{i:2}" for i in range(self.cols))
+        top_border = top_border + "\n   " + "╭" + "─" * self.cols * 2 + "╮"
         bottom_border = "╰" + "─" * self.cols * 2 + "╯"
         maze_rows = "\n".join(
-            "│" + "".join(MAZE_PRINT_STYLES[cell] for cell in row) + "│" for row in self
+            f"{i:2} │" + "".join(MAZE_PRINT_STYLES[cell] for cell in row) + "│"
+            for i, row in enumerate(self)
         )
-        return f"{top_border}\n{maze_rows}\n{bottom_border}"
+        return f"   {top_border}\n{maze_rows}\n   {bottom_border}"
 
     def __str__(self) -> str:
         """Return the maze as a string."""

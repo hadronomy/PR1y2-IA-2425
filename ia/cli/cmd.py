@@ -16,7 +16,8 @@ from ia import __version__
 from ia.graph import UndirectedGraph
 from ia.graph.algorithm import TraversalAlgorithm, TraversalResult
 from ia.graph.parser import parse_and_transform
-from ia.maze.maze import Maze
+from ia.maze.matrix import MatrixPosition
+from ia.maze.maze import Maze, MazeTile
 from ia.tree.utils import print_tree
 
 
@@ -149,6 +150,11 @@ def informed():
     """Traverse a maze using an informed search algorithm."""
     console = Console()
     maze = Maze(rows=10, cols=10)
+    maze[0, 0] = MazeTile.START
+    pos = MatrixPosition(row=9, col=26)
+    console.log(pos.representation())
+    for _offset, tile in maze.adjacent(5, 5).items():
+        maze[tile] = MazeTile.EMPTY
     console.print(maze)
     console.print("\nMaze traversal not implemented yet.", style="red bold")
     console.print("\nInformed search not implemented yet.", style="red bold")
