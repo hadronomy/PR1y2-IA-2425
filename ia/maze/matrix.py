@@ -12,6 +12,64 @@ class MatrixPosition(tuple[int, int]):
         self.row = row
         self.col = col
 
+    def representation(
+        self, translation_dict: dict[str, list[str]] = None
+    ) -> tuple[str, str]:
+        """Get the representation of the position.
+
+        Returns
+        -------
+            (tuple[str, str])
+                The representation of the position.
+        """
+        if translation_dict is None:
+            translation_dict = {
+                "row": [str(number) for number in range(0, 10)],
+                "col": [chr(letter) for letter in range(65, 91)],
+            }
+        row = translation_dict["row"][self.row % len(translation_dict["row"])]
+        col = translation_dict["col"][self.col % len(translation_dict["col"])]
+        while self.row >= len(translation_dict["row"]):
+            self.row //= len(translation_dict["row"])
+            row = translation_dict["row"][self.row % len(translation_dict["row"])] + row
+        while self.col >= len(translation_dict["col"]):
+            self.col //= len(translation_dict["col"])
+            col = translation_dict["col"][self.col % len(translation_dict["col"])] + col
+        return row, col
+
+    @classmethod
+    def from_representation(
+        cls,
+        representation: tuple[str, str],
+    ):
+        """Create a position from its representation.
+
+        Parameters
+        ----------
+            representation : (tuple[str, str])
+                The representation of the position.
+
+        Returns
+        -------
+            (MatrixPosition)
+                The position.
+        """
+        row, col = representation
+        translation_dict = {
+            "row": [str(number) for number in range(0, 10)],
+            "col": [chr(letter) for letter in range(65, 91)],
+        }
+
+        def calculate_index(value, translation_dict):
+            index = 0
+            for char in value:
+                index = index * len(translation_dict) + translation_dict.index(char)
+            return index
+
+        row_index = calculate_index(row, translation_dict["row"])
+        col_index = calculate_index(col, translation_dict["col"])
+        return cls(row=row_index, col=col_index)
+
     def __str__(self) -> str:
         """Return the position as a string."""
         return f"({self.row}, {self.col})"
