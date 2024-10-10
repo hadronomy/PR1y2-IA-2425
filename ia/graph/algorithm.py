@@ -9,8 +9,8 @@ from ia.tree.node import Node
 class TraversalAlgorithm(str, Enum):
     """Traversal algorithm class."""
 
-    dfs = "dfs"
-    bfs = "bfs"
+    DFS = "dfs"
+    BFS = "bfs"
 
 
 class AlgorithmHistory:
