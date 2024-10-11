@@ -149,7 +149,7 @@ def uninformed(
 def informed():
     """Traverse a maze using an informed search algorithm."""
     console = Console()
-    maze = Maze(rows=10, cols=10)
+    maze = Maze(rows=20, cols=30)
     maze[0, 0] = MazeTile.START
     pos = MatrixPosition(row=9, col=26)
     console.log(pos.representation())

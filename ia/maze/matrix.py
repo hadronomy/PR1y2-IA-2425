@@ -4,6 +4,8 @@ from __future__ import annotations
 
 from typing import TypeVar
 
+from ia.maze.utils import number_to_representation
+
 
 class MatrixPosition(tuple[int, int]):
     """Matrix position data structure."""
@@ -27,15 +29,10 @@ class MatrixPosition(tuple[int, int]):
                 "row": [str(number) for number in range(0, 10)],
                 "col": [chr(letter) for letter in range(65, 91)],
             }
-        row = translation_dict["row"][self.row % len(translation_dict["row"])]
-        col = translation_dict["col"][self.col % len(translation_dict["col"])]
-        while self.row >= len(translation_dict["row"]):
-            self.row //= len(translation_dict["row"])
-            row = translation_dict["row"][self.row % len(translation_dict["row"])] + row
-        while self.col >= len(translation_dict["col"]):
-            self.col //= len(translation_dict["col"])
-            col = translation_dict["col"][self.col % len(translation_dict["col"])] + col
-        return row, col
+
+        row_representation = number_to_representation(self.row, translation_dict["row"])
+        col_representation = number_to_representation(self.col, translation_dict["col"])
+        return row_representation, col_representation
 
     @classmethod
     def from_representation(
