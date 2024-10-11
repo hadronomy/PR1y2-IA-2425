@@ -85,6 +85,7 @@ class MatrixPosition(tuple[int, int]):
         return f"({self.row}, {self.col})"
 
     def __hash__(self) -> int:
+        """Return the hash of the position."""
         return super().__hash__()
 
     def __repr__(self) -> str:
