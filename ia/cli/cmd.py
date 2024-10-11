@@ -167,6 +167,13 @@ def informed(
             console.print("\nFailed to parse the maze.", style="red bold")
             raise typer.Exit(1)
     console.print(maze)
+    result = maze.a_star()
+    if result is None:
+        console.print("\nNo path found.", style="red bold")
+        raise typer.Exit(1)
+    console.print("\nPath found:", style="green bold")
+    for node in result:
+        console.print(node)
     raise typer.Exit(1)
 
 

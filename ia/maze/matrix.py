@@ -84,6 +84,9 @@ class MatrixPosition(tuple[int, int]):
         """Return the position as a string."""
         return f"({self.row}, {self.col})"
 
+    def __hash__(self) -> int:
+        return super().__hash__()
+
     def __repr__(self) -> str:
         """Return the position as a string."""
         return str(self)
@@ -113,7 +116,7 @@ class Matrix:
         """Get the default value."""
         return self.__default
 
-    def adjacent(
+    def neighbors(
         self, row: int, col: int, offsets: list[MatrixPosition] = None
     ) -> dict[MatrixPosition, MatrixPosition]:
         """Get the adjacent cells.
@@ -149,7 +152,9 @@ class Matrix:
         for row_offset, col_offset in offsets:
             new_row, new_col = row + row_offset, col + col_offset
             if 0 <= new_row < self.__rows and 0 <= new_col < self.__cols:
-                adjacent.update({(row_offset, col_offset): (new_row, new_col)})
+                adjacent.update(
+                    {MatrixPosition(row_offset, col_offset): (new_row, new_col)}
+                )
         return adjacent
 
     def is_valid(self, row: int, col: int) -> bool:
