@@ -20,7 +20,11 @@ def parse(input_text: str, mappings: dict[str, MazeTile] | None = None) -> Maze:
     cols = int(lines[1])
     lines = [line.split() for line in lines[2:]]
     maze = Maze(rows=rows, cols=cols)
+    if len(lines) != rows:
+        raise ValueError("Invalid maze dimensions.")
     for i, line in enumerate(lines):
+        if len(line) != cols:
+            raise ValueError("Invalid maze dimensions.")
         for j, char in enumerate(line):
             if char == "3":
                 if maze.start is not None:

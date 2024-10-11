@@ -1,10 +1,12 @@
 """Maze data structure."""
 
+import heapq
 from enum import Enum
 from typing import TypeVar
 
 from ia.maze.matrix import Matrix, MatrixPosition
 from ia.maze.utils import ALPHABET, number_to_representation
+from ia.tree.node import Node
 
 
 class MazeTile(str, Enum):
@@ -72,9 +74,75 @@ class Maze(Matrix):
         )
         return f"    {top_border}\n{maze_rows}\n   {bottom_border}"
 
+    def a_star(
+        self, start: MatrixPosition = None, goal: MatrixPosition = None
+    ) -> list[MatrixPosition] | None:
+        """Find the shortest path between the start and goal positions using the A* algorithm."""  # noqa: E501
+        if start is None:
+            start = self.start
+        if goal is None:
+            goal = self.goal
+        open_set = []
+        heapq.heappush(
+            open_set,
+            (
+                0,
+                Node(
+                    name=start,
+                    parent=None,
+                    position=start,
+                    compare_by="f_score",
+                    g_score=0,
+                    f_score=manhattan_distance(start, goal),
+                ),
+            ),
+        )
+        came_from = {}
+        g_score = {start: 0}
+        f_score = {start: manhattan_distance(start, goal)}
+
+        while open_set:
+            current_node = heapq.heappop(open_set)[1]
+            current = current_node.position
+
+            if current[0] == goal[0] and current[1] == goal[1]:
+                return current_node.node_path
+
+            for neighbor in self.neighbors(current[0], current[1]).values():
+                tentative_g_score = (
+                    g_score[current] + 1
+                )  # Assuming cost to move to a neighbor is 1
+                if neighbor not in g_score or tentative_g_score < g_score[neighbor]:
+                    came_from[neighbor] = current
+                    g_score[neighbor] = tentative_g_score
+                    f_score[neighbor] = tentative_g_score + manhattan_distance(
+                        neighbor, goal
+                    )
+                    heapq.heappush(
+                        open_set,
+                        (
+                            f_score[neighbor],
+                            Node(
+                                name=neighbor,
+                                parent=current_node,
+                                compare_by="f_score",
+                                position=neighbor,
+                                g_score=tentative_g_score,
+                                f_score=f_score[neighbor],
+                            ),
+                        ),
+                    )
+
+        return None
+
     def __str__(self) -> str:
         """Return the maze as a string."""
         return self.print()
+
+
+def manhattan_distance(start: MatrixPosition, goal: MatrixPosition) -> int:
+    """Calculate the Manhattan distance between two positions."""
+    return abs(start[0] - goal[0]) + abs(start[1] - goal[1])
 
 
 TContent = TypeVar("TContent", bound=MazeTile)

@@ -18,9 +18,16 @@ class Node(BaseNode):
     Nodes can be linked to each other with `parent` and `children` setter methods.
     """
 
-    def __init__(self, name: str = "", separator: str = "/", **kargs: any):
+    def __init__(
+        self,
+        name: str = "",
+        separator: str = "/",
+        compare_by: str = "name",
+        **kargs: any,
+    ):
         self.name = name
         self._separator = separator
+        self.__compare_by = compare_by
         super().__init__(**kargs)
         if not self.node_name:
             raise ValueError("Node name is required.")
@@ -117,6 +124,21 @@ class Node(BaseNode):
                 "Duplicate nodes with the same path\n.",
                 f"There exist nodes with the same path: {duplicate_names_str}",
             )
+
+    def __lt__(self, other: Node) -> bool:
+        """Compare nodes by name.
+
+        Parameters
+        ----------
+            other : (Node)
+
+        Returns
+        -------
+            (bool)
+        """
+        return self.get_attribute(self.__compare_by) < other.get_attribute(
+            self.__compare_by
+        )
 
     def __getitem__(self, child_name: str) -> Node:
         """Get child node by name.
