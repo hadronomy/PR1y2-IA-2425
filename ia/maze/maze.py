@@ -3,7 +3,7 @@
 from enum import Enum
 from typing import TypeVar
 
-from ia.maze.matrix import Matrix
+from ia.maze.matrix import Matrix, MatrixPosition
 from ia.maze.utils import ALPHABET, number_to_representation
 
 
@@ -27,8 +27,37 @@ MAZE_PRINT_STYLES = {
 class Maze(Matrix):
     """Maze data structure."""
 
-    def __init__(self, *, rows: int, cols: int) -> None:
+    def __init__(
+        self,
+        *,
+        rows: int,
+        cols: int,
+        start: MatrixPosition = None,
+        goal: MatrixPosition = None,
+    ) -> None:
         super().__init__(rows=rows, cols=cols, default=MazeTile.WALL)
+        self.__start = start
+        self.__goal = goal
+
+    @property
+    def start(self) -> MatrixPosition:
+        """Get the start position."""
+        return self.__start
+
+    @start.setter
+    def start(self, value: MatrixPosition) -> None:
+        """Set the start position."""
+        self.__start = value
+
+    @property
+    def goal(self) -> MatrixPosition:
+        """Get the goal position."""
+        return self.__goal
+
+    @goal.setter
+    def goal(self, value: MatrixPosition) -> None:
+        """Set the goal position."""
+        self.__goal = value
 
     def print(self) -> str:
         """Print the maze as a string."""

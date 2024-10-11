@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from collections.abc import Iterable
 from typing import TypeVar
 
 from ia.maze.utils import number_to_representation
@@ -13,6 +14,10 @@ class MatrixPosition(tuple[int, int]):
     def __init__(self, row: int, col: int) -> None:
         self.row = row
         self.col = col
+
+    def __new__(cls, row: int, col: int):
+        """Create a new position."""
+        return super().__new__(cls, (row, col))
 
     def representation(
         self, translation_dict: dict[str, list[str]] = None
@@ -66,6 +71,14 @@ class MatrixPosition(tuple[int, int]):
         row_index = calculate_index(row, translation_dict["row"])
         col_index = calculate_index(col, translation_dict["col"])
         return cls(row=row_index, col=col_index)
+
+    def __eq__(self, value: object) -> bool:
+        """Check if the positions are equal."""
+        return (
+            isinstance(value, MatrixPosition)
+            and value.row == self.row
+            and value.col == self.col
+        )
 
     def __str__(self) -> str:
         """Return the position as a string."""
@@ -187,8 +200,14 @@ class Matrix:
         """Check if the matrix contains the item."""
         return item in self.__data
 
-    def __iter__(self):
-        """Iterate over the matrix."""
+    def __iter__(self) -> Iterable[TContent]:
+        """Iterate over the matrix.
+
+        Yields
+        ------
+            (tuple[MatrixPosition, TContent])
+                The position and the value of the matrix tile.
+        """
         yield from self.__data
 
     def __str__(self) -> str:
@@ -205,3 +224,35 @@ class Matrix:
 
 
 TContent = TypeVar("TContent", bound=any)
+
+
+class enumerate_matrix(Iterable[tuple[MatrixPosition, TContent]]):
+    """Enumerate the matrix.
+
+    Parameters
+    ----------
+        matrix : (Matrix)
+            The matrix to enumerate.
+
+    Yields
+    ------
+        (tuple[MatrixPosition, TContent])
+            The position and the value of the matrix tile.
+    """
+
+    def __init__(self, matrix: Matrix):
+        self.__matrix = matrix
+
+    def __iter__(self) -> Iterable[tuple[MatrixPosition, TContent]]:
+        """Iterate over the matrix."""
+        for row in range(self.__matrix.rows):
+            for col in range(self.__matrix.cols):
+                yield MatrixPosition(row, col), self.__matrix[row, col]
+
+    def __str__(self) -> str:
+        """Return the matrix as a string."""
+        return str(self.__matrix)
+
+    def __repr__(self) -> str:
+        """Return the matrix as a string."""
+        return str(self.__matrix)
