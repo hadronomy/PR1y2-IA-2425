@@ -6,6 +6,7 @@ Contains the Node class.
 from __future__ import annotations
 
 from collections import Counter
+from functools import total_ordering
 from typing import TypeVar
 
 from .basenode import BaseNode
@@ -125,6 +126,7 @@ class Node(BaseNode):
                 f"There exist nodes with the same path: {duplicate_names_str}",
             )
 
+    @total_ordering
     def __lt__(self, other: Node) -> bool:
         """Compare nodes by name.
 
