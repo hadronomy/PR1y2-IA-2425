@@ -16,8 +16,6 @@ from ia import __version__
 from ia.graph import UndirectedGraph
 from ia.graph.algorithm import TraversalAlgorithm, TraversalResult
 from ia.graph.parser import parse_and_transform
-from ia.maze.matrix import MatrixPosition
-from ia.maze.maze import Maze, MazeTile
 from ia.maze.parser import parse as parse_maze
 from ia.tree.utils import print_tree
 
