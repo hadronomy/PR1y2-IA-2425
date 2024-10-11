@@ -27,7 +27,7 @@
 
 ## Docs
 
-See the [docs](/docs/README.pdf) pdf for more information.
+See the [docs](/docs/README.md) for more information.
 
 ## Installation
 
