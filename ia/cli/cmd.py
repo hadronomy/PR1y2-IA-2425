@@ -18,6 +18,7 @@ from ia.graph.algorithm import TraversalAlgorithm, TraversalResult
 from ia.graph.parser import parse_and_transform
 from ia.maze.matrix import MatrixPosition
 from ia.maze.maze import Maze, MazeTile
+from ia.maze.parser import parse as parse_maze
 from ia.tree.utils import print_tree
 
 
@@ -146,18 +147,28 @@ def uninformed(
         print_tree(result.tree)
 
 
-def informed():
+def informed(
+    input_path: Annotated[
+        Path,
+        typer.Argument(
+            help="The path to the file containing the graph.",
+            exists=True,
+            file_okay=True,
+            dir_okay=False,
+            readable=True,
+            resolve_path=True,
+        ),
+    ],
+):
     """Traverse a maze using an informed search algorithm."""
     console = Console()
-    maze = Maze(rows=20, cols=30)
-    maze[0, 0] = MazeTile.START
-    pos = MatrixPosition(row=9, col=26)
-    console.log(pos.representation())
-    for _offset, tile in maze.adjacent(5, 5).items():
-        maze[tile] = MazeTile.EMPTY
+    maze = None
+    with open(input_path) as input_file:
+        maze = parse_maze(input_file.read())
+        if maze is None:
+            console.print("\nFailed to parse the maze.", style="red bold")
+            raise typer.Exit(1)
     console.print(maze)
-    console.print("\nMaze traversal not implemented yet.", style="red bold")
-    console.print("\nInformed search not implemented yet.", style="red bold")
     raise typer.Exit(1)
 
 
