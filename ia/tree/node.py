@@ -128,7 +128,7 @@ class Node(BaseNode):
 
     @total_ordering
     def __lt__(self, other: Node) -> bool:
-        """Compare nodes by name.
+        """Compare nodes by the attribute defined in `compare_by`.
 
         Parameters
         ----------
