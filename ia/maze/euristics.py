@@ -7,7 +7,7 @@ from ia.maze.matrix import MatrixPosition
 
 def manhattan_distance(start: MatrixPosition, goal: MatrixPosition) -> int:
     """Calculate the Manhattan distance between two positions."""
-    return abs(start.row - goal.row) + abs(start.col - goal.col)
+    return (abs(start.row - goal.row) + abs(start.col - goal.col)) * 3
 
 
 def euclidean_distance(start: MatrixPosition, goal: MatrixPosition) -> float:

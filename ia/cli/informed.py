@@ -44,6 +44,12 @@ def informed(
             help="Use the simple maze representation.",
         ),
     ] = None,
+    plot: Annotated[
+        bool | None,
+        typer.Option(
+            help="Plot the maze.",
+        ),
+    ] = None,
 ):
     """Traverse a maze using an informed search algorithm."""
     console = Console()
@@ -59,17 +65,19 @@ def informed(
         maze.goal = MatrixPosition(goal[0], goal[1])
     print_style = "detailed" if pretty else "simple"
     console.print(maze.print(style=print_style))
-    result = maze.a_star()
-    if result is None:
+    result_path = maze.a_star()
+    if result_path is None:
         console.print("\nNo path found.", style="red bold")
         raise typer.Exit(1)
     console.print("\nPath found:", style="green bold")
-    for node in result:
+    for node in result_path:
         console.print(node)
+    position_path = [node.position for node in result_path]
     console.print(
         maze.print(
-            path=[node.position for node in result],
+            path=position_path,
             style=print_style,
         )
     )
+    maze.plot(path=result_path) if plot else None
     raise typer.Exit(1)
