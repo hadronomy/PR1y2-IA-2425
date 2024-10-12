@@ -9,6 +9,7 @@ from typing import Annotated
 import typer
 from rich.console import Console
 
+from ia import __version__
 from ia.cli.informed import informed
 from ia.cli.uninformed import uninformed
 from ia.graph.parser import parse_and_transform
@@ -21,7 +22,7 @@ def run():
     app.command("informed")(informed)
     # This callback is needed to force typer to use
     # subcommands even when there is only one command.
-    app.callback()(lambda: None)
+    app.callback()(callback)
 
     try:
         import matplotlib.pyplot as plt  # type: ignore # noqa: F401
@@ -31,6 +32,29 @@ def run():
     except ImportError:
         pass
     app(prog_name="ia")
+
+
+def version_callback(value: bool):
+    """Print the version."""
+    if value:
+        print(f"ia version {__version__}")
+        raise typer.Exit()
+
+
+def callback(
+    version: Annotated[
+        bool | None,
+        typer.Option(
+            "--version",
+            "-v",
+            callback=version_callback,
+            help="Print the program version.",
+            is_eager=True,
+        ),
+    ] = None,
+):
+    """Cli app callback."""
+    pass
 
 
 def preview(

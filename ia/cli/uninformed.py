@@ -16,13 +16,6 @@ from ia.graph.undirected import UndirectedGraph
 from ia.tree.utils import print_tree
 
 
-def version_callback(value: bool):
-    """Print the version."""
-    if value:
-        print(f"ia version {__version__}")
-        raise typer.Exit()
-
-
 def uninformed(
     input_path: Annotated[
         Path,
@@ -65,15 +58,6 @@ def uninformed(
             help="The path to the file to write the output to.",
             writable=True,
             resolve_path=True,
-        ),
-    ] = None,
-    version: Annotated[
-        bool | None,
-        typer.Option(
-            "--version",
-            "-v",
-            callback=version_callback,
-            help="Print the program version.",
         ),
     ] = None,
     preview: Annotated[
