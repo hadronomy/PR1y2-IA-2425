@@ -3,21 +3,18 @@
 from __future__ import annotations
 
 from collections.abc import Iterable
+from dataclasses import dataclass
 from typing import TypeVar
 
 from ia.maze.utils import number_to_representation
 
 
-class MatrixPosition(tuple[int, int]):
+@dataclass(frozen=True, repr=True, eq=True, unsafe_hash=True)
+class MatrixPosition:
     """Matrix position data structure."""
 
-    def __init__(self, row: int, col: int) -> None:
-        self.row = row
-        self.col = col
-
-    def __new__(cls, row: int, col: int):
-        """Create a new position."""
-        return super().__new__(cls, (row, col))
+    row: int
+    col: int
 
     def representation(
         self, translation_dict: dict[str, list[str]] = None
@@ -72,25 +69,37 @@ class MatrixPosition(tuple[int, int]):
         col_index = calculate_index(col, translation_dict["col"])
         return cls(row=row_index, col=col_index)
 
-    def __eq__(self, value: object) -> bool:
-        """Check if the positions are equal."""
-        return (
-            isinstance(value, MatrixPosition)
-            and value.row == self.row
-            and value.col == self.col
-        )
+    def __add__(self, other: MatrixPosition | tuple[int, int]) -> MatrixPosition:
+        """Add two positions."""
+        if isinstance(other, tuple):
+            return MatrixPosition(self.row + other[0], self.col + other[1])
+        return MatrixPosition(self.row + other.row, self.col + other.col)
+
+    def __radd__(self, other: MatrixPosition | tuple[int, int]) -> MatrixPosition:
+        """Add two positions."""
+        return self.__add__(other)
+
+    def __sub__(self, other: MatrixPosition | tuple[int, int]) -> MatrixPosition:
+        """Subtract two positions."""
+        if isinstance(other, tuple):
+            return MatrixPosition(self.row - other[0], self.col - other[1])
+        return MatrixPosition(self.row - other.row, self.col - other.col)
+
+    def __rsub__(self, other: MatrixPosition | tuple[int, int]) -> MatrixPosition:
+        """Subtract two positions."""
+        return self.__sub__(other)
+
+    def __mul__(self, other: int) -> MatrixPosition:
+        """Multiply a position by a scalar."""
+        return MatrixPosition(self.row * other, self.col * other)
+
+    def __rmul__(self, other: int) -> MatrixPosition:
+        """Multiply a position by a scalar."""
+        return self.__mul__(other)
 
     def __str__(self) -> str:
         """Return the position as a string."""
         return f"({self.row}, {self.col})"
-
-    def __hash__(self) -> int:
-        """Return the hash of the position."""
-        return super().__hash__()
-
-    def __repr__(self) -> str:
-        """Return the position as a string."""
-        return str(self)
 
 
 class Matrix:
@@ -154,7 +163,11 @@ class Matrix:
             new_row, new_col = row + row_offset, col + col_offset
             if 0 <= new_row < self.__rows and 0 <= new_col < self.__cols:
                 adjacent.update(
-                    {MatrixPosition(row_offset, col_offset): (new_row, new_col)}
+                    {
+                        MatrixPosition(row_offset, col_offset): MatrixPosition(
+                            new_row, new_col
+                        )
+                    }
                 )
         return adjacent
 
