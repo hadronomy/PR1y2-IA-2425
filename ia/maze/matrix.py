@@ -201,7 +201,7 @@ class Matrix:
             (bool)
                 True if the position is valid, False otherwise.
         """
-        return self.is_valid(position[0], position[1])
+        return self.is_valid(position.row, position.col)
 
     def __len__(self) -> int:
         """Return the number of elements in the matrix."""
@@ -209,11 +209,15 @@ class Matrix:
 
     def __getitem__(self, key: MatrixPosition) -> TContent:
         """Get the value of the matrix."""
-        return self.__data[key[0]][key[1]]
+        if isinstance(key, tuple):
+            key = MatrixPosition(*key)
+        return self.__data[key.row][key.col]
 
     def __setitem__(self, key: MatrixPosition, value: TContent) -> None:
         """Set the value of the matrix."""
-        self.__data[key[0]][key[1]] = value
+        if isinstance(key, tuple):
+            key = MatrixPosition(*key)
+        self.__data[key.row][key.col] = value
 
     def __contains__(self, item: TContent) -> bool:
         """Check if the matrix contains the item."""
