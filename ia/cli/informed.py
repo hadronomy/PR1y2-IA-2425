@@ -6,6 +6,7 @@ from typing import Annotated
 import typer
 from rich.console import Console
 
+from ia.maze.matrix import MatrixPosition
 from ia.maze.parser import parse as parse_maze
 
 
@@ -21,6 +22,22 @@ def informed(
             resolve_path=True,
         ),
     ],
+    start: Annotated[
+        tuple[int, int] | None,
+        typer.Option(
+            "--start",
+            "-s",
+            help="The start node.",
+        ),
+    ] = None,
+    goal: Annotated[
+        tuple[int, int] | None,
+        typer.Option(
+            "--goal",
+            "-g",
+            help="The goal node.",
+        ),
+    ] = None,
     pretty: Annotated[
         bool | None,
         typer.Option(
@@ -36,6 +53,10 @@ def informed(
         if maze is None:
             console.print("\nFailed to parse the maze.", style="red bold")
             raise typer.Exit(1)
+    if start is not None:
+        maze.start = MatrixPosition(start[0], start[1])
+    if goal is not None:
+        maze.goal = MatrixPosition(goal[0], goal[1])
     if pretty:
         console.print(maze)
     else:
