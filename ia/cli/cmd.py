@@ -53,7 +53,7 @@ def callback(
         ),
     ] = None,
 ):
-    """Cli app callback."""
+    """CLI for different search algorithms solicited in university assignments."""
     pass
 
 
