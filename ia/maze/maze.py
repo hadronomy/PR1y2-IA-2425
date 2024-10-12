@@ -2,30 +2,18 @@
 
 import heapq
 from collections.abc import Callable
-from enum import Enum
 from typing import TypeVar
 
 from ia.maze import euristics
+from ia.maze.constants import (
+    DEFAULT_MAZE_MAPPINGS,
+    MAZE_PRINT_STYLES,
+    NUMBERS,
+)
 from ia.maze.matrix import Matrix, MatrixPosition
-from ia.maze.utils import ALPHABET, number_to_representation
+from ia.maze.tile import MazeTile
+from ia.maze.utils import number_to_representation
 from ia.tree.node import Node
-
-
-class MazeTile(str, Enum):
-    """Maze tile class."""
-
-    WALL = "wall"
-    EMPTY = "empty"
-    START = "start"
-    GOAL = "goal"
-
-
-MAZE_PRINT_STYLES = {
-    MazeTile.WALL: "██",
-    MazeTile.EMPTY: "  ",
-    MazeTile.START: "SS",
-    MazeTile.GOAL: "GG",
-}
 
 
 class Maze(Matrix):
@@ -66,12 +54,26 @@ class Maze(Matrix):
     def print(self) -> str:
         """Print the maze as a string."""
         top_border = "".join(
-            f"{number_to_representation(i, ALPHABET):2}" for i in range(self.cols)
+            f"{number_to_representation(i, NUMBERS):2}" for i in range(self.cols)
         )
         top_border = top_border + "\n   " + "╭" + "─" * self.cols * 2 + "╮"
         bottom_border = "╰" + "─" * self.cols * 2 + "╯"
         maze_rows = "\n".join(
             f"{i:2} │" + "".join(MAZE_PRINT_STYLES[cell] for cell in row) + "│"
+            for i, row in enumerate(self)
+        )
+        return f"    {top_border}\n{maze_rows}\n   {bottom_border}"
+
+    def print_simple(self) -> str:
+        """Print the maze as a string with simple styles."""
+        tile_numbers = {v: k for k, v in DEFAULT_MAZE_MAPPINGS.items()}
+        top_border = "".join(
+            f"{number_to_representation(i, NUMBERS):2}" for i in range(self.cols)
+        )
+        top_border = top_border + "\n   " + "╭" + "─" * self.cols * 2 + "╮"
+        bottom_border = "╰" + "─" * self.cols * 2 + "╯"
+        maze_rows = "\n".join(
+            f"{i:2} │" + " ".join(tile_numbers[cell] for cell in row) + " │"
             for i, row in enumerate(self)
         )
         return f"    {top_border}\n{maze_rows}\n   {bottom_border}"
