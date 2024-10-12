@@ -174,6 +174,7 @@ class Maze(Matrix):
                     compare_by="f_score",
                     g_score=0,
                     f_score=euristic_func(start, goal),
+                    h_score=euristic_func(start, goal),
                 ),
             ),
         )
@@ -197,9 +198,8 @@ class Maze(Matrix):
                 if neighbor not in g_score or tentative_g_score < g_score[neighbor]:
                     came_from[neighbor] = current
                     g_score[neighbor] = tentative_g_score
-                    f_score[neighbor] = tentative_g_score + euristic_func(
-                        neighbor, goal
-                    )
+                    h_score = euristic_func(neighbor, goal)
+                    f_score[neighbor] = tentative_g_score + h_score
                     heapq.heappush(
                         open_set,
                         (
@@ -211,11 +211,117 @@ class Maze(Matrix):
                                 position=neighbor,
                                 g_score=tentative_g_score,
                                 f_score=f_score[neighbor],
+                                h_score=h_score,
                             ),
                         ),
                     )
 
         return None
+
+    def plot(self, path: list[Node] = None) -> None:
+        """Plot the maze with an optional path."""
+        try:
+            import matplotlib.pyplot as plt
+        except ImportError as e:
+            raise ImportError("Matplotlib is required to plot the maze.") from e
+
+        fig, ax = plt.subplots(figsize=(self.cols, self.rows))
+        ax.imshow(
+            [[0 if cell == MazeTile.WALL else 1 for cell in row] for row in self],
+            cmap="gray",
+            origin="upper",
+        )
+        ax.set_xticks(range(self.cols))
+        ax.set_yticks(range(self.rows))
+        ax.set_xticks([x - 0.5 for x in range(1, self.cols)], minor=True)
+        ax.set_yticks([y - 0.5 for y in range(1, self.rows)], minor=True)
+        ax.grid(which="minor", color="black", linestyle="-", linewidth=1.5)
+        ax.tick_params(which="minor", size=0)
+
+        if path:
+            for i in range(len(path) - 1):
+                current_node = path[i]
+                next_node = path[i + 1]
+                dx = next_node.position.col - current_node.position.col
+                dy = next_node.position.row - current_node.position.row
+                ax.arrow(
+                    current_node.position.col,
+                    current_node.position.row,
+                    dx,
+                    dy,
+                    head_width=0.1,
+                    head_length=0.1,
+                    fc="cornflowerblue",
+                    ec="cornflowerblue",
+                )
+
+        for i, row in enumerate(self):
+            for j, cell in enumerate(row):
+                margin = 0.1
+                left = j - 0.5 + margin
+                right = j + 0.5 - margin
+                bottom = i - 0.5 + margin
+                top = i + 0.5 - margin
+                if cell == MazeTile.START:
+                    ax.text(
+                        j,
+                        i,
+                        "S",
+                        ha="center",
+                        va="center",
+                        color="black",
+                        fontsize=20,
+                        fontweight="bold",
+                        fontstyle="italic",
+                    )
+                elif cell == MazeTile.GOAL:
+                    ax.text(
+                        j,
+                        i,
+                        "E",
+                        ha="center",
+                        va="center",
+                        color="black",
+                        fontsize=20,
+                        fontweight="bold",
+                        fontstyle="italic",
+                    )
+                for node in path:
+                    if node.position.row == i and node.position.col == j:
+                        ax.text(
+                            left,
+                            top,
+                            f"{node.g_score}",
+                            ha="left",
+                            va="bottom",
+                            color="limegreen",
+                            fontsize=10,
+                            fontweight="bold",
+                            fontstyle="italic",
+                        )
+                        ax.text(
+                            left,
+                            bottom,
+                            f"{node.f_score}",
+                            ha="left",
+                            va="top",
+                            color="red",
+                            fontsize=10,
+                            fontweight="bold",
+                            fontstyle="italic",
+                        )
+                        ax.text(
+                            right,
+                            top,
+                            f"{node.h_score}",
+                            ha="right",
+                            va="bottom",
+                            color="cornflowerblue",
+                            fontsize=10,
+                            fontweight="bold",
+                            fontstyle="italic",
+                        )
+        plt.show()
 
     def __str__(self) -> str:
         """Return the maze as a string."""
