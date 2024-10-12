@@ -57,10 +57,8 @@ def informed(
         maze.start = MatrixPosition(start[0], start[1])
     if goal is not None:
         maze.goal = MatrixPosition(goal[0], goal[1])
-    if pretty:
-        console.print(maze)
-    else:
-        console.print(maze.print_simple())
+    print_style = "detailed" if pretty else "simple"
+    console.print(maze.print(style=print_style))
     result = maze.a_star()
     if result is None:
         console.print("\nNo path found.", style="red bold")
@@ -68,4 +66,10 @@ def informed(
     console.print("\nPath found:", style="green bold")
     for node in result:
         console.print(node)
+    console.print(
+        maze.print(
+            path=[node.position for node in result],
+            style=print_style,
+        )
+    )
     raise typer.Exit(1)
