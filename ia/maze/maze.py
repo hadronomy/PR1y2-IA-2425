@@ -39,6 +39,9 @@ class Maze(Matrix):
     @start.setter
     def start(self, value: MatrixPosition) -> None:
         """Set the start position."""
+        if self.start is not None:
+            self[self.start] = MazeTile.WALL
+            self[value] = MazeTile.START
         self.__start = value
 
     @property
@@ -49,6 +52,9 @@ class Maze(Matrix):
     @goal.setter
     def goal(self, value: MatrixPosition) -> None:
         """Set the goal position."""
+        if self.goal is not None:
+            self[self.goal] = MazeTile.WALL
+            self[value] = MazeTile.GOAL
         self.__goal = value
 
     def print(self) -> str:

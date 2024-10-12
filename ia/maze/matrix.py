@@ -9,7 +9,7 @@ from typing import TypeVar
 from ia.maze.utils import number_to_representation
 
 
-@dataclass(frozen=True, repr=True, eq=True, unsafe_hash=True)
+@dataclass(frozen=True, repr=True, unsafe_hash=True)
 class MatrixPosition:
     """Matrix position data structure."""
 
@@ -68,6 +68,16 @@ class MatrixPosition:
         row_index = calculate_index(row, translation_dict["row"])
         col_index = calculate_index(col, translation_dict["col"])
         return cls(row=row_index, col=col_index)
+
+    def __eq__(self, value: object) -> bool:
+        """Check if two positions are equal."""
+        if isinstance(value, tuple):
+            value = MatrixPosition(*value)
+        return self.row == value.row and self.col == value.col
+
+    def __req__(self, value: object) -> bool:
+        """Check if two positions are equal."""
+        return self.__eq__(value)
 
     def __add__(self, other: MatrixPosition | tuple[int, int]) -> MatrixPosition:
         """Add two positions."""
