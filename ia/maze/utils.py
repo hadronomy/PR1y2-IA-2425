@@ -1,8 +1,5 @@
 """Utility functions for the maze module."""
 
-ALPHABET = [chr(letter) for letter in range(65, 91)]
-NUMBERS = [str(number) for number in range(0, 10)]
-
 
 def number_to_representation(number: int, translation_list: list[str]) -> str:
     """Convert a number to a representation.

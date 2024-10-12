@@ -1,14 +1,8 @@
 """Parser for maze files."""
 
+from ia.maze.constants import DEFAULT_MAZE_MAPPINGS
 from ia.maze.matrix import MatrixPosition
 from ia.maze.maze import Maze, MazeTile
-
-DEFAULT_MAZE_MAPPINGS = {
-    "0": MazeTile.EMPTY,
-    "1": MazeTile.WALL,
-    "3": MazeTile.START,
-    "4": MazeTile.GOAL,
-}
 
 
 def parse(input_text: str, mappings: dict[str, MazeTile] | None = None) -> Maze:

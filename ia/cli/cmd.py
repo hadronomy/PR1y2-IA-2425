@@ -157,6 +157,12 @@ def informed(
             resolve_path=True,
         ),
     ],
+    pretty: Annotated[
+        bool | None,
+        typer.Option(
+            help="Use the simple maze representation.",
+        ),
+    ] = None,
 ):
     """Traverse a maze using an informed search algorithm."""
     console = Console()
@@ -166,7 +172,10 @@ def informed(
         if maze is None:
             console.print("\nFailed to parse the maze.", style="red bold")
             raise typer.Exit(1)
-    console.print(maze)
+    if pretty:
+        console.print(maze)
+    else:
+        console.print(maze.print_simple())
     result = maze.a_star()
     if result is None:
         console.print("\nNo path found.", style="red bold")
