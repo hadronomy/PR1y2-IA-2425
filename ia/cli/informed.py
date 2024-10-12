@@ -22,6 +22,17 @@ def informed(
             resolve_path=True,
         ),
     ],
+    output_path: Annotated[
+        Path | None,
+        typer.Option(
+            "--output",
+            "-o",
+            help="The path to the output file.",
+            writable=True,
+            resolve_path=True,
+            dir_okay=True,
+        ),
+    ] = None,
     start: Annotated[
         tuple[int, int] | None,
         typer.Option(
@@ -79,5 +90,11 @@ def informed(
             style=print_style,
         )
     )
-    maze.plot(path=result_path) if plot else None
-    raise typer.Exit(1)
+    file_name = input_path.stem
+    plot_file_name = file_name + "_result.png"
+    if output_path and not output_path.exists():
+        output_path.mkdir(parents=True, exist_ok=True)
+    plot_output_path = output_path / plot_file_name if output_path else None
+    maze.plot(
+        path=result_path, title=file_name, file_path=plot_output_path
+    ) if plot else None

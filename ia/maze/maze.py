@@ -218,14 +218,29 @@ class Maze(Matrix):
 
         return None
 
-    def plot(self, path: list[Node] = None) -> None:
+    def plot(
+        self,
+        path: list[Node] | None = None,
+        title: str | None = None,
+        subtitle: str | None = None,
+        file_path: str | None = None,
+    ) -> None:
         """Plot the maze with an optional path."""
         try:
             import matplotlib.pyplot as plt
         except ImportError as e:
             raise ImportError("Matplotlib is required to plot the maze.") from e
 
-        fig, ax = plt.subplots(figsize=(self.cols, self.rows))
+        if not title:
+            title = "Maze"
+        if not subtitle:
+            subtitle = "by @hadronomy"
+
+        fig, ax = plt.subplots(
+            figsize=(self.cols, self.rows), dpi=300 if file_path else 100
+        )
+        fig.suptitle(title, fontsize=20)
+        fig.text(0.5, 0.90, subtitle, ha="center", fontsize=10)
         ax.imshow(
             [[0 if cell == MazeTile.WALL else 1 for cell in row] for row in self],
             cmap="gray",
@@ -321,7 +336,10 @@ class Maze(Matrix):
                             fontweight="bold",
                             fontstyle="italic",
                         )
-        plt.show()
+        if not file_path:
+            plt.show()
+            return
+        plt.savefig(file_path)
 
     def __str__(self) -> str:
         """Return the maze as a string."""
