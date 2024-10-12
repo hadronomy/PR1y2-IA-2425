@@ -57,31 +57,69 @@ class Maze(Matrix):
             self[value] = MazeTile.GOAL
         self.__goal = value
 
-    def print(self) -> str:
-        """Print the maze as a string."""
-        top_border = "".join(
-            f"{number_to_representation(i, NUMBERS):2}" for i in range(self.cols)
-        )
-        top_border = top_border + "\n   " + "╭" + "─" * self.cols * 2 + "╮"
-        bottom_border = "╰" + "─" * self.cols * 2 + "╯"
-        maze_rows = "\n".join(
-            f"{i:2} │" + "".join(MAZE_PRINT_STYLES[cell] for cell in row) + "│"
-            for i, row in enumerate(self)
-        )
-        return f"    {top_border}\n{maze_rows}\n   {bottom_border}"
+    def print(self, path: list[MatrixPosition] = None, style: str = "detailed") -> str:
+        """Print the maze as a string with an optional path and style.
 
-    def print_simple(self) -> str:
-        """Print the maze as a string with simple styles."""
-        tile_numbers = {v: k for k, v in DEFAULT_MAZE_MAPPINGS.items()}
+        Parameters
+        ----------
+            path : (list[MatrixPosition])
+                The path to highlight in the maze.
+            style : (str)
+                The style to use for printing the maze.
+                Options are "detailed" and "simple".
+
+        Returns
+        -------
+            (str)
+                The maze as a string.
+        """
         top_border = "".join(
             f"{number_to_representation(i, NUMBERS):2}" for i in range(self.cols)
         )
-        top_border = top_border + "\n   " + "╭" + "─" * self.cols * 2 + "╮"
-        bottom_border = "╰" + "─" * self.cols * 2 + "╯"
-        maze_rows = "\n".join(
-            f"{i:2} │" + " ".join(tile_numbers[cell] for cell in row) + " │"
-            for i, row in enumerate(self)
-        )
+        top_border = " " + top_border + "\n   " + "╭" + "─" * (self.cols * 2 + 1) + "╮"
+        bottom_border = "╰" + "─" * (self.cols * 2 + 1) + "╯"
+
+        path_set = set(path) if path else set()
+
+        if style == "detailed":
+
+            def get_tile_style(cell, position):
+                if (
+                    position in path_set
+                    and not cell == MazeTile.START
+                    and not cell == MazeTile.GOAL
+                ):
+                    return MAZE_PRINT_STYLES["path"]
+                return MAZE_PRINT_STYLES[cell]
+
+            maze_rows = "\n".join(
+                f"{i:2} │ "
+                + " ".join(
+                    get_tile_style(cell, MatrixPosition(i, j))
+                    for j, cell in enumerate(row)
+                )
+                + " │"
+                for i, row in enumerate(self)
+            )
+        elif style == "simple":
+            tile_numbers = {v: k for k, v in DEFAULT_MAZE_MAPPINGS.items()}
+
+            maze_rows = "\n".join(
+                f"{i:2} │ "
+                + " ".join(
+                    "*"
+                    if MatrixPosition(i, j) in path_set
+                    and not cell == MazeTile.START
+                    and not cell == MazeTile.GOAL
+                    else tile_numbers[cell]
+                    for j, cell in enumerate(row)
+                )
+                + " │"
+                for i, row in enumerate(self)
+            )
+        else:
+            raise ValueError(f"Unknown style: {style}")
+
         return f"    {top_border}\n{maze_rows}\n   {bottom_border}"
 
     def a_star(
