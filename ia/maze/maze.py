@@ -1,9 +1,11 @@
 """Maze data structure."""
 
 import heapq
+from collections.abc import Callable
 from enum import Enum
 from typing import TypeVar
 
+from ia.maze import euristics
 from ia.maze.matrix import Matrix, MatrixPosition
 from ia.maze.utils import ALPHABET, number_to_representation
 from ia.tree.node import Node
@@ -75,13 +77,45 @@ class Maze(Matrix):
         return f"    {top_border}\n{maze_rows}\n   {bottom_border}"
 
     def a_star(
-        self, start: MatrixPosition = None, goal: MatrixPosition = None
+        self,
+        start: MatrixPosition | None = None,
+        goal: MatrixPosition | None = None,
+        euristic_func: Callable[[MatrixPosition, MatrixPosition], int] | None = None,
+        g_score_func: Callable[[MatrixPosition, MatrixPosition], int] | None = None,
+        tiles_to_ignore: list[MazeTile] | None = None,
     ) -> list[MatrixPosition] | None:
-        """Find the shortest path between the start and goal positions using the A* algorithm."""  # noqa: E501
+        """Find the shortest path between the start and goal positions using the A* algorithm.
+
+        Parameters
+        ----------
+            start : (MatrixPosition)
+                The start position.
+            goal : (MatrixPosition)
+                The goal position.
+            euristic_func : (Callable[[MatrixPosition, MatrixPosition], int])
+                The euristic function to use.
+            g_score_func : (Callable[[MatrixPosition, MatrixPosition], int])
+                The g score function to use.
+            tiles_to_ignore : (list[MazeTile])
+                The tiles to ignore.
+
+        Returns
+        -------
+            (list[MatrixPosition]) | None
+                The path from the start to the goal.
+                If no path is found, None is returned.
+        """  # noqa: E501
         if start is None:
             start = self.start
         if goal is None:
             goal = self.goal
+        if euristic_func is None:
+            euristic_func = euristics.manhattan_distance
+        if g_score_func is None:
+            g_score_func = euristics.greater_diagonal_g_score
+        if tiles_to_ignore is None:
+            tiles_to_ignore = [MazeTile.WALL]
+
         open_set = []
         heapq.heappush(
             open_set,
@@ -93,13 +127,13 @@ class Maze(Matrix):
                     position=start,
                     compare_by="f_score",
                     g_score=0,
-                    f_score=manhattan_distance(start, goal),
+                    f_score=euristic_func(start, goal),
                 ),
             ),
         )
         came_from = {}
         g_score = {start: 0}
-        f_score = {start: manhattan_distance(start, goal)}
+        f_score = {start: euristic_func(start, goal)}
 
         while open_set:
             current_node = heapq.heappop(open_set)[1]
@@ -109,13 +143,15 @@ class Maze(Matrix):
                 return current_node.node_path
 
             for neighbor in self.neighbors(current.row, current.col).values():
-                tentative_g_score = (
-                    g_score[current] + 1
+                if self[neighbor] in tiles_to_ignore:
+                    continue
+                tentative_g_score = g_score[current] + g_score_func(
+                    current, neighbor
                 )  # Assuming cost to move to a neighbor is 1
                 if neighbor not in g_score or tentative_g_score < g_score[neighbor]:
                     came_from[neighbor] = current
                     g_score[neighbor] = tentative_g_score
-                    f_score[neighbor] = tentative_g_score + manhattan_distance(
+                    f_score[neighbor] = tentative_g_score + euristic_func(
                         neighbor, goal
                     )
                     heapq.heappush(
@@ -138,11 +174,6 @@ class Maze(Matrix):
     def __str__(self) -> str:
         """Return the maze as a string."""
         return self.print()
-
-
-def manhattan_distance(start: MatrixPosition, goal: MatrixPosition) -> int:
-    """Calculate the Manhattan distance between two positions."""
-    return abs(start.row - goal.row) + abs(start.col - goal.col)
 
 
 TContent = TypeVar("TContent", bound=MazeTile)
