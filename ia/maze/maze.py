@@ -105,10 +105,10 @@ class Maze(Matrix):
             current_node = heapq.heappop(open_set)[1]
             current = current_node.position
 
-            if current[0] == goal[0] and current[1] == goal[1]:
+            if current == goal:
                 return current_node.node_path
 
-            for neighbor in self.neighbors(current[0], current[1]).values():
+            for neighbor in self.neighbors(current.row, current.col).values():
                 tentative_g_score = (
                     g_score[current] + 1
                 )  # Assuming cost to move to a neighbor is 1
@@ -142,7 +142,7 @@ class Maze(Matrix):
 
 def manhattan_distance(start: MatrixPosition, goal: MatrixPosition) -> int:
     """Calculate the Manhattan distance between two positions."""
-    return abs(start[0] - goal[0]) + abs(start[1] - goal[1])
+    return abs(start.row - goal.row) + abs(start.col - goal.col)
 
 
 TContent = TypeVar("TContent", bound=MazeTile)
