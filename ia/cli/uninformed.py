@@ -8,7 +8,6 @@ import typer
 from rich.console import Console
 from rich.text import Text
 
-from ia import __version__
 from ia.cli.utils import wrap_text
 from ia.graph.algorithm import TraversalAlgorithm, TraversalResult
 from ia.graph.parser.parser import parse_and_transform
