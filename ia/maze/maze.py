@@ -215,6 +215,7 @@ class Maze(Matrix):
         path: list[Node] | None = None,
         title: str | None = None,
         subtitle: str | None = None,
+        headerless: bool = False,
         file_path: str | None = None,
     ) -> None:
         """Plot the maze with an optional path."""
@@ -231,8 +232,9 @@ class Maze(Matrix):
         fig, ax = plt.subplots(
             figsize=(self.cols, self.rows), dpi=300 if file_path else 100
         )
-        fig.suptitle(title, fontsize=20)
-        fig.text(0.5, 0.90, subtitle, ha="center", fontsize=10)
+        if not headerless:
+            fig.suptitle(title, fontsize=20)
+            fig.text(0.5, 0.90, subtitle, ha="center", fontsize=10)
         ax.imshow(
             [[0 if cell == MazeTile.WALL else 1 for cell in row] for row in self],
             cmap="gray",
