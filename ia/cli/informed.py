@@ -1,5 +1,6 @@
 """Informed search command."""
 
+import time
 from pathlib import Path
 from typing import Annotated, Literal
 
@@ -91,7 +92,10 @@ def informed(
         maze.goal = MatrixPosition(goal[0], goal[1])
     print_style = "detailed" if pretty else "simple"
 
+    start_time = time.time()
     result = maze.a_star()
+    end_time = time.time()
+    execution_time = end_time - start_time
 
     input_file_name = input_path.stem
     output_file_name = input_file_name + "-out.txt"
@@ -99,7 +103,10 @@ def informed(
     output_text_file = (
         open(output_text_file_path, "w") if output_text_file_path else None
     )  # noqa: E501
+
     console = Console(file=output_text_file)
+    console.print(f"Execution time: {execution_time:.4f} seconds", style="blue bold")
+
     print_result(console, maze, print_style, result)
 
     plot_file_name = input_file_name + "_result.png"
