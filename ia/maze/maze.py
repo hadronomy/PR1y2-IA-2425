@@ -9,11 +9,9 @@ from ia.maze import euristics
 from ia.maze.constants import (
     DEFAULT_MAZE_MAPPINGS,
     MAZE_PRINT_STYLES,
-    NUMBERS,
 )
 from ia.maze.matrix import Matrix, MatrixPosition
 from ia.maze.tile import MazeTile
-from ia.maze.utils import number_to_representation
 from ia.tree.node import Node
 
 
