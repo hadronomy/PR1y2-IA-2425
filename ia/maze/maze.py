@@ -4,6 +4,7 @@ import heapq
 from collections.abc import Callable
 from typing import TypeVar
 
+from ia.algorithm import AlgorithmHistory, TraversalResult
 from ia.maze import euristics
 from ia.maze.constants import (
     DEFAULT_MAZE_MAPPINGS,
@@ -179,12 +180,24 @@ class Maze(Matrix):
         g_score = {start: 0}
         f_score = {start: euristic_func(start, goal)}
 
+        generated: list[MatrixPosition] = [start]
+        inspected: list[MatrixPosition] = []
+
+        history = AlgorithmHistory()
+        history.add_step(inspected=inspected, generated=generated)
+
         while open_set:
-            current_node = heapq.heappop(open_set)
-            current = current_node.position
+            current_node: Node = heapq.heappop(open_set)
+            current: MatrixPosition = current_node.position
+            inspected.append(current)
 
             if current == goal:
-                return current_node.node_path
+                history.add_step(inspected=inspected, generated=generated)
+                return TraversalResult(
+                    history,
+                    path=current_node.node_path,
+                    cost=current_node.f_score,
+                )
 
             for neighbor in self.neighbors(current.row, current.col).values():
                 if self[neighbor] in tiles_to_ignore:
@@ -195,8 +208,7 @@ class Maze(Matrix):
                     g_score[neighbor] = tentative_g_score
                     h_score = euristic_func(neighbor, goal)
                     f_score[neighbor] = tentative_g_score + h_score
-                    heapq.heappush(
-                        open_set,
+                    new_node = (
                         Node(
                             name=neighbor,
                             parent=current_node,
@@ -207,8 +219,14 @@ class Maze(Matrix):
                             h_score=h_score,
                         ),
                     )
+                    heapq.heappush(
+                        open_set,
+                        new_node[0],
+                    )
+                    generated.append(neighbor)
+            history.add_step(inspected=inspected, generated=generated)
 
-        return None
+        return TraversalResult(history, path=None, cost=None)
 
     def plot(
         self,
@@ -295,41 +313,42 @@ class Maze(Matrix):
                         fontweight="bold",
                         fontstyle="italic",
                     )
-                for node in path:
-                    if node.position.row == i and node.position.col == j:
-                        ax.text(
-                            left,
-                            top,
-                            f"{node.g_score}",
-                            ha="left",
-                            va="bottom",
-                            color="limegreen",
-                            fontsize=10,
-                            fontweight="bold",
-                            fontstyle="italic",
-                        )
-                        ax.text(
-                            left,
-                            bottom,
-                            f"{node.f_score}",
-                            ha="left",
-                            va="top",
-                            color="red",
-                            fontsize=10,
-                            fontweight="bold",
-                            fontstyle="italic",
-                        )
-                        ax.text(
-                            right,
-                            top,
-                            f"{node.h_score}",
-                            ha="right",
-                            va="bottom",
-                            color="cornflowerblue",
-                            fontsize=10,
-                            fontweight="bold",
-                            fontstyle="italic",
-                        )
+                if path:
+                    for node in path:
+                        if node.position.row == i and node.position.col == j:
+                            ax.text(
+                                left,
+                                top,
+                                f"{node.g_score}",
+                                ha="left",
+                                va="bottom",
+                                color="limegreen",
+                                fontsize=10,
+                                fontweight="bold",
+                                fontstyle="italic",
+                            )
+                            ax.text(
+                                left,
+                                bottom,
+                                f"{node.f_score}",
+                                ha="left",
+                                va="top",
+                                color="red",
+                                fontsize=10,
+                                fontweight="bold",
+                                fontstyle="italic",
+                            )
+                            ax.text(
+                                right,
+                                top,
+                                f"{node.h_score}",
+                                ha="right",
+                                va="bottom",
+                                color="cornflowerblue",
+                                fontsize=10,
+                                fontweight="bold",
+                                fontstyle="italic",
+                            )
         if not file_path:
             plt.show()
             return
