@@ -26,7 +26,7 @@ def octile_distance(start: MatrixPosition, goal: MatrixPosition) -> int:
     """Calculate the Octile distance between two positions."""
     dx = abs(start.row - goal.row)
     dy = abs(start.col - goal.col)
-    return dx + dy + (math.sqrt(2) - 2) * min(dx, dy)
+    return math.floor(dx + dy + (math.sqrt(2) - 2) * min(dx, dy))
 
 
 def greater_diagonal_g_score(current: MatrixPosition, neighbor: MatrixPosition) -> int:
