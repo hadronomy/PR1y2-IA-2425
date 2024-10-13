@@ -165,17 +165,14 @@ class Maze(Matrix):
         open_set = []
         heapq.heappush(
             open_set,
-            (
-                0,
-                Node(
-                    name=start,
-                    parent=None,
-                    position=start,
-                    compare_by="f_score",
-                    g_score=0,
-                    f_score=euristic_func(start, goal),
-                    h_score=euristic_func(start, goal),
-                ),
+            Node(
+                name=start,
+                parent=None,
+                position=start,
+                compare_by="f_score",
+                g_score=0,
+                f_score=euristic_func(start, goal),
+                h_score=euristic_func(start, goal),
             ),
         )
         came_from = {}
@@ -183,7 +180,7 @@ class Maze(Matrix):
         f_score = {start: euristic_func(start, goal)}
 
         while open_set:
-            current_node = heapq.heappop(open_set)[1]
+            current_node = heapq.heappop(open_set)
             current = current_node.position
 
             if current == goal:
@@ -192,9 +189,7 @@ class Maze(Matrix):
             for neighbor in self.neighbors(current.row, current.col).values():
                 if self[neighbor] in tiles_to_ignore:
                     continue
-                tentative_g_score = g_score[current] + g_score_func(
-                    current, neighbor
-                )
+                tentative_g_score = g_score[current] + g_score_func(current, neighbor)
                 if neighbor not in g_score or tentative_g_score < g_score[neighbor]:
                     came_from[neighbor] = current
                     g_score[neighbor] = tentative_g_score
@@ -202,17 +197,14 @@ class Maze(Matrix):
                     f_score[neighbor] = tentative_g_score + h_score
                     heapq.heappush(
                         open_set,
-                        (
-                            f_score[neighbor],
-                            Node(
-                                name=neighbor,
-                                parent=current_node,
-                                compare_by="f_score",
-                                position=neighbor,
-                                g_score=tentative_g_score,
-                                f_score=f_score[neighbor],
-                                h_score=h_score,
-                            ),
+                        Node(
+                            name=neighbor,
+                            parent=current_node,
+                            compare_by="f_score",
+                            position=neighbor,
+                            g_score=tentative_g_score,
+                            f_score=f_score[neighbor],
+                            h_score=h_score,
                         ),
                     )
 
