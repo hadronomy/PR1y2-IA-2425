@@ -5,7 +5,9 @@ from typing import Annotated
 
 import typer
 from rich.console import Console
+from rich.text import Text
 
+from ia.cli.utils import wrap_text
 from ia.maze.matrix import MatrixPosition
 from ia.maze.parser import parse as parse_maze
 
@@ -87,28 +89,60 @@ def informed(
     if goal is not None:
         maze.goal = MatrixPosition(goal[0], goal[1])
     print_style = "detailed" if pretty else "simple"
-    console.print(maze.print(style=print_style))
-    result_path = maze.a_star()
-    if result_path is None:
+
+    result = maze.a_star()
+    if result.path is None:
         console.print("\nNo path found.", style="red bold")
-        raise typer.Exit(1)
-    console.print("\nPath found:", style="green bold")
-    for node in result_path:
-        console.print(node)
-    position_path = [node.position for node in result_path]
+    else:
+        console.print("\nPath found:", style="green bold")
+
+    position_path = [node.position for node in result.path] if result.path else None
     console.print(
         maze.print(
             path=position_path,
             style=print_style,
         )
     )
+
+    width = 35
+    divider = Text("-" * width, style="grey30")
+    for i, step in enumerate(result.history):
+        console.print(divider)
+        console.print(Text(f"Iteration {i + 1}", style="red bold"))
+        console.print(
+            wrap_text(
+                f"Generated nodes: {", ".join(str(i) for i in step["generated"])}",
+                width,
+            )
+        )
+        console.print(
+            wrap_text(
+                f"Inspected nodes: {", ".join(str(i) for i in step["inspected"])}",
+                width,
+            )
+        )
+    console.print(divider)
+    if position_path:
+        console.print(
+            Text("Path:", style="bold"),
+            wrap_text(
+                f"{" -> ".join(str(i) for i in position_path)}",
+                width - 5,
+            ),
+        )
+    else:
+        console.print(Text("Path:", style="bold"), "-")
+    console.print(divider)
+    console.print(Text("Cost:", style="bold"), f"{result.cost if result.path else -1}")
+    console.print(divider)
+
     file_name = input_path.stem
     plot_file_name = file_name + "_result.png"
     if output_path and not output_path.exists():
         output_path.mkdir(parents=True, exist_ok=True)
     plot_output_path = output_path / plot_file_name if output_path else None
     maze.plot(
-        path=result_path,
+        path=result.path,
         title=file_name,
         file_path=plot_output_path,
         headerless=no_header,

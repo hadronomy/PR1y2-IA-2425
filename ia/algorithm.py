@@ -43,6 +43,7 @@ class AlgorithmHistory:
         return iter(self.history)
 
 
+# TODO: Refactor to dataclass
 class TraversalResult:
     """Traversal result class.
 
@@ -53,7 +54,7 @@ class TraversalResult:
     def __init__(
         self,
         history: AlgorithmHistory,
-        path: list[int],
+        path: list[Node],
         cost: int,
         tree: Node | None = None,
     ):
@@ -65,7 +66,7 @@ class TraversalResult:
                 The history of the algorithm
         visited: dict[int, bool]
                 The visited nodes
-        path: list[int]
+        path: list[Node]
                 The resulting path
         cost: int
                 The cost of the path
@@ -81,9 +82,10 @@ class TraversalResult:
         return f"Path: {self.path}, Cost: {self.cost}"
 
 
-def graph_path_cost(path: list[int], weights: dict[tuple[int, int], int]) -> int:
+def graph_path_cost(path: list[Node], weights: dict[tuple[int, int], int]) -> int:
     """Calculate the cost from a path using the weights of the graph."""
     cost = 0
+    path = [node.id for node in path]
     for i in range(1, len(path)):
         cost += weights[(path[i - 1], path[i])]
     return cost

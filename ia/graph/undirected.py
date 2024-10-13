@@ -167,9 +167,12 @@ class UndirectedGraph:
             history.add_step(generated=generated, inspected=inspected)
         if current.id != end:
             return TraversalResult(history, [], -1, tree=tree_root)
-        path = [ancestor.id for ancestor in current.node_path]
+        path = current.node_path
         return TraversalResult(
-            history, path, graph_path_cost(path, self.weights), tree=tree_root
+            history,
+            path=current.node_path,
+            cost=graph_path_cost(path, self.weights),
+            tree=tree_root,
         )
 
     def bfs(
@@ -215,9 +218,12 @@ class UndirectedGraph:
             history.add_step(generated=generated, inspected=inspected)
         if current.id != end:
             return TraversalResult(history, [], -1, tree=tree_root)
-        path = [ancestor.id for ancestor in current.node_path]
+        path = current.node_path
         return TraversalResult(
-            history, path, graph_path_cost(path, self.weights), tree=tree_root
+            history,
+            path=current.node_path,
+            cost=graph_path_cost(path, self.weights),
+            tree=tree_root,
         )
 
     def traverse(

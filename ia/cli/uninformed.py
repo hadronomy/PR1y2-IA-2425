@@ -138,10 +138,11 @@ def print_result(
             )
         )
     console.print(divider)
+    path = [node.id for node in result.path]
     console.print(
         Text("Path:", style="bold"),
         wrap_text(
-            f"{" -> ".join(str(i) for i in result.path)}",
+            f"{" -> ".join(str(i) for i in path)}",
             width - 5,
         ),
     )
