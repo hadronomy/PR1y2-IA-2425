@@ -1,13 +1,14 @@
 """Informed search command."""
 
 from pathlib import Path
-from typing import Annotated
+from typing import Annotated, Literal
 
 import typer
 from rich.console import Console
 from rich.text import Text
 
 from ia.cli.utils import wrap_text
+from ia.maze import Maze
 from ia.maze.matrix import MatrixPosition
 from ia.maze.parser import parse as parse_maze
 
@@ -91,6 +92,48 @@ def informed(
     print_style = "detailed" if pretty else "simple"
 
     result = maze.a_star()
+
+    input_file_name = input_path.stem
+    output_file_name = input_file_name + "-out.txt"
+    output_text_file_path = output_path / output_file_name if output_path else None  # noqa: E501
+    output_text_file = (
+        open(output_text_file_path, "w") if output_text_file_path else None
+    )  # noqa: E501
+    console = Console(file=output_text_file)
+    print_result(console, maze, print_style, result)
+
+    plot_file_name = input_file_name + "_result.png"
+    if output_path and not output_path.exists():
+        output_path.mkdir(parents=True, exist_ok=True)
+    plot_output_path = output_path / plot_file_name if output_path else None
+    maze.plot(
+        path=result.path,
+        title=input_file_name,
+        file_path=plot_output_path,
+        headerless=no_header,
+    ) if plot else None
+
+
+def print_result(
+    console: Console,
+    maze: Maze,
+    print_style: Literal["simple"] | Literal["detailed"],
+    result,
+):
+    """
+    Print the result of the maze traversal.
+
+    Parameters
+    ----------
+        console: Console
+            The console to print the result
+        maze: Maze
+            The maze
+        print_style: str
+            The style to print the maze
+        result: TraversalResult
+            The result of the traversal
+    """  # noqa: E501
     if result.path is None:
         console.print("\nNo path found.", style="red bold")
     else:
@@ -135,15 +178,3 @@ def informed(
     console.print(divider)
     console.print(Text("Cost:", style="bold"), f"{result.cost if result.path else -1}")
     console.print(divider)
-
-    file_name = input_path.stem
-    plot_file_name = file_name + "_result.png"
-    if output_path and not output_path.exists():
-        output_path.mkdir(parents=True, exist_ok=True)
-    plot_output_path = output_path / plot_file_name if output_path else None
-    maze.plot(
-        path=result.path,
-        title=file_name,
-        file_path=plot_output_path,
-        headerless=no_header,
-    ) if plot else None
