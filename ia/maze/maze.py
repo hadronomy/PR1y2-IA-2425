@@ -74,10 +74,24 @@ class Maze(Matrix):
             (str)
                 The maze as a string.
         """
-        top_border = "".join(
-            f"{number_to_representation(i, NUMBERS):2}" for i in range(self.cols)
+        top_border_lines = [
+            " " * (self.cols * 2 + 1) for _ in range(len(str(self.cols)))
+        ]
+        for i in range(self.cols):
+            digits = str(i)
+            for j, digit in enumerate(reversed(digits)):
+                top_border_lines[j] = (
+                    top_border_lines[j][: i * 2 + 1]
+                    + digit
+                    + top_border_lines[j][i * 2 + 2 :]
+                )
+        top_border = (
+            "\n    ".join(reversed(top_border_lines))
+            + "\n   "
+            + "╭"
+            + "─" * (self.cols * 2 + 1)
+            + "╮"
         )
-        top_border = " " + top_border + "\n   " + "╭" + "─" * (self.cols * 2 + 1) + "╮"
         bottom_border = "╰" + "─" * (self.cols * 2 + 1) + "╯"
 
         path_set = set(path) if path else set()
