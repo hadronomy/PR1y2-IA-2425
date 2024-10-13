@@ -30,7 +30,7 @@ jobs:
         id: git-cliff
         with:
           config: cliff.toml
-          args: -vv --latest --no-exec -s header
+          args: -vv --latest --no-exec -s header --ignore-tags release
         env:
           GITHUB_REPO: ${{ github.repository }}
           GITHUB_TOKEN: ${{ steps.generate-token.outputs.token }}
