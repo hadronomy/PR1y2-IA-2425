@@ -171,6 +171,12 @@ def print_result(
                 width,
             )
         )
+        console.print(
+            wrap_text(
+                f"Current path: {" -> ".join(str(i) for i in step["path"])}",
+                width,
+            )
+        )
     console.print(divider)
     if position_path:
         console.print(

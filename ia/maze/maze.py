@@ -196,7 +196,7 @@ class Maze(Matrix):
         inspected: list[MatrixPosition] = []
 
         history = AlgorithmHistory()
-        history.add_step(inspected=inspected, generated=generated)
+        history.add_step(inspected=inspected, generated=generated, path=[])
 
         while open_set:
             current_node: Node = heapq.heappop(open_set)
@@ -204,10 +204,14 @@ class Maze(Matrix):
             inspected.append(current)
 
             if current == goal:
-                history.add_step(inspected=inspected, generated=generated)
+                node_path = current_node.node_path
+                position_path = [node.position for node in node_path]
+                history.add_step(
+                    inspected=inspected, generated=generated, path=position_path
+                )
                 return TraversalResult(
                     history,
-                    path=current_node.node_path,
+                    path=node_path,
                     cost=current_node.f_score,
                 )
 
@@ -236,7 +240,10 @@ class Maze(Matrix):
                         new_node[0],
                     )
                     generated.append(neighbor)
-            history.add_step(inspected=inspected, generated=generated)
+            position_path = [node.position for node in current_node.node_path]
+            history.add_step(
+                inspected=inspected, generated=generated, path=position_path
+            )
 
         return TraversalResult(history, path=None, cost=None)
 
