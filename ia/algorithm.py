@@ -34,6 +34,10 @@ class AlgorithmHistory:
         """Get the history."""
         return self.history
 
+    def __getitem__(self, step: int) -> dict:
+        """Get a step from the history."""
+        return self.history[step]
+
     def __str__(self) -> str:
         """Return the history as a string."""
         return str(self.history)

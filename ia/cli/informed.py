@@ -1,5 +1,6 @@
 """Informed search command."""
 
+import math
 import time
 from pathlib import Path
 from typing import Annotated, Literal
@@ -8,6 +9,7 @@ import typer
 from rich.console import Console
 from rich.text import Text
 
+from ia.algorithm import TraversalResult
 from ia.cli.utils import wrap_text
 from ia.maze import Maze
 from ia.maze.matrix import MatrixPosition
@@ -97,8 +99,11 @@ def informed(
     end_time = time.time()
     execution_time = end_time - start_time
 
+    if output_path and not output_path.exists():
+        output_path.mkdir(parents=True, exist_ok=True)
+
     input_file_name = input_path.stem
-    output_file_name = input_file_name + "-out.txt"
+    output_file_name = input_file_name + "_out.txt"
     output_text_file_path = output_path / output_file_name if output_path else None  # noqa: E501
     output_text_file = (
         open(output_text_file_path, "w") if output_text_file_path else None
@@ -107,11 +112,9 @@ def informed(
     console = Console(file=output_text_file)
     console.print(f"Execution time: {execution_time:.4f} seconds", style="blue bold")
 
-    print_result(console, maze, print_style, result)
+    print_result(console, input_file_name, maze, print_style, result)
 
     plot_file_name = input_file_name + "_result.png"
-    if output_path and not output_path.exists():
-        output_path.mkdir(parents=True, exist_ok=True)
     plot_output_path = output_path / plot_file_name if output_path else None
     maze.plot(
         path=result.path,
@@ -123,6 +126,7 @@ def informed(
 
 def print_result(
     console: Console,
+    input_file_name: str,
     maze: Maze,
     print_style: Literal["simple"] | Literal["detailed"],
     result,
@@ -141,10 +145,13 @@ def print_result(
         result: TraversalResult
             The result of the traversal
     """  # noqa: E501
+    console.print("Algorithm: A*", style="blue bold")
     if result.path is None:
         console.print("\nNo path found.", style="red bold")
     else:
         console.print("\nPath found:", style="green bold")
+
+    print_table(console, input_file_name, maze, result)
 
     position_path = [node.position for node in result.path] if result.path else None
     console.print(
@@ -191,3 +198,62 @@ def print_result(
     console.print(divider)
     console.print(Text("Cost:", style="bold"), f"{result.cost if result.path else -1}")
     console.print(divider)
+
+
+def print_table(
+    console: Console, input_file_name: str, maze: Maze, result: TraversalResult
+):
+    """
+    Print a table summarizing the maze traversal results.
+
+    Parameters
+    ----------
+        console: Console
+            The console to print the table.
+        input_file_name: str
+            The name of the input file.
+        maze: Maze
+            The maze object.
+        result: TraversalResult
+            The result of the traversal.
+    """
+    from tabulate import tabulate
+
+    data = (
+        [
+            (
+                "Instance",
+                "n",
+                "m",
+                "S",
+                "E",
+                "Path",
+                "Cost",
+                "Nº Nodes generated",
+                "Nº Nodes inspected",
+            ),
+            (
+                input_file_name,
+                maze.rows,
+                maze.cols,
+                maze.start,
+                maze.goal,
+                " -> ".join(
+                    str(node) for node in [node.position for node in result.path]
+                )
+                if result.path
+                else "-",
+                result.cost if result.path else -1,
+                len(result.history[-1]["generated"]),
+                len(result.history[-1]["inspected"]),
+            ),
+        ],
+    )
+    table_str = tabulate(
+        data[0],
+        headers="firstrow",
+        tablefmt="fancy_grid",
+        maxcolwidths=30,
+        maxheadercolwidths=math.inf,
+    )
+    console.print(table_str)

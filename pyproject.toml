@@ -10,8 +10,9 @@ readme = "README.md"
 python = "^3.12"
 typer = "^0.12.5"
 lark = "^1.2.2"
+tabulate = "^0.9.0"
+matplotlib = "^3.9.2"
 networkx = { version = "^3.3", optional = true }
-matplotlib = { version = "^3.9.2", optional = true }
 pyqt6 = { version = "^6.7.1", optional = true }
 scipy = { version = "^1.14.1", optional = true }
 pydot = { version = "^3.0.2", optional = true }
@@ -19,15 +20,7 @@ pandas = { version = "^2.2.3", optional = true }
 pygraphviz = { version = "^1.14", optional = true }
 
 [tool.poetry.extras]
-preview = [
-  "networkx",
-  "matplotlib",
-  "pyqt6",
-  "scipy",
-  "pydot",
-  "pandas",
-  "pygraphviz",
-]
+preview = ["networkx", "pyqt6", "scipy", "pydot", "pandas", "pygraphviz"]
 
 [tool.poetry.group.dev.dependencies]
 pre-commit = "^3.8.0"
