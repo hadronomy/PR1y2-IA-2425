@@ -26,7 +26,6 @@ preview = ["networkx", "pyqt6", "scipy", "pydot", "pandas", "pygraphviz"]
 pre-commit = "^3.8.0"
 twine = "^5.1.1"
 ruff = "^0.6.8"
-nuitka = "^2.4.8"
 
 [build-system]
 requires = ["poetry-core"]
