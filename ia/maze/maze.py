@@ -194,7 +194,7 @@ class Maze(Matrix):
                     continue
                 tentative_g_score = g_score[current] + g_score_func(
                     current, neighbor
-                )  # Assuming cost to move to a neighbor is 1
+                )
                 if neighbor not in g_score or tentative_g_score < g_score[neighbor]:
                     came_from[neighbor] = current
                     g_score[neighbor] = tentative_g_score
