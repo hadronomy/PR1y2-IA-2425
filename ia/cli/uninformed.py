@@ -8,8 +8,8 @@ import typer
 from rich.console import Console
 from rich.text import Text
 
+from ia.algorithm import TraversalResult, UninformedTraversalAlgorithm
 from ia.cli.utils import wrap_text
-from ia.graph.algorithm import TraversalAlgorithm, TraversalResult
 from ia.graph.parser.parser import parse_and_transform
 from ia.graph.undirected import UndirectedGraph
 from ia.tree.utils import print_tree
@@ -28,7 +28,7 @@ def uninformed(
         ),
     ],
     algorithm: Annotated[
-        TraversalAlgorithm,
+        UninformedTraversalAlgorithm,
         typer.Option(
             help="Traversal algorithm to use.",
         ),
@@ -109,7 +109,7 @@ def print_result(
     graph: UndirectedGraph,
     start: int,
     end: int,
-    algorithm: TraversalAlgorithm,
+    algorithm: UninformedTraversalAlgorithm,
     result: TraversalResult,
     file: TextIO = sys.stdout,
 ):

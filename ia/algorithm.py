@@ -6,11 +6,17 @@ from enum import Enum
 from ia.tree.node import Node
 
 
-class TraversalAlgorithm(str, Enum):
+class UninformedTraversalAlgorithm(str, Enum):
     """Traversal algorithm class."""
 
     DFS = "dfs"
     BFS = "bfs"
+
+
+class InformedTraversalAlgorithm(str, Enum):
+    """Traversal algorithm class."""
+
+    A_STAR = "a_star"
 
 
 class AlgorithmHistory:

@@ -6,14 +6,13 @@ Contains the UndirectedGraph class.
 
 from collections.abc import Callable
 
-from ia.tree.node import Node
-
-from .algorithm import (
+from ia.algorithm import (
     AlgorithmHistory,
-    TraversalAlgorithm,
     TraversalResult,
+    UninformedTraversalAlgorithm,
     graph_path_cost,
 )
+from ia.tree.node import Node
 
 
 class UndirectedGraph:
@@ -222,7 +221,7 @@ class UndirectedGraph:
         )
 
     def traverse(
-        self, *, start: int, end: int, algorithm: TraversalAlgorithm
+        self, *, start: int, end: int, algorithm: UninformedTraversalAlgorithm
     ) -> TraversalResult:
         """Traverse the graph."""
         if algorithm == "dfs":
