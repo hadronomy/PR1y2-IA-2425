@@ -61,9 +61,21 @@ def informed(
             help="Plot the maze.",
         ),
     ] = None,
+    no_header: Annotated[
+        bool | None,
+        typer.Option(
+            "--no-header",
+            help="Do not print the header.",
+        ),
+    ] = None,
 ):
     """Traverse a maze using an informed search algorithm."""
     console = Console()
+
+    if no_header and not plot:
+        console.print("No header and no plot selected.", style="red bold")
+        raise typer.Exit(1)
+
     maze = None
     with open(input_path) as input_file:
         maze = parse_maze(input_file.read())
@@ -96,5 +108,8 @@ def informed(
         output_path.mkdir(parents=True, exist_ok=True)
     plot_output_path = output_path / plot_file_name if output_path else None
     maze.plot(
-        path=result_path, title=file_name, file_path=plot_output_path
+        path=result_path,
+        title=file_name,
+        file_path=plot_output_path,
+        headerless=no_header,
     ) if plot else None
