@@ -46,7 +46,7 @@ def euclidean_distance(start: MatrixPosition, goal: MatrixPosition) -> float:
             The goal position.
     """
     return math.floor(
-        ((start.row - goal.row) ** 2 + (start.col - goal.col) ** 2) ** 0.5
+        (((start.row - goal.row) ** 2 + (start.col - goal.col) ** 2) ** 0.5) * 3
     )
 
 
