@@ -20,12 +20,12 @@ You can download the wheel file from the `releases page <https://github.com/hadr
 
     .. code-block:: sh
 
-      curl -LJO https://github.com/hadronomy/PR1y2-IA-2425/releases/latest/download/ia-1.0.0-py3-none-any.whl
+      curl -LJO https://github.com/hadronomy/PR1y2-IA-2425/releases/latest/download/ia-1.2.1-py3-none-any.whl
 
 
     .. note::
 
-        Replace `ia-1.0.0-py3-none-any.whl` with the name of the latest wheel file available on the releases page.
+        Replace `ia-1.2.1-py3-none-any.whl` with the name of the latest wheel file available on the releases page.
 
 #. Install the wheel file using `pip`:
 

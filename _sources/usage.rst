@@ -14,6 +14,7 @@ See the :ref:`installation` guide to install the package.
       poetry shell
 
 .. _usage:
+
 Usage
 *****
 
