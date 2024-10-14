@@ -1,4 +1,5 @@
 .. _installation:
+
 Installation
 ############
 
@@ -117,4 +118,6 @@ This command will display the help message with all the available commands and o
 Additional Information
 ======================
 
-For more detailed information, refer to the `README <https://github.com/hadronomy/PR1y2-IA-2425/blob/main/README.md>` file in the root of the repository.
+For more detailed information, 
+refer to the `README <https://github.com/hadronomy/PR1y2-IA-2425/blob/main/README.md/>`_ 
+file in the root of the repository.
