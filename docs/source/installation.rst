@@ -6,7 +6,7 @@ This document provides detailed instructions on how to install and set up the pr
 Option 1: Install from Wheel File (Recommended)
 ************************************************
 
-You can download the wheel file from the `releases page <https://github.com/hadronomy/PR1y2-IA-2425|/releases/latest>`_ and install it using `pip`.
+You can download the wheel file from the `releases page <https://github.com/hadronomy/PR1y2-IA-2425/releases/latest>`_ and install it using `pip`.
 
 .. note::
 
