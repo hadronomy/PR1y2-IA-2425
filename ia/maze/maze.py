@@ -142,7 +142,7 @@ class Maze(Matrix):
         euristic_func: Callable[[MatrixPosition, MatrixPosition], int] | None = None,
         g_score_func: Callable[[MatrixPosition, MatrixPosition], int] | None = None,
         tiles_to_ignore: list[MazeTile] | None = None,
-    ) -> list[MatrixPosition] | None:
+    ) -> TraversalResult:
         """Find the shortest path between the start and goal positions using the A* algorithm.
 
         Parameters
@@ -160,7 +160,7 @@ class Maze(Matrix):
 
         Returns
         -------
-            (list[MatrixPosition]) | None
+            (TraversalResult)
                 The path from the start to the goal.
                 If no path is found, None is returned.
         """  # noqa: E501
