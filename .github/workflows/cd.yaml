@@ -47,6 +47,11 @@ jobs:
     needs: generate-changelog
     steps:
       - uses: actions/checkout@v4
+      - name: Typst
+        uses: lvignoli/typst-action@main
+        with:
+          source_file: |
+            report/report.typ
       - name: Install Python
         uses: actions/setup-python@v4
         with:
@@ -74,3 +79,4 @@ jobs:
           body: "${{ needs.generate-changelog.outputs.release_body }}"
           files: |
             dist/*
+            report/report.pdf
