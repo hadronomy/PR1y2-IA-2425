@@ -10,10 +10,6 @@ ia.algorithm.TraversalResult
    :special-members:
 
    
-   
-   
-
-   
    .. automethod:: __init__
 
    
@@ -22,5 +18,9 @@ ia.algorithm.TraversalResult
    .. autosummary::
    
       ~TraversalResult.__init__
+   
+   
+
+   
    
    

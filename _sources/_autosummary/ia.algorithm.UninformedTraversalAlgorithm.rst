@@ -10,17 +10,6 @@ ia.algorithm.UninformedTraversalAlgorithm
    :special-members:
 
    
-   
-   .. rubric:: Attributes
-
-   .. autosummary::
-   
-      ~UninformedTraversalAlgorithm.DFS
-      ~UninformedTraversalAlgorithm.BFS
-   
-   
-
-   
    .. automethod:: __init__
 
    
@@ -76,5 +65,16 @@ ia.algorithm.UninformedTraversalAlgorithm
       ~UninformedTraversalAlgorithm.format_map
       ~UninformedTraversalAlgorithm.maketrans
       ~UninformedTraversalAlgorithm.__init__
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~UninformedTraversalAlgorithm.DFS
+      ~UninformedTraversalAlgorithm.BFS
    
    

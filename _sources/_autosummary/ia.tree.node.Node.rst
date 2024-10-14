@@ -10,6 +10,26 @@ ia.tree.node.Node
    :special-members:
 
    
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Node.__init__
+      ~Node.append
+      ~Node.copy
+      ~Node.describe
+      ~Node.extend
+      ~Node.from_dict
+      ~Node.get_attribute
+      ~Node.set_attribute
+      ~Node.sort
+   
+   
+
+   
    
    .. rubric:: Attributes
 
@@ -32,25 +52,5 @@ ia.tree.node.Node
       ~Node.root
       ~Node.separator
       ~Node.siblings
-   
-   
-
-   
-   .. automethod:: __init__
-
-   
-   .. rubric:: Methods
-
-   .. autosummary::
-   
-      ~Node.__init__
-      ~Node.append
-      ~Node.copy
-      ~Node.describe
-      ~Node.extend
-      ~Node.from_dict
-      ~Node.get_attribute
-      ~Node.set_attribute
-      ~Node.sort
    
    

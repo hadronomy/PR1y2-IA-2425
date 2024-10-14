@@ -10,6 +10,26 @@ ia.tree.basenode.BaseNode
    :special-members:
 
    
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~BaseNode.__init__
+      ~BaseNode.append
+      ~BaseNode.copy
+      ~BaseNode.describe
+      ~BaseNode.extend
+      ~BaseNode.from_dict
+      ~BaseNode.get_attribute
+      ~BaseNode.set_attribute
+      ~BaseNode.sort
+   
+   
+
+   
    
    .. rubric:: Attributes
 
@@ -29,25 +49,5 @@ ia.tree.basenode.BaseNode
       ~BaseNode.right_sibling
       ~BaseNode.root
       ~BaseNode.siblings
-   
-   
-
-   
-   .. automethod:: __init__
-
-   
-   .. rubric:: Methods
-
-   .. autosummary::
-   
-      ~BaseNode.__init__
-      ~BaseNode.append
-      ~BaseNode.copy
-      ~BaseNode.describe
-      ~BaseNode.extend
-      ~BaseNode.from_dict
-      ~BaseNode.get_attribute
-      ~BaseNode.set_attribute
-      ~BaseNode.sort
    
    

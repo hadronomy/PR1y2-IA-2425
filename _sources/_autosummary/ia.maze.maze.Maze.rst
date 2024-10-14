@@ -10,20 +10,6 @@ ia.maze.maze.Maze
    :special-members:
 
    
-   
-   .. rubric:: Attributes
-
-   .. autosummary::
-   
-      ~Maze.cols
-      ~Maze.default
-      ~Maze.goal
-      ~Maze.rows
-      ~Maze.start
-   
-   
-
-   
    .. automethod:: __init__
 
    
@@ -38,5 +24,19 @@ ia.maze.maze.Maze
       ~Maze.neighbors
       ~Maze.plot
       ~Maze.print
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Maze.cols
+      ~Maze.default
+      ~Maze.goal
+      ~Maze.rows
+      ~Maze.start
    
    

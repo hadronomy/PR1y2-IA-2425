@@ -10,20 +10,6 @@ ia.maze.euristics.Euristic
    :special-members:
 
    
-   
-   .. rubric:: Attributes
-
-   .. autosummary::
-   
-      ~Euristic.MANHATTAN
-      ~Euristic.EUCLIDEAN
-      ~Euristic.CHEBYSHEV
-      ~Euristic.OCTILE
-      ~Euristic.GREATER_DIAGONAL_G_SCORE
-   
-   
-
-   
    .. automethod:: __init__
 
    
@@ -80,5 +66,19 @@ ia.maze.euristics.Euristic
       ~Euristic.maketrans
       ~Euristic.to_function
       ~Euristic.__init__
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Euristic.MANHATTAN
+      ~Euristic.EUCLIDEAN
+      ~Euristic.CHEBYSHEV
+      ~Euristic.OCTILE
+      ~Euristic.GREATER_DIAGONAL_G_SCORE
    
    

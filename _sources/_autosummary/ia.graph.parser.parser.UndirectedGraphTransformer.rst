@@ -10,10 +10,6 @@ ia.graph.parser.parser.UndirectedGraphTransformer
    :special-members:
 
    
-   
-   
-
-   
    .. automethod:: __init__
 
    
@@ -31,5 +27,9 @@ ia.graph.parser.parser.UndirectedGraphTransformer
       ~UndirectedGraphTransformer.graph
       ~UndirectedGraphTransformer.transform
       ~UndirectedGraphTransformer.weight
+   
+   
+
+   
    
    

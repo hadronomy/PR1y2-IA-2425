@@ -10,19 +10,6 @@ ia.maze.tile.MazeTile
    :special-members:
 
    
-   
-   .. rubric:: Attributes
-
-   .. autosummary::
-   
-      ~MazeTile.WALL
-      ~MazeTile.EMPTY
-      ~MazeTile.START
-      ~MazeTile.GOAL
-   
-   
-
-   
    .. automethod:: __init__
 
    
@@ -78,5 +65,18 @@ ia.maze.tile.MazeTile
       ~MazeTile.format_map
       ~MazeTile.maketrans
       ~MazeTile.__init__
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~MazeTile.WALL
+      ~MazeTile.EMPTY
+      ~MazeTile.START
+      ~MazeTile.GOAL
    
    

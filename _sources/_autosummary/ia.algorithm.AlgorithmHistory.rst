@@ -10,10 +10,6 @@ ia.algorithm.AlgorithmHistory
    :special-members:
 
    
-   
-   
-
-   
    .. automethod:: __init__
 
    
@@ -24,5 +20,9 @@ ia.algorithm.AlgorithmHistory
       ~AlgorithmHistory.__init__
       ~AlgorithmHistory.add_step
       ~AlgorithmHistory.get_history
+   
+   
+
+   
    
    

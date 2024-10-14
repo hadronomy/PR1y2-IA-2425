@@ -10,16 +10,6 @@ ia.algorithm.InformedTraversalAlgorithm
    :special-members:
 
    
-   
-   .. rubric:: Attributes
-
-   .. autosummary::
-   
-      ~InformedTraversalAlgorithm.A_STAR
-   
-   
-
-   
    .. automethod:: __init__
 
    
@@ -75,5 +65,15 @@ ia.algorithm.InformedTraversalAlgorithm
       ~InformedTraversalAlgorithm.format_map
       ~InformedTraversalAlgorithm.maketrans
       ~InformedTraversalAlgorithm.__init__
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~InformedTraversalAlgorithm.A_STAR
    
    

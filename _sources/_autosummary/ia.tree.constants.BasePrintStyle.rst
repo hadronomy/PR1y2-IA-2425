@@ -10,18 +10,6 @@ ia.tree.constants.BasePrintStyle
    :special-members:
 
    
-   
-   .. rubric:: Attributes
-
-   .. autosummary::
-   
-      ~BasePrintStyle.stem
-      ~BasePrintStyle.branch
-      ~BasePrintStyle.strem_final
-   
-   
-
-   
    .. automethod:: __init__
 
    
@@ -30,5 +18,17 @@ ia.tree.constants.BasePrintStyle
    .. autosummary::
    
       ~BasePrintStyle.__init__
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~BasePrintStyle.stem
+      ~BasePrintStyle.branch
+      ~BasePrintStyle.strem_final
    
    

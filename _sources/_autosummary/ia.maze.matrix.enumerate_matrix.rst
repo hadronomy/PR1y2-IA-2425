@@ -10,10 +10,6 @@ ia.maze.matrix.enumerate\_matrix
    :special-members:
 
    
-   
-   
-
-   
    .. automethod:: __init__
 
    
@@ -22,5 +18,9 @@ ia.maze.matrix.enumerate\_matrix
    .. autosummary::
    
       ~enumerate_matrix.__init__
+   
+   
+
+   
    
    

@@ -437,27 +437,6 @@ document.write(`
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ia.maze.maze.</span></span><span class="sig-name descname"><span class="pre">Maze</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rows</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cols</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="ia.maze.matrix.MatrixPosition.html#ia.maze.matrix.MatrixPosition" title="ia.maze.matrix.MatrixPosition"><span class="pre">MatrixPosition</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="ia.maze.matrix.MatrixPosition.html#ia.maze.matrix.MatrixPosition" title="ia.maze.matrix.MatrixPosition"><span class="pre">MatrixPosition</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.maze.maze.Maze" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="ia.maze.matrix.Matrix.html#ia.maze.matrix.Matrix" title="ia.maze.matrix.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a></p>
 <p>Maze data structure.</p>
-<p class="rubric">Attributes</p>
-<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ia.maze.maze.Maze.cols" title="ia.maze.maze.Maze.cols"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cols</span></code></a></p></td>
-<td><p>Get the number of columns.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ia.maze.maze.Maze.default" title="ia.maze.maze.Maze.default"><code class="xref py py-obj docutils literal notranslate"><span class="pre">default</span></code></a></p></td>
-<td><p>Get the default value.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ia.maze.maze.Maze.goal" title="ia.maze.maze.Maze.goal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">goal</span></code></a></p></td>
-<td><p>Get the goal position.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ia.maze.maze.Maze.rows" title="ia.maze.maze.Maze.rows"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rows</span></code></a></p></td>
-<td><p>Get the number of rows.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ia.maze.maze.Maze.start" title="ia.maze.maze.Maze.start"><code class="xref py py-obj docutils literal notranslate"><span class="pre">start</span></code></a></p></td>
-<td><p>Get the start position.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
 <dl class="py method">
 <dt class="sig sig-object py" id="ia.maze.maze.Maze.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rows</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cols</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="ia.maze.matrix.MatrixPosition.html#ia.maze.matrix.MatrixPosition" title="ia.maze.matrix.MatrixPosition"><span class="pre">MatrixPosition</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="ia.maze.matrix.MatrixPosition.html#ia.maze.matrix.MatrixPosition" title="ia.maze.matrix.MatrixPosition"><span class="pre">MatrixPosition</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#ia.maze.maze.Maze.__init__" title="Link to this definition">#</a></dt>
@@ -486,6 +465,27 @@ document.write(`
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#ia.maze.maze.Maze.print" title="ia.maze.maze.Maze.print"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print</span></code></a>([path, style])</p></td>
 <td><p>Print the maze as a string with an optional path and style.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="rubric">Attributes</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ia.maze.maze.Maze.cols" title="ia.maze.maze.Maze.cols"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cols</span></code></a></p></td>
+<td><p>Get the number of columns.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#ia.maze.maze.Maze.default" title="ia.maze.maze.Maze.default"><code class="xref py py-obj docutils literal notranslate"><span class="pre">default</span></code></a></p></td>
+<td><p>Get the default value.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ia.maze.maze.Maze.goal" title="ia.maze.maze.Maze.goal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">goal</span></code></a></p></td>
+<td><p>Get the goal position.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#ia.maze.maze.Maze.rows" title="ia.maze.maze.Maze.rows"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rows</span></code></a></p></td>
+<td><p>Get the number of rows.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ia.maze.maze.Maze.start" title="ia.maze.maze.Maze.start"><code class="xref py py-obj docutils literal notranslate"><span class="pre">start</span></code></a></p></td>
+<td><p>Get the start position.</p></td>
 </tr>
 </tbody>
 </table>

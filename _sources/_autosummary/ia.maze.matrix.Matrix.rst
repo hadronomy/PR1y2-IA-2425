@@ -10,18 +10,6 @@ ia.maze.matrix.Matrix
    :special-members:
 
    
-   
-   .. rubric:: Attributes
-
-   .. autosummary::
-   
-      ~Matrix.cols
-      ~Matrix.default
-      ~Matrix.rows
-   
-   
-
-   
    .. automethod:: __init__
 
    
@@ -33,5 +21,17 @@ ia.maze.matrix.Matrix
       ~Matrix.is_valid
       ~Matrix.is_valid_position
       ~Matrix.neighbors
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Matrix.cols
+      ~Matrix.default
+      ~Matrix.rows
    
    

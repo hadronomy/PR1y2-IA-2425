@@ -10,6 +10,18 @@ ia.tree.constants.ExportConstants
    :special-members:
 
    
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ExportConstants.__init__
+   
+   
+
+   
    
    .. rubric:: Attributes
 
@@ -40,17 +52,5 @@ ia.tree.constants.ExportConstants
       ~ExportConstants.VERTICAL_RIGHT
       ~ExportConstants.VERTICAL_RIGHT_BOLD
       ~ExportConstants.VERTICAL_RIGHT_DOUBLE
-   
-   
-
-   
-   .. automethod:: __init__
-
-   
-   .. rubric:: Methods
-
-   .. autosummary::
-   
-      ~ExportConstants.__init__
    
    

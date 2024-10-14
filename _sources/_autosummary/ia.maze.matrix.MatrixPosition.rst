@@ -10,17 +10,6 @@ ia.maze.matrix.MatrixPosition
    :special-members:
 
    
-   
-   .. rubric:: Attributes
-
-   .. autosummary::
-   
-      ~MatrixPosition.row
-      ~MatrixPosition.col
-   
-   
-
-   
    .. automethod:: __init__
 
    
@@ -31,5 +20,16 @@ ia.maze.matrix.MatrixPosition
       ~MatrixPosition.__init__
       ~MatrixPosition.from_representation
       ~MatrixPosition.representation
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~MatrixPosition.row
+      ~MatrixPosition.col
    
    

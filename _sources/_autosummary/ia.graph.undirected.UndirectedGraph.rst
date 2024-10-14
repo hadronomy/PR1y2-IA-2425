@@ -10,25 +10,6 @@ ia.graph.undirected.UndirectedGraph
    :special-members:
 
    
-   
-   .. rubric:: Attributes
-
-   .. autosummary::
-   
-      ~UndirectedGraph.adjacency
-      ~UndirectedGraph.adjacency_list
-      ~UndirectedGraph.adjacency_matrix
-      ~UndirectedGraph.degree
-      ~UndirectedGraph.edges
-      ~UndirectedGraph.incidence_list
-      ~UndirectedGraph.incidence_matrix
-      ~UndirectedGraph.neighbors
-      ~UndirectedGraph.vertices
-      ~UndirectedGraph.weights
-   
-   
-
-   
    .. automethod:: __init__
 
    
@@ -44,5 +25,24 @@ ia.graph.undirected.UndirectedGraph
       ~UndirectedGraph.remove_vertex
       ~UndirectedGraph.to_networkx
       ~UndirectedGraph.traverse
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~UndirectedGraph.adjacency
+      ~UndirectedGraph.adjacency_list
+      ~UndirectedGraph.adjacency_matrix
+      ~UndirectedGraph.degree
+      ~UndirectedGraph.edges
+      ~UndirectedGraph.incidence_list
+      ~UndirectedGraph.incidence_matrix
+      ~UndirectedGraph.neighbors
+      ~UndirectedGraph.vertices
+      ~UndirectedGraph.weights
    
    
