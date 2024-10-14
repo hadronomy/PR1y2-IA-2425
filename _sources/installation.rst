@@ -6,19 +6,24 @@ This document provides detailed instructions on how to install and set up the pr
 Option 1: Install from Wheel File (Recommended)
 ************************************************
 
-You can download the wheel file from the `releases page <https://github.com/yourusername/your-repo-name/releases>`_ and install it using `pip`.
+You can download the wheel file from the `releases page <https://github.com/hadronomy/PR1y2-IA-2425|/releases/latest>`_ and install it using `pip`.
 
 .. note::
 
     This is the recommended method for installing the project as it is the simplest and quickest way to get started.
 
-#. Download the latest `.whl` file from the `releases page <https://github.com/yourusername/your-repo-name/releases>`_.
+#. Download the latest `.whl` file from the `releases page <https://github.com/hadronomy/PR1y2-IA-2425/releases/latest>`_.
 
     Alternatively, you can use the following `curl` command to download the wheel file:
 
     .. code-block:: sh
 
-      curl -L https://github.com/yourusername/your-repo-name/releases/download/vX.Y.Z/your-wheel-file.whl
+      curl -LJO https://github.com/hadronomy/PR1y2-IA-2425/releases/latest/download/ia-1.0.0-py3-none-any.whl
+
+
+    .. note::
+
+        Replace `ia-1.0.0-py3-none-any.whl` with the name of the latest wheel file available on the releases page.
 
 #. Install the wheel file using `pip`:
 
@@ -72,8 +77,8 @@ First, clone the repository to your local machine:
 
 .. code-block:: sh
 
-    git clone https://github.com/yourusername/your-repo-name.git
-    cd your-repo-name
+    git clone https://github.com/hadronomy/PR1y2-IA-2425.git
+    cd PR1y2-IA-2425
 
 Set Up the Virtual Environment
 ==============================
