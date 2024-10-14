@@ -168,7 +168,7 @@ Gracias a estos principios, el diseño de la práctica es más claro, mantenible
 
 #pagebreak()
 
-==== MazeTile
+=== MazeTile
 
 Clase enum que contiene los posibles valores de una celda
 de un laberinto. Los valores posibles son los siguientes:
@@ -195,7 +195,7 @@ del programa.
 )
 
 
-==== MatrixPosition
+=== MatrixPosition
 
 Representa la posición de una celda en una matriz bidimensional.
 Contiene los atributos *row* y *col* que representan la fila y la columna
@@ -208,7 +208,7 @@ posible situación. Además de los métodos mágicos#footnote()[
 necesarios para
 su uso en operaciones, comparaciones y representación.
 
-==== Node
+=== Node
 
 Cada instancia de esta clase actua como un *nodo
 y un árbol al mismo tiempo*. Implementa todas las funciones
@@ -234,7 +234,7 @@ y aseguran la integridad del árbol.
 
 #pagebreak()
 
-==== Maze
+=== Maze
 
 Esta clase contiene la representación del laberinto en forma de matriz
 y las funciones necesarias para su uso. Además, contiene
@@ -251,7 +251,7 @@ Cada elemento de la matriz representa una celda del laberinto.
 Las celdas o "tiles" están representadas por la clase enum
 *MazeTile* que contiene los posibles valores de una celda.
 
-==== Algoritmo $A*$
+=== Algoritmo $A*$
 
 El algoritmo $A*$ es un algoritmo de búsqueda informada que combina
 la búsqueda en anchura con la búsqueda heurística. Utiliza una función
