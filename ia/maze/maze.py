@@ -1,6 +1,7 @@
 """Maze data structure."""
 
 import heapq
+import random
 from collections.abc import Callable
 from typing import TypeVar
 
@@ -199,7 +200,11 @@ class Maze(Matrix):
         history.add_step(inspected=inspected, generated=generated, path=[])
 
         while open_set:
-            current_node: Node = heapq.heappop(open_set)
+            # Get the top 3 nodes with the lowest f_score
+            top_nodes = heapq.nsmallest(3, open_set, key=lambda node: node.f_score)
+            # Select one node at random from the top 3
+            current_node = random.choice(top_nodes)
+            open_set.remove(current_node)
             current: MatrixPosition = current_node.position
             inspected.append(current)
 
