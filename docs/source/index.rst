@@ -16,6 +16,7 @@ Getting Started
    :maxdepth: 2
 
    installation
+   usage
 
 Modules
 -------
