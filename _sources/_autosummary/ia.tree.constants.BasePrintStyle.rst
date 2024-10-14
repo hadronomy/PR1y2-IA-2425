@@ -5,6 +5,7 @@ ia.tree.constants.BasePrintStyle
 
 .. autoclass:: BasePrintStyle
    :members:
+   :special-members:
    :show-inheritance:
    :inherited-members:
 

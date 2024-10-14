@@ -397,6 +397,11 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.algorithm.AlgorithmHistory"><code class="docutils literal notranslate"><span class="pre">AlgorithmHistory</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.algorithm.AlgorithmHistory.__init__"><code class="docutils literal notranslate"><span class="pre">AlgorithmHistory.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.algorithm.AlgorithmHistory.__getitem__"><code class="docutils literal notranslate"><span class="pre">AlgorithmHistory.__getitem__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id0"><code class="docutils literal notranslate"><span class="pre">AlgorithmHistory.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.algorithm.AlgorithmHistory.__iter__"><code class="docutils literal notranslate"><span class="pre">AlgorithmHistory.__iter__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.algorithm.AlgorithmHistory.__str__"><code class="docutils literal notranslate"><span class="pre">AlgorithmHistory.__str__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.algorithm.AlgorithmHistory.__weakref__"><code class="docutils literal notranslate"><span class="pre">AlgorithmHistory.__weakref__</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.algorithm.AlgorithmHistory.add_step"><code class="docutils literal notranslate"><span class="pre">AlgorithmHistory.add_step()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.algorithm.AlgorithmHistory.get_history"><code class="docutils literal notranslate"><span class="pre">AlgorithmHistory.get_history()</span></code></a></li>
 </ul>
@@ -428,7 +433,7 @@ document.write(`
 <p class="rubric">Methods</p>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ia.algorithm.AlgorithmHistory.__init__" title="ia.algorithm.AlgorithmHistory.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#id0" title="ia.algorithm.AlgorithmHistory.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>()</p></td>
 <td><p>Initialize the history.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#ia.algorithm.AlgorithmHistory.add_step" title="ia.algorithm.AlgorithmHistory.add_step"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_step</span></code></a>(**kargs)</p></td>
@@ -440,6 +445,36 @@ document.write(`
 </tbody>
 </table>
 </div>
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.algorithm.AlgorithmHistory.__getitem__">
+<span class="sig-name descname"><span class="pre">__getitem__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">step</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#ia.algorithm.AlgorithmHistory.__getitem__" title="Link to this definition">#</a></dt>
+<dd><p>Get a step from the history.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#id0" title="Link to this definition">#</a></dt>
+<dd><p>Initialize the history.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.algorithm.AlgorithmHistory.__iter__">
+<span class="sig-name descname"><span class="pre">__iter__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ia.algorithm.AlgorithmHistory.__iter__" title="Link to this definition">#</a></dt>
+<dd><p>Iterate over the history.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.algorithm.AlgorithmHistory.__str__">
+<span class="sig-name descname"><span class="pre">__str__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#ia.algorithm.AlgorithmHistory.__str__" title="Link to this definition">#</a></dt>
+<dd><p>Return the history as a string.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ia.algorithm.AlgorithmHistory.__weakref__">
+<span class="sig-name descname"><span class="pre">__weakref__</span></span><a class="headerlink" href="#ia.algorithm.AlgorithmHistory.__weakref__" title="Link to this definition">#</a></dt>
+<dd><p>list of weak references to the object</p>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="ia.algorithm.AlgorithmHistory.add_step">
 <span class="sig-name descname"><span class="pre">add_step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#ia.algorithm.AlgorithmHistory.add_step" title="Link to this definition">#</a></dt>
@@ -503,6 +538,11 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.algorithm.AlgorithmHistory"><code class="docutils literal notranslate"><span class="pre">AlgorithmHistory</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.algorithm.AlgorithmHistory.__init__"><code class="docutils literal notranslate"><span class="pre">AlgorithmHistory.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.algorithm.AlgorithmHistory.__getitem__"><code class="docutils literal notranslate"><span class="pre">AlgorithmHistory.__getitem__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id0"><code class="docutils literal notranslate"><span class="pre">AlgorithmHistory.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.algorithm.AlgorithmHistory.__iter__"><code class="docutils literal notranslate"><span class="pre">AlgorithmHistory.__iter__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.algorithm.AlgorithmHistory.__str__"><code class="docutils literal notranslate"><span class="pre">AlgorithmHistory.__str__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.algorithm.AlgorithmHistory.__weakref__"><code class="docutils literal notranslate"><span class="pre">AlgorithmHistory.__weakref__</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.algorithm.AlgorithmHistory.add_step"><code class="docutils literal notranslate"><span class="pre">AlgorithmHistory.add_step()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.algorithm.AlgorithmHistory.get_history"><code class="docutils literal notranslate"><span class="pre">AlgorithmHistory.get_history()</span></code></a></li>
 </ul>

@@ -402,6 +402,10 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.graph.parser.parser.UndirectedGraphTransformer.NODE_AMOUNT"><code class="docutils literal notranslate"><span class="pre">UndirectedGraphTransformer.NODE_AMOUNT()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.graph.parser.parser.UndirectedGraphTransformer.NO_ZERO"><code class="docutils literal notranslate"><span class="pre">UndirectedGraphTransformer.NO_ZERO()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.graph.parser.parser.UndirectedGraphTransformer.WS"><code class="docutils literal notranslate"><span class="pre">UndirectedGraphTransformer.WS()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.graph.parser.parser.UndirectedGraphTransformer.__class_getitem__"><code class="docutils literal notranslate"><span class="pre">UndirectedGraphTransformer.__class_getitem__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id0"><code class="docutils literal notranslate"><span class="pre">UndirectedGraphTransformer.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.graph.parser.parser.UndirectedGraphTransformer.__init_subclass__"><code class="docutils literal notranslate"><span class="pre">UndirectedGraphTransformer.__init_subclass__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.graph.parser.parser.UndirectedGraphTransformer.__weakref__"><code class="docutils literal notranslate"><span class="pre">UndirectedGraphTransformer.__weakref__</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.graph.parser.parser.UndirectedGraphTransformer.edge_weights"><code class="docutils literal notranslate"><span class="pre">UndirectedGraphTransformer.edge_weights()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.graph.parser.parser.UndirectedGraphTransformer.graph"><code class="docutils literal notranslate"><span class="pre">UndirectedGraphTransformer.graph()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.graph.parser.parser.UndirectedGraphTransformer.weight"><code class="docutils literal notranslate"><span class="pre">UndirectedGraphTransformer.weight()</span></code></a></li>
@@ -448,7 +452,7 @@ document.write(`
 <tr class="row-odd"><td><p><a class="reference internal" href="#ia.graph.parser.parser.UndirectedGraphTransformer.WS" title="ia.graph.parser.parser.UndirectedGraphTransformer.WS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">WS</span></code></a>(children)</p></td>
 <td><p>Discard the whitespace token.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ia.graph.parser.parser.UndirectedGraphTransformer.__init__" title="ia.graph.parser.parser.UndirectedGraphTransformer.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>([visit_tokens])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#id0" title="ia.graph.parser.parser.UndirectedGraphTransformer.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>([visit_tokens])</p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#ia.graph.parser.parser.UndirectedGraphTransformer.edge_weights" title="ia.graph.parser.parser.UndirectedGraphTransformer.edge_weights"><code class="xref py py-obj docutils literal notranslate"><span class="pre">edge_weights</span></code></a>(children)</p></td>
@@ -538,6 +542,34 @@ expected to be convertible to an integer.</p>
 </dd>
 </dl>
 </section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.graph.parser.parser.UndirectedGraphTransformer.__class_getitem__">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">__class_getitem__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.graph.parser.parser.UndirectedGraphTransformer.__class_getitem__" title="Link to this definition">#</a></dt>
+<dd><p>Parameterizes a generic class.</p>
+<p>At least, parameterizing a generic class is the <em>main</em> thing this
+method does. For example, for some generic class <cite>Foo</cite>, this is called
+when we do <cite>Foo[int]</cite> - there, with <cite>cls=Foo</cite> and <cite>params=int</cite>.</p>
+<p>However, note that this method is also called when defining generic
+classes in the first place with <cite>class Foo[T]: …</cite>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">visit_tokens</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#id0" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.graph.parser.parser.UndirectedGraphTransformer.__init_subclass__">
+<span class="sig-name descname"><span class="pre">__init_subclass__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ia.graph.parser.parser.UndirectedGraphTransformer.__init_subclass__" title="Link to this definition">#</a></dt>
+<dd><p>Function to initialize subclasses.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ia.graph.parser.parser.UndirectedGraphTransformer.__weakref__">
+<span class="sig-name descname"><span class="pre">__weakref__</span></span><a class="headerlink" href="#ia.graph.parser.parser.UndirectedGraphTransformer.__weakref__" title="Link to this definition">#</a></dt>
+<dd><p>list of weak references to the object</p>
 </dd></dl>
 
 <dl class="py method">
@@ -641,6 +673,10 @@ int: The weight of the edge as an integer if the value is “-1”.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.graph.parser.parser.UndirectedGraphTransformer.NODE_AMOUNT"><code class="docutils literal notranslate"><span class="pre">UndirectedGraphTransformer.NODE_AMOUNT()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.graph.parser.parser.UndirectedGraphTransformer.NO_ZERO"><code class="docutils literal notranslate"><span class="pre">UndirectedGraphTransformer.NO_ZERO()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.graph.parser.parser.UndirectedGraphTransformer.WS"><code class="docutils literal notranslate"><span class="pre">UndirectedGraphTransformer.WS()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.graph.parser.parser.UndirectedGraphTransformer.__class_getitem__"><code class="docutils literal notranslate"><span class="pre">UndirectedGraphTransformer.__class_getitem__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id0"><code class="docutils literal notranslate"><span class="pre">UndirectedGraphTransformer.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.graph.parser.parser.UndirectedGraphTransformer.__init_subclass__"><code class="docutils literal notranslate"><span class="pre">UndirectedGraphTransformer.__init_subclass__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.graph.parser.parser.UndirectedGraphTransformer.__weakref__"><code class="docutils literal notranslate"><span class="pre">UndirectedGraphTransformer.__weakref__</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.graph.parser.parser.UndirectedGraphTransformer.edge_weights"><code class="docutils literal notranslate"><span class="pre">UndirectedGraphTransformer.edge_weights()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.graph.parser.parser.UndirectedGraphTransformer.graph"><code class="docutils literal notranslate"><span class="pre">UndirectedGraphTransformer.graph()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.graph.parser.parser.UndirectedGraphTransformer.weight"><code class="docutils literal notranslate"><span class="pre">UndirectedGraphTransformer.weight()</span></code></a></li>

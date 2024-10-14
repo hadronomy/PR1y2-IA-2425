@@ -397,6 +397,16 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.node.Node"><code class="docutils literal notranslate"><span class="pre">Node</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.node.Node.__init__"><code class="docutils literal notranslate"><span class="pre">Node.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.node.Node.__contains__"><code class="docutils literal notranslate"><span class="pre">Node.__contains__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.node.Node.__copy__"><code class="docutils literal notranslate"><span class="pre">Node.__copy__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.node.Node.__getitem__"><code class="docutils literal notranslate"><span class="pre">Node.__getitem__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id0"><code class="docutils literal notranslate"><span class="pre">Node.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.node.Node.__iter__"><code class="docutils literal notranslate"><span class="pre">Node.__iter__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.node.Node.__lshift__"><code class="docutils literal notranslate"><span class="pre">Node.__lshift__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.node.Node.__lt__"><code class="docutils literal notranslate"><span class="pre">Node.__lt__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.node.Node.__repr__"><code class="docutils literal notranslate"><span class="pre">Node.__repr__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.node.Node.__rshift__"><code class="docutils literal notranslate"><span class="pre">Node.__rshift__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.node.Node.__weakref__"><code class="docutils literal notranslate"><span class="pre">Node.__weakref__</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.node.Node.ancestors"><code class="docutils literal notranslate"><span class="pre">Node.ancestors</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.node.Node.append"><code class="docutils literal notranslate"><span class="pre">Node.append()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.node.Node.children"><code class="docutils literal notranslate"><span class="pre">Node.children</span></code></a></li>
@@ -510,7 +520,7 @@ Nodes can be linked to each other with <cite>parent</cite> and <cite>children</c
 <p class="rubric">Methods</p>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ia.tree.node.Node.__init__" title="ia.tree.node.Node.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>([name, separator, compare_by])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#id0" title="ia.tree.node.Node.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>([name, separator, compare_by])</p></td>
 <td><p>Initialize the node.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#ia.tree.node.Node.append" title="ia.tree.node.Node.append"><code class="xref py py-obj docutils literal notranslate"><span class="pre">append</span></code></a>(other)</p></td>
@@ -540,12 +550,140 @@ Nodes can be linked to each other with <cite>parent</cite> and <cite>children</c
 </tbody>
 </table>
 </div>
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.tree.node.Node.__contains__">
+<span class="sig-name descname"><span class="pre">__contains__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">T</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#ia.tree.node.Node.__contains__" title="Link to this definition">#</a></dt>
+<dd><p>Check if other is in children nodes.</p>
+<section id="args">
+<h2>Args<a class="headerlink" href="#args" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>other (Self): node to check</p>
+</div></blockquote>
+</section>
+<section id="returns">
+<h2>Returns<a class="headerlink" href="#returns" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>(bool)</p>
+</div></blockquote>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.tree.node.Node.__copy__">
+<span class="sig-name descname"><span class="pre">__copy__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">T</span></span></span><a class="headerlink" href="#ia.tree.node.Node.__copy__" title="Link to this definition">#</a></dt>
+<dd><p>Copy the node.</p>
+<section id="id1">
+<h2>Returns<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><ol class="upperalpha simple" start="20">
+<li></li>
+</ol>
+</div></blockquote>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.tree.node.Node.__getitem__">
+<span class="sig-name descname"><span class="pre">__getitem__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">child_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#ia.tree.node.Node" title="ia.tree.node.Node"><span class="pre">Node</span></a></span></span><a class="headerlink" href="#ia.tree.node.Node.__getitem__" title="Link to this definition">#</a></dt>
+<dd><p>Get child node by name.</p>
+<section id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>child_name : (str)</p>
+</div></blockquote>
+</section>
+<section id="id2">
+<h2>Returns<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>(Node)</p>
+</div></blockquote>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">separator</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'/'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compare_by</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'name'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id0" title="Link to this definition">#</a></dt>
+<dd><p>Initialize the node.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.tree.node.Node.__iter__">
+<span class="sig-name descname"><span class="pre">__iter__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">T</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ia.tree.node.Node.__iter__" title="Link to this definition">#</a></dt>
+<dd><p>Iterate over the children nodes.</p>
+<section id="id3">
+<h2>Returns<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>(Iterable[T])</p>
+</div></blockquote>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.tree.node.Node.__lshift__">
+<span class="sig-name descname"><span class="pre">__lshift__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">T</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#ia.tree.node.Node.__lshift__" title="Link to this definition">#</a></dt>
+<dd><p>Append self as child of other.</p>
+<section id="id4">
+<h2>Args<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>other (Self): parent to be added</p>
+</div></blockquote>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.tree.node.Node.__lt__">
+<span class="sig-name descname"><span class="pre">__lt__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#ia.tree.node.Node" title="ia.tree.node.Node"><span class="pre">Node</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#ia.tree.node.Node.__lt__" title="Link to this definition">#</a></dt>
+<dd><p>Compare nodes by the attribute defined in <cite>compare_by</cite>.</p>
+<section id="id5">
+<h2>Parameters<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>other : (Node)</p>
+</div></blockquote>
+</section>
+<section id="id6">
+<h2>Returns<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>(bool)</p>
+</div></blockquote>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.tree.node.Node.__repr__">
+<span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#ia.tree.node.Node.__repr__" title="Link to this definition">#</a></dt>
+<dd><p>Print format of Node.</p>
+<section id="id7">
+<h2>Returns<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>(str)</p>
+</div></blockquote>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.tree.node.Node.__rshift__">
+<span class="sig-name descname"><span class="pre">__rshift__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">T</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#ia.tree.node.Node.__rshift__" title="Link to this definition">#</a></dt>
+<dd><p>Append other as child of self.</p>
+<section id="id8">
+<h2>Args<a class="headerlink" href="#id8" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>other (Self): child to be added</p>
+</div></blockquote>
+</section>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ia.tree.node.Node.__weakref__">
+<span class="sig-name descname"><span class="pre">__weakref__</span></span><a class="headerlink" href="#ia.tree.node.Node.__weakref__" title="Link to this definition">#</a></dt>
+<dd><p>list of weak references to the object</p>
+</dd></dl>
+
 <dl class="py property">
 <dt class="sig sig-object py" id="ia.tree.node.Node.ancestors">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ancestors</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">T</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#ia.tree.node.Node.ancestors" title="Link to this definition">#</a></dt>
 <dd><p>Get the ancestors nodes.</p>
-<section id="returns">
-<h2>Returns<a class="headerlink" href="#returns" title="Link to this heading">#</a></h2>
+<section id="id9">
+<h2>Returns<a class="headerlink" href="#id9" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><p>Iterable[Self]: The ancestors nodes.</p>
 </div></blockquote>
@@ -556,8 +694,8 @@ Nodes can be linked to each other with <cite>parent</cite> and <cite>children</c
 <dt class="sig sig-object py" id="ia.tree.node.Node.append">
 <span class="sig-name descname"><span class="pre">append</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">T</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#ia.tree.node.Node.append" title="Link to this definition">#</a></dt>
 <dd><p>Append other as child of self.</p>
-<section id="args">
-<h2>Args<a class="headerlink" href="#args" title="Link to this heading">#</a></h2>
+<section id="id10">
+<h2>Args<a class="headerlink" href="#id10" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><p>other (Self): child to be added</p>
 </div></blockquote>
@@ -568,8 +706,8 @@ Nodes can be linked to each other with <cite>parent</cite> and <cite>children</c
 <dt class="sig sig-object py" id="ia.tree.node.Node.children">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">children</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">T</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#ia.tree.node.Node.children" title="Link to this definition">#</a></dt>
 <dd><p>Get the children nodes.</p>
-<section id="id1">
-<h2>Returns<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<section id="id11">
+<h2>Returns<a class="headerlink" href="#id11" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><p>list[T]: The children nodes.</p>
 </div></blockquote>
@@ -580,8 +718,8 @@ Nodes can be linked to each other with <cite>parent</cite> and <cite>children</c
 <dt class="sig sig-object py" id="ia.tree.node.Node.copy">
 <span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">T</span></span></span><a class="headerlink" href="#ia.tree.node.Node.copy" title="Link to this definition">#</a></dt>
 <dd><p>Copy the node.</p>
-<section id="id2">
-<h2>Returns<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<section id="id12">
+<h2>Returns<a class="headerlink" href="#id12" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><ol class="upperalpha simple" start="20">
 <li></li>
@@ -594,8 +732,8 @@ Nodes can be linked to each other with <cite>parent</cite> and <cite>children</c
 <dt class="sig sig-object py" id="ia.tree.node.Node.depth">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">depth</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#ia.tree.node.Node.depth" title="Link to this definition">#</a></dt>
 <dd><p>Get the depth of the node.</p>
-<section id="id3">
-<h2>Returns<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<section id="id13">
+<h2>Returns<a class="headerlink" href="#id13" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><p>int: The depth of the node.</p>
 </div></blockquote>
@@ -606,8 +744,8 @@ Nodes can be linked to each other with <cite>parent</cite> and <cite>children</c
 <dt class="sig sig-object py" id="ia.tree.node.Node.descendants">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">descendants</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">T</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#ia.tree.node.Node.descendants" title="Link to this definition">#</a></dt>
 <dd><p>Get the descendants nodes.</p>
-<section id="id4">
-<h2>Returns<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<section id="id14">
+<h2>Returns<a class="headerlink" href="#id14" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><p>Iterable[T]: The descendants nodes.</p>
 </div></blockquote>
@@ -618,15 +756,15 @@ Nodes can be linked to each other with <cite>parent</cite> and <cite>children</c
 <dt class="sig sig-object py" id="ia.tree.node.Node.describe">
 <span class="sig-name descname"><span class="pre">describe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exclude_attributes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude_prefix</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ia.tree.node.Node.describe" title="Link to this definition">#</a></dt>
 <dd><p>Describe the node.</p>
-<section id="id5">
-<h2>Args<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<section id="id15">
+<h2>Args<a class="headerlink" href="#id15" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><p>exclude_attributes (list[str]): list of attributes to exclude
 exclude_prefix (str): prefix to exclude</p>
 </div></blockquote>
 </section>
-<section id="id6">
-<h2>Returns<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<section id="id16">
+<h2>Returns<a class="headerlink" href="#id16" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><p>list[tuple[str, any]]: list of attributes and their values</p>
 </div></blockquote>
@@ -637,8 +775,8 @@ exclude_prefix (str): prefix to exclude</p>
 <dt class="sig sig-object py" id="ia.tree.node.Node.diameter">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">diameter</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#ia.tree.node.Node.diameter" title="Link to this definition">#</a></dt>
 <dd><p>Get the diameter of the tree.</p>
-<section id="id7">
-<h2>Returns<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
+<section id="id17">
+<h2>Returns<a class="headerlink" href="#id17" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><p>int: The diameter of the tree.</p>
 </div></blockquote>
@@ -649,8 +787,8 @@ exclude_prefix (str): prefix to exclude</p>
 <dt class="sig sig-object py" id="ia.tree.node.Node.extend">
 <span class="sig-name descname"><span class="pre">extend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">T</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#ia.tree.node.Node.extend" title="Link to this definition">#</a></dt>
 <dd><p>Extend children of self with other.</p>
-<section id="id8">
-<h2>Args<a class="headerlink" href="#id8" title="Link to this heading">#</a></h2>
+<section id="id18">
+<h2>Args<a class="headerlink" href="#id18" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><p>other (list[T]): children to be added</p>
 </div></blockquote>
@@ -661,15 +799,15 @@ exclude_prefix (str): prefix to exclude</p>
 <dt class="sig sig-object py" id="ia.tree.node.Node.from_dict">
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="ia.tree.basenode.BaseNode.html#ia.tree.basenode.BaseNode" title="ia.tree.basenode.BaseNode"><span class="pre">BaseNode</span></a></span></span><a class="headerlink" href="#ia.tree.node.Node.from_dict" title="Link to this definition">#</a></dt>
 <dd><p>Create a tree from a dictionary.</p>
-<section id="id9">
-<h2>Args<a class="headerlink" href="#id9" title="Link to this heading">#</a></h2>
+<section id="id19">
+<h2>Args<a class="headerlink" href="#id19" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><p>input_dict (dict[str, any]): dictionary with node information,
 key: attribute name, value: attribute value</p>
 </div></blockquote>
 </section>
-<section id="id10">
-<h2>Returns<a class="headerlink" href="#id10" title="Link to this heading">#</a></h2>
+<section id="id20">
+<h2>Returns<a class="headerlink" href="#id20" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><p>(BaseNode)</p>
 </div></blockquote>
@@ -680,15 +818,15 @@ key: attribute name, value: attribute value</p>
 <dt class="sig sig-object py" id="ia.tree.node.Node.get_attribute">
 <span class="sig-name descname"><span class="pre">get_attribute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attribute_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">any</span></span></span><a class="headerlink" href="#ia.tree.node.Node.get_attribute" title="Link to this definition">#</a></dt>
 <dd><p>Get the attribute value.</p>
-<section id="id11">
-<h2>Args<a class="headerlink" href="#id11" title="Link to this heading">#</a></h2>
+<section id="id21">
+<h2>Args<a class="headerlink" href="#id21" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><p>attribute_name (str): attribute name
 default_value (any): default value if attribute is not found</p>
 </div></blockquote>
 </section>
-<section id="id12">
-<h2>Returns<a class="headerlink" href="#id12" title="Link to this heading">#</a></h2>
+<section id="id22">
+<h2>Returns<a class="headerlink" href="#id22" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><p>any: attribute value</p>
 </div></blockquote>
@@ -699,8 +837,8 @@ default_value (any): default value if attribute is not found</p>
 <dt class="sig sig-object py" id="ia.tree.node.Node.is_leaf">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_leaf</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#ia.tree.node.Node.is_leaf" title="Link to this definition">#</a></dt>
 <dd><p>Check if the node is leaf.</p>
-<section id="id13">
-<h2>Returns<a class="headerlink" href="#id13" title="Link to this heading">#</a></h2>
+<section id="id23">
+<h2>Returns<a class="headerlink" href="#id23" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><p>bool: True if the node is leaf, False otherwise.</p>
 </div></blockquote>
@@ -711,8 +849,8 @@ default_value (any): default value if attribute is not found</p>
 <dt class="sig sig-object py" id="ia.tree.node.Node.is_root">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_root</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#ia.tree.node.Node.is_root" title="Link to this definition">#</a></dt>
 <dd><p>Check if the node is root.</p>
-<section id="id14">
-<h2>Returns<a class="headerlink" href="#id14" title="Link to this heading">#</a></h2>
+<section id="id24">
+<h2>Returns<a class="headerlink" href="#id24" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><p>bool: True if the node is root, False otherwise.</p>
 </div></blockquote>
@@ -723,8 +861,8 @@ default_value (any): default value if attribute is not found</p>
 <dt class="sig sig-object py" id="ia.tree.node.Node.leaves">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">leaves</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">T</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#ia.tree.node.Node.leaves" title="Link to this definition">#</a></dt>
 <dd><p>Get the leaves nodes.</p>
-<section id="id15">
-<h2>Returns<a class="headerlink" href="#id15" title="Link to this heading">#</a></h2>
+<section id="id25">
+<h2>Returns<a class="headerlink" href="#id25" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><p>Iterable[T]: The leaves nodes.</p>
 </div></blockquote>
@@ -735,8 +873,8 @@ default_value (any): default value if attribute is not found</p>
 <dt class="sig sig-object py" id="ia.tree.node.Node.left_sibling">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">left_sibling</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">T</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#ia.tree.node.Node.left_sibling" title="Link to this definition">#</a></dt>
 <dd><p>Get the left sibling node.</p>
-<section id="id16">
-<h2>Returns<a class="headerlink" href="#id16" title="Link to this heading">#</a></h2>
+<section id="id26">
+<h2>Returns<a class="headerlink" href="#id26" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><p>T: The left sibling node.</p>
 </div></blockquote>
@@ -747,8 +885,8 @@ default_value (any): default value if attribute is not found</p>
 <dt class="sig sig-object py" id="ia.tree.node.Node.node_name">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">node_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ia.tree.node.Node.node_name" title="Link to this definition">#</a></dt>
 <dd><p>Get node name.</p>
-<section id="id17">
-<h2>Returns<a class="headerlink" href="#id17" title="Link to this heading">#</a></h2>
+<section id="id27">
+<h2>Returns<a class="headerlink" href="#id27" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><p>(str)</p>
 </div></blockquote>
@@ -759,8 +897,8 @@ default_value (any): default value if attribute is not found</p>
 <dt class="sig sig-object py" id="ia.tree.node.Node.node_path">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">node_path</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">T</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#ia.tree.node.Node.node_path" title="Link to this definition">#</a></dt>
 <dd><p>Get the node path.</p>
-<section id="id18">
-<h2>Returns<a class="headerlink" href="#id18" title="Link to this heading">#</a></h2>
+<section id="id28">
+<h2>Returns<a class="headerlink" href="#id28" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><p>Iterable[T]: The node path.</p>
 </div></blockquote>
@@ -771,8 +909,8 @@ default_value (any): default value if attribute is not found</p>
 <dt class="sig sig-object py" id="ia.tree.node.Node.parent">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parent</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">T</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#ia.tree.node.Node.parent" title="Link to this definition">#</a></dt>
 <dd><p>Get the parent node.</p>
-<section id="id19">
-<h2>Returns<a class="headerlink" href="#id19" title="Link to this heading">#</a></h2>
+<section id="id29">
+<h2>Returns<a class="headerlink" href="#id29" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><p>T | None: The parent node.</p>
 </div></blockquote>
@@ -783,8 +921,8 @@ default_value (any): default value if attribute is not found</p>
 <dt class="sig sig-object py" id="ia.tree.node.Node.path_name">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">path_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ia.tree.node.Node.path_name" title="Link to this definition">#</a></dt>
 <dd><p>Get path name.</p>
-<section id="id20">
-<h2>Returns<a class="headerlink" href="#id20" title="Link to this heading">#</a></h2>
+<section id="id30">
+<h2>Returns<a class="headerlink" href="#id30" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><p>(str)</p>
 </div></blockquote>
@@ -795,8 +933,8 @@ default_value (any): default value if attribute is not found</p>
 <dt class="sig sig-object py" id="ia.tree.node.Node.right_sibling">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">right_sibling</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">T</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#ia.tree.node.Node.right_sibling" title="Link to this definition">#</a></dt>
 <dd><p>Get the right sibling node.</p>
-<section id="id21">
-<h2>Returns<a class="headerlink" href="#id21" title="Link to this heading">#</a></h2>
+<section id="id31">
+<h2>Returns<a class="headerlink" href="#id31" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><p>T: The right sibling node.</p>
 </div></blockquote>
@@ -807,8 +945,8 @@ default_value (any): default value if attribute is not found</p>
 <dt class="sig sig-object py" id="ia.tree.node.Node.root">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">root</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">T</span></em><a class="headerlink" href="#ia.tree.node.Node.root" title="Link to this definition">#</a></dt>
 <dd><p>Get the root node.</p>
-<section id="id22">
-<h2>Returns<a class="headerlink" href="#id22" title="Link to this heading">#</a></h2>
+<section id="id32">
+<h2>Returns<a class="headerlink" href="#id32" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><p>T: The root node.</p>
 </div></blockquote>
@@ -819,8 +957,8 @@ default_value (any): default value if attribute is not found</p>
 <dt class="sig sig-object py" id="ia.tree.node.Node.separator">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">separator</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ia.tree.node.Node.separator" title="Link to this definition">#</a></dt>
 <dd><p>Get separator, gets from root node.</p>
-<section id="id23">
-<h2>Returns<a class="headerlink" href="#id23" title="Link to this heading">#</a></h2>
+<section id="id33">
+<h2>Returns<a class="headerlink" href="#id33" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><p>(str)</p>
 </div></blockquote>
@@ -831,15 +969,15 @@ default_value (any): default value if attribute is not found</p>
 <dt class="sig sig-object py" id="ia.tree.node.Node.set_attribute">
 <span class="sig-name descname"><span class="pre">set_attribute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attributes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">T</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ia.tree.node.Node.set_attribute" title="Link to this definition">#</a></dt>
 <dd><p>Set the attribute value.</p>
-<section id="id24">
-<h2>Args<a class="headerlink" href="#id24" title="Link to this heading">#</a></h2>
+<section id="id34">
+<h2>Args<a class="headerlink" href="#id34" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><p>node (T): node to travel to from current node,
 inclusive of start and end node</p>
 </div></blockquote>
 </section>
-<section id="id25">
-<h2>Returns<a class="headerlink" href="#id25" title="Link to this heading">#</a></h2>
+<section id="id35">
+<h2>Returns<a class="headerlink" href="#id35" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><p>(Iterable[T])</p>
 </div></blockquote>
@@ -850,8 +988,8 @@ inclusive of start and end node</p>
 <dt class="sig sig-object py" id="ia.tree.node.Node.siblings">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">siblings</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">T</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#ia.tree.node.Node.siblings" title="Link to this definition">#</a></dt>
 <dd><p>Get the siblings nodes.</p>
-<section id="id26">
-<h2>Returns<a class="headerlink" href="#id26" title="Link to this heading">#</a></h2>
+<section id="id36">
+<h2>Returns<a class="headerlink" href="#id36" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><p>list[T]: The siblings nodes.</p>
 </div></blockquote>
@@ -862,8 +1000,8 @@ inclusive of start and end node</p>
 <dt class="sig sig-object py" id="ia.tree.node.Node.sort">
 <span class="sig-name descname"><span class="pre">sort</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#ia.tree.node.Node.sort" title="Link to this definition">#</a></dt>
 <dd><p>Sort the children nodes.</p>
-<section id="id27">
-<h2>Args<a class="headerlink" href="#id27" title="Link to this heading">#</a></h2>
+<section id="id37">
+<h2>Args<a class="headerlink" href="#id37" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><p>kwargs: sort arguments</p>
 </div></blockquote>
@@ -921,6 +1059,16 @@ inclusive of start and end node</p>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.node.Node"><code class="docutils literal notranslate"><span class="pre">Node</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.node.Node.__init__"><code class="docutils literal notranslate"><span class="pre">Node.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.node.Node.__contains__"><code class="docutils literal notranslate"><span class="pre">Node.__contains__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.node.Node.__copy__"><code class="docutils literal notranslate"><span class="pre">Node.__copy__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.node.Node.__getitem__"><code class="docutils literal notranslate"><span class="pre">Node.__getitem__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id0"><code class="docutils literal notranslate"><span class="pre">Node.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.node.Node.__iter__"><code class="docutils literal notranslate"><span class="pre">Node.__iter__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.node.Node.__lshift__"><code class="docutils literal notranslate"><span class="pre">Node.__lshift__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.node.Node.__lt__"><code class="docutils literal notranslate"><span class="pre">Node.__lt__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.node.Node.__repr__"><code class="docutils literal notranslate"><span class="pre">Node.__repr__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.node.Node.__rshift__"><code class="docutils literal notranslate"><span class="pre">Node.__rshift__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.node.Node.__weakref__"><code class="docutils literal notranslate"><span class="pre">Node.__weakref__</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.node.Node.ancestors"><code class="docutils literal notranslate"><span class="pre">Node.ancestors</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.node.Node.append"><code class="docutils literal notranslate"><span class="pre">Node.append()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.node.Node.children"><code class="docutils literal notranslate"><span class="pre">Node.children</span></code></a></li>

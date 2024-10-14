@@ -5,6 +5,7 @@ ia.maze.matrix.enumerate\_matrix
 
 .. autoclass:: enumerate_matrix
    :members:
+   :special-members:
    :show-inheritance:
    :inherited-members:
 

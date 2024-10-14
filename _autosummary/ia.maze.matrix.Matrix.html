@@ -397,6 +397,15 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.maze.matrix.Matrix"><code class="docutils literal notranslate"><span class="pre">Matrix</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.maze.matrix.Matrix.__init__"><code class="docutils literal notranslate"><span class="pre">Matrix.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.maze.matrix.Matrix.__contains__"><code class="docutils literal notranslate"><span class="pre">Matrix.__contains__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.maze.matrix.Matrix.__getitem__"><code class="docutils literal notranslate"><span class="pre">Matrix.__getitem__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id0"><code class="docutils literal notranslate"><span class="pre">Matrix.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.maze.matrix.Matrix.__iter__"><code class="docutils literal notranslate"><span class="pre">Matrix.__iter__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.maze.matrix.Matrix.__len__"><code class="docutils literal notranslate"><span class="pre">Matrix.__len__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.maze.matrix.Matrix.__repr__"><code class="docutils literal notranslate"><span class="pre">Matrix.__repr__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.maze.matrix.Matrix.__setitem__"><code class="docutils literal notranslate"><span class="pre">Matrix.__setitem__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.maze.matrix.Matrix.__str__"><code class="docutils literal notranslate"><span class="pre">Matrix.__str__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.maze.matrix.Matrix.__weakref__"><code class="docutils literal notranslate"><span class="pre">Matrix.__weakref__</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.maze.matrix.Matrix.cols"><code class="docutils literal notranslate"><span class="pre">Matrix.cols</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.maze.matrix.Matrix.default"><code class="docutils literal notranslate"><span class="pre">Matrix.default</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.maze.matrix.Matrix.is_valid"><code class="docutils literal notranslate"><span class="pre">Matrix.is_valid()</span></code></a></li>
@@ -446,7 +455,7 @@ document.write(`
 <p class="rubric">Methods</p>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ia.maze.matrix.Matrix.__init__" title="ia.maze.matrix.Matrix.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(*, rows, cols, default)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#id0" title="ia.maze.matrix.Matrix.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(*, rows, cols, default)</p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#ia.maze.matrix.Matrix.is_valid" title="ia.maze.matrix.Matrix.is_valid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_valid</span></code></a>(row, col)</p></td>
@@ -461,6 +470,68 @@ document.write(`
 </tbody>
 </table>
 </div>
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.maze.matrix.Matrix.__contains__">
+<span class="sig-name descname"><span class="pre">__contains__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">TContent</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#ia.maze.matrix.Matrix.__contains__" title="Link to this definition">#</a></dt>
+<dd><p>Check if the matrix contains the item.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.maze.matrix.Matrix.__getitem__">
+<span class="sig-name descname"><span class="pre">__getitem__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="ia.maze.matrix.MatrixPosition.html#ia.maze.matrix.MatrixPosition" title="ia.maze.matrix.MatrixPosition"><span class="pre">MatrixPosition</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">TContent</span></span></span><a class="headerlink" href="#ia.maze.matrix.Matrix.__getitem__" title="Link to this definition">#</a></dt>
+<dd><p>Get the value of the matrix.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rows</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cols</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">TContent</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#id0" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.maze.matrix.Matrix.__iter__">
+<span class="sig-name descname"><span class="pre">__iter__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">TContent</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ia.maze.matrix.Matrix.__iter__" title="Link to this definition">#</a></dt>
+<dd><p>Iterate over the matrix.</p>
+<section id="yields">
+<h2>Yields<a class="headerlink" href="#yields" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><dl class="simple">
+<dt>(tuple[MatrixPosition, TContent])</dt><dd><p>The position and the value of the matrix tile.</p>
+</dd>
+</dl>
+</div></blockquote>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.maze.matrix.Matrix.__len__">
+<span class="sig-name descname"><span class="pre">__len__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#ia.maze.matrix.Matrix.__len__" title="Link to this definition">#</a></dt>
+<dd><p>Return the number of elements in the matrix.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.maze.matrix.Matrix.__repr__">
+<span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#ia.maze.matrix.Matrix.__repr__" title="Link to this definition">#</a></dt>
+<dd><p>Return the matrix as a string.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.maze.matrix.Matrix.__setitem__">
+<span class="sig-name descname"><span class="pre">__setitem__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="ia.maze.matrix.MatrixPosition.html#ia.maze.matrix.MatrixPosition" title="ia.maze.matrix.MatrixPosition"><span class="pre">MatrixPosition</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">TContent</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#ia.maze.matrix.Matrix.__setitem__" title="Link to this definition">#</a></dt>
+<dd><p>Set the value of the matrix.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.maze.matrix.Matrix.__str__">
+<span class="sig-name descname"><span class="pre">__str__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#ia.maze.matrix.Matrix.__str__" title="Link to this definition">#</a></dt>
+<dd><p>Return the matrix as a string.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ia.maze.matrix.Matrix.__weakref__">
+<span class="sig-name descname"><span class="pre">__weakref__</span></span><a class="headerlink" href="#ia.maze.matrix.Matrix.__weakref__" title="Link to this definition">#</a></dt>
+<dd><p>list of weak references to the object</p>
+</dd></dl>
+
 <dl class="py property">
 <dt class="sig sig-object py" id="ia.maze.matrix.Matrix.cols">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cols</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#ia.maze.matrix.Matrix.cols" title="Link to this definition">#</a></dt>
@@ -610,6 +681,15 @@ and the value is the position.</p>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.maze.matrix.Matrix"><code class="docutils literal notranslate"><span class="pre">Matrix</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.maze.matrix.Matrix.__init__"><code class="docutils literal notranslate"><span class="pre">Matrix.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.maze.matrix.Matrix.__contains__"><code class="docutils literal notranslate"><span class="pre">Matrix.__contains__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.maze.matrix.Matrix.__getitem__"><code class="docutils literal notranslate"><span class="pre">Matrix.__getitem__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id0"><code class="docutils literal notranslate"><span class="pre">Matrix.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.maze.matrix.Matrix.__iter__"><code class="docutils literal notranslate"><span class="pre">Matrix.__iter__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.maze.matrix.Matrix.__len__"><code class="docutils literal notranslate"><span class="pre">Matrix.__len__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.maze.matrix.Matrix.__repr__"><code class="docutils literal notranslate"><span class="pre">Matrix.__repr__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.maze.matrix.Matrix.__setitem__"><code class="docutils literal notranslate"><span class="pre">Matrix.__setitem__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.maze.matrix.Matrix.__str__"><code class="docutils literal notranslate"><span class="pre">Matrix.__str__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.maze.matrix.Matrix.__weakref__"><code class="docutils literal notranslate"><span class="pre">Matrix.__weakref__</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.maze.matrix.Matrix.cols"><code class="docutils literal notranslate"><span class="pre">Matrix.cols</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.maze.matrix.Matrix.default"><code class="docutils literal notranslate"><span class="pre">Matrix.default</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.maze.matrix.Matrix.is_valid"><code class="docutils literal notranslate"><span class="pre">Matrix.is_valid()</span></code></a></li>

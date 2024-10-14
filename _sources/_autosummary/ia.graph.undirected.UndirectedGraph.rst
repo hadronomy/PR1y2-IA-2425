@@ -5,6 +5,7 @@ ia.graph.undirected.UndirectedGraph
 
 .. autoclass:: UndirectedGraph
    :members:
+   :special-members:
    :show-inheritance:
    :inherited-members:
 

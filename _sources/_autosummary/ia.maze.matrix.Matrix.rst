@@ -5,6 +5,7 @@ ia.maze.matrix.Matrix
 
 .. autoclass:: Matrix
    :members:
+   :special-members:
    :show-inheritance:
    :inherited-members:
 

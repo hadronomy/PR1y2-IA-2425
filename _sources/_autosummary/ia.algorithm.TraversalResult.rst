@@ -5,6 +5,7 @@ ia.algorithm.TraversalResult
 
 .. autoclass:: TraversalResult
    :members:
+   :special-members:
    :show-inheritance:
    :inherited-members:
 

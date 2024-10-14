@@ -5,6 +5,7 @@ ia.algorithm.AlgorithmHistory
 
 .. autoclass:: AlgorithmHistory
    :members:
+   :special-members:
    :show-inheritance:
    :inherited-members:
 

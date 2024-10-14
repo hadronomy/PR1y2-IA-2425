@@ -5,6 +5,7 @@ ia.tree.node.Node
 
 .. autoclass:: Node
    :members:
+   :special-members:
    :show-inheritance:
    :inherited-members:
 

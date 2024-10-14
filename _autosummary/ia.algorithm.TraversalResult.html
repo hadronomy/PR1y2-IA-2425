@@ -397,6 +397,9 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.algorithm.TraversalResult"><code class="docutils literal notranslate"><span class="pre">TraversalResult</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.algorithm.TraversalResult.__init__"><code class="docutils literal notranslate"><span class="pre">TraversalResult.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id0"><code class="docutils literal notranslate"><span class="pre">TraversalResult.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.algorithm.TraversalResult.__str__"><code class="docutils literal notranslate"><span class="pre">TraversalResult.__str__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.algorithm.TraversalResult.__weakref__"><code class="docutils literal notranslate"><span class="pre">TraversalResult.__weakref__</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -441,12 +444,43 @@ the algorithm history</p>
 <p class="rubric">Methods</p>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ia.algorithm.TraversalResult.__init__" title="ia.algorithm.TraversalResult.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(history, path, cost[, tree])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#id0" title="ia.algorithm.TraversalResult.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(history, path, cost[, tree])</p></td>
 <td><p>Initialize the result.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
+<dl class="py method">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">history</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="ia.algorithm.AlgorithmHistory.html#ia.algorithm.AlgorithmHistory" title="ia.algorithm.AlgorithmHistory"><span class="pre">AlgorithmHistory</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="ia.tree.node.Node.html#ia.tree.node.Node" title="ia.tree.node.Node"><span class="pre">Node</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cost</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tree</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="ia.tree.node.Node.html#ia.tree.node.Node" title="ia.tree.node.Node"><span class="pre">Node</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id0" title="Link to this definition">#</a></dt>
+<dd><p>Initialize the result.</p>
+<section id="id1">
+<h2>Parameters<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<dl class="simple">
+<dt>history: AlgorithmHistory</dt><dd><p>The history of the algorithm</p>
+</dd>
+<dt>visited: dict[int, bool]</dt><dd><p>The visited nodes</p>
+</dd>
+<dt>path: list[Node]</dt><dd><p>The resulting path</p>
+</dd>
+<dt>cost: int</dt><dd><p>The cost of the path</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.algorithm.TraversalResult.__str__">
+<span class="sig-name descname"><span class="pre">__str__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#ia.algorithm.TraversalResult.__str__" title="Link to this definition">#</a></dt>
+<dd><p>Return the result as a string.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ia.algorithm.TraversalResult.__weakref__">
+<span class="sig-name descname"><span class="pre">__weakref__</span></span><a class="headerlink" href="#ia.algorithm.TraversalResult.__weakref__" title="Link to this definition">#</a></dt>
+<dd><p>list of weak references to the object</p>
+</dd></dl>
+
 </dd></dl>
 
 </section>
@@ -498,6 +532,9 @@ the algorithm history</p>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.algorithm.TraversalResult"><code class="docutils literal notranslate"><span class="pre">TraversalResult</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.algorithm.TraversalResult.__init__"><code class="docutils literal notranslate"><span class="pre">TraversalResult.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id0"><code class="docutils literal notranslate"><span class="pre">TraversalResult.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.algorithm.TraversalResult.__str__"><code class="docutils literal notranslate"><span class="pre">TraversalResult.__str__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.algorithm.TraversalResult.__weakref__"><code class="docutils literal notranslate"><span class="pre">TraversalResult.__weakref__</span></code></a></li>
 </ul>
 </li>
 </ul>
