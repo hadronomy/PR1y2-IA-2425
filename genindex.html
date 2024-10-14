@@ -1,0 +1,1514 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Index &#8212; IA - Search Algorithms v1.0.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=8cd78353"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'genindex';</script>
+    <link rel="index" title="Index" href="#" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">IA - Search Algorithms v1.0.0 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="_autosummary/ia.graph.html">ia.graph</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="_autosummary/ia.graph.parser.html">ia.graph.parser</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/ia.graph.parser.parser.html">ia.graph.parser.parser</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/ia.graph.parser.parser.get_context.html">ia.graph.parser.parser.get_context</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/ia.graph.parser.parser.on_parse_error.html">ia.graph.parser.parser.on_parse_error</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/ia.graph.parser.parser.parse_and_transform.html">ia.graph.parser.parser.parse_and_transform</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/ia.graph.parser.parser.UndirectedGraphTransformer.html">ia.graph.parser.parser.UndirectedGraphTransformer</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="_autosummary/ia.graph.undirected.html">ia.graph.undirected</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/ia.graph.undirected.UndirectedGraph.html">ia.graph.undirected.UndirectedGraph</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="_autosummary/ia.maze.html">ia.maze</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="_autosummary/ia.maze.constants.html">ia.maze.constants</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/ia.maze.constants.ALPHABET.html">ia.maze.constants.ALPHABET</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/ia.maze.constants.NUMBERS.html">ia.maze.constants.NUMBERS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/ia.maze.constants.MAZE_PRINT_STYLES.html">ia.maze.constants.MAZE_PRINT_STYLES</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/ia.maze.constants.DEFAULT_MAZE_MAPPINGS.html">ia.maze.constants.DEFAULT_MAZE_MAPPINGS</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="_autosummary/ia.maze.euristics.html">ia.maze.euristics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/ia.maze.euristics.chebyshev_distance.html">ia.maze.euristics.chebyshev_distance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/ia.maze.euristics.euclidean_distance.html">ia.maze.euristics.euclidean_distance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/ia.maze.euristics.greater_diagonal_g_score.html">ia.maze.euristics.greater_diagonal_g_score</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/ia.maze.euristics.manhattan_distance.html">ia.maze.euristics.manhattan_distance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/ia.maze.euristics.octile_distance.html">ia.maze.euristics.octile_distance</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="_autosummary/ia.maze.matrix.html">ia.maze.matrix</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/ia.maze.matrix.Matrix.html">ia.maze.matrix.Matrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/ia.maze.matrix.MatrixPosition.html">ia.maze.matrix.MatrixPosition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/ia.maze.matrix.enumerate_matrix.html">ia.maze.matrix.enumerate_matrix</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="_autosummary/ia.maze.maze.html">ia.maze.maze</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/ia.maze.maze.Maze.html">ia.maze.maze.Maze</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="_autosummary/ia.maze.parser.html">ia.maze.parser</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/ia.maze.parser.parse.html">ia.maze.parser.parse</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="_autosummary/ia.maze.tile.html">ia.maze.tile</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/ia.maze.tile.MazeTile.html">ia.maze.tile.MazeTile</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="_autosummary/ia.maze.utils.html">ia.maze.utils</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/ia.maze.utils.number_to_representation.html">ia.maze.utils.number_to_representation</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="_autosummary/ia.tree.html">ia.tree</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="_autosummary/ia.tree.basenode.html">ia.tree.basenode</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/ia.tree.basenode.BaseNode.html">ia.tree.basenode.BaseNode</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="_autosummary/ia.tree.constants.html">ia.tree.constants</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/ia.tree.constants.BasePrintStyle.html">ia.tree.constants.BasePrintStyle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/ia.tree.constants.ExportConstants.html">ia.tree.constants.ExportConstants</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="_autosummary/ia.tree.iterators.html">ia.tree.iterators</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/ia.tree.iterators.postorder_iter.html">ia.tree.iterators.postorder_iter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/ia.tree.iterators.preorder_iter.html">ia.tree.iterators.preorder_iter</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="_autosummary/ia.tree.node.html">ia.tree.node</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/ia.tree.node.Node.html">ia.tree.node.Node</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="_autosummary/ia.tree.utils.html">ia.tree.utils</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/ia.tree.utils.get_subtree.html">ia.tree.utils.get_subtree</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/ia.tree.utils.print_tree.html">ia.tree.utils.print_tree</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/ia.tree.utils.yield_tree.html">ia.tree.utils.yield_tree</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="_autosummary/ia.algorithm.html">ia.algorithm</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/ia.algorithm.graph_path_cost.html">ia.algorithm.graph_path_cost</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/ia.algorithm.AlgorithmHistory.html">ia.algorithm.AlgorithmHistory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/ia.algorithm.InformedTraversalAlgorithm.html">ia.algorithm.InformedTraversalAlgorithm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/ia.algorithm.TraversalResult.html">ia.algorithm.TraversalResult</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/ia.algorithm.UninformedTraversalAlgorithm.html">ia.algorithm.UninformedTraversalAlgorithm</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+
+<h1 id="index">Index</h1>
+
+<div class="genindex-jumpbox">
+ <a href="#_"><strong>_</strong></a>
+ | <a href="#A"><strong>A</strong></a>
+ | <a href="#B"><strong>B</strong></a>
+ | <a href="#C"><strong>C</strong></a>
+ | <a href="#D"><strong>D</strong></a>
+ | <a href="#E"><strong>E</strong></a>
+ | <a href="#F"><strong>F</strong></a>
+ | <a href="#G"><strong>G</strong></a>
+ | <a href="#I"><strong>I</strong></a>
+ | <a href="#J"><strong>J</strong></a>
+ | <a href="#L"><strong>L</strong></a>
+ | <a href="#M"><strong>M</strong></a>
+ | <a href="#N"><strong>N</strong></a>
+ | <a href="#O"><strong>O</strong></a>
+ | <a href="#P"><strong>P</strong></a>
+ | <a href="#R"><strong>R</strong></a>
+ | <a href="#S"><strong>S</strong></a>
+ | <a href="#T"><strong>T</strong></a>
+ | <a href="#U"><strong>U</strong></a>
+ | <a href="#V"><strong>V</strong></a>
+ | <a href="#W"><strong>W</strong></a>
+ | <a href="#Y"><strong>Y</strong></a>
+ | <a href="#Z"><strong>Z</strong></a>
+ 
+</div>
+<h2 id="_">_</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/ia.algorithm.AlgorithmHistory.html#ia.algorithm.AlgorithmHistory.__init__">__init__() (ia.algorithm.AlgorithmHistory method)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.algorithm.InformedTraversalAlgorithm.html#ia.algorithm.InformedTraversalAlgorithm.__init__">(ia.algorithm.InformedTraversalAlgorithm method)</a>
+</li>
+        <li><a href="_autosummary/ia.algorithm.TraversalResult.html#ia.algorithm.TraversalResult.__init__">(ia.algorithm.TraversalResult method)</a>
+</li>
+        <li><a href="_autosummary/ia.algorithm.UninformedTraversalAlgorithm.html#ia.algorithm.UninformedTraversalAlgorithm.__init__">(ia.algorithm.UninformedTraversalAlgorithm method)</a>
+</li>
+        <li><a href="_autosummary/ia.graph.parser.parser.UndirectedGraphTransformer.html#ia.graph.parser.parser.UndirectedGraphTransformer.__init__">(ia.graph.parser.parser.UndirectedGraphTransformer method)</a>
+</li>
+        <li><a href="_autosummary/ia.graph.undirected.UndirectedGraph.html#ia.graph.undirected.UndirectedGraph.__init__">(ia.graph.undirected.UndirectedGraph method)</a>
+</li>
+        <li><a href="_autosummary/ia.maze.matrix.enumerate_matrix.html#ia.maze.matrix.enumerate_matrix.__init__">(ia.maze.matrix.enumerate_matrix method)</a>
+</li>
+        <li><a href="_autosummary/ia.maze.matrix.Matrix.html#ia.maze.matrix.Matrix.__init__">(ia.maze.matrix.Matrix method)</a>
+</li>
+        <li><a href="_autosummary/ia.maze.matrix.MatrixPosition.html#ia.maze.matrix.MatrixPosition.__init__">(ia.maze.matrix.MatrixPosition method)</a>
+</li>
+        <li><a href="_autosummary/ia.maze.maze.Maze.html#ia.maze.maze.Maze.__init__">(ia.maze.maze.Maze method)</a>
+</li>
+        <li><a href="_autosummary/ia.maze.tile.MazeTile.html#ia.maze.tile.MazeTile.__init__">(ia.maze.tile.MazeTile method)</a>
+</li>
+        <li><a href="_autosummary/ia.tree.basenode.BaseNode.html#ia.tree.basenode.BaseNode.__init__">(ia.tree.basenode.BaseNode method)</a>
+</li>
+        <li><a href="_autosummary/ia.tree.constants.BasePrintStyle.html#ia.tree.constants.BasePrintStyle.__init__">(ia.tree.constants.BasePrintStyle method)</a>
+</li>
+        <li><a href="_autosummary/ia.tree.constants.ExportConstants.html#ia.tree.constants.ExportConstants.__init__">(ia.tree.constants.ExportConstants method)</a>
+</li>
+        <li><a href="_autosummary/ia.tree.node.Node.html#ia.tree.node.Node.__init__">(ia.tree.node.Node method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="A">A</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/ia.maze.maze.Maze.html#ia.maze.maze.Maze.a_star">a_star() (ia.maze.maze.Maze method)</a>
+</li>
+      <li><a href="_autosummary/ia.graph.undirected.UndirectedGraph.html#ia.graph.undirected.UndirectedGraph.add_edge">add_edge() (ia.graph.undirected.UndirectedGraph method)</a>
+</li>
+      <li><a href="_autosummary/ia.algorithm.AlgorithmHistory.html#ia.algorithm.AlgorithmHistory.add_step">add_step() (ia.algorithm.AlgorithmHistory method)</a>
+</li>
+      <li><a href="_autosummary/ia.graph.undirected.UndirectedGraph.html#ia.graph.undirected.UndirectedGraph.adjacency">adjacency (ia.graph.undirected.UndirectedGraph property)</a>
+</li>
+      <li><a href="_autosummary/ia.graph.undirected.UndirectedGraph.html#ia.graph.undirected.UndirectedGraph.adjacency_list">adjacency_list (ia.graph.undirected.UndirectedGraph property)</a>
+</li>
+      <li><a href="_autosummary/ia.graph.undirected.UndirectedGraph.html#ia.graph.undirected.UndirectedGraph.adjacency_matrix">adjacency_matrix (ia.graph.undirected.UndirectedGraph property)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/ia.algorithm.AlgorithmHistory.html#ia.algorithm.AlgorithmHistory">AlgorithmHistory (class in ia.algorithm)</a>
+</li>
+      <li><a href="_autosummary/ia.maze.constants.ALPHABET.html#ia.maze.constants.ALPHABET">ALPHABET (in module ia.maze.constants)</a>
+</li>
+      <li><a href="_autosummary/ia.tree.basenode.BaseNode.html#ia.tree.basenode.BaseNode.ancestors">ancestors (ia.tree.basenode.BaseNode property)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.tree.node.Node.html#ia.tree.node.Node.ancestors">(ia.tree.node.Node property)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/ia.tree.basenode.BaseNode.html#ia.tree.basenode.BaseNode.append">append() (ia.tree.basenode.BaseNode method)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.tree.node.Node.html#ia.tree.node.Node.append">(ia.tree.node.Node method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="B">B</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/ia.tree.basenode.BaseNode.html#ia.tree.basenode.BaseNode">BaseNode (class in ia.tree.basenode)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/ia.tree.constants.BasePrintStyle.html#ia.tree.constants.BasePrintStyle">BasePrintStyle (class in ia.tree.constants)</a>
+</li>
+      <li><a href="_autosummary/ia.graph.undirected.UndirectedGraph.html#ia.graph.undirected.UndirectedGraph.bfs">bfs() (ia.graph.undirected.UndirectedGraph method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="C">C</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/ia.algorithm.InformedTraversalAlgorithm.html#ia.algorithm.InformedTraversalAlgorithm.capitalize">capitalize() (ia.algorithm.InformedTraversalAlgorithm method)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.algorithm.UninformedTraversalAlgorithm.html#ia.algorithm.UninformedTraversalAlgorithm.capitalize">(ia.algorithm.UninformedTraversalAlgorithm method)</a>
+</li>
+        <li><a href="_autosummary/ia.maze.tile.MazeTile.html#ia.maze.tile.MazeTile.capitalize">(ia.maze.tile.MazeTile method)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/ia.algorithm.InformedTraversalAlgorithm.html#ia.algorithm.InformedTraversalAlgorithm.casefold">casefold() (ia.algorithm.InformedTraversalAlgorithm method)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.algorithm.UninformedTraversalAlgorithm.html#ia.algorithm.UninformedTraversalAlgorithm.casefold">(ia.algorithm.UninformedTraversalAlgorithm method)</a>
+</li>
+        <li><a href="_autosummary/ia.maze.tile.MazeTile.html#ia.maze.tile.MazeTile.casefold">(ia.maze.tile.MazeTile method)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/ia.algorithm.InformedTraversalAlgorithm.html#ia.algorithm.InformedTraversalAlgorithm.center">center() (ia.algorithm.InformedTraversalAlgorithm method)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.algorithm.UninformedTraversalAlgorithm.html#ia.algorithm.UninformedTraversalAlgorithm.center">(ia.algorithm.UninformedTraversalAlgorithm method)</a>
+</li>
+        <li><a href="_autosummary/ia.maze.tile.MazeTile.html#ia.maze.tile.MazeTile.center">(ia.maze.tile.MazeTile method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/ia.maze.euristics.chebyshev_distance.html#ia.maze.euristics.chebyshev_distance">chebyshev_distance() (in module ia.maze.euristics)</a>
+</li>
+      <li><a href="_autosummary/ia.tree.basenode.BaseNode.html#ia.tree.basenode.BaseNode.children">children (ia.tree.basenode.BaseNode property)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.tree.node.Node.html#ia.tree.node.Node.children">(ia.tree.node.Node property)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/ia.maze.matrix.Matrix.html#ia.maze.matrix.Matrix.cols">cols (ia.maze.matrix.Matrix property)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.maze.maze.Maze.html#ia.maze.maze.Maze.cols">(ia.maze.maze.Maze property)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/ia.tree.basenode.BaseNode.html#ia.tree.basenode.BaseNode.copy">copy() (ia.tree.basenode.BaseNode method)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.tree.node.Node.html#ia.tree.node.Node.copy">(ia.tree.node.Node method)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/ia.algorithm.InformedTraversalAlgorithm.html#ia.algorithm.InformedTraversalAlgorithm.count">count() (ia.algorithm.InformedTraversalAlgorithm method)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.algorithm.UninformedTraversalAlgorithm.html#ia.algorithm.UninformedTraversalAlgorithm.count">(ia.algorithm.UninformedTraversalAlgorithm method)</a>
+</li>
+        <li><a href="_autosummary/ia.maze.tile.MazeTile.html#ia.maze.tile.MazeTile.count">(ia.maze.tile.MazeTile method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="D">D</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/ia.maze.matrix.Matrix.html#ia.maze.matrix.Matrix.default">default (ia.maze.matrix.Matrix property)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.maze.maze.Maze.html#ia.maze.maze.Maze.default">(ia.maze.maze.Maze property)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/ia.maze.constants.DEFAULT_MAZE_MAPPINGS.html#ia.maze.constants.DEFAULT_MAZE_MAPPINGS">DEFAULT_MAZE_MAPPINGS (in module ia.maze.constants)</a>
+</li>
+      <li><a href="_autosummary/ia.graph.undirected.UndirectedGraph.html#ia.graph.undirected.UndirectedGraph.degree">degree (ia.graph.undirected.UndirectedGraph property)</a>
+</li>
+      <li><a href="_autosummary/ia.tree.basenode.BaseNode.html#ia.tree.basenode.BaseNode.depth">depth (ia.tree.basenode.BaseNode property)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.tree.node.Node.html#ia.tree.node.Node.depth">(ia.tree.node.Node property)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/ia.tree.basenode.BaseNode.html#ia.tree.basenode.BaseNode.descendants">descendants (ia.tree.basenode.BaseNode property)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.tree.node.Node.html#ia.tree.node.Node.descendants">(ia.tree.node.Node property)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/ia.tree.basenode.BaseNode.html#ia.tree.basenode.BaseNode.describe">describe() (ia.tree.basenode.BaseNode method)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.tree.node.Node.html#ia.tree.node.Node.describe">(ia.tree.node.Node method)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/ia.graph.undirected.UndirectedGraph.html#ia.graph.undirected.UndirectedGraph.dfs">dfs() (ia.graph.undirected.UndirectedGraph method)</a>
+</li>
+      <li><a href="_autosummary/ia.tree.basenode.BaseNode.html#ia.tree.basenode.BaseNode.diameter">diameter (ia.tree.basenode.BaseNode property)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.tree.node.Node.html#ia.tree.node.Node.diameter">(ia.tree.node.Node property)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="E">E</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/ia.graph.parser.parser.UndirectedGraphTransformer.html#ia.graph.parser.parser.UndirectedGraphTransformer.edge_weights">edge_weights() (ia.graph.parser.parser.UndirectedGraphTransformer method)</a>
+</li>
+      <li><a href="_autosummary/ia.graph.undirected.UndirectedGraph.html#ia.graph.undirected.UndirectedGraph.edges">edges (ia.graph.undirected.UndirectedGraph property)</a>
+</li>
+      <li><a href="_autosummary/ia.algorithm.InformedTraversalAlgorithm.html#ia.algorithm.InformedTraversalAlgorithm.encode">encode() (ia.algorithm.InformedTraversalAlgorithm method)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.algorithm.UninformedTraversalAlgorithm.html#ia.algorithm.UninformedTraversalAlgorithm.encode">(ia.algorithm.UninformedTraversalAlgorithm method)</a>
+</li>
+        <li><a href="_autosummary/ia.maze.tile.MazeTile.html#ia.maze.tile.MazeTile.encode">(ia.maze.tile.MazeTile method)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/ia.algorithm.InformedTraversalAlgorithm.html#ia.algorithm.InformedTraversalAlgorithm.endswith">endswith() (ia.algorithm.InformedTraversalAlgorithm method)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.algorithm.UninformedTraversalAlgorithm.html#ia.algorithm.UninformedTraversalAlgorithm.endswith">(ia.algorithm.UninformedTraversalAlgorithm method)</a>
+</li>
+        <li><a href="_autosummary/ia.maze.tile.MazeTile.html#ia.maze.tile.MazeTile.endswith">(ia.maze.tile.MazeTile method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/ia.maze.matrix.enumerate_matrix.html#ia.maze.matrix.enumerate_matrix">enumerate_matrix (class in ia.maze.matrix)</a>
+</li>
+      <li><a href="_autosummary/ia.maze.euristics.euclidean_distance.html#ia.maze.euristics.euclidean_distance">euclidean_distance() (in module ia.maze.euristics)</a>
+</li>
+      <li><a href="_autosummary/ia.algorithm.InformedTraversalAlgorithm.html#ia.algorithm.InformedTraversalAlgorithm.expandtabs">expandtabs() (ia.algorithm.InformedTraversalAlgorithm method)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.algorithm.UninformedTraversalAlgorithm.html#ia.algorithm.UninformedTraversalAlgorithm.expandtabs">(ia.algorithm.UninformedTraversalAlgorithm method)</a>
+</li>
+        <li><a href="_autosummary/ia.maze.tile.MazeTile.html#ia.maze.tile.MazeTile.expandtabs">(ia.maze.tile.MazeTile method)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/ia.tree.constants.ExportConstants.html#ia.tree.constants.ExportConstants">ExportConstants (class in ia.tree.constants)</a>
+</li>
+      <li><a href="_autosummary/ia.tree.basenode.BaseNode.html#ia.tree.basenode.BaseNode.extend">extend() (ia.tree.basenode.BaseNode method)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.tree.node.Node.html#ia.tree.node.Node.extend">(ia.tree.node.Node method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="F">F</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/ia.algorithm.InformedTraversalAlgorithm.html#ia.algorithm.InformedTraversalAlgorithm.find">find() (ia.algorithm.InformedTraversalAlgorithm method)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.algorithm.UninformedTraversalAlgorithm.html#ia.algorithm.UninformedTraversalAlgorithm.find">(ia.algorithm.UninformedTraversalAlgorithm method)</a>
+</li>
+        <li><a href="_autosummary/ia.maze.tile.MazeTile.html#ia.maze.tile.MazeTile.find">(ia.maze.tile.MazeTile method)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/ia.algorithm.InformedTraversalAlgorithm.html#ia.algorithm.InformedTraversalAlgorithm.format">format() (ia.algorithm.InformedTraversalAlgorithm method)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.algorithm.UninformedTraversalAlgorithm.html#ia.algorithm.UninformedTraversalAlgorithm.format">(ia.algorithm.UninformedTraversalAlgorithm method)</a>
+</li>
+        <li><a href="_autosummary/ia.maze.tile.MazeTile.html#ia.maze.tile.MazeTile.format">(ia.maze.tile.MazeTile method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/ia.algorithm.InformedTraversalAlgorithm.html#ia.algorithm.InformedTraversalAlgorithm.format_map">format_map() (ia.algorithm.InformedTraversalAlgorithm method)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.algorithm.UninformedTraversalAlgorithm.html#ia.algorithm.UninformedTraversalAlgorithm.format_map">(ia.algorithm.UninformedTraversalAlgorithm method)</a>
+</li>
+        <li><a href="_autosummary/ia.maze.tile.MazeTile.html#ia.maze.tile.MazeTile.format_map">(ia.maze.tile.MazeTile method)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/ia.tree.basenode.BaseNode.html#ia.tree.basenode.BaseNode.from_dict">from_dict() (ia.tree.basenode.BaseNode class method)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.tree.node.Node.html#ia.tree.node.Node.from_dict">(ia.tree.node.Node class method)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/ia.maze.matrix.MatrixPosition.html#ia.maze.matrix.MatrixPosition.from_representation">from_representation() (ia.maze.matrix.MatrixPosition class method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="G">G</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/ia.tree.basenode.BaseNode.html#ia.tree.basenode.BaseNode.get_attribute">get_attribute() (ia.tree.basenode.BaseNode method)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.tree.node.Node.html#ia.tree.node.Node.get_attribute">(ia.tree.node.Node method)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/ia.graph.parser.parser.get_context.html#ia.graph.parser.parser.get_context">get_context() (in module ia.graph.parser.parser)</a>
+</li>
+      <li><a href="_autosummary/ia.algorithm.AlgorithmHistory.html#ia.algorithm.AlgorithmHistory.get_history">get_history() (ia.algorithm.AlgorithmHistory method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/ia.tree.utils.get_subtree.html#ia.tree.utils.get_subtree">get_subtree() (in module ia.tree.utils)</a>
+</li>
+      <li><a href="_autosummary/ia.maze.maze.Maze.html#ia.maze.maze.Maze.goal">goal (ia.maze.maze.Maze property)</a>
+</li>
+      <li><a href="_autosummary/ia.graph.parser.parser.UndirectedGraphTransformer.html#ia.graph.parser.parser.UndirectedGraphTransformer.graph">graph() (ia.graph.parser.parser.UndirectedGraphTransformer method)</a>
+</li>
+      <li><a href="_autosummary/ia.algorithm.graph_path_cost.html#ia.algorithm.graph_path_cost">graph_path_cost() (in module ia.algorithm)</a>
+</li>
+      <li><a href="_autosummary/ia.maze.euristics.greater_diagonal_g_score.html#ia.maze.euristics.greater_diagonal_g_score">greater_diagonal_g_score() (in module ia.maze.euristics)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="I">I</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    ia.algorithm
+
+      <ul>
+        <li><a href="_autosummary/ia.algorithm.html#module-ia.algorithm">module</a>
+</li>
+      </ul></li>
+      <li>
+    ia.graph
+
+      <ul>
+        <li><a href="_autosummary/ia.graph.html#module-ia.graph">module</a>
+</li>
+      </ul></li>
+      <li>
+    ia.graph.parser
+
+      <ul>
+        <li><a href="_autosummary/ia.graph.parser.html#module-ia.graph.parser">module</a>
+</li>
+      </ul></li>
+      <li>
+    ia.graph.parser.parser
+
+      <ul>
+        <li><a href="_autosummary/ia.graph.parser.parser.html#module-ia.graph.parser.parser">module</a>
+</li>
+      </ul></li>
+      <li>
+    ia.graph.undirected
+
+      <ul>
+        <li><a href="_autosummary/ia.graph.undirected.html#module-ia.graph.undirected">module</a>
+</li>
+      </ul></li>
+      <li>
+    ia.maze
+
+      <ul>
+        <li><a href="_autosummary/ia.maze.html#module-ia.maze">module</a>
+</li>
+      </ul></li>
+      <li>
+    ia.maze.constants
+
+      <ul>
+        <li><a href="_autosummary/ia.maze.constants.html#module-ia.maze.constants">module</a>
+</li>
+      </ul></li>
+      <li>
+    ia.maze.euristics
+
+      <ul>
+        <li><a href="_autosummary/ia.maze.euristics.html#module-ia.maze.euristics">module</a>
+</li>
+      </ul></li>
+      <li>
+    ia.maze.matrix
+
+      <ul>
+        <li><a href="_autosummary/ia.maze.matrix.html#module-ia.maze.matrix">module</a>
+</li>
+      </ul></li>
+      <li>
+    ia.maze.maze
+
+      <ul>
+        <li><a href="_autosummary/ia.maze.maze.html#module-ia.maze.maze">module</a>
+</li>
+      </ul></li>
+      <li>
+    ia.maze.parser
+
+      <ul>
+        <li><a href="_autosummary/ia.maze.parser.html#module-ia.maze.parser">module</a>
+</li>
+      </ul></li>
+      <li>
+    ia.maze.tile
+
+      <ul>
+        <li><a href="_autosummary/ia.maze.tile.html#module-ia.maze.tile">module</a>
+</li>
+      </ul></li>
+      <li>
+    ia.maze.utils
+
+      <ul>
+        <li><a href="_autosummary/ia.maze.utils.html#module-ia.maze.utils">module</a>
+</li>
+      </ul></li>
+      <li>
+    ia.tree
+
+      <ul>
+        <li><a href="_autosummary/ia.tree.html#module-ia.tree">module</a>
+</li>
+      </ul></li>
+      <li>
+    ia.tree.basenode
+
+      <ul>
+        <li><a href="_autosummary/ia.tree.basenode.html#module-ia.tree.basenode">module</a>
+</li>
+      </ul></li>
+      <li>
+    ia.tree.constants
+
+      <ul>
+        <li><a href="_autosummary/ia.tree.constants.html#module-ia.tree.constants">module</a>
+</li>
+      </ul></li>
+      <li>
+    ia.tree.iterators
+
+      <ul>
+        <li><a href="_autosummary/ia.tree.iterators.html#module-ia.tree.iterators">module</a>
+</li>
+      </ul></li>
+      <li>
+    ia.tree.node
+
+      <ul>
+        <li><a href="_autosummary/ia.tree.node.html#module-ia.tree.node">module</a>
+</li>
+      </ul></li>
+      <li>
+    ia.tree.utils
+
+      <ul>
+        <li><a href="_autosummary/ia.tree.utils.html#module-ia.tree.utils">module</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/ia.graph.undirected.UndirectedGraph.html#ia.graph.undirected.UndirectedGraph.incidence_list">incidence_list (ia.graph.undirected.UndirectedGraph property)</a>
+</li>
+      <li><a href="_autosummary/ia.graph.undirected.UndirectedGraph.html#ia.graph.undirected.UndirectedGraph.incidence_matrix">incidence_matrix (ia.graph.undirected.UndirectedGraph property)</a>
+</li>
+      <li><a href="_autosummary/ia.algorithm.InformedTraversalAlgorithm.html#ia.algorithm.InformedTraversalAlgorithm.index">index() (ia.algorithm.InformedTraversalAlgorithm method)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.algorithm.UninformedTraversalAlgorithm.html#ia.algorithm.UninformedTraversalAlgorithm.index">(ia.algorithm.UninformedTraversalAlgorithm method)</a>
+</li>
+        <li><a href="_autosummary/ia.maze.tile.MazeTile.html#ia.maze.tile.MazeTile.index">(ia.maze.tile.MazeTile method)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/ia.algorithm.InformedTraversalAlgorithm.html#ia.algorithm.InformedTraversalAlgorithm">InformedTraversalAlgorithm (class in ia.algorithm)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/ia.graph.parser.parser.UndirectedGraphTransformer.html#ia.graph.parser.parser.UndirectedGraphTransformer.INT">INT() (ia.graph.parser.parser.UndirectedGraphTransformer method)</a>
+</li>
+      <li><a href="_autosummary/ia.tree.basenode.BaseNode.html#ia.tree.basenode.BaseNode.is_leaf">is_leaf (ia.tree.basenode.BaseNode property)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.tree.node.Node.html#ia.tree.node.Node.is_leaf">(ia.tree.node.Node property)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/ia.tree.basenode.BaseNode.html#ia.tree.basenode.BaseNode.is_root">is_root (ia.tree.basenode.BaseNode property)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.tree.node.Node.html#ia.tree.node.Node.is_root">(ia.tree.node.Node property)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/ia.maze.matrix.Matrix.html#ia.maze.matrix.Matrix.is_valid">is_valid() (ia.maze.matrix.Matrix method)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.maze.maze.Maze.html#ia.maze.maze.Maze.is_valid">(ia.maze.maze.Maze method)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/ia.maze.matrix.Matrix.html#ia.maze.matrix.Matrix.is_valid_position">is_valid_position() (ia.maze.matrix.Matrix method)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.maze.maze.Maze.html#ia.maze.maze.Maze.is_valid_position">(ia.maze.maze.Maze method)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/ia.algorithm.InformedTraversalAlgorithm.html#ia.algorithm.InformedTraversalAlgorithm.isalnum">isalnum() (ia.algorithm.InformedTraversalAlgorithm method)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.algorithm.UninformedTraversalAlgorithm.html#ia.algorithm.UninformedTraversalAlgorithm.isalnum">(ia.algorithm.UninformedTraversalAlgorithm method)</a>
+</li>
+        <li><a href="_autosummary/ia.maze.tile.MazeTile.html#ia.maze.tile.MazeTile.isalnum">(ia.maze.tile.MazeTile method)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/ia.algorithm.InformedTraversalAlgorithm.html#ia.algorithm.InformedTraversalAlgorithm.isalpha">isalpha() (ia.algorithm.InformedTraversalAlgorithm method)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.algorithm.UninformedTraversalAlgorithm.html#ia.algorithm.UninformedTraversalAlgorithm.isalpha">(ia.algorithm.UninformedTraversalAlgorithm method)</a>
+</li>
+        <li><a href="_autosummary/ia.maze.tile.MazeTile.html#ia.maze.tile.MazeTile.isalpha">(ia.maze.tile.MazeTile method)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/ia.algorithm.InformedTraversalAlgorithm.html#ia.algorithm.InformedTraversalAlgorithm.isascii">isascii() (ia.algorithm.InformedTraversalAlgorithm method)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.algorithm.UninformedTraversalAlgorithm.html#ia.algorithm.UninformedTraversalAlgorithm.isascii">(ia.algorithm.UninformedTraversalAlgorithm method)</a>
+</li>
+        <li><a href="_autosummary/ia.maze.tile.MazeTile.html#ia.maze.tile.MazeTile.isascii">(ia.maze.tile.MazeTile method)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/ia.algorithm.InformedTraversalAlgorithm.html#ia.algorithm.InformedTraversalAlgorithm.isdecimal">isdecimal() (ia.algorithm.InformedTraversalAlgorithm method)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.algorithm.UninformedTraversalAlgorithm.html#ia.algorithm.UninformedTraversalAlgorithm.isdecimal">(ia.algorithm.UninformedTraversalAlgorithm method)</a>
+</li>
+        <li><a href="_autosummary/ia.maze.tile.MazeTile.html#ia.maze.tile.MazeTile.isdecimal">(ia.maze.tile.MazeTile method)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/ia.algorithm.InformedTraversalAlgorithm.html#ia.algorithm.InformedTraversalAlgorithm.isdigit">isdigit() (ia.algorithm.InformedTraversalAlgorithm method)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.algorithm.UninformedTraversalAlgorithm.html#ia.algorithm.UninformedTraversalAlgorithm.isdigit">(ia.algorithm.UninformedTraversalAlgorithm method)</a>
+</li>
+        <li><a href="_autosummary/ia.maze.tile.MazeTile.html#ia.maze.tile.MazeTile.isdigit">(ia.maze.tile.MazeTile method)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/ia.algorithm.InformedTraversalAlgorithm.html#ia.algorithm.InformedTraversalAlgorithm.isidentifier">isidentifier() (ia.algorithm.InformedTraversalAlgorithm method)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.algorithm.UninformedTraversalAlgorithm.html#ia.algorithm.UninformedTraversalAlgorithm.isidentifier">(ia.algorithm.UninformedTraversalAlgorithm method)</a>
+</li>
+        <li><a href="_autosummary/ia.maze.tile.MazeTile.html#ia.maze.tile.MazeTile.isidentifier">(ia.maze.tile.MazeTile method)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/ia.algorithm.InformedTraversalAlgorithm.html#ia.algorithm.InformedTraversalAlgorithm.islower">islower() (ia.algorithm.InformedTraversalAlgorithm method)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.algorithm.UninformedTraversalAlgorithm.html#ia.algorithm.UninformedTraversalAlgorithm.islower">(ia.algorithm.UninformedTraversalAlgorithm method)</a>
+</li>
+        <li><a href="_autosummary/ia.maze.tile.MazeTile.html#ia.maze.tile.MazeTile.islower">(ia.maze.tile.MazeTile method)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/ia.algorithm.InformedTraversalAlgorithm.html#ia.algorithm.InformedTraversalAlgorithm.isnumeric">isnumeric() (ia.algorithm.InformedTraversalAlgorithm method)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.algorithm.UninformedTraversalAlgorithm.html#ia.algorithm.UninformedTraversalAlgorithm.isnumeric">(ia.algorithm.UninformedTraversalAlgorithm method)</a>
+</li>
+        <li><a href="_autosummary/ia.maze.tile.MazeTile.html#ia.maze.tile.MazeTile.isnumeric">(ia.maze.tile.MazeTile method)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/ia.algorithm.InformedTraversalAlgorithm.html#ia.algorithm.InformedTraversalAlgorithm.isprintable">isprintable() (ia.algorithm.InformedTraversalAlgorithm method)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.algorithm.UninformedTraversalAlgorithm.html#ia.algorithm.UninformedTraversalAlgorithm.isprintable">(ia.algorithm.UninformedTraversalAlgorithm method)</a>
+</li>
+        <li><a href="_autosummary/ia.maze.tile.MazeTile.html#ia.maze.tile.MazeTile.isprintable">(ia.maze.tile.MazeTile method)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/ia.algorithm.InformedTraversalAlgorithm.html#ia.algorithm.InformedTraversalAlgorithm.isspace">isspace() (ia.algorithm.InformedTraversalAlgorithm method)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.algorithm.UninformedTraversalAlgorithm.html#ia.algorithm.UninformedTraversalAlgorithm.isspace">(ia.algorithm.UninformedTraversalAlgorithm method)</a>
+</li>
+        <li><a href="_autosummary/ia.maze.tile.MazeTile.html#ia.maze.tile.MazeTile.isspace">(ia.maze.tile.MazeTile method)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/ia.algorithm.InformedTraversalAlgorithm.html#ia.algorithm.InformedTraversalAlgorithm.istitle">istitle() (ia.algorithm.InformedTraversalAlgorithm method)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.algorithm.UninformedTraversalAlgorithm.html#ia.algorithm.UninformedTraversalAlgorithm.istitle">(ia.algorithm.UninformedTraversalAlgorithm method)</a>
+</li>
+        <li><a href="_autosummary/ia.maze.tile.MazeTile.html#ia.maze.tile.MazeTile.istitle">(ia.maze.tile.MazeTile method)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/ia.algorithm.InformedTraversalAlgorithm.html#ia.algorithm.InformedTraversalAlgorithm.isupper">isupper() (ia.algorithm.InformedTraversalAlgorithm method)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.algorithm.UninformedTraversalAlgorithm.html#ia.algorithm.UninformedTraversalAlgorithm.isupper">(ia.algorithm.UninformedTraversalAlgorithm method)</a>
+</li>
+        <li><a href="_autosummary/ia.maze.tile.MazeTile.html#ia.maze.tile.MazeTile.isupper">(ia.maze.tile.MazeTile method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="J">J</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/ia.algorithm.InformedTraversalAlgorithm.html#ia.algorithm.InformedTraversalAlgorithm.join">join() (ia.algorithm.InformedTraversalAlgorithm method)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.algorithm.UninformedTraversalAlgorithm.html#ia.algorithm.UninformedTraversalAlgorithm.join">(ia.algorithm.UninformedTraversalAlgorithm method)</a>
+</li>
+        <li><a href="_autosummary/ia.maze.tile.MazeTile.html#ia.maze.tile.MazeTile.join">(ia.maze.tile.MazeTile method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="L">L</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/ia.tree.basenode.BaseNode.html#ia.tree.basenode.BaseNode.leaves">leaves (ia.tree.basenode.BaseNode property)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.tree.node.Node.html#ia.tree.node.Node.leaves">(ia.tree.node.Node property)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/ia.tree.basenode.BaseNode.html#ia.tree.basenode.BaseNode.left_sibling">left_sibling (ia.tree.basenode.BaseNode property)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.tree.node.Node.html#ia.tree.node.Node.left_sibling">(ia.tree.node.Node property)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/ia.algorithm.InformedTraversalAlgorithm.html#ia.algorithm.InformedTraversalAlgorithm.ljust">ljust() (ia.algorithm.InformedTraversalAlgorithm method)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.algorithm.UninformedTraversalAlgorithm.html#ia.algorithm.UninformedTraversalAlgorithm.ljust">(ia.algorithm.UninformedTraversalAlgorithm method)</a>
+</li>
+        <li><a href="_autosummary/ia.maze.tile.MazeTile.html#ia.maze.tile.MazeTile.ljust">(ia.maze.tile.MazeTile method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/ia.algorithm.InformedTraversalAlgorithm.html#ia.algorithm.InformedTraversalAlgorithm.lower">lower() (ia.algorithm.InformedTraversalAlgorithm method)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.algorithm.UninformedTraversalAlgorithm.html#ia.algorithm.UninformedTraversalAlgorithm.lower">(ia.algorithm.UninformedTraversalAlgorithm method)</a>
+</li>
+        <li><a href="_autosummary/ia.maze.tile.MazeTile.html#ia.maze.tile.MazeTile.lower">(ia.maze.tile.MazeTile method)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/ia.algorithm.InformedTraversalAlgorithm.html#ia.algorithm.InformedTraversalAlgorithm.lstrip">lstrip() (ia.algorithm.InformedTraversalAlgorithm method)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.algorithm.UninformedTraversalAlgorithm.html#ia.algorithm.UninformedTraversalAlgorithm.lstrip">(ia.algorithm.UninformedTraversalAlgorithm method)</a>
+</li>
+        <li><a href="_autosummary/ia.maze.tile.MazeTile.html#ia.maze.tile.MazeTile.lstrip">(ia.maze.tile.MazeTile method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="M">M</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/ia.algorithm.InformedTraversalAlgorithm.html#ia.algorithm.InformedTraversalAlgorithm.maketrans">maketrans() (ia.algorithm.InformedTraversalAlgorithm static method)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.algorithm.UninformedTraversalAlgorithm.html#ia.algorithm.UninformedTraversalAlgorithm.maketrans">(ia.algorithm.UninformedTraversalAlgorithm static method)</a>
+</li>
+        <li><a href="_autosummary/ia.maze.tile.MazeTile.html#ia.maze.tile.MazeTile.maketrans">(ia.maze.tile.MazeTile static method)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/ia.maze.euristics.manhattan_distance.html#ia.maze.euristics.manhattan_distance">manhattan_distance() (in module ia.maze.euristics)</a>
+</li>
+      <li><a href="_autosummary/ia.maze.matrix.Matrix.html#ia.maze.matrix.Matrix">Matrix (class in ia.maze.matrix)</a>
+</li>
+      <li><a href="_autosummary/ia.maze.matrix.MatrixPosition.html#ia.maze.matrix.MatrixPosition">MatrixPosition (class in ia.maze.matrix)</a>
+</li>
+      <li><a href="_autosummary/ia.maze.maze.Maze.html#ia.maze.maze.Maze">Maze (class in ia.maze.maze)</a>
+</li>
+      <li><a href="_autosummary/ia.maze.constants.MAZE_PRINT_STYLES.html#ia.maze.constants.MAZE_PRINT_STYLES">MAZE_PRINT_STYLES (in module ia.maze.constants)</a>
+</li>
+      <li><a href="_autosummary/ia.maze.tile.MazeTile.html#ia.maze.tile.MazeTile">MazeTile (class in ia.maze.tile)</a>
+</li>
+      <li>
+    module
+
+      <ul>
+        <li><a href="_autosummary/ia.algorithm.html#module-ia.algorithm">ia.algorithm</a>
+</li>
+        <li><a href="_autosummary/ia.graph.html#module-ia.graph">ia.graph</a>
+</li>
+        <li><a href="_autosummary/ia.graph.parser.html#module-ia.graph.parser">ia.graph.parser</a>
+</li>
+        <li><a href="_autosummary/ia.graph.parser.parser.html#module-ia.graph.parser.parser">ia.graph.parser.parser</a>
+</li>
+        <li><a href="_autosummary/ia.graph.undirected.html#module-ia.graph.undirected">ia.graph.undirected</a>
+</li>
+        <li><a href="_autosummary/ia.maze.html#module-ia.maze">ia.maze</a>
+</li>
+        <li><a href="_autosummary/ia.maze.constants.html#module-ia.maze.constants">ia.maze.constants</a>
+</li>
+        <li><a href="_autosummary/ia.maze.euristics.html#module-ia.maze.euristics">ia.maze.euristics</a>
+</li>
+        <li><a href="_autosummary/ia.maze.matrix.html#module-ia.maze.matrix">ia.maze.matrix</a>
+</li>
+        <li><a href="_autosummary/ia.maze.maze.html#module-ia.maze.maze">ia.maze.maze</a>
+</li>
+        <li><a href="_autosummary/ia.maze.parser.html#module-ia.maze.parser">ia.maze.parser</a>
+</li>
+        <li><a href="_autosummary/ia.maze.tile.html#module-ia.maze.tile">ia.maze.tile</a>
+</li>
+        <li><a href="_autosummary/ia.maze.utils.html#module-ia.maze.utils">ia.maze.utils</a>
+</li>
+        <li><a href="_autosummary/ia.tree.html#module-ia.tree">ia.tree</a>
+</li>
+        <li><a href="_autosummary/ia.tree.basenode.html#module-ia.tree.basenode">ia.tree.basenode</a>
+</li>
+        <li><a href="_autosummary/ia.tree.constants.html#module-ia.tree.constants">ia.tree.constants</a>
+</li>
+        <li><a href="_autosummary/ia.tree.iterators.html#module-ia.tree.iterators">ia.tree.iterators</a>
+</li>
+        <li><a href="_autosummary/ia.tree.node.html#module-ia.tree.node">ia.tree.node</a>
+</li>
+        <li><a href="_autosummary/ia.tree.utils.html#module-ia.tree.utils">ia.tree.utils</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="N">N</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/ia.graph.undirected.UndirectedGraph.html#ia.graph.undirected.UndirectedGraph.neighbors">neighbors (ia.graph.undirected.UndirectedGraph property)</a>
+</li>
+      <li><a href="_autosummary/ia.maze.matrix.Matrix.html#ia.maze.matrix.Matrix.neighbors">neighbors() (ia.maze.matrix.Matrix method)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.maze.maze.Maze.html#ia.maze.maze.Maze.neighbors">(ia.maze.maze.Maze method)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/ia.graph.parser.parser.UndirectedGraphTransformer.html#ia.graph.parser.parser.UndirectedGraphTransformer.NEWLINE">NEWLINE() (ia.graph.parser.parser.UndirectedGraphTransformer method)</a>
+</li>
+      <li><a href="_autosummary/ia.graph.parser.parser.UndirectedGraphTransformer.html#ia.graph.parser.parser.UndirectedGraphTransformer.NO_ZERO">NO_ZERO() (ia.graph.parser.parser.UndirectedGraphTransformer method)</a>
+</li>
+      <li><a href="_autosummary/ia.tree.node.Node.html#ia.tree.node.Node">Node (class in ia.tree.node)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/ia.graph.parser.parser.UndirectedGraphTransformer.html#ia.graph.parser.parser.UndirectedGraphTransformer.NODE_AMOUNT">NODE_AMOUNT() (ia.graph.parser.parser.UndirectedGraphTransformer method)</a>
+</li>
+      <li><a href="_autosummary/ia.tree.node.Node.html#ia.tree.node.Node.node_name">node_name (ia.tree.node.Node property)</a>
+</li>
+      <li><a href="_autosummary/ia.tree.basenode.BaseNode.html#ia.tree.basenode.BaseNode.node_path">node_path (ia.tree.basenode.BaseNode property)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.tree.node.Node.html#ia.tree.node.Node.node_path">(ia.tree.node.Node property)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/ia.maze.utils.number_to_representation.html#ia.maze.utils.number_to_representation">number_to_representation() (in module ia.maze.utils)</a>
+</li>
+      <li><a href="_autosummary/ia.maze.constants.NUMBERS.html#ia.maze.constants.NUMBERS">NUMBERS (in module ia.maze.constants)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="O">O</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/ia.maze.euristics.octile_distance.html#ia.maze.euristics.octile_distance">octile_distance() (in module ia.maze.euristics)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/ia.graph.parser.parser.on_parse_error.html#ia.graph.parser.parser.on_parse_error">on_parse_error() (in module ia.graph.parser.parser)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="P">P</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/ia.tree.basenode.BaseNode.html#ia.tree.basenode.BaseNode.parent">parent (ia.tree.basenode.BaseNode property)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.tree.node.Node.html#ia.tree.node.Node.parent">(ia.tree.node.Node property)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/ia.maze.parser.parse.html#ia.maze.parser.parse">parse() (in module ia.maze.parser)</a>
+</li>
+      <li><a href="_autosummary/ia.graph.parser.parser.parse_and_transform.html#ia.graph.parser.parser.parse_and_transform">parse_and_transform() (in module ia.graph.parser.parser)</a>
+</li>
+      <li><a href="_autosummary/ia.algorithm.InformedTraversalAlgorithm.html#ia.algorithm.InformedTraversalAlgorithm.partition">partition() (ia.algorithm.InformedTraversalAlgorithm method)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.algorithm.UninformedTraversalAlgorithm.html#ia.algorithm.UninformedTraversalAlgorithm.partition">(ia.algorithm.UninformedTraversalAlgorithm method)</a>
+</li>
+        <li><a href="_autosummary/ia.maze.tile.MazeTile.html#ia.maze.tile.MazeTile.partition">(ia.maze.tile.MazeTile method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/ia.tree.node.Node.html#ia.tree.node.Node.path_name">path_name (ia.tree.node.Node property)</a>
+</li>
+      <li><a href="_autosummary/ia.maze.maze.Maze.html#ia.maze.maze.Maze.plot">plot() (ia.maze.maze.Maze method)</a>
+</li>
+      <li><a href="_autosummary/ia.tree.iterators.postorder_iter.html#ia.tree.iterators.postorder_iter">postorder_iter() (in module ia.tree.iterators)</a>
+</li>
+      <li><a href="_autosummary/ia.tree.iterators.preorder_iter.html#ia.tree.iterators.preorder_iter">preorder_iter() (in module ia.tree.iterators)</a>
+</li>
+      <li><a href="_autosummary/ia.maze.maze.Maze.html#ia.maze.maze.Maze.print">print() (ia.maze.maze.Maze method)</a>
+</li>
+      <li><a href="_autosummary/ia.tree.utils.print_tree.html#ia.tree.utils.print_tree">print_tree() (in module ia.tree.utils)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="R">R</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/ia.graph.undirected.UndirectedGraph.html#ia.graph.undirected.UndirectedGraph.remove_edge">remove_edge() (ia.graph.undirected.UndirectedGraph method)</a>
+</li>
+      <li><a href="_autosummary/ia.graph.undirected.UndirectedGraph.html#ia.graph.undirected.UndirectedGraph.remove_vertex">remove_vertex() (ia.graph.undirected.UndirectedGraph method)</a>
+</li>
+      <li><a href="_autosummary/ia.algorithm.InformedTraversalAlgorithm.html#ia.algorithm.InformedTraversalAlgorithm.removeprefix">removeprefix() (ia.algorithm.InformedTraversalAlgorithm method)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.algorithm.UninformedTraversalAlgorithm.html#ia.algorithm.UninformedTraversalAlgorithm.removeprefix">(ia.algorithm.UninformedTraversalAlgorithm method)</a>
+</li>
+        <li><a href="_autosummary/ia.maze.tile.MazeTile.html#ia.maze.tile.MazeTile.removeprefix">(ia.maze.tile.MazeTile method)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/ia.algorithm.InformedTraversalAlgorithm.html#ia.algorithm.InformedTraversalAlgorithm.removesuffix">removesuffix() (ia.algorithm.InformedTraversalAlgorithm method)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.algorithm.UninformedTraversalAlgorithm.html#ia.algorithm.UninformedTraversalAlgorithm.removesuffix">(ia.algorithm.UninformedTraversalAlgorithm method)</a>
+</li>
+        <li><a href="_autosummary/ia.maze.tile.MazeTile.html#ia.maze.tile.MazeTile.removesuffix">(ia.maze.tile.MazeTile method)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/ia.algorithm.InformedTraversalAlgorithm.html#ia.algorithm.InformedTraversalAlgorithm.replace">replace() (ia.algorithm.InformedTraversalAlgorithm method)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.algorithm.UninformedTraversalAlgorithm.html#ia.algorithm.UninformedTraversalAlgorithm.replace">(ia.algorithm.UninformedTraversalAlgorithm method)</a>
+</li>
+        <li><a href="_autosummary/ia.maze.tile.MazeTile.html#ia.maze.tile.MazeTile.replace">(ia.maze.tile.MazeTile method)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/ia.maze.matrix.MatrixPosition.html#ia.maze.matrix.MatrixPosition.representation">representation() (ia.maze.matrix.MatrixPosition method)</a>
+</li>
+      <li><a href="_autosummary/ia.algorithm.InformedTraversalAlgorithm.html#ia.algorithm.InformedTraversalAlgorithm.rfind">rfind() (ia.algorithm.InformedTraversalAlgorithm method)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.algorithm.UninformedTraversalAlgorithm.html#ia.algorithm.UninformedTraversalAlgorithm.rfind">(ia.algorithm.UninformedTraversalAlgorithm method)</a>
+</li>
+        <li><a href="_autosummary/ia.maze.tile.MazeTile.html#ia.maze.tile.MazeTile.rfind">(ia.maze.tile.MazeTile method)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/ia.tree.basenode.BaseNode.html#ia.tree.basenode.BaseNode.right_sibling">right_sibling (ia.tree.basenode.BaseNode property)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.tree.node.Node.html#ia.tree.node.Node.right_sibling">(ia.tree.node.Node property)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/ia.algorithm.InformedTraversalAlgorithm.html#ia.algorithm.InformedTraversalAlgorithm.rindex">rindex() (ia.algorithm.InformedTraversalAlgorithm method)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.algorithm.UninformedTraversalAlgorithm.html#ia.algorithm.UninformedTraversalAlgorithm.rindex">(ia.algorithm.UninformedTraversalAlgorithm method)</a>
+</li>
+        <li><a href="_autosummary/ia.maze.tile.MazeTile.html#ia.maze.tile.MazeTile.rindex">(ia.maze.tile.MazeTile method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/ia.algorithm.InformedTraversalAlgorithm.html#ia.algorithm.InformedTraversalAlgorithm.rjust">rjust() (ia.algorithm.InformedTraversalAlgorithm method)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.algorithm.UninformedTraversalAlgorithm.html#ia.algorithm.UninformedTraversalAlgorithm.rjust">(ia.algorithm.UninformedTraversalAlgorithm method)</a>
+</li>
+        <li><a href="_autosummary/ia.maze.tile.MazeTile.html#ia.maze.tile.MazeTile.rjust">(ia.maze.tile.MazeTile method)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/ia.tree.basenode.BaseNode.html#ia.tree.basenode.BaseNode.root">root (ia.tree.basenode.BaseNode property)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.tree.node.Node.html#ia.tree.node.Node.root">(ia.tree.node.Node property)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/ia.maze.matrix.Matrix.html#ia.maze.matrix.Matrix.rows">rows (ia.maze.matrix.Matrix property)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.maze.maze.Maze.html#ia.maze.maze.Maze.rows">(ia.maze.maze.Maze property)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/ia.algorithm.InformedTraversalAlgorithm.html#ia.algorithm.InformedTraversalAlgorithm.rpartition">rpartition() (ia.algorithm.InformedTraversalAlgorithm method)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.algorithm.UninformedTraversalAlgorithm.html#ia.algorithm.UninformedTraversalAlgorithm.rpartition">(ia.algorithm.UninformedTraversalAlgorithm method)</a>
+</li>
+        <li><a href="_autosummary/ia.maze.tile.MazeTile.html#ia.maze.tile.MazeTile.rpartition">(ia.maze.tile.MazeTile method)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/ia.algorithm.InformedTraversalAlgorithm.html#ia.algorithm.InformedTraversalAlgorithm.rsplit">rsplit() (ia.algorithm.InformedTraversalAlgorithm method)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.algorithm.UninformedTraversalAlgorithm.html#ia.algorithm.UninformedTraversalAlgorithm.rsplit">(ia.algorithm.UninformedTraversalAlgorithm method)</a>
+</li>
+        <li><a href="_autosummary/ia.maze.tile.MazeTile.html#ia.maze.tile.MazeTile.rsplit">(ia.maze.tile.MazeTile method)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/ia.algorithm.InformedTraversalAlgorithm.html#ia.algorithm.InformedTraversalAlgorithm.rstrip">rstrip() (ia.algorithm.InformedTraversalAlgorithm method)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.algorithm.UninformedTraversalAlgorithm.html#ia.algorithm.UninformedTraversalAlgorithm.rstrip">(ia.algorithm.UninformedTraversalAlgorithm method)</a>
+</li>
+        <li><a href="_autosummary/ia.maze.tile.MazeTile.html#ia.maze.tile.MazeTile.rstrip">(ia.maze.tile.MazeTile method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="S">S</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/ia.tree.node.Node.html#ia.tree.node.Node.separator">separator (ia.tree.node.Node property)</a>
+</li>
+      <li><a href="_autosummary/ia.tree.basenode.BaseNode.html#ia.tree.basenode.BaseNode.set_attribute">set_attribute() (ia.tree.basenode.BaseNode method)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.tree.node.Node.html#ia.tree.node.Node.set_attribute">(ia.tree.node.Node method)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/ia.tree.basenode.BaseNode.html#ia.tree.basenode.BaseNode.siblings">siblings (ia.tree.basenode.BaseNode property)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.tree.node.Node.html#ia.tree.node.Node.siblings">(ia.tree.node.Node property)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/ia.tree.basenode.BaseNode.html#ia.tree.basenode.BaseNode.sort">sort() (ia.tree.basenode.BaseNode method)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.tree.node.Node.html#ia.tree.node.Node.sort">(ia.tree.node.Node method)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/ia.algorithm.InformedTraversalAlgorithm.html#ia.algorithm.InformedTraversalAlgorithm.split">split() (ia.algorithm.InformedTraversalAlgorithm method)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.algorithm.UninformedTraversalAlgorithm.html#ia.algorithm.UninformedTraversalAlgorithm.split">(ia.algorithm.UninformedTraversalAlgorithm method)</a>
+</li>
+        <li><a href="_autosummary/ia.maze.tile.MazeTile.html#ia.maze.tile.MazeTile.split">(ia.maze.tile.MazeTile method)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/ia.algorithm.InformedTraversalAlgorithm.html#ia.algorithm.InformedTraversalAlgorithm.splitlines">splitlines() (ia.algorithm.InformedTraversalAlgorithm method)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.algorithm.UninformedTraversalAlgorithm.html#ia.algorithm.UninformedTraversalAlgorithm.splitlines">(ia.algorithm.UninformedTraversalAlgorithm method)</a>
+</li>
+        <li><a href="_autosummary/ia.maze.tile.MazeTile.html#ia.maze.tile.MazeTile.splitlines">(ia.maze.tile.MazeTile method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/ia.maze.maze.Maze.html#ia.maze.maze.Maze.start">start (ia.maze.maze.Maze property)</a>
+</li>
+      <li><a href="_autosummary/ia.algorithm.InformedTraversalAlgorithm.html#ia.algorithm.InformedTraversalAlgorithm.startswith">startswith() (ia.algorithm.InformedTraversalAlgorithm method)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.algorithm.UninformedTraversalAlgorithm.html#ia.algorithm.UninformedTraversalAlgorithm.startswith">(ia.algorithm.UninformedTraversalAlgorithm method)</a>
+</li>
+        <li><a href="_autosummary/ia.maze.tile.MazeTile.html#ia.maze.tile.MazeTile.startswith">(ia.maze.tile.MazeTile method)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/ia.algorithm.InformedTraversalAlgorithm.html#ia.algorithm.InformedTraversalAlgorithm.strip">strip() (ia.algorithm.InformedTraversalAlgorithm method)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.algorithm.UninformedTraversalAlgorithm.html#ia.algorithm.UninformedTraversalAlgorithm.strip">(ia.algorithm.UninformedTraversalAlgorithm method)</a>
+</li>
+        <li><a href="_autosummary/ia.maze.tile.MazeTile.html#ia.maze.tile.MazeTile.strip">(ia.maze.tile.MazeTile method)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/ia.algorithm.InformedTraversalAlgorithm.html#ia.algorithm.InformedTraversalAlgorithm.swapcase">swapcase() (ia.algorithm.InformedTraversalAlgorithm method)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.algorithm.UninformedTraversalAlgorithm.html#ia.algorithm.UninformedTraversalAlgorithm.swapcase">(ia.algorithm.UninformedTraversalAlgorithm method)</a>
+</li>
+        <li><a href="_autosummary/ia.maze.tile.MazeTile.html#ia.maze.tile.MazeTile.swapcase">(ia.maze.tile.MazeTile method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="T">T</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/ia.algorithm.InformedTraversalAlgorithm.html#ia.algorithm.InformedTraversalAlgorithm.title">title() (ia.algorithm.InformedTraversalAlgorithm method)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.algorithm.UninformedTraversalAlgorithm.html#ia.algorithm.UninformedTraversalAlgorithm.title">(ia.algorithm.UninformedTraversalAlgorithm method)</a>
+</li>
+        <li><a href="_autosummary/ia.maze.tile.MazeTile.html#ia.maze.tile.MazeTile.title">(ia.maze.tile.MazeTile method)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/ia.graph.undirected.UndirectedGraph.html#ia.graph.undirected.UndirectedGraph.to_networkx">to_networkx() (ia.graph.undirected.UndirectedGraph method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/ia.algorithm.InformedTraversalAlgorithm.html#ia.algorithm.InformedTraversalAlgorithm.translate">translate() (ia.algorithm.InformedTraversalAlgorithm method)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.algorithm.UninformedTraversalAlgorithm.html#ia.algorithm.UninformedTraversalAlgorithm.translate">(ia.algorithm.UninformedTraversalAlgorithm method)</a>
+</li>
+        <li><a href="_autosummary/ia.maze.tile.MazeTile.html#ia.maze.tile.MazeTile.translate">(ia.maze.tile.MazeTile method)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/ia.algorithm.TraversalResult.html#ia.algorithm.TraversalResult">TraversalResult (class in ia.algorithm)</a>
+</li>
+      <li><a href="_autosummary/ia.graph.undirected.UndirectedGraph.html#ia.graph.undirected.UndirectedGraph.traverse">traverse() (ia.graph.undirected.UndirectedGraph method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="U">U</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/ia.graph.undirected.UndirectedGraph.html#ia.graph.undirected.UndirectedGraph">UndirectedGraph (class in ia.graph.undirected)</a>
+</li>
+      <li><a href="_autosummary/ia.graph.parser.parser.UndirectedGraphTransformer.html#ia.graph.parser.parser.UndirectedGraphTransformer">UndirectedGraphTransformer (class in ia.graph.parser.parser)</a>
+</li>
+      <li><a href="_autosummary/ia.algorithm.UninformedTraversalAlgorithm.html#ia.algorithm.UninformedTraversalAlgorithm">UninformedTraversalAlgorithm (class in ia.algorithm)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/ia.algorithm.InformedTraversalAlgorithm.html#ia.algorithm.InformedTraversalAlgorithm.upper">upper() (ia.algorithm.InformedTraversalAlgorithm method)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.algorithm.UninformedTraversalAlgorithm.html#ia.algorithm.UninformedTraversalAlgorithm.upper">(ia.algorithm.UninformedTraversalAlgorithm method)</a>
+</li>
+        <li><a href="_autosummary/ia.maze.tile.MazeTile.html#ia.maze.tile.MazeTile.upper">(ia.maze.tile.MazeTile method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="V">V</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/ia.graph.undirected.UndirectedGraph.html#ia.graph.undirected.UndirectedGraph.vertices">vertices (ia.graph.undirected.UndirectedGraph property)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="W">W</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/ia.graph.parser.parser.UndirectedGraphTransformer.html#ia.graph.parser.parser.UndirectedGraphTransformer.weight">weight() (ia.graph.parser.parser.UndirectedGraphTransformer method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/ia.graph.undirected.UndirectedGraph.html#ia.graph.undirected.UndirectedGraph.weights">weights (ia.graph.undirected.UndirectedGraph property)</a>
+</li>
+      <li><a href="_autosummary/ia.graph.parser.parser.UndirectedGraphTransformer.html#ia.graph.parser.parser.UndirectedGraphTransformer.WS">WS() (ia.graph.parser.parser.UndirectedGraphTransformer method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="Y">Y</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/ia.tree.utils.yield_tree.html#ia.tree.utils.yield_tree">yield_tree() (in module ia.tree.utils)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="Z">Z</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/ia.algorithm.InformedTraversalAlgorithm.html#ia.algorithm.InformedTraversalAlgorithm.zfill">zfill() (ia.algorithm.InformedTraversalAlgorithm method)</a>
+
+      <ul>
+        <li><a href="_autosummary/ia.algorithm.UninformedTraversalAlgorithm.html#ia.algorithm.UninformedTraversalAlgorithm.zfill">(ia.algorithm.UninformedTraversalAlgorithm method)</a>
+</li>
+        <li><a href="_autosummary/ia.maze.tile.MazeTile.html#ia.maze.tile.MazeTile.zfill">(ia.maze.tile.MazeTile method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Pablo Hernández Jiménez
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, Pablo Hernández Jiménez.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
