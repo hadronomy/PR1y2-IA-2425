@@ -12,6 +12,7 @@ from rich.text import Text
 from ia.algorithm import TraversalResult
 from ia.cli.utils import wrap_text
 from ia.maze import Maze
+from ia.maze.euristics import Euristic
 from ia.maze.matrix import MatrixPosition
 from ia.maze.parser import parse as parse_maze
 
@@ -74,6 +75,14 @@ def informed(
             help="Do not print the header.",
         ),
     ] = None,
+    euristic: Annotated[
+        Euristic,
+        typer.Option(
+            "--euristic",
+            "-e",
+            help="The euristic function to use.",
+        ),
+    ] = Euristic.MANHATTAN,
 ):
     """Traverse a maze using an informed search algorithm."""
     console = Console()
@@ -95,7 +104,7 @@ def informed(
     print_style = "detailed" if pretty else "simple"
 
     start_time = time.time()
-    result = maze.a_star()
+    result = maze.a_star(euristic_func=euristic.to_function())
     end_time = time.time()
     execution_time = end_time - start_time
 
@@ -110,6 +119,8 @@ def informed(
     )  # noqa: E501
 
     console = Console(file=output_text_file)
+    console.print("Algorithm: A*", style="blue bold")
+    console.print(f"Euristic: {euristic.value}", style="blue bold")
     console.print(f"Execution time: {execution_time:.4f} seconds", style="blue bold")
 
     print_result(console, input_file_name, maze, print_style, result)
@@ -145,7 +156,6 @@ def print_result(
         result: TraversalResult
             The result of the traversal
     """  # noqa: E501
-    console.print("Algorithm: A*", style="blue bold")
     if result.path is None:
         console.print("\nNo path found.", style="red bold")
     else:

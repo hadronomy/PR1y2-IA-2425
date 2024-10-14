@@ -1,5 +1,7 @@
 """Euristic functions for the A* algorithm."""
 
+from collections.abc import Callable
+from enum import Enum
 import math
 
 from ia.maze.matrix import MatrixPosition
@@ -115,3 +117,35 @@ def greater_diagonal_g_score(current: MatrixPosition, neighbor: MatrixPosition) 
     if offset == (0, 1) or offset == (1, 0) or offset == (0, -1) or offset == (-1, 0):
         return 5
     return 7
+
+
+class Euristic(str, Enum):
+    """Euristic class.
+
+    Defines the euristic functions for the A* algorithm and
+    allows to call them by their name and easily execute them.
+    """
+
+    MANHATTAN = "manhattan"
+    EUCLIDEAN = "euclidean"
+    CHEBYSHEV = "chebyshev"
+    OCTILE = "octile"
+    GREATER_DIAGONAL_G_SCORE = "greater_diagonal_g_score"
+
+    def to_function(self) -> Callable[[MatrixPosition, MatrixPosition], int]:
+        """Call the euristic function.
+
+        Parameters
+        ----------
+            start : MatrixPosition
+                The start position.
+            goal : MatrixPosition
+                The goal position.
+        """
+        return {
+            Euristic.MANHATTAN: manhattan_distance,
+            Euristic.EUCLIDEAN: euclidean_distance,
+            Euristic.CHEBYSHEV: chebyshev_distance,
+            Euristic.OCTILE: octile_distance,
+            Euristic.GREATER_DIAGONAL_G_SCORE: greater_diagonal_g_score,
+        }[self]
