@@ -31,3 +31,7 @@ exclude_patterns = []
 
 html_theme = "sphinx_book_theme"
 html_static_path = ["_static"]
+
+rst_epilog = """
+.. |repo_url| replace:: https://github.com/hadronomy/PR1y2-IA-2425
+"""
