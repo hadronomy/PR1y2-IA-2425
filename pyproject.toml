@@ -40,7 +40,7 @@ ia = "ia.main:main"
 known-third-party = ["typer", "click"]
 
 [tool.ruff]
-exclude = ["generated_*.py"]
+exclude = ["generated_*.py", "docs/"]
 target-version = "py312"
 
 [tool.ruff.lint]
