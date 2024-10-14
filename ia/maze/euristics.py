@@ -1,8 +1,8 @@
 """Euristic functions for the A* algorithm."""
 
+import math
 from collections.abc import Callable
 from enum import Enum
-import math
 
 from ia.maze.matrix import MatrixPosition
 
