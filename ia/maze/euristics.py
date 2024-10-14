@@ -147,5 +147,4 @@ class Euristic(str, Enum):
             Euristic.EUCLIDEAN: euclidean_distance,
             Euristic.CHEBYSHEV: chebyshev_distance,
             Euristic.OCTILE: octile_distance,
-            Euristic.GREATER_DIAGONAL_G_SCORE: greater_diagonal_g_score,
         }[self]
