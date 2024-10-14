@@ -5,9 +5,9 @@ ia.algorithm.UninformedTraversalAlgorithm
 
 .. autoclass:: UninformedTraversalAlgorithm
    :members:
-   :special-members:
    :show-inheritance:
    :inherited-members:
+   :special-members:
 
    
    

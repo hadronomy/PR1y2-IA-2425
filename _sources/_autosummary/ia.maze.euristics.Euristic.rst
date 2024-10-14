@@ -5,9 +5,9 @@ ia.maze.euristics.Euristic
 
 .. autoclass:: Euristic
    :members:
-   :special-members:
    :show-inheritance:
    :inherited-members:
+   :special-members:
 
    
    

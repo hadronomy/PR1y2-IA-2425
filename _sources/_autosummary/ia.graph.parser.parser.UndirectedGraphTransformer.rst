@@ -5,9 +5,9 @@ ia.graph.parser.parser.UndirectedGraphTransformer
 
 .. autoclass:: UndirectedGraphTransformer
    :members:
-   :special-members:
    :show-inheritance:
    :inherited-members:
+   :special-members:
 
    
    

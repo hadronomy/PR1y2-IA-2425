@@ -5,9 +5,9 @@ ia.maze.maze.Maze
 
 .. autoclass:: Maze
    :members:
-   :special-members:
    :show-inheritance:
    :inherited-members:
+   :special-members:
 
    
    

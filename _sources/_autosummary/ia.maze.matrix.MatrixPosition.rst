@@ -5,9 +5,9 @@ ia.maze.matrix.MatrixPosition
 
 .. autoclass:: MatrixPosition
    :members:
-   :special-members:
    :show-inheritance:
    :inherited-members:
+   :special-members:
 
    
    

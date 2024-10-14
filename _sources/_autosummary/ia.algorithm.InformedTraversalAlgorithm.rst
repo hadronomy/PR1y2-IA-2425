@@ -5,9 +5,9 @@ ia.algorithm.InformedTraversalAlgorithm
 
 .. autoclass:: InformedTraversalAlgorithm
    :members:
-   :special-members:
    :show-inheritance:
    :inherited-members:
+   :special-members:
 
    
    

@@ -5,9 +5,9 @@ ia.maze.tile.MazeTile
 
 .. autoclass:: MazeTile
    :members:
-   :special-members:
    :show-inheritance:
    :inherited-members:
+   :special-members:
 
    
    

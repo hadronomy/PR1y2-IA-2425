@@ -5,9 +5,9 @@ ia.tree.constants.ExportConstants
 
 .. autoclass:: ExportConstants
    :members:
-   :special-members:
    :show-inheritance:
    :inherited-members:
+   :special-members:
 
    
    
