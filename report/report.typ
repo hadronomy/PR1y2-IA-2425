@@ -29,8 +29,6 @@
   se recomienda la lectura de la #link("https://hadronomy.github.io/PR1y2-IA-2425/")[documentación del proyecto]
   donde se explica en detalle la implementación y el diseño de la práctica.
 
-  #linebreak()
-
   Además, en la documentación se encuentran las instrucciones de 
   #link("https://hadronomy.github.io/PR1y2-IA-2425/installation.html")[instalación y ejecución del programa].
 ]
@@ -38,15 +36,11 @@
 En esta práctica se implementa el algoritmo de búsqueda $A*$ 
 y se aplica a un problema de búsqueda de caminos en un laberinto.
 
-#linebreak()
-
 Destacar que para el desarrollo de la práctica se ha utilizado el lenguaje de programación Python#footnote[
   #link("https://www.python.org/"): Python es un lenguaje de programación interpretado cuya filosofía hace hincapié en una sintaxis que favorezca un código legible.
 ]. Por tanto y al no ser un lenguaje de programación
 compilado se darán
 #link("https://hadronomy.github.io/PR1y2-IA-2425/installation.html")[instrucciones para su correcta instalación y ejecución.]
-
-#linebreak()
 
 Se explicará la implementación del algoritmo y se mostrarán los resultados obtenidos,
 comparando diferentes heurísticas y sus resultados.
@@ -130,8 +124,6 @@ de datos y funciones que son necesarias para el correcto funcionamiento
 de la *Práctica 2*. Y gracias a la modularidad del diseño, se pueden
 reutilizar estas estructuras y funciones sin tener que duplicar código.
 
-#linebreak()
-
 En el *CLI*@cli la ejecución de ambas prácticas se encuentra
 diferenciada en subcomandos.
 
@@ -158,8 +150,6 @@ Para el diseño e implementación de la práctica, se ha seguido un enfoque basa
 modularidad y los principios *SOLID*. La modularidad permite dividir el sistema en 
 partes más pequeñas y manejables, facilitando el mantenimiento y la escalabilidad del código. 
 Cada módulo se encarga de una funcionalidad específica, lo que reduce la complejidad y mejora la reutilización del código.
-
-#linebreak()
 
 Los principios *SOLID*, que son cinco principios de diseño orientado a objetos, se han aplicado para asegurar que el código sea robusto y fácil de mantener:
 
@@ -228,22 +218,16 @@ define el comportamiento básico de un nodo y *Node*,
 solo añade y modifica los métodos necesarios para su uso en un árbol de
 búsqueda.
 
-#linebreak()
-
 Gracias a la versatilidad de Python, esta clase
 permite la adición en el momento de instanciación de un nodo
 una cantidad arbitraria de atributos. Que serán útiles para
 la implementación de los algoritmos de búsqueda y su uso
 en general.
 
-#linebreak()
-
 También permite definir en base a qué atributo se ordenarán
 los nodos. Por defecto se ordenan por el atributo *name*.
 Pero más adelante veremos que en el algoritmo $A*$ se ordenan
 por el atributo *f_score*.
-
-#linebreak()
 
 Los *setters* de los atributos de la clase *Node* comprueban
 y aseguran la integridad del árbol.
@@ -256,18 +240,12 @@ Esta clase contiene la representación del laberinto en forma de matriz
 y las funciones necesarias para su uso. Además, contiene
 la implementación del algoritmo de búsqueda $A*$.
 
-#linebreak()
-
 Hereda de la clase *Matrix* que contiene las funciones
 necesarias para la representación de una matriz y su uso.
-
-#linebreak()
 
 La clase *Maze* contiene las funciones necesarias para
 la representación de un laberinto y su uso en el algoritmo
 de búsqueda $A*$.
-
-#linebreak()
 
 Cada elemento de la matriz representa una celda del laberinto.
 Las celdas o "tiles" están representadas por la clase enum
@@ -279,8 +257,6 @@ El algoritmo $A*$ es un algoritmo de búsqueda informada que combina
 la búsqueda en anchura con la búsqueda heurística. Utiliza una función
 de evaluación que combina el coste de llegar a un nodo con una estimación
 del coste de llegar al objetivo desde ese nodo.
-
-#linebreak()
 
 El algoritmo $A*$ se basa en la siguiente fórmula de evaluación:
 
@@ -434,8 +410,6 @@ objetivo, no existen nodos con menor valor $f$ en el `open_set` y por tanto
 la solución es óptima.
 
 Cada vez que se extrae un nodo del `open_set`, se añade a la lista `inspected`.
-
-#linebreak()
 
 Por cada vecino del `MazeTile` asociado al nodo actual, 
 cuyo tipo de `MazeTile` no pertenezca a los ignorados, 
