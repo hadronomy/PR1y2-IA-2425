@@ -34,7 +34,7 @@ def informed(
         typer.Option(
             "--output",
             "-o",
-            help="The path to the output file.",
+            help="The path to the output directory.",
             writable=True,
             resolve_path=True,
             dir_okay=True,
@@ -83,6 +83,12 @@ def informed(
             help="The euristic function to use.",
         ),
     ] = Euristic.MANHATTAN,
+    suffix: Annotated[
+        str | None,
+        typer.Option(
+            help="The suffix for the output file.",
+        ),
+    ] = None,
 ):
     """Traverse a maze using an informed search algorithm."""
     console = Console()
@@ -112,7 +118,11 @@ def informed(
         output_path.mkdir(parents=True, exist_ok=True)
 
     input_file_name = input_path.stem
-    output_file_name = input_file_name + "_out.txt"
+    output_file_name = (
+        input_file_name + "_out.txt"
+        if not suffix
+        else input_file_name + "_out_" + suffix + ".txt"
+    )  # noqa: E501
     output_text_file_path = output_path / output_file_name if output_path else None  # noqa: E501
     output_text_file = (
         open(output_text_file_path, "w") if output_text_file_path else None
@@ -125,7 +135,11 @@ def informed(
 
     print_result(console, input_file_name, maze, print_style, result)
 
-    plot_file_name = input_file_name + "_result.png"
+    plot_file_name = (
+        input_file_name + "_plot.png"
+        if not suffix
+        else input_file_name + "_plot_" + suffix + ".png"
+    )  # noqa: E501
     plot_output_path = output_path / plot_file_name if output_path else None
     maze.plot(
         path=result.path,
