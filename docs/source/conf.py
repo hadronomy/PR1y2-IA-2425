@@ -14,7 +14,7 @@ sys.path.insert(0, str(Path("../..", "ia").resolve()))
 project = "IA - Search Algorithms"
 copyright = "2024, Pablo Hernández Jiménez"
 author = "Pablo Hernández Jiménez"
-release = "v1.2.1"
+release = "v1.2.2"
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
