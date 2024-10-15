@@ -280,4 +280,4 @@ def print_table(
         maxcolwidths=30,
         maxheadercolwidths=math.inf,
     )
-    console.print(table_str)
+    console.print(table_str, crop=False, overflow="ignore")
