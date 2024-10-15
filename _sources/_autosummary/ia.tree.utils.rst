@@ -2,13 +2,11 @@ ia.tree.utils
 =============
 
 .. automodule:: ia.tree.utils
-  
-   
-   
-   
 
    
-   
+
+
+
    .. rubric:: Functions
 
    .. autosummary::
@@ -17,16 +15,6 @@ ia.tree.utils
       get_subtree
       print_tree
       yield_tree
-   
-   
-
-   
-   
-   
-
-   
-   
-   
 
 
 

@@ -2,22 +2,11 @@ ia.graph.parser
 ===============
 
 .. automodule:: ia.graph.parser
-  
-   
-   
-   
 
    
-   
-   
 
-   
-   
-   
 
-   
-   
-   
+
 
 
 
@@ -25,11 +14,7 @@ ia.graph.parser
 
 .. autosummary::
    :toctree:
-   :template: custom-module-template.rst
    :recursive:
 
-
-
+   generated_parser
    parser
-
-

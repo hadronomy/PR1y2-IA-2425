@@ -2,13 +2,11 @@ ia.tree.iterators
 =================
 
 .. automodule:: ia.tree.iterators
-  
-   
-   
-   
 
    
-   
+
+
+
    .. rubric:: Functions
 
    .. autosummary::
@@ -16,16 +14,6 @@ ia.tree.iterators
    
       postorder_iter
       preorder_iter
-   
-   
-
-   
-   
-   
-
-   
-   
-   
 
 
 

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>ia.tree.basenode &#8212; IA - Search Algorithms v1.2.2 documentation</title>
+    <title>ia.tree.basenode &#8212; IA - Search Algorithms 1.2.2 documentation</title>
   
   
   
@@ -30,16 +30,22 @@
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=029aecb1"></script>
+    <script src="../_static/documentation_options.js?v=778ca11c"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '_autosummary/ia.tree.basenode';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -132,7 +138,7 @@
   
   
   
-    <p class="title logo__title">IA - Search Algorithms v1.2.2 documentation</p>
+    <p class="title logo__title">IA - Search Algorithms 1.2.2 documentation</p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -166,7 +172,16 @@
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="ia.graph.undirected.html">ia.graph.undirected</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="ia.graph.undirected.UndirectedGraph.html">ia.graph.undirected.UndirectedGraph</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="ia.graph.undirected.UndirectedGraph.html">ia.graph.undirected.UndirectedGraph</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="ia.graph.undirected.UndirectedGraph.add_edge.html">ia.graph.undirected.UndirectedGraph.add_edge</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.graph.undirected.UndirectedGraph.bfs.html">ia.graph.undirected.UndirectedGraph.bfs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.graph.undirected.UndirectedGraph.dfs.html">ia.graph.undirected.UndirectedGraph.dfs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.graph.undirected.UndirectedGraph.remove_edge.html">ia.graph.undirected.UndirectedGraph.remove_edge</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.graph.undirected.UndirectedGraph.remove_vertex.html">ia.graph.undirected.UndirectedGraph.remove_vertex</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.graph.undirected.UndirectedGraph.to_networkx.html">ia.graph.undirected.UndirectedGraph.to_networkx</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.graph.undirected.UndirectedGraph.traverse.html">ia.graph.undirected.UndirectedGraph.traverse</a></li>
+</ul>
+</details></li>
 </ul>
 </details></li>
 </ul>
@@ -185,17 +200,83 @@
 <li class="toctree-l3"><a class="reference internal" href="ia.maze.euristics.greater_diagonal_g_score.html">ia.maze.euristics.greater_diagonal_g_score</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ia.maze.euristics.manhattan_distance.html">ia.maze.euristics.manhattan_distance</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ia.maze.euristics.octile_distance.html">ia.maze.euristics.octile_distance</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ia.maze.euristics.Euristic.html">ia.maze.euristics.Euristic</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="ia.maze.euristics.Euristic.html">ia.maze.euristics.Euristic</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.capitalize.html">ia.maze.euristics.Euristic.capitalize</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.casefold.html">ia.maze.euristics.Euristic.casefold</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.center.html">ia.maze.euristics.Euristic.center</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.count.html">ia.maze.euristics.Euristic.count</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.encode.html">ia.maze.euristics.Euristic.encode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.endswith.html">ia.maze.euristics.Euristic.endswith</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.expandtabs.html">ia.maze.euristics.Euristic.expandtabs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.find.html">ia.maze.euristics.Euristic.find</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.format.html">ia.maze.euristics.Euristic.format</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.format_map.html">ia.maze.euristics.Euristic.format_map</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.index.html">ia.maze.euristics.Euristic.index</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.isalnum.html">ia.maze.euristics.Euristic.isalnum</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.isalpha.html">ia.maze.euristics.Euristic.isalpha</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.isascii.html">ia.maze.euristics.Euristic.isascii</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.isdecimal.html">ia.maze.euristics.Euristic.isdecimal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.isdigit.html">ia.maze.euristics.Euristic.isdigit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.isidentifier.html">ia.maze.euristics.Euristic.isidentifier</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.islower.html">ia.maze.euristics.Euristic.islower</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.isnumeric.html">ia.maze.euristics.Euristic.isnumeric</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.isprintable.html">ia.maze.euristics.Euristic.isprintable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.isspace.html">ia.maze.euristics.Euristic.isspace</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.istitle.html">ia.maze.euristics.Euristic.istitle</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.isupper.html">ia.maze.euristics.Euristic.isupper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.join.html">ia.maze.euristics.Euristic.join</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.ljust.html">ia.maze.euristics.Euristic.ljust</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.lower.html">ia.maze.euristics.Euristic.lower</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.lstrip.html">ia.maze.euristics.Euristic.lstrip</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.maketrans.html">ia.maze.euristics.Euristic.maketrans</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.partition.html">ia.maze.euristics.Euristic.partition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.removeprefix.html">ia.maze.euristics.Euristic.removeprefix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.removesuffix.html">ia.maze.euristics.Euristic.removesuffix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.replace.html">ia.maze.euristics.Euristic.replace</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.rfind.html">ia.maze.euristics.Euristic.rfind</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.rindex.html">ia.maze.euristics.Euristic.rindex</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.rjust.html">ia.maze.euristics.Euristic.rjust</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.rpartition.html">ia.maze.euristics.Euristic.rpartition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.rsplit.html">ia.maze.euristics.Euristic.rsplit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.rstrip.html">ia.maze.euristics.Euristic.rstrip</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.split.html">ia.maze.euristics.Euristic.split</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.splitlines.html">ia.maze.euristics.Euristic.splitlines</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.startswith.html">ia.maze.euristics.Euristic.startswith</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.strip.html">ia.maze.euristics.Euristic.strip</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.swapcase.html">ia.maze.euristics.Euristic.swapcase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.title.html">ia.maze.euristics.Euristic.title</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.translate.html">ia.maze.euristics.Euristic.translate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.upper.html">ia.maze.euristics.Euristic.upper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.zfill.html">ia.maze.euristics.Euristic.zfill</a></li>
+</ul>
+</details></li>
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="ia.maze.matrix.html">ia.maze.matrix</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="ia.maze.matrix.Matrix.html">ia.maze.matrix.Matrix</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ia.maze.matrix.MatrixPosition.html">ia.maze.matrix.MatrixPosition</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="ia.maze.matrix.Matrix.html">ia.maze.matrix.Matrix</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.matrix.Matrix.is_valid.html">ia.maze.matrix.Matrix.is_valid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.matrix.Matrix.is_valid_position.html">ia.maze.matrix.Matrix.is_valid_position</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.matrix.Matrix.neighbors.html">ia.maze.matrix.Matrix.neighbors</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="ia.maze.matrix.MatrixPosition.html">ia.maze.matrix.MatrixPosition</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.matrix.MatrixPosition.from_representation.html">ia.maze.matrix.MatrixPosition.from_representation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.matrix.MatrixPosition.representation.html">ia.maze.matrix.MatrixPosition.representation</a></li>
+</ul>
+</details></li>
 <li class="toctree-l3"><a class="reference internal" href="ia.maze.matrix.enumerate_matrix.html">ia.maze.matrix.enumerate_matrix</a></li>
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="ia.maze.maze.html">ia.maze.maze</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="ia.maze.maze.Maze.html">ia.maze.maze.Maze</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="ia.maze.maze.Maze.html">ia.maze.maze.Maze</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.maze.Maze.a_star.html">ia.maze.maze.Maze.a_star</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.maze.Maze.is_valid.html">ia.maze.maze.Maze.is_valid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.maze.Maze.is_valid_position.html">ia.maze.maze.Maze.is_valid_position</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.maze.Maze.neighbors.html">ia.maze.maze.Maze.neighbors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.maze.Maze.plot.html">ia.maze.maze.Maze.plot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.maze.Maze.print.html">ia.maze.maze.Maze.print</a></li>
+</ul>
+</details></li>
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="ia.maze.parser.html">ia.maze.parser</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -203,7 +284,56 @@
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="ia.maze.tile.html">ia.maze.tile</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="ia.maze.tile.MazeTile.html">ia.maze.tile.MazeTile</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="ia.maze.tile.MazeTile.html">ia.maze.tile.MazeTile</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.capitalize.html">ia.maze.tile.MazeTile.capitalize</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.casefold.html">ia.maze.tile.MazeTile.casefold</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.center.html">ia.maze.tile.MazeTile.center</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.count.html">ia.maze.tile.MazeTile.count</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.encode.html">ia.maze.tile.MazeTile.encode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.endswith.html">ia.maze.tile.MazeTile.endswith</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.expandtabs.html">ia.maze.tile.MazeTile.expandtabs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.find.html">ia.maze.tile.MazeTile.find</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.format.html">ia.maze.tile.MazeTile.format</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.format_map.html">ia.maze.tile.MazeTile.format_map</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.index.html">ia.maze.tile.MazeTile.index</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.isalnum.html">ia.maze.tile.MazeTile.isalnum</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.isalpha.html">ia.maze.tile.MazeTile.isalpha</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.isascii.html">ia.maze.tile.MazeTile.isascii</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.isdecimal.html">ia.maze.tile.MazeTile.isdecimal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.isdigit.html">ia.maze.tile.MazeTile.isdigit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.isidentifier.html">ia.maze.tile.MazeTile.isidentifier</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.islower.html">ia.maze.tile.MazeTile.islower</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.isnumeric.html">ia.maze.tile.MazeTile.isnumeric</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.isprintable.html">ia.maze.tile.MazeTile.isprintable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.isspace.html">ia.maze.tile.MazeTile.isspace</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.istitle.html">ia.maze.tile.MazeTile.istitle</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.isupper.html">ia.maze.tile.MazeTile.isupper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.join.html">ia.maze.tile.MazeTile.join</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.ljust.html">ia.maze.tile.MazeTile.ljust</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.lower.html">ia.maze.tile.MazeTile.lower</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.lstrip.html">ia.maze.tile.MazeTile.lstrip</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.maketrans.html">ia.maze.tile.MazeTile.maketrans</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.partition.html">ia.maze.tile.MazeTile.partition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.removeprefix.html">ia.maze.tile.MazeTile.removeprefix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.removesuffix.html">ia.maze.tile.MazeTile.removesuffix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.replace.html">ia.maze.tile.MazeTile.replace</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.rfind.html">ia.maze.tile.MazeTile.rfind</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.rindex.html">ia.maze.tile.MazeTile.rindex</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.rjust.html">ia.maze.tile.MazeTile.rjust</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.rpartition.html">ia.maze.tile.MazeTile.rpartition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.rsplit.html">ia.maze.tile.MazeTile.rsplit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.rstrip.html">ia.maze.tile.MazeTile.rstrip</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.split.html">ia.maze.tile.MazeTile.split</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.splitlines.html">ia.maze.tile.MazeTile.splitlines</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.startswith.html">ia.maze.tile.MazeTile.startswith</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.strip.html">ia.maze.tile.MazeTile.strip</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.swapcase.html">ia.maze.tile.MazeTile.swapcase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.title.html">ia.maze.tile.MazeTile.title</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.translate.html">ia.maze.tile.MazeTile.translate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.upper.html">ia.maze.tile.MazeTile.upper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.zfill.html">ia.maze.tile.MazeTile.zfill</a></li>
+</ul>
+</details></li>
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="ia.maze.utils.html">ia.maze.utils</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -214,7 +344,17 @@
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="ia.tree.html">ia.tree</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active has-children"><a class="current reference internal" href="#">ia.tree.basenode</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="ia.tree.basenode.BaseNode.html">ia.tree.basenode.BaseNode</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="ia.tree.basenode.BaseNode.html">ia.tree.basenode.BaseNode</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="ia.tree.basenode.BaseNode.append.html">ia.tree.basenode.BaseNode.append</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.tree.basenode.BaseNode.copy.html">ia.tree.basenode.BaseNode.copy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.tree.basenode.BaseNode.describe.html">ia.tree.basenode.BaseNode.describe</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.tree.basenode.BaseNode.extend.html">ia.tree.basenode.BaseNode.extend</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.tree.basenode.BaseNode.from_dict.html">ia.tree.basenode.BaseNode.from_dict</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.tree.basenode.BaseNode.get_attribute.html">ia.tree.basenode.BaseNode.get_attribute</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.tree.basenode.BaseNode.set_attribute.html">ia.tree.basenode.BaseNode.set_attribute</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.tree.basenode.BaseNode.sort.html">ia.tree.basenode.BaseNode.sort</a></li>
+</ul>
+</details></li>
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="ia.tree.constants.html">ia.tree.constants</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -228,7 +368,17 @@
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="ia.tree.node.html">ia.tree.node</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="ia.tree.node.Node.html">ia.tree.node.Node</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="ia.tree.node.Node.html">ia.tree.node.Node</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="ia.tree.node.Node.append.html">ia.tree.node.Node.append</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.tree.node.Node.copy.html">ia.tree.node.Node.copy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.tree.node.Node.describe.html">ia.tree.node.Node.describe</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.tree.node.Node.extend.html">ia.tree.node.Node.extend</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.tree.node.Node.from_dict.html">ia.tree.node.Node.from_dict</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.tree.node.Node.get_attribute.html">ia.tree.node.Node.get_attribute</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.tree.node.Node.set_attribute.html">ia.tree.node.Node.set_attribute</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.tree.node.Node.sort.html">ia.tree.node.Node.sort</a></li>
+</ul>
+</details></li>
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="ia.tree.utils.html">ia.tree.utils</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -241,10 +391,112 @@
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="ia.algorithm.html">ia.algorithm</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="ia.algorithm.graph_path_cost.html">ia.algorithm.graph_path_cost</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ia.algorithm.AlgorithmHistory.html">ia.algorithm.AlgorithmHistory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.html">ia.algorithm.InformedTraversalAlgorithm</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="ia.algorithm.AlgorithmHistory.html">ia.algorithm.AlgorithmHistory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.AlgorithmHistory.add_step.html">ia.algorithm.AlgorithmHistory.add_step</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.AlgorithmHistory.get_history.html">ia.algorithm.AlgorithmHistory.get_history</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.html">ia.algorithm.InformedTraversalAlgorithm</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.capitalize.html">ia.algorithm.InformedTraversalAlgorithm.capitalize</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.casefold.html">ia.algorithm.InformedTraversalAlgorithm.casefold</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.center.html">ia.algorithm.InformedTraversalAlgorithm.center</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.count.html">ia.algorithm.InformedTraversalAlgorithm.count</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.encode.html">ia.algorithm.InformedTraversalAlgorithm.encode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.endswith.html">ia.algorithm.InformedTraversalAlgorithm.endswith</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.expandtabs.html">ia.algorithm.InformedTraversalAlgorithm.expandtabs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.find.html">ia.algorithm.InformedTraversalAlgorithm.find</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.format.html">ia.algorithm.InformedTraversalAlgorithm.format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.format_map.html">ia.algorithm.InformedTraversalAlgorithm.format_map</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.index.html">ia.algorithm.InformedTraversalAlgorithm.index</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.isalnum.html">ia.algorithm.InformedTraversalAlgorithm.isalnum</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.isalpha.html">ia.algorithm.InformedTraversalAlgorithm.isalpha</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.isascii.html">ia.algorithm.InformedTraversalAlgorithm.isascii</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.isdecimal.html">ia.algorithm.InformedTraversalAlgorithm.isdecimal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.isdigit.html">ia.algorithm.InformedTraversalAlgorithm.isdigit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.isidentifier.html">ia.algorithm.InformedTraversalAlgorithm.isidentifier</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.islower.html">ia.algorithm.InformedTraversalAlgorithm.islower</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.isnumeric.html">ia.algorithm.InformedTraversalAlgorithm.isnumeric</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.isprintable.html">ia.algorithm.InformedTraversalAlgorithm.isprintable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.isspace.html">ia.algorithm.InformedTraversalAlgorithm.isspace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.istitle.html">ia.algorithm.InformedTraversalAlgorithm.istitle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.isupper.html">ia.algorithm.InformedTraversalAlgorithm.isupper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.join.html">ia.algorithm.InformedTraversalAlgorithm.join</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.ljust.html">ia.algorithm.InformedTraversalAlgorithm.ljust</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.lower.html">ia.algorithm.InformedTraversalAlgorithm.lower</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.lstrip.html">ia.algorithm.InformedTraversalAlgorithm.lstrip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.maketrans.html">ia.algorithm.InformedTraversalAlgorithm.maketrans</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.partition.html">ia.algorithm.InformedTraversalAlgorithm.partition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.removeprefix.html">ia.algorithm.InformedTraversalAlgorithm.removeprefix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.removesuffix.html">ia.algorithm.InformedTraversalAlgorithm.removesuffix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.replace.html">ia.algorithm.InformedTraversalAlgorithm.replace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.rfind.html">ia.algorithm.InformedTraversalAlgorithm.rfind</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.rindex.html">ia.algorithm.InformedTraversalAlgorithm.rindex</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.rjust.html">ia.algorithm.InformedTraversalAlgorithm.rjust</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.rpartition.html">ia.algorithm.InformedTraversalAlgorithm.rpartition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.rsplit.html">ia.algorithm.InformedTraversalAlgorithm.rsplit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.rstrip.html">ia.algorithm.InformedTraversalAlgorithm.rstrip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.split.html">ia.algorithm.InformedTraversalAlgorithm.split</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.splitlines.html">ia.algorithm.InformedTraversalAlgorithm.splitlines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.startswith.html">ia.algorithm.InformedTraversalAlgorithm.startswith</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.strip.html">ia.algorithm.InformedTraversalAlgorithm.strip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.swapcase.html">ia.algorithm.InformedTraversalAlgorithm.swapcase</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.title.html">ia.algorithm.InformedTraversalAlgorithm.title</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.translate.html">ia.algorithm.InformedTraversalAlgorithm.translate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.upper.html">ia.algorithm.InformedTraversalAlgorithm.upper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.zfill.html">ia.algorithm.InformedTraversalAlgorithm.zfill</a></li>
+</ul>
+</details></li>
 <li class="toctree-l2"><a class="reference internal" href="ia.algorithm.TraversalResult.html">ia.algorithm.TraversalResult</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.html">ia.algorithm.UninformedTraversalAlgorithm</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.html">ia.algorithm.UninformedTraversalAlgorithm</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.capitalize.html">ia.algorithm.UninformedTraversalAlgorithm.capitalize</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.casefold.html">ia.algorithm.UninformedTraversalAlgorithm.casefold</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.center.html">ia.algorithm.UninformedTraversalAlgorithm.center</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.count.html">ia.algorithm.UninformedTraversalAlgorithm.count</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.encode.html">ia.algorithm.UninformedTraversalAlgorithm.encode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.endswith.html">ia.algorithm.UninformedTraversalAlgorithm.endswith</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.expandtabs.html">ia.algorithm.UninformedTraversalAlgorithm.expandtabs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.find.html">ia.algorithm.UninformedTraversalAlgorithm.find</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.format.html">ia.algorithm.UninformedTraversalAlgorithm.format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.format_map.html">ia.algorithm.UninformedTraversalAlgorithm.format_map</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.index.html">ia.algorithm.UninformedTraversalAlgorithm.index</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.isalnum.html">ia.algorithm.UninformedTraversalAlgorithm.isalnum</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.isalpha.html">ia.algorithm.UninformedTraversalAlgorithm.isalpha</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.isascii.html">ia.algorithm.UninformedTraversalAlgorithm.isascii</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.isdecimal.html">ia.algorithm.UninformedTraversalAlgorithm.isdecimal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.isdigit.html">ia.algorithm.UninformedTraversalAlgorithm.isdigit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.isidentifier.html">ia.algorithm.UninformedTraversalAlgorithm.isidentifier</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.islower.html">ia.algorithm.UninformedTraversalAlgorithm.islower</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.isnumeric.html">ia.algorithm.UninformedTraversalAlgorithm.isnumeric</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.isprintable.html">ia.algorithm.UninformedTraversalAlgorithm.isprintable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.isspace.html">ia.algorithm.UninformedTraversalAlgorithm.isspace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.istitle.html">ia.algorithm.UninformedTraversalAlgorithm.istitle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.isupper.html">ia.algorithm.UninformedTraversalAlgorithm.isupper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.join.html">ia.algorithm.UninformedTraversalAlgorithm.join</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.ljust.html">ia.algorithm.UninformedTraversalAlgorithm.ljust</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.lower.html">ia.algorithm.UninformedTraversalAlgorithm.lower</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.lstrip.html">ia.algorithm.UninformedTraversalAlgorithm.lstrip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.maketrans.html">ia.algorithm.UninformedTraversalAlgorithm.maketrans</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.partition.html">ia.algorithm.UninformedTraversalAlgorithm.partition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.removeprefix.html">ia.algorithm.UninformedTraversalAlgorithm.removeprefix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.removesuffix.html">ia.algorithm.UninformedTraversalAlgorithm.removesuffix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.replace.html">ia.algorithm.UninformedTraversalAlgorithm.replace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.rfind.html">ia.algorithm.UninformedTraversalAlgorithm.rfind</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.rindex.html">ia.algorithm.UninformedTraversalAlgorithm.rindex</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.rjust.html">ia.algorithm.UninformedTraversalAlgorithm.rjust</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.rpartition.html">ia.algorithm.UninformedTraversalAlgorithm.rpartition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.rsplit.html">ia.algorithm.UninformedTraversalAlgorithm.rsplit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.rstrip.html">ia.algorithm.UninformedTraversalAlgorithm.rstrip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.split.html">ia.algorithm.UninformedTraversalAlgorithm.split</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.splitlines.html">ia.algorithm.UninformedTraversalAlgorithm.splitlines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.startswith.html">ia.algorithm.UninformedTraversalAlgorithm.startswith</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.strip.html">ia.algorithm.UninformedTraversalAlgorithm.strip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.swapcase.html">ia.algorithm.UninformedTraversalAlgorithm.swapcase</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.title.html">ia.algorithm.UninformedTraversalAlgorithm.title</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.translate.html">ia.algorithm.UninformedTraversalAlgorithm.translate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.upper.html">ia.algorithm.UninformedTraversalAlgorithm.upper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.zfill.html">ia.algorithm.UninformedTraversalAlgorithm.zfill</a></li>
+</ul>
+</details></li>
 </ul>
 </details></li>
 </ul>
@@ -400,7 +652,7 @@ document.write(`
   <section id="module-ia.tree.basenode">
 <span id="ia-tree-basenode"></span><h1>ia.tree.basenode<a class="headerlink" href="#module-ia.tree.basenode" title="Link to this heading">#</a></h1>
 <p>BaseNode module.</p>
-<p>Based of <cite>bigtree</cite> python package.</p>
+<p>Based of <em class="xref py py-obj">bigtree</em> python package.</p>
 <p class="rubric">Classes</p>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
 <tbody>

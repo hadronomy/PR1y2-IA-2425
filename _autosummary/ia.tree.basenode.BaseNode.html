@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>ia.tree.basenode.BaseNode &#8212; IA - Search Algorithms v1.2.2 documentation</title>
+    <title>ia.tree.basenode.BaseNode &#8212; IA - Search Algorithms 1.2.2 documentation</title>
   
   
   
@@ -30,20 +30,26 @@
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=029aecb1"></script>
+    <script src="../_static/documentation_options.js?v=778ca11c"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '_autosummary/ia.tree.basenode.BaseNode';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="ia.tree.constants" href="ia.tree.constants.html" />
+    <link rel="next" title="ia.tree.basenode.BaseNode.append" href="ia.tree.basenode.BaseNode.append.html" />
     <link rel="prev" title="ia.tree.basenode" href="ia.tree.basenode.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -132,7 +138,7 @@
   
   
   
-    <p class="title logo__title">IA - Search Algorithms v1.2.2 documentation</p>
+    <p class="title logo__title">IA - Search Algorithms 1.2.2 documentation</p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -166,7 +172,16 @@
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="ia.graph.undirected.html">ia.graph.undirected</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="ia.graph.undirected.UndirectedGraph.html">ia.graph.undirected.UndirectedGraph</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="ia.graph.undirected.UndirectedGraph.html">ia.graph.undirected.UndirectedGraph</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="ia.graph.undirected.UndirectedGraph.add_edge.html">ia.graph.undirected.UndirectedGraph.add_edge</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.graph.undirected.UndirectedGraph.bfs.html">ia.graph.undirected.UndirectedGraph.bfs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.graph.undirected.UndirectedGraph.dfs.html">ia.graph.undirected.UndirectedGraph.dfs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.graph.undirected.UndirectedGraph.remove_edge.html">ia.graph.undirected.UndirectedGraph.remove_edge</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.graph.undirected.UndirectedGraph.remove_vertex.html">ia.graph.undirected.UndirectedGraph.remove_vertex</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.graph.undirected.UndirectedGraph.to_networkx.html">ia.graph.undirected.UndirectedGraph.to_networkx</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.graph.undirected.UndirectedGraph.traverse.html">ia.graph.undirected.UndirectedGraph.traverse</a></li>
+</ul>
+</details></li>
 </ul>
 </details></li>
 </ul>
@@ -185,17 +200,83 @@
 <li class="toctree-l3"><a class="reference internal" href="ia.maze.euristics.greater_diagonal_g_score.html">ia.maze.euristics.greater_diagonal_g_score</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ia.maze.euristics.manhattan_distance.html">ia.maze.euristics.manhattan_distance</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ia.maze.euristics.octile_distance.html">ia.maze.euristics.octile_distance</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ia.maze.euristics.Euristic.html">ia.maze.euristics.Euristic</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="ia.maze.euristics.Euristic.html">ia.maze.euristics.Euristic</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.capitalize.html">ia.maze.euristics.Euristic.capitalize</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.casefold.html">ia.maze.euristics.Euristic.casefold</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.center.html">ia.maze.euristics.Euristic.center</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.count.html">ia.maze.euristics.Euristic.count</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.encode.html">ia.maze.euristics.Euristic.encode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.endswith.html">ia.maze.euristics.Euristic.endswith</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.expandtabs.html">ia.maze.euristics.Euristic.expandtabs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.find.html">ia.maze.euristics.Euristic.find</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.format.html">ia.maze.euristics.Euristic.format</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.format_map.html">ia.maze.euristics.Euristic.format_map</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.index.html">ia.maze.euristics.Euristic.index</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.isalnum.html">ia.maze.euristics.Euristic.isalnum</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.isalpha.html">ia.maze.euristics.Euristic.isalpha</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.isascii.html">ia.maze.euristics.Euristic.isascii</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.isdecimal.html">ia.maze.euristics.Euristic.isdecimal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.isdigit.html">ia.maze.euristics.Euristic.isdigit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.isidentifier.html">ia.maze.euristics.Euristic.isidentifier</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.islower.html">ia.maze.euristics.Euristic.islower</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.isnumeric.html">ia.maze.euristics.Euristic.isnumeric</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.isprintable.html">ia.maze.euristics.Euristic.isprintable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.isspace.html">ia.maze.euristics.Euristic.isspace</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.istitle.html">ia.maze.euristics.Euristic.istitle</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.isupper.html">ia.maze.euristics.Euristic.isupper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.join.html">ia.maze.euristics.Euristic.join</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.ljust.html">ia.maze.euristics.Euristic.ljust</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.lower.html">ia.maze.euristics.Euristic.lower</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.lstrip.html">ia.maze.euristics.Euristic.lstrip</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.maketrans.html">ia.maze.euristics.Euristic.maketrans</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.partition.html">ia.maze.euristics.Euristic.partition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.removeprefix.html">ia.maze.euristics.Euristic.removeprefix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.removesuffix.html">ia.maze.euristics.Euristic.removesuffix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.replace.html">ia.maze.euristics.Euristic.replace</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.rfind.html">ia.maze.euristics.Euristic.rfind</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.rindex.html">ia.maze.euristics.Euristic.rindex</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.rjust.html">ia.maze.euristics.Euristic.rjust</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.rpartition.html">ia.maze.euristics.Euristic.rpartition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.rsplit.html">ia.maze.euristics.Euristic.rsplit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.rstrip.html">ia.maze.euristics.Euristic.rstrip</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.split.html">ia.maze.euristics.Euristic.split</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.splitlines.html">ia.maze.euristics.Euristic.splitlines</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.startswith.html">ia.maze.euristics.Euristic.startswith</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.strip.html">ia.maze.euristics.Euristic.strip</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.swapcase.html">ia.maze.euristics.Euristic.swapcase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.title.html">ia.maze.euristics.Euristic.title</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.translate.html">ia.maze.euristics.Euristic.translate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.upper.html">ia.maze.euristics.Euristic.upper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.euristics.Euristic.zfill.html">ia.maze.euristics.Euristic.zfill</a></li>
+</ul>
+</details></li>
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="ia.maze.matrix.html">ia.maze.matrix</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="ia.maze.matrix.Matrix.html">ia.maze.matrix.Matrix</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ia.maze.matrix.MatrixPosition.html">ia.maze.matrix.MatrixPosition</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="ia.maze.matrix.Matrix.html">ia.maze.matrix.Matrix</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.matrix.Matrix.is_valid.html">ia.maze.matrix.Matrix.is_valid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.matrix.Matrix.is_valid_position.html">ia.maze.matrix.Matrix.is_valid_position</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.matrix.Matrix.neighbors.html">ia.maze.matrix.Matrix.neighbors</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="ia.maze.matrix.MatrixPosition.html">ia.maze.matrix.MatrixPosition</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.matrix.MatrixPosition.from_representation.html">ia.maze.matrix.MatrixPosition.from_representation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.matrix.MatrixPosition.representation.html">ia.maze.matrix.MatrixPosition.representation</a></li>
+</ul>
+</details></li>
 <li class="toctree-l3"><a class="reference internal" href="ia.maze.matrix.enumerate_matrix.html">ia.maze.matrix.enumerate_matrix</a></li>
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="ia.maze.maze.html">ia.maze.maze</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="ia.maze.maze.Maze.html">ia.maze.maze.Maze</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="ia.maze.maze.Maze.html">ia.maze.maze.Maze</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.maze.Maze.a_star.html">ia.maze.maze.Maze.a_star</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.maze.Maze.is_valid.html">ia.maze.maze.Maze.is_valid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.maze.Maze.is_valid_position.html">ia.maze.maze.Maze.is_valid_position</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.maze.Maze.neighbors.html">ia.maze.maze.Maze.neighbors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.maze.Maze.plot.html">ia.maze.maze.Maze.plot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.maze.Maze.print.html">ia.maze.maze.Maze.print</a></li>
+</ul>
+</details></li>
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="ia.maze.parser.html">ia.maze.parser</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -203,7 +284,56 @@
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="ia.maze.tile.html">ia.maze.tile</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="ia.maze.tile.MazeTile.html">ia.maze.tile.MazeTile</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="ia.maze.tile.MazeTile.html">ia.maze.tile.MazeTile</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.capitalize.html">ia.maze.tile.MazeTile.capitalize</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.casefold.html">ia.maze.tile.MazeTile.casefold</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.center.html">ia.maze.tile.MazeTile.center</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.count.html">ia.maze.tile.MazeTile.count</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.encode.html">ia.maze.tile.MazeTile.encode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.endswith.html">ia.maze.tile.MazeTile.endswith</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.expandtabs.html">ia.maze.tile.MazeTile.expandtabs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.find.html">ia.maze.tile.MazeTile.find</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.format.html">ia.maze.tile.MazeTile.format</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.format_map.html">ia.maze.tile.MazeTile.format_map</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.index.html">ia.maze.tile.MazeTile.index</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.isalnum.html">ia.maze.tile.MazeTile.isalnum</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.isalpha.html">ia.maze.tile.MazeTile.isalpha</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.isascii.html">ia.maze.tile.MazeTile.isascii</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.isdecimal.html">ia.maze.tile.MazeTile.isdecimal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.isdigit.html">ia.maze.tile.MazeTile.isdigit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.isidentifier.html">ia.maze.tile.MazeTile.isidentifier</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.islower.html">ia.maze.tile.MazeTile.islower</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.isnumeric.html">ia.maze.tile.MazeTile.isnumeric</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.isprintable.html">ia.maze.tile.MazeTile.isprintable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.isspace.html">ia.maze.tile.MazeTile.isspace</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.istitle.html">ia.maze.tile.MazeTile.istitle</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.isupper.html">ia.maze.tile.MazeTile.isupper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.join.html">ia.maze.tile.MazeTile.join</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.ljust.html">ia.maze.tile.MazeTile.ljust</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.lower.html">ia.maze.tile.MazeTile.lower</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.lstrip.html">ia.maze.tile.MazeTile.lstrip</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.maketrans.html">ia.maze.tile.MazeTile.maketrans</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.partition.html">ia.maze.tile.MazeTile.partition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.removeprefix.html">ia.maze.tile.MazeTile.removeprefix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.removesuffix.html">ia.maze.tile.MazeTile.removesuffix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.replace.html">ia.maze.tile.MazeTile.replace</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.rfind.html">ia.maze.tile.MazeTile.rfind</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.rindex.html">ia.maze.tile.MazeTile.rindex</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.rjust.html">ia.maze.tile.MazeTile.rjust</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.rpartition.html">ia.maze.tile.MazeTile.rpartition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.rsplit.html">ia.maze.tile.MazeTile.rsplit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.rstrip.html">ia.maze.tile.MazeTile.rstrip</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.split.html">ia.maze.tile.MazeTile.split</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.splitlines.html">ia.maze.tile.MazeTile.splitlines</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.startswith.html">ia.maze.tile.MazeTile.startswith</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.strip.html">ia.maze.tile.MazeTile.strip</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.swapcase.html">ia.maze.tile.MazeTile.swapcase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.title.html">ia.maze.tile.MazeTile.title</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.translate.html">ia.maze.tile.MazeTile.translate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.upper.html">ia.maze.tile.MazeTile.upper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.maze.tile.MazeTile.zfill.html">ia.maze.tile.MazeTile.zfill</a></li>
+</ul>
+</details></li>
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="ia.maze.utils.html">ia.maze.utils</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -214,7 +344,17 @@
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="ia.tree.html">ia.tree</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active has-children"><a class="reference internal" href="ia.tree.basenode.html">ia.tree.basenode</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l3 current active"><a class="current reference internal" href="#">ia.tree.basenode.BaseNode</a></li>
+<li class="toctree-l3 current active has-children"><a class="current reference internal" href="#">ia.tree.basenode.BaseNode</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="ia.tree.basenode.BaseNode.append.html">ia.tree.basenode.BaseNode.append</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.tree.basenode.BaseNode.copy.html">ia.tree.basenode.BaseNode.copy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.tree.basenode.BaseNode.describe.html">ia.tree.basenode.BaseNode.describe</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.tree.basenode.BaseNode.extend.html">ia.tree.basenode.BaseNode.extend</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.tree.basenode.BaseNode.from_dict.html">ia.tree.basenode.BaseNode.from_dict</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.tree.basenode.BaseNode.get_attribute.html">ia.tree.basenode.BaseNode.get_attribute</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.tree.basenode.BaseNode.set_attribute.html">ia.tree.basenode.BaseNode.set_attribute</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.tree.basenode.BaseNode.sort.html">ia.tree.basenode.BaseNode.sort</a></li>
+</ul>
+</details></li>
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="ia.tree.constants.html">ia.tree.constants</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -228,7 +368,17 @@
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="ia.tree.node.html">ia.tree.node</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="ia.tree.node.Node.html">ia.tree.node.Node</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="ia.tree.node.Node.html">ia.tree.node.Node</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="ia.tree.node.Node.append.html">ia.tree.node.Node.append</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.tree.node.Node.copy.html">ia.tree.node.Node.copy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.tree.node.Node.describe.html">ia.tree.node.Node.describe</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.tree.node.Node.extend.html">ia.tree.node.Node.extend</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.tree.node.Node.from_dict.html">ia.tree.node.Node.from_dict</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.tree.node.Node.get_attribute.html">ia.tree.node.Node.get_attribute</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.tree.node.Node.set_attribute.html">ia.tree.node.Node.set_attribute</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.tree.node.Node.sort.html">ia.tree.node.Node.sort</a></li>
+</ul>
+</details></li>
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="ia.tree.utils.html">ia.tree.utils</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -241,10 +391,112 @@
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="ia.algorithm.html">ia.algorithm</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="ia.algorithm.graph_path_cost.html">ia.algorithm.graph_path_cost</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ia.algorithm.AlgorithmHistory.html">ia.algorithm.AlgorithmHistory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.html">ia.algorithm.InformedTraversalAlgorithm</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="ia.algorithm.AlgorithmHistory.html">ia.algorithm.AlgorithmHistory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.AlgorithmHistory.add_step.html">ia.algorithm.AlgorithmHistory.add_step</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.AlgorithmHistory.get_history.html">ia.algorithm.AlgorithmHistory.get_history</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.html">ia.algorithm.InformedTraversalAlgorithm</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.capitalize.html">ia.algorithm.InformedTraversalAlgorithm.capitalize</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.casefold.html">ia.algorithm.InformedTraversalAlgorithm.casefold</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.center.html">ia.algorithm.InformedTraversalAlgorithm.center</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.count.html">ia.algorithm.InformedTraversalAlgorithm.count</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.encode.html">ia.algorithm.InformedTraversalAlgorithm.encode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.endswith.html">ia.algorithm.InformedTraversalAlgorithm.endswith</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.expandtabs.html">ia.algorithm.InformedTraversalAlgorithm.expandtabs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.find.html">ia.algorithm.InformedTraversalAlgorithm.find</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.format.html">ia.algorithm.InformedTraversalAlgorithm.format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.format_map.html">ia.algorithm.InformedTraversalAlgorithm.format_map</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.index.html">ia.algorithm.InformedTraversalAlgorithm.index</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.isalnum.html">ia.algorithm.InformedTraversalAlgorithm.isalnum</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.isalpha.html">ia.algorithm.InformedTraversalAlgorithm.isalpha</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.isascii.html">ia.algorithm.InformedTraversalAlgorithm.isascii</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.isdecimal.html">ia.algorithm.InformedTraversalAlgorithm.isdecimal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.isdigit.html">ia.algorithm.InformedTraversalAlgorithm.isdigit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.isidentifier.html">ia.algorithm.InformedTraversalAlgorithm.isidentifier</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.islower.html">ia.algorithm.InformedTraversalAlgorithm.islower</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.isnumeric.html">ia.algorithm.InformedTraversalAlgorithm.isnumeric</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.isprintable.html">ia.algorithm.InformedTraversalAlgorithm.isprintable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.isspace.html">ia.algorithm.InformedTraversalAlgorithm.isspace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.istitle.html">ia.algorithm.InformedTraversalAlgorithm.istitle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.isupper.html">ia.algorithm.InformedTraversalAlgorithm.isupper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.join.html">ia.algorithm.InformedTraversalAlgorithm.join</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.ljust.html">ia.algorithm.InformedTraversalAlgorithm.ljust</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.lower.html">ia.algorithm.InformedTraversalAlgorithm.lower</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.lstrip.html">ia.algorithm.InformedTraversalAlgorithm.lstrip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.maketrans.html">ia.algorithm.InformedTraversalAlgorithm.maketrans</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.partition.html">ia.algorithm.InformedTraversalAlgorithm.partition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.removeprefix.html">ia.algorithm.InformedTraversalAlgorithm.removeprefix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.removesuffix.html">ia.algorithm.InformedTraversalAlgorithm.removesuffix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.replace.html">ia.algorithm.InformedTraversalAlgorithm.replace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.rfind.html">ia.algorithm.InformedTraversalAlgorithm.rfind</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.rindex.html">ia.algorithm.InformedTraversalAlgorithm.rindex</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.rjust.html">ia.algorithm.InformedTraversalAlgorithm.rjust</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.rpartition.html">ia.algorithm.InformedTraversalAlgorithm.rpartition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.rsplit.html">ia.algorithm.InformedTraversalAlgorithm.rsplit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.rstrip.html">ia.algorithm.InformedTraversalAlgorithm.rstrip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.split.html">ia.algorithm.InformedTraversalAlgorithm.split</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.splitlines.html">ia.algorithm.InformedTraversalAlgorithm.splitlines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.startswith.html">ia.algorithm.InformedTraversalAlgorithm.startswith</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.strip.html">ia.algorithm.InformedTraversalAlgorithm.strip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.swapcase.html">ia.algorithm.InformedTraversalAlgorithm.swapcase</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.title.html">ia.algorithm.InformedTraversalAlgorithm.title</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.translate.html">ia.algorithm.InformedTraversalAlgorithm.translate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.upper.html">ia.algorithm.InformedTraversalAlgorithm.upper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.InformedTraversalAlgorithm.zfill.html">ia.algorithm.InformedTraversalAlgorithm.zfill</a></li>
+</ul>
+</details></li>
 <li class="toctree-l2"><a class="reference internal" href="ia.algorithm.TraversalResult.html">ia.algorithm.TraversalResult</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.html">ia.algorithm.UninformedTraversalAlgorithm</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.html">ia.algorithm.UninformedTraversalAlgorithm</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.capitalize.html">ia.algorithm.UninformedTraversalAlgorithm.capitalize</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.casefold.html">ia.algorithm.UninformedTraversalAlgorithm.casefold</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.center.html">ia.algorithm.UninformedTraversalAlgorithm.center</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.count.html">ia.algorithm.UninformedTraversalAlgorithm.count</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.encode.html">ia.algorithm.UninformedTraversalAlgorithm.encode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.endswith.html">ia.algorithm.UninformedTraversalAlgorithm.endswith</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.expandtabs.html">ia.algorithm.UninformedTraversalAlgorithm.expandtabs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.find.html">ia.algorithm.UninformedTraversalAlgorithm.find</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.format.html">ia.algorithm.UninformedTraversalAlgorithm.format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.format_map.html">ia.algorithm.UninformedTraversalAlgorithm.format_map</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.index.html">ia.algorithm.UninformedTraversalAlgorithm.index</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.isalnum.html">ia.algorithm.UninformedTraversalAlgorithm.isalnum</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.isalpha.html">ia.algorithm.UninformedTraversalAlgorithm.isalpha</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.isascii.html">ia.algorithm.UninformedTraversalAlgorithm.isascii</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.isdecimal.html">ia.algorithm.UninformedTraversalAlgorithm.isdecimal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.isdigit.html">ia.algorithm.UninformedTraversalAlgorithm.isdigit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.isidentifier.html">ia.algorithm.UninformedTraversalAlgorithm.isidentifier</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.islower.html">ia.algorithm.UninformedTraversalAlgorithm.islower</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.isnumeric.html">ia.algorithm.UninformedTraversalAlgorithm.isnumeric</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.isprintable.html">ia.algorithm.UninformedTraversalAlgorithm.isprintable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.isspace.html">ia.algorithm.UninformedTraversalAlgorithm.isspace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.istitle.html">ia.algorithm.UninformedTraversalAlgorithm.istitle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.isupper.html">ia.algorithm.UninformedTraversalAlgorithm.isupper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.join.html">ia.algorithm.UninformedTraversalAlgorithm.join</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.ljust.html">ia.algorithm.UninformedTraversalAlgorithm.ljust</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.lower.html">ia.algorithm.UninformedTraversalAlgorithm.lower</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.lstrip.html">ia.algorithm.UninformedTraversalAlgorithm.lstrip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.maketrans.html">ia.algorithm.UninformedTraversalAlgorithm.maketrans</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.partition.html">ia.algorithm.UninformedTraversalAlgorithm.partition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.removeprefix.html">ia.algorithm.UninformedTraversalAlgorithm.removeprefix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.removesuffix.html">ia.algorithm.UninformedTraversalAlgorithm.removesuffix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.replace.html">ia.algorithm.UninformedTraversalAlgorithm.replace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.rfind.html">ia.algorithm.UninformedTraversalAlgorithm.rfind</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.rindex.html">ia.algorithm.UninformedTraversalAlgorithm.rindex</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.rjust.html">ia.algorithm.UninformedTraversalAlgorithm.rjust</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.rpartition.html">ia.algorithm.UninformedTraversalAlgorithm.rpartition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.rsplit.html">ia.algorithm.UninformedTraversalAlgorithm.rsplit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.rstrip.html">ia.algorithm.UninformedTraversalAlgorithm.rstrip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.split.html">ia.algorithm.UninformedTraversalAlgorithm.split</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.splitlines.html">ia.algorithm.UninformedTraversalAlgorithm.splitlines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.startswith.html">ia.algorithm.UninformedTraversalAlgorithm.startswith</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.strip.html">ia.algorithm.UninformedTraversalAlgorithm.strip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.swapcase.html">ia.algorithm.UninformedTraversalAlgorithm.swapcase</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.title.html">ia.algorithm.UninformedTraversalAlgorithm.title</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.translate.html">ia.algorithm.UninformedTraversalAlgorithm.translate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.upper.html">ia.algorithm.UninformedTraversalAlgorithm.upper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.algorithm.UninformedTraversalAlgorithm.zfill.html">ia.algorithm.UninformedTraversalAlgorithm.zfill</a></li>
+</ul>
+</details></li>
 </ul>
 </details></li>
 </ul>
@@ -395,40 +647,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode"><code class="docutils literal notranslate"><span class="pre">BaseNode</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode.__init__"><code class="docutils literal notranslate"><span class="pre">BaseNode.__init__()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode.__contains__"><code class="docutils literal notranslate"><span class="pre">BaseNode.__contains__()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode.__copy__"><code class="docutils literal notranslate"><span class="pre">BaseNode.__copy__()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id0"><code class="docutils literal notranslate"><span class="pre">BaseNode.__init__()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode.__iter__"><code class="docutils literal notranslate"><span class="pre">BaseNode.__iter__()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode.__lshift__"><code class="docutils literal notranslate"><span class="pre">BaseNode.__lshift__()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode.__repr__"><code class="docutils literal notranslate"><span class="pre">BaseNode.__repr__()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode.__rshift__"><code class="docutils literal notranslate"><span class="pre">BaseNode.__rshift__()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode.__weakref__"><code class="docutils literal notranslate"><span class="pre">BaseNode.__weakref__</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode.ancestors"><code class="docutils literal notranslate"><span class="pre">BaseNode.ancestors</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode.append"><code class="docutils literal notranslate"><span class="pre">BaseNode.append()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode.children"><code class="docutils literal notranslate"><span class="pre">BaseNode.children</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode.copy"><code class="docutils literal notranslate"><span class="pre">BaseNode.copy()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode.depth"><code class="docutils literal notranslate"><span class="pre">BaseNode.depth</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode.descendants"><code class="docutils literal notranslate"><span class="pre">BaseNode.descendants</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode.describe"><code class="docutils literal notranslate"><span class="pre">BaseNode.describe()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode.diameter"><code class="docutils literal notranslate"><span class="pre">BaseNode.diameter</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode.extend"><code class="docutils literal notranslate"><span class="pre">BaseNode.extend()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode.from_dict"><code class="docutils literal notranslate"><span class="pre">BaseNode.from_dict()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode.get_attribute"><code class="docutils literal notranslate"><span class="pre">BaseNode.get_attribute()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode.is_leaf"><code class="docutils literal notranslate"><span class="pre">BaseNode.is_leaf</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode.is_root"><code class="docutils literal notranslate"><span class="pre">BaseNode.is_root</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode.leaves"><code class="docutils literal notranslate"><span class="pre">BaseNode.leaves</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode.left_sibling"><code class="docutils literal notranslate"><span class="pre">BaseNode.left_sibling</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode.node_path"><code class="docutils literal notranslate"><span class="pre">BaseNode.node_path</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode.parent"><code class="docutils literal notranslate"><span class="pre">BaseNode.parent</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode.right_sibling"><code class="docutils literal notranslate"><span class="pre">BaseNode.right_sibling</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode.root"><code class="docutils literal notranslate"><span class="pre">BaseNode.root</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode.set_attribute"><code class="docutils literal notranslate"><span class="pre">BaseNode.set_attribute()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode.siblings"><code class="docutils literal notranslate"><span class="pre">BaseNode.siblings</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode.sort"><code class="docutils literal notranslate"><span class="pre">BaseNode.sort()</span></code></a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode"><code class="docutils literal notranslate"><span class="pre">BaseNode</span></code></a></li>
 </ul>
             </nav>
         </div>
@@ -445,481 +664,71 @@ document.write(`
 <dl class="py class">
 <dt class="sig sig-object py" id="ia.tree.basenode.BaseNode">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ia.tree.basenode.</span></span><span class="sig-name descname"><span class="pre">BaseNode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">T</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">children</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">T</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.tree.basenode.BaseNode" title="Link to this definition">#</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>BaseNode extends any Python class to a graph node.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="ia.tree.basenode.BaseNode.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">T</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">children</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">T</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.tree.basenode.BaseNode.__init__" title="Link to this definition">#</a></dt>
-<dd><p>Initialize the node.</p>
-</dd></dl>
-
+<dd><p>BaseNode extends any Python class to a graph node.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">ancestors</span></code></dt><dd><p>Get the ancestors nodes.</p>
+</dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">children</span></code></dt><dd><p>Get the children nodes.</p>
+</dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">depth</span></code></dt><dd><p>Get the depth of the node.</p>
+</dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">descendants</span></code></dt><dd><p>Get the descendants nodes.</p>
+</dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">diameter</span></code></dt><dd><p>Get the diameter of the tree.</p>
+</dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_leaf</span></code></dt><dd><p>Check if the node is leaf.</p>
+</dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_root</span></code></dt><dd><p>Check if the node is root.</p>
+</dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">leaves</span></code></dt><dd><p>Get the leaves nodes.</p>
+</dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">left_sibling</span></code></dt><dd><p>Get the left sibling node.</p>
+</dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">node_path</span></code></dt><dd><p>Get the node path.</p>
+</dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">parent</span></code></dt><dd><p>Get the parent node.</p>
+</dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">right_sibling</span></code></dt><dd><p>Get the right sibling node.</p>
+</dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">root</span></code></dt><dd><p>Get the root node.</p>
+</dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">siblings</span></code></dt><dd><p>Get the siblings nodes.</p>
+</dd>
+</dl>
+</dd>
+</dl>
 <p class="rubric">Methods</p>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#id0" title="ia.tree.basenode.BaseNode.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>([parent, children])</p></td>
-<td><p>Initialize the node.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ia.tree.basenode.BaseNode.append" title="ia.tree.basenode.BaseNode.append"><code class="xref py py-obj docutils literal notranslate"><span class="pre">append</span></code></a>(other)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="ia.tree.basenode.BaseNode.append.html#ia.tree.basenode.BaseNode.append" title="ia.tree.basenode.BaseNode.append"><code class="xref py py-obj docutils literal notranslate"><span class="pre">append</span></code></a>(other)</p></td>
 <td><p>Append other as child of self.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ia.tree.basenode.BaseNode.copy" title="ia.tree.basenode.BaseNode.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="ia.tree.basenode.BaseNode.copy.html#ia.tree.basenode.BaseNode.copy" title="ia.tree.basenode.BaseNode.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code></a>()</p></td>
 <td><p>Copy the node.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ia.tree.basenode.BaseNode.describe" title="ia.tree.basenode.BaseNode.describe"><code class="xref py py-obj docutils literal notranslate"><span class="pre">describe</span></code></a>([exclude_attributes, exclude_prefix])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="ia.tree.basenode.BaseNode.describe.html#ia.tree.basenode.BaseNode.describe" title="ia.tree.basenode.BaseNode.describe"><code class="xref py py-obj docutils literal notranslate"><span class="pre">describe</span></code></a>([exclude_attributes, exclude_prefix])</p></td>
 <td><p>Describe the node.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ia.tree.basenode.BaseNode.extend" title="ia.tree.basenode.BaseNode.extend"><code class="xref py py-obj docutils literal notranslate"><span class="pre">extend</span></code></a>(other)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="ia.tree.basenode.BaseNode.extend.html#ia.tree.basenode.BaseNode.extend" title="ia.tree.basenode.BaseNode.extend"><code class="xref py py-obj docutils literal notranslate"><span class="pre">extend</span></code></a>(other)</p></td>
 <td><p>Extend children of self with other.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ia.tree.basenode.BaseNode.from_dict" title="ia.tree.basenode.BaseNode.from_dict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_dict</span></code></a>(input_dict)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="ia.tree.basenode.BaseNode.from_dict.html#ia.tree.basenode.BaseNode.from_dict" title="ia.tree.basenode.BaseNode.from_dict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_dict</span></code></a>(input_dict)</p></td>
 <td><p>Create a tree from a dictionary.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ia.tree.basenode.BaseNode.get_attribute" title="ia.tree.basenode.BaseNode.get_attribute"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_attribute</span></code></a>(attribute_name[, default_value])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="ia.tree.basenode.BaseNode.get_attribute.html#ia.tree.basenode.BaseNode.get_attribute" title="ia.tree.basenode.BaseNode.get_attribute"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_attribute</span></code></a>(attribute_name[, default_value])</p></td>
 <td><p>Get the attribute value.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ia.tree.basenode.BaseNode.set_attribute" title="ia.tree.basenode.BaseNode.set_attribute"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_attribute</span></code></a>(attributes)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="ia.tree.basenode.BaseNode.set_attribute.html#ia.tree.basenode.BaseNode.set_attribute" title="ia.tree.basenode.BaseNode.set_attribute"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_attribute</span></code></a>(attributes)</p></td>
 <td><p>Set the attribute value.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ia.tree.basenode.BaseNode.sort" title="ia.tree.basenode.BaseNode.sort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sort</span></code></a>(**kwargs)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="ia.tree.basenode.BaseNode.sort.html#ia.tree.basenode.BaseNode.sort" title="ia.tree.basenode.BaseNode.sort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sort</span></code></a>(**kwargs)</p></td>
 <td><p>Sort the children nodes.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<p class="rubric">Attributes</p>
-<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ia.tree.basenode.BaseNode.ancestors" title="ia.tree.basenode.BaseNode.ancestors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ancestors</span></code></a></p></td>
-<td><p>Get the ancestors nodes.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ia.tree.basenode.BaseNode.children" title="ia.tree.basenode.BaseNode.children"><code class="xref py py-obj docutils literal notranslate"><span class="pre">children</span></code></a></p></td>
-<td><p>Get the children nodes.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ia.tree.basenode.BaseNode.depth" title="ia.tree.basenode.BaseNode.depth"><code class="xref py py-obj docutils literal notranslate"><span class="pre">depth</span></code></a></p></td>
-<td><p>Get the depth of the node.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ia.tree.basenode.BaseNode.descendants" title="ia.tree.basenode.BaseNode.descendants"><code class="xref py py-obj docutils literal notranslate"><span class="pre">descendants</span></code></a></p></td>
-<td><p>Get the descendants nodes.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ia.tree.basenode.BaseNode.diameter" title="ia.tree.basenode.BaseNode.diameter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">diameter</span></code></a></p></td>
-<td><p>Get the diameter of the tree.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ia.tree.basenode.BaseNode.is_leaf" title="ia.tree.basenode.BaseNode.is_leaf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_leaf</span></code></a></p></td>
-<td><p>Check if the node is leaf.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ia.tree.basenode.BaseNode.is_root" title="ia.tree.basenode.BaseNode.is_root"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_root</span></code></a></p></td>
-<td><p>Check if the node is root.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ia.tree.basenode.BaseNode.leaves" title="ia.tree.basenode.BaseNode.leaves"><code class="xref py py-obj docutils literal notranslate"><span class="pre">leaves</span></code></a></p></td>
-<td><p>Get the leaves nodes.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ia.tree.basenode.BaseNode.left_sibling" title="ia.tree.basenode.BaseNode.left_sibling"><code class="xref py py-obj docutils literal notranslate"><span class="pre">left_sibling</span></code></a></p></td>
-<td><p>Get the left sibling node.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ia.tree.basenode.BaseNode.node_path" title="ia.tree.basenode.BaseNode.node_path"><code class="xref py py-obj docutils literal notranslate"><span class="pre">node_path</span></code></a></p></td>
-<td><p>Get the node path.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ia.tree.basenode.BaseNode.parent" title="ia.tree.basenode.BaseNode.parent"><code class="xref py py-obj docutils literal notranslate"><span class="pre">parent</span></code></a></p></td>
-<td><p>Get the parent node.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ia.tree.basenode.BaseNode.right_sibling" title="ia.tree.basenode.BaseNode.right_sibling"><code class="xref py py-obj docutils literal notranslate"><span class="pre">right_sibling</span></code></a></p></td>
-<td><p>Get the right sibling node.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ia.tree.basenode.BaseNode.root" title="ia.tree.basenode.BaseNode.root"><code class="xref py py-obj docutils literal notranslate"><span class="pre">root</span></code></a></p></td>
-<td><p>Get the root node.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ia.tree.basenode.BaseNode.siblings" title="ia.tree.basenode.BaseNode.siblings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">siblings</span></code></a></p></td>
-<td><p>Get the siblings nodes.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<dl class="py method">
-<dt class="sig sig-object py" id="ia.tree.basenode.BaseNode.__contains__">
-<span class="sig-name descname"><span class="pre">__contains__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">T</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#ia.tree.basenode.BaseNode.__contains__" title="Link to this definition">#</a></dt>
-<dd><p>Check if other is in children nodes.</p>
-<section id="args">
-<h2>Args<a class="headerlink" href="#args" title="Link to this heading">#</a></h2>
-<blockquote>
-<div><p>other (Self): node to check</p>
-</div></blockquote>
-</section>
-<section id="returns">
-<h2>Returns<a class="headerlink" href="#returns" title="Link to this heading">#</a></h2>
-<blockquote>
-<div><p>(bool)</p>
-</div></blockquote>
-</section>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="ia.tree.basenode.BaseNode.__copy__">
-<span class="sig-name descname"><span class="pre">__copy__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">T</span></span></span><a class="headerlink" href="#ia.tree.basenode.BaseNode.__copy__" title="Link to this definition">#</a></dt>
-<dd><p>Copy the node.</p>
-<section id="id1">
-<h2>Returns<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
-<blockquote>
-<div><ol class="upperalpha simple" start="20">
-<li></li>
-</ol>
-</div></blockquote>
-</section>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="id0">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">T</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">children</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">T</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id0" title="Link to this definition">#</a></dt>
-<dd><p>Initialize the node.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="ia.tree.basenode.BaseNode.__iter__">
-<span class="sig-name descname"><span class="pre">__iter__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">T</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ia.tree.basenode.BaseNode.__iter__" title="Link to this definition">#</a></dt>
-<dd><p>Iterate over the children nodes.</p>
-<section id="id2">
-<h2>Returns<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
-<blockquote>
-<div><p>(Iterable[T])</p>
-</div></blockquote>
-</section>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="ia.tree.basenode.BaseNode.__lshift__">
-<span class="sig-name descname"><span class="pre">__lshift__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">T</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#ia.tree.basenode.BaseNode.__lshift__" title="Link to this definition">#</a></dt>
-<dd><p>Append self as child of other.</p>
-<section id="id3">
-<h2>Args<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
-<blockquote>
-<div><p>other (Self): parent to be added</p>
-</div></blockquote>
-</section>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="ia.tree.basenode.BaseNode.__repr__">
-<span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#ia.tree.basenode.BaseNode.__repr__" title="Link to this definition">#</a></dt>
-<dd><p>Representation of the node.</p>
-<section id="id4">
-<h2>Returns<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
-<blockquote>
-<div><p>str: string representation of the node</p>
-</div></blockquote>
-</section>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="ia.tree.basenode.BaseNode.__rshift__">
-<span class="sig-name descname"><span class="pre">__rshift__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">T</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#ia.tree.basenode.BaseNode.__rshift__" title="Link to this definition">#</a></dt>
-<dd><p>Append other as child of self.</p>
-<section id="id5">
-<h2>Args<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
-<blockquote>
-<div><p>other (Self): child to be added</p>
-</div></blockquote>
-</section>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="ia.tree.basenode.BaseNode.__weakref__">
-<span class="sig-name descname"><span class="pre">__weakref__</span></span><a class="headerlink" href="#ia.tree.basenode.BaseNode.__weakref__" title="Link to this definition">#</a></dt>
-<dd><p>list of weak references to the object</p>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="ia.tree.basenode.BaseNode.ancestors">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ancestors</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">T</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#ia.tree.basenode.BaseNode.ancestors" title="Link to this definition">#</a></dt>
-<dd><p>Get the ancestors nodes.</p>
-<section id="id6">
-<h2>Returns<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
-<blockquote>
-<div><p>Iterable[Self]: The ancestors nodes.</p>
-</div></blockquote>
-</section>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="ia.tree.basenode.BaseNode.append">
-<span class="sig-name descname"><span class="pre">append</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">T</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#ia.tree.basenode.BaseNode.append" title="Link to this definition">#</a></dt>
-<dd><p>Append other as child of self.</p>
-<section id="id7">
-<h2>Args<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
-<blockquote>
-<div><p>other (Self): child to be added</p>
-</div></blockquote>
-</section>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="ia.tree.basenode.BaseNode.children">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">children</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">T</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#ia.tree.basenode.BaseNode.children" title="Link to this definition">#</a></dt>
-<dd><p>Get the children nodes.</p>
-<section id="id8">
-<h2>Returns<a class="headerlink" href="#id8" title="Link to this heading">#</a></h2>
-<blockquote>
-<div><p>list[T]: The children nodes.</p>
-</div></blockquote>
-</section>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="ia.tree.basenode.BaseNode.copy">
-<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">T</span></span></span><a class="headerlink" href="#ia.tree.basenode.BaseNode.copy" title="Link to this definition">#</a></dt>
-<dd><p>Copy the node.</p>
-<section id="id9">
-<h2>Returns<a class="headerlink" href="#id9" title="Link to this heading">#</a></h2>
-<blockquote>
-<div><ol class="upperalpha simple" start="20">
-<li></li>
-</ol>
-</div></blockquote>
-</section>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="ia.tree.basenode.BaseNode.depth">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">depth</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#ia.tree.basenode.BaseNode.depth" title="Link to this definition">#</a></dt>
-<dd><p>Get the depth of the node.</p>
-<section id="id10">
-<h2>Returns<a class="headerlink" href="#id10" title="Link to this heading">#</a></h2>
-<blockquote>
-<div><p>int: The depth of the node.</p>
-</div></blockquote>
-</section>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="ia.tree.basenode.BaseNode.descendants">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">descendants</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">T</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#ia.tree.basenode.BaseNode.descendants" title="Link to this definition">#</a></dt>
-<dd><p>Get the descendants nodes.</p>
-<section id="id11">
-<h2>Returns<a class="headerlink" href="#id11" title="Link to this heading">#</a></h2>
-<blockquote>
-<div><p>Iterable[T]: The descendants nodes.</p>
-</div></blockquote>
-</section>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="ia.tree.basenode.BaseNode.describe">
-<span class="sig-name descname"><span class="pre">describe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exclude_attributes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude_prefix</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ia.tree.basenode.BaseNode.describe" title="Link to this definition">#</a></dt>
-<dd><p>Describe the node.</p>
-<section id="id12">
-<h2>Args<a class="headerlink" href="#id12" title="Link to this heading">#</a></h2>
-<blockquote>
-<div><p>exclude_attributes (list[str]): list of attributes to exclude
-exclude_prefix (str): prefix to exclude</p>
-</div></blockquote>
-</section>
-<section id="id13">
-<h2>Returns<a class="headerlink" href="#id13" title="Link to this heading">#</a></h2>
-<blockquote>
-<div><p>list[tuple[str, any]]: list of attributes and their values</p>
-</div></blockquote>
-</section>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="ia.tree.basenode.BaseNode.diameter">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">diameter</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#ia.tree.basenode.BaseNode.diameter" title="Link to this definition">#</a></dt>
-<dd><p>Get the diameter of the tree.</p>
-<section id="id14">
-<h2>Returns<a class="headerlink" href="#id14" title="Link to this heading">#</a></h2>
-<blockquote>
-<div><p>int: The diameter of the tree.</p>
-</div></blockquote>
-</section>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="ia.tree.basenode.BaseNode.extend">
-<span class="sig-name descname"><span class="pre">extend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">T</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#ia.tree.basenode.BaseNode.extend" title="Link to this definition">#</a></dt>
-<dd><p>Extend children of self with other.</p>
-<section id="id15">
-<h2>Args<a class="headerlink" href="#id15" title="Link to this heading">#</a></h2>
-<blockquote>
-<div><p>other (list[T]): children to be added</p>
-</div></blockquote>
-</section>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="ia.tree.basenode.BaseNode.from_dict">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#ia.tree.basenode.BaseNode" title="ia.tree.basenode.BaseNode"><span class="pre">BaseNode</span></a></span></span><a class="headerlink" href="#ia.tree.basenode.BaseNode.from_dict" title="Link to this definition">#</a></dt>
-<dd><p>Create a tree from a dictionary.</p>
-<section id="id16">
-<h2>Args<a class="headerlink" href="#id16" title="Link to this heading">#</a></h2>
-<blockquote>
-<div><p>input_dict (dict[str, any]): dictionary with node information,
-key: attribute name, value: attribute value</p>
-</div></blockquote>
-</section>
-<section id="id17">
-<h2>Returns<a class="headerlink" href="#id17" title="Link to this heading">#</a></h2>
-<blockquote>
-<div><p>(BaseNode)</p>
-</div></blockquote>
-</section>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="ia.tree.basenode.BaseNode.get_attribute">
-<span class="sig-name descname"><span class="pre">get_attribute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attribute_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">any</span></span></span><a class="headerlink" href="#ia.tree.basenode.BaseNode.get_attribute" title="Link to this definition">#</a></dt>
-<dd><p>Get the attribute value.</p>
-<section id="id18">
-<h2>Args<a class="headerlink" href="#id18" title="Link to this heading">#</a></h2>
-<blockquote>
-<div><p>attribute_name (str): attribute name
-default_value (any): default value if attribute is not found</p>
-</div></blockquote>
-</section>
-<section id="id19">
-<h2>Returns<a class="headerlink" href="#id19" title="Link to this heading">#</a></h2>
-<blockquote>
-<div><p>any: attribute value</p>
-</div></blockquote>
-</section>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="ia.tree.basenode.BaseNode.is_leaf">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_leaf</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#ia.tree.basenode.BaseNode.is_leaf" title="Link to this definition">#</a></dt>
-<dd><p>Check if the node is leaf.</p>
-<section id="id20">
-<h2>Returns<a class="headerlink" href="#id20" title="Link to this heading">#</a></h2>
-<blockquote>
-<div><p>bool: True if the node is leaf, False otherwise.</p>
-</div></blockquote>
-</section>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="ia.tree.basenode.BaseNode.is_root">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_root</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#ia.tree.basenode.BaseNode.is_root" title="Link to this definition">#</a></dt>
-<dd><p>Check if the node is root.</p>
-<section id="id21">
-<h2>Returns<a class="headerlink" href="#id21" title="Link to this heading">#</a></h2>
-<blockquote>
-<div><p>bool: True if the node is root, False otherwise.</p>
-</div></blockquote>
-</section>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="ia.tree.basenode.BaseNode.leaves">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">leaves</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">T</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#ia.tree.basenode.BaseNode.leaves" title="Link to this definition">#</a></dt>
-<dd><p>Get the leaves nodes.</p>
-<section id="id22">
-<h2>Returns<a class="headerlink" href="#id22" title="Link to this heading">#</a></h2>
-<blockquote>
-<div><p>Iterable[T]: The leaves nodes.</p>
-</div></blockquote>
-</section>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="ia.tree.basenode.BaseNode.left_sibling">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">left_sibling</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">T</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#ia.tree.basenode.BaseNode.left_sibling" title="Link to this definition">#</a></dt>
-<dd><p>Get the left sibling node.</p>
-<section id="id23">
-<h2>Returns<a class="headerlink" href="#id23" title="Link to this heading">#</a></h2>
-<blockquote>
-<div><p>T: The left sibling node.</p>
-</div></blockquote>
-</section>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="ia.tree.basenode.BaseNode.node_path">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">node_path</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">T</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#ia.tree.basenode.BaseNode.node_path" title="Link to this definition">#</a></dt>
-<dd><p>Get the node path.</p>
-<section id="id24">
-<h2>Returns<a class="headerlink" href="#id24" title="Link to this heading">#</a></h2>
-<blockquote>
-<div><p>Iterable[T]: The node path.</p>
-</div></blockquote>
-</section>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="ia.tree.basenode.BaseNode.parent">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parent</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">T</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#ia.tree.basenode.BaseNode.parent" title="Link to this definition">#</a></dt>
-<dd><p>Get the parent node.</p>
-<section id="id25">
-<h2>Returns<a class="headerlink" href="#id25" title="Link to this heading">#</a></h2>
-<blockquote>
-<div><p>T | None: The parent node.</p>
-</div></blockquote>
-</section>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="ia.tree.basenode.BaseNode.right_sibling">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">right_sibling</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">T</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#ia.tree.basenode.BaseNode.right_sibling" title="Link to this definition">#</a></dt>
-<dd><p>Get the right sibling node.</p>
-<section id="id26">
-<h2>Returns<a class="headerlink" href="#id26" title="Link to this heading">#</a></h2>
-<blockquote>
-<div><p>T: The right sibling node.</p>
-</div></blockquote>
-</section>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="ia.tree.basenode.BaseNode.root">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">root</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">T</span></em><a class="headerlink" href="#ia.tree.basenode.BaseNode.root" title="Link to this definition">#</a></dt>
-<dd><p>Get the root node.</p>
-<section id="id27">
-<h2>Returns<a class="headerlink" href="#id27" title="Link to this heading">#</a></h2>
-<blockquote>
-<div><p>T: The root node.</p>
-</div></blockquote>
-</section>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="ia.tree.basenode.BaseNode.set_attribute">
-<span class="sig-name descname"><span class="pre">set_attribute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attributes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">T</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ia.tree.basenode.BaseNode.set_attribute" title="Link to this definition">#</a></dt>
-<dd><p>Set the attribute value.</p>
-<section id="id28">
-<h2>Args<a class="headerlink" href="#id28" title="Link to this heading">#</a></h2>
-<blockquote>
-<div><p>node (T): node to travel to from current node,
-inclusive of start and end node</p>
-</div></blockquote>
-</section>
-<section id="id29">
-<h2>Returns<a class="headerlink" href="#id29" title="Link to this heading">#</a></h2>
-<blockquote>
-<div><p>(Iterable[T])</p>
-</div></blockquote>
-</section>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="ia.tree.basenode.BaseNode.siblings">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">siblings</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">T</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#ia.tree.basenode.BaseNode.siblings" title="Link to this definition">#</a></dt>
-<dd><p>Get the siblings nodes.</p>
-<section id="id30">
-<h2>Returns<a class="headerlink" href="#id30" title="Link to this heading">#</a></h2>
-<blockquote>
-<div><p>list[T]: The siblings nodes.</p>
-</div></blockquote>
-</section>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="ia.tree.basenode.BaseNode.sort">
-<span class="sig-name descname"><span class="pre">sort</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#ia.tree.basenode.BaseNode.sort" title="Link to this definition">#</a></dt>
-<dd><p>Sort the children nodes.</p>
-<section id="id31">
-<h2>Args<a class="headerlink" href="#id31" title="Link to this heading">#</a></h2>
-<blockquote>
-<div><p>kwargs: sort arguments</p>
-</div></blockquote>
-</section>
-</dd></dl>
-
 </dd></dl>
 
 </section>
@@ -945,11 +754,11 @@ inclusive of start and end node</p>
       </div>
     </a>
     <a class="right-next"
-       href="ia.tree.constants.html"
+       href="ia.tree.basenode.BaseNode.append.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">ia.tree.constants</p>
+        <p class="prev-next-title">ia.tree.basenode.BaseNode.append</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -969,40 +778,7 @@ inclusive of start and end node</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode"><code class="docutils literal notranslate"><span class="pre">BaseNode</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode.__init__"><code class="docutils literal notranslate"><span class="pre">BaseNode.__init__()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode.__contains__"><code class="docutils literal notranslate"><span class="pre">BaseNode.__contains__()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode.__copy__"><code class="docutils literal notranslate"><span class="pre">BaseNode.__copy__()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id0"><code class="docutils literal notranslate"><span class="pre">BaseNode.__init__()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode.__iter__"><code class="docutils literal notranslate"><span class="pre">BaseNode.__iter__()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode.__lshift__"><code class="docutils literal notranslate"><span class="pre">BaseNode.__lshift__()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode.__repr__"><code class="docutils literal notranslate"><span class="pre">BaseNode.__repr__()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode.__rshift__"><code class="docutils literal notranslate"><span class="pre">BaseNode.__rshift__()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode.__weakref__"><code class="docutils literal notranslate"><span class="pre">BaseNode.__weakref__</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode.ancestors"><code class="docutils literal notranslate"><span class="pre">BaseNode.ancestors</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode.append"><code class="docutils literal notranslate"><span class="pre">BaseNode.append()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode.children"><code class="docutils literal notranslate"><span class="pre">BaseNode.children</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode.copy"><code class="docutils literal notranslate"><span class="pre">BaseNode.copy()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode.depth"><code class="docutils literal notranslate"><span class="pre">BaseNode.depth</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode.descendants"><code class="docutils literal notranslate"><span class="pre">BaseNode.descendants</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode.describe"><code class="docutils literal notranslate"><span class="pre">BaseNode.describe()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode.diameter"><code class="docutils literal notranslate"><span class="pre">BaseNode.diameter</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode.extend"><code class="docutils literal notranslate"><span class="pre">BaseNode.extend()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode.from_dict"><code class="docutils literal notranslate"><span class="pre">BaseNode.from_dict()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode.get_attribute"><code class="docutils literal notranslate"><span class="pre">BaseNode.get_attribute()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode.is_leaf"><code class="docutils literal notranslate"><span class="pre">BaseNode.is_leaf</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode.is_root"><code class="docutils literal notranslate"><span class="pre">BaseNode.is_root</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode.leaves"><code class="docutils literal notranslate"><span class="pre">BaseNode.leaves</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode.left_sibling"><code class="docutils literal notranslate"><span class="pre">BaseNode.left_sibling</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode.node_path"><code class="docutils literal notranslate"><span class="pre">BaseNode.node_path</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode.parent"><code class="docutils literal notranslate"><span class="pre">BaseNode.parent</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode.right_sibling"><code class="docutils literal notranslate"><span class="pre">BaseNode.right_sibling</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode.root"><code class="docutils literal notranslate"><span class="pre">BaseNode.root</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode.set_attribute"><code class="docutils literal notranslate"><span class="pre">BaseNode.set_attribute()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode.siblings"><code class="docutils literal notranslate"><span class="pre">BaseNode.siblings</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode.sort"><code class="docutils literal notranslate"><span class="pre">BaseNode.sort()</span></code></a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.basenode.BaseNode"><code class="docutils literal notranslate"><span class="pre">BaseNode</span></code></a></li>
 </ul>
   </nav></div>
 

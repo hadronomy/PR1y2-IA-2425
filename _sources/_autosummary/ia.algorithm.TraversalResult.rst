@@ -4,23 +4,15 @@ ia.algorithm.TraversalResult
 .. currentmodule:: ia.algorithm
 
 .. autoclass:: TraversalResult
-   :members:
-   :show-inheritance:
-   :inherited-members:
-   :special-members:
 
    
-   .. automethod:: __init__
+
+   .. HACK -- the point here is that we don't want this to appear in the output, but the autosummary should still generate the pages.
+      .. autosummary::
+         :toctree:
+      
+
+
 
    
-   .. rubric:: Methods
 
-   .. autosummary::
-   
-      ~TraversalResult.__init__
-   
-   
-
-   
-   
-   

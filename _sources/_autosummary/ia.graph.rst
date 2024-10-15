@@ -2,22 +2,11 @@
 ========
 
 .. automodule:: ia.graph
-  
-   
-   
-   
 
    
-   
-   
 
-   
-   
-   
 
-   
-   
-   
+
 
 
 
@@ -25,13 +14,7 @@
 
 .. autosummary::
    :toctree:
-   :template: custom-module-template.rst
    :recursive:
 
-
    parser
-
-
    undirected
-
-

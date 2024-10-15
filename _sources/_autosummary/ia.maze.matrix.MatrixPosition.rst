@@ -4,32 +4,24 @@ ia.maze.matrix.MatrixPosition
 .. currentmodule:: ia.maze.matrix
 
 .. autoclass:: MatrixPosition
-   :members:
-   :show-inheritance:
-   :inherited-members:
-   :special-members:
 
    
-   .. automethod:: __init__
+
+   .. HACK -- the point here is that we don't want this to appear in the output, but the autosummary should still generate the pages.
+      .. autosummary::
+         :toctree:
+      
+         MatrixPosition.from_representation
+         MatrixPosition.representation
+
+
 
    
-   .. rubric:: Methods
 
-   .. autosummary::
-   
-      ~MatrixPosition.__init__
-      ~MatrixPosition.from_representation
-      ~MatrixPosition.representation
-   
-   
+   .. HACK -- the point here is that we don't want this to appear in the output, but the autosummary should still generate the pages.
+      .. autosummary::
+         :toctree:
+      
+         MatrixPosition.row
+         MatrixPosition.col
 
-   
-   
-   .. rubric:: Attributes
-
-   .. autosummary::
-   
-      ~MatrixPosition.row
-      ~MatrixPosition.col
-   
-   

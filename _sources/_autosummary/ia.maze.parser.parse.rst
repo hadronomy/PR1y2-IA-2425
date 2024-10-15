@@ -1,6 +1,10 @@
+
+
 ia.maze.parser.parse
 ====================
 
 .. currentmodule:: ia.maze.parser
 
-.. autofunction:: parse
+
+
+.. autofunction:: ia::.maze.parser.parse

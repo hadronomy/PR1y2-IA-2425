@@ -3,8 +3,12 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+######################
 IA - Search Algorithms
-====================================
+######################
+
+
+**Version**: |version|
 
 This is the documentation for the IA - Search Algorithms project.
 That implements a simple CLI for tinkering with uninformed and informed search algorithms.
@@ -24,7 +28,7 @@ Modules
 .. autosummary::
    :caption: Reference
    :toctree: _autosummary
-   :template: custom-module-template.rst
+   :template: autosummary/module.rst
    :recursive:
 
    ia.graph

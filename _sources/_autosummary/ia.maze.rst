@@ -2,22 +2,11 @@
 =======
 
 .. automodule:: ia.maze
-  
-   
-   
-   
 
    
-   
-   
 
-   
-   
-   
 
-   
-   
-   
+
 
 
 
@@ -25,28 +14,12 @@
 
 .. autosummary::
    :toctree:
-   :template: custom-module-template.rst
    :recursive:
 
-
    constants
-
-
    euristics
-
-
    matrix
-
-
    maze
-
-
    parser
-
-
    tile
-
-
    utils
-
-

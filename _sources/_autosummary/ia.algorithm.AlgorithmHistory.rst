@@ -4,25 +4,17 @@ ia.algorithm.AlgorithmHistory
 .. currentmodule:: ia.algorithm
 
 .. autoclass:: AlgorithmHistory
-   :members:
-   :show-inheritance:
-   :inherited-members:
-   :special-members:
 
    
-   .. automethod:: __init__
+
+   .. HACK -- the point here is that we don't want this to appear in the output, but the autosummary should still generate the pages.
+      .. autosummary::
+         :toctree:
+      
+         AlgorithmHistory.add_step
+         AlgorithmHistory.get_history
+
+
 
    
-   .. rubric:: Methods
 
-   .. autosummary::
-   
-      ~AlgorithmHistory.__init__
-      ~AlgorithmHistory.add_step
-      ~AlgorithmHistory.get_history
-   
-   
-
-   
-   
-   

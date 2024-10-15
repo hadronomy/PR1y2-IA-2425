@@ -2,22 +2,11 @@
 =======
 
 .. automodule:: ia.tree
-  
-   
-   
-   
 
    
-   
-   
 
-   
-   
-   
 
-   
-   
-   
+
 
 
 
@@ -25,22 +14,10 @@
 
 .. autosummary::
    :toctree:
-   :template: custom-module-template.rst
    :recursive:
 
-
    basenode
-
-
    constants
-
-
    iterators
-
-
    node
-
-
    utils
-
-

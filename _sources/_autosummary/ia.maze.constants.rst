@@ -2,9 +2,9 @@ ia.maze.constants
 =================
 
 .. automodule:: ia.maze.constants
-  
+
    
-   
+
    .. rubric:: Module Attributes
 
    .. autosummary::
@@ -14,20 +14,8 @@ ia.maze.constants
       NUMBERS
       MAZE_PRINT_STYLES
       DEFAULT_MAZE_MAPPINGS
-   
-   
 
-   
-   
-   
 
-   
-   
-   
-
-   
-   
-   
 
 
 

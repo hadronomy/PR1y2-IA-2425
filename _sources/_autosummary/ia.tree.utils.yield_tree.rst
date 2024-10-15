@@ -1,6 +1,10 @@
+
+
 ia.tree.utils.yield\_tree
 =========================
 
 .. currentmodule:: ia.tree.utils
 
-.. autofunction:: yield_tree
+
+
+.. autofunction:: ia::.tree.utils.yield_tree
