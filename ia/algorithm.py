@@ -10,7 +10,32 @@ class UninformedTraversalAlgorithm(str, Enum):
     """Traversal algorithm class."""
 
     DFS = "dfs"
+    """Depth First Search
+
+    The Depth First Search algorithm is a traversal algorithm that
+    explores the graph by going as far as possible along a branch
+    and then backtracking.
+    """
+
     BFS = "bfs"
+    """Breadth First Search
+
+    The Breadth First Search algorithm is a traversal algorithm that
+    explores the graph by visiting all the nodes at the current depth
+    before moving to the nodes at the next depth.
+
+    Examples
+    --------
+
+    >>> from ia.graph import Graph
+    >>> from ia.algorithm import UninformedTraversalAlgorithm
+
+    >>> graph = Graph()
+    >>> graph.add_edge(1, 2)
+    >>> graph.add_edge(1, 3)
+    >>> graph.add_edge(2, 4)
+    >>> graph.add_edge(2, 5)
+    """
 
 
 class InformedTraversalAlgorithm(str, Enum):

@@ -1,7 +1,10 @@
-Getting Started
-###############
+.. _guide_basic_usage:
 
-See the :ref:`installation` guide to install the package.
+###########
+Basic Usage
+###########
+
+See the :ref:`_guide_installation` guide to install the package.
 
 .. note::
 

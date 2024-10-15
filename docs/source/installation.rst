@@ -1,5 +1,6 @@
-.. _installation:
+.. _guide_installation:
 
+############
 Installation
 ############
 
