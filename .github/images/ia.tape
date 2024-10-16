@@ -67,7 +67,7 @@ Set Height 800
 Set Margin 30
 Set MarginFill "#6B50FF"
 Set WindowBar Colorful
-Set WindowBarSize 40
+Set WindowBarSize 60
 Set BorderRadius 10
 
 Type "ia --help" Sleep 500ms  Enter
