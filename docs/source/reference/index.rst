@@ -19,7 +19,8 @@ informed search algorithms.
     uninformed
     informed
 
-.. grid:: 2
+.. grid:: 1 1 2 2
+    :gutter: 2
 
     .. grid-item-card::
 

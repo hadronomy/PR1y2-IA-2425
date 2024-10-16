@@ -31,7 +31,8 @@ The project is developed using the following technologies:
 The project is hosted on GitHub at the following URL:
 |repo_url|
 
-.. grid:: 2
+.. grid:: 1 1 2 2
+    :gutter: 2
 
     .. grid-item-card::
 

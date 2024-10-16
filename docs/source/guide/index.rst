@@ -14,7 +14,8 @@ User Guide
 
 In this section, you will find detailed instructions on how to install and use the project.
 
-.. grid:: 2
+.. grid:: 1 1 2 2
+    :gutter: 2
 
     .. grid-item-card::
 
