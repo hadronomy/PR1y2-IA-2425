@@ -6,7 +6,7 @@
   <p></p> 
   <a href="https://ull.es">
     <img
-      alt="License"
+      alt="University"
       src="https://img.shields.io/badge/ULL-5C068C?style=for-the-badge&logo=gitbook&labelColor=302D41"
     />
   </a>
