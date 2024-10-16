@@ -25,6 +25,16 @@
   <hr />
 </div>
 
+<div align="center">
+
+  <img 
+    alt="program example" 
+    src="/.github/images/ia.gif" 
+    width="auto" 
+    height="auto"
+  />
+</div>
+
 ## Docs
 
 See the [docs](https://hadronomy.github.io/PR1y2-IA-2425) for more information.
