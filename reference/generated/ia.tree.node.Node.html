@@ -47,8 +47,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'reference/generated/ia.tree.node.Node';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="ia.tree.node.Node.append" href="ia.tree.node.Node.append.html" />
-    <link rel="prev" title="ia.graph.undirected.UndirectedGraph.traverse" href="generated/ia.graph.undirected.UndirectedGraph.traverse.html" />
+    <link rel="next" title="Informed Search Algorithms" href="../informed.html" />
+    <link rel="prev" title="ia.graph.undirected.UndirectedGraph" href="ia.graph.undirected.UndirectedGraph.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
     <meta name="docbuild:last-update" content="Oct 16, 2024"/>
@@ -307,28 +307,10 @@ document.write(`
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../uninformed.html">Uninformed Search Algorithms</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="ia.graph.UndirectedGraph.bfs.html">ia.graph.UndirectedGraph.bfs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ia.graph.UndirectedGraph.dfs.html">ia.graph.UndirectedGraph.dfs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ia.graph.undirected.UndirectedGraph.bfs.html">ia.graph.undirected.UndirectedGraph.bfs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ia.graph.undirected.UndirectedGraph.dfs.html">ia.graph.undirected.UndirectedGraph.dfs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ia.graph.undirected.UndirectedGraph.html">ia.graph.undirected.UndirectedGraph</a></li>
-<li class="toctree-l2 current active has-children"><a class="current reference internal" href="#">ia.tree.node.Node</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="ia.tree.node.Node.append.html">ia.tree.node.Node.append</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ia.tree.node.Node.copy.html">ia.tree.node.Node.copy</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ia.tree.node.Node.describe.html">ia.tree.node.Node.describe</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ia.tree.node.Node.extend.html">ia.tree.node.Node.extend</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ia.tree.node.Node.from_dict.html">ia.tree.node.Node.from_dict</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ia.tree.node.Node.get_attribute.html">ia.tree.node.Node.get_attribute</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ia.tree.node.Node.set_attribute.html">ia.tree.node.Node.set_attribute</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ia.tree.node.Node.sort.html">ia.tree.node.Node.sort</a></li>
-<li class="toctree-l3"><a class="reference internal" href="generated/ia.tree.node.Node.append.html">ia.tree.node.Node.append</a></li>
-<li class="toctree-l3"><a class="reference internal" href="generated/ia.tree.node.Node.copy.html">ia.tree.node.Node.copy</a></li>
-<li class="toctree-l3"><a class="reference internal" href="generated/ia.tree.node.Node.describe.html">ia.tree.node.Node.describe</a></li>
-<li class="toctree-l3"><a class="reference internal" href="generated/ia.tree.node.Node.extend.html">ia.tree.node.Node.extend</a></li>
-<li class="toctree-l3"><a class="reference internal" href="generated/ia.tree.node.Node.from_dict.html">ia.tree.node.Node.from_dict</a></li>
-<li class="toctree-l3"><a class="reference internal" href="generated/ia.tree.node.Node.get_attribute.html">ia.tree.node.Node.get_attribute</a></li>
-<li class="toctree-l3"><a class="reference internal" href="generated/ia.tree.node.Node.set_attribute.html">ia.tree.node.Node.set_attribute</a></li>
-<li class="toctree-l3"><a class="reference internal" href="generated/ia.tree.node.Node.sort.html">ia.tree.node.Node.sort</a></li>
-</ul>
-</details></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">ia.tree.node.Node</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../informed.html">Informed Search Algorithms</a></li>
@@ -397,108 +379,136 @@ document.write(`
 <dl class="py class">
 <dt class="sig sig-object py" id="ia.tree.node.Node">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ia.tree.node.</span></span><span class="sig-name descname"><span class="pre">Node</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">separator</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'/'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compare_by</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'name'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ia/tree/node.html#Node"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ia.tree.node.Node" title="Link to this definition">#</a></dt>
-<dd><p>Node is an extension of BaseNode, and is able to extend any Python class.</p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseNode</span></code></p>
+<p>Node is an extension of BaseNode, and is able to extend any Python class.</p>
 <p>Nodes can have attributes if they are initialized <a class="reference internal" href="#ia.tree.node.Node" title="ia.tree.node.Node"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Node</span></code></a>, <em>dictionary</em>.
 Nodes can be linked to each other with <code class="xref py py-obj docutils literal notranslate"><span class="pre">parent</span></code> and <code class="xref py py-obj docutils literal notranslate"><span class="pre">children</span></code> setter methods.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Attributes<span class="colon">:</span></dt>
-<dd class="field-odd"><dl class="simple">
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">ancestors</span></code></dt><dd><p>Get the ancestors nodes.</p>
-</dd>
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">children</span></code></dt><dd><p>Get the children nodes.</p>
-</dd>
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">depth</span></code></dt><dd><p>Get the depth of the node.</p>
-</dd>
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">descendants</span></code></dt><dd><p>Get the descendants nodes.</p>
-</dd>
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">diameter</span></code></dt><dd><p>Get the diameter of the tree.</p>
-</dd>
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_leaf</span></code></dt><dd><p>Check if the node is leaf.</p>
-</dd>
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_root</span></code></dt><dd><p>Check if the node is root.</p>
-</dd>
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">leaves</span></code></dt><dd><p>Get the leaves nodes.</p>
-</dd>
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">left_sibling</span></code></dt><dd><p>Get the left sibling node.</p>
-</dd>
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">node_name</span></code></dt><dd><p>Get node name.</p>
-</dd>
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">node_path</span></code></dt><dd><p>Get the node path.</p>
-</dd>
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">parent</span></code></dt><dd><p>Get the parent node.</p>
-</dd>
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">path_name</span></code></dt><dd><p>Get path name.</p>
-</dd>
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">right_sibling</span></code></dt><dd><p>Get the right sibling node.</p>
-</dd>
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">root</span></code></dt><dd><p>Get the root node.</p>
-</dd>
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">separator</span></code></dt><dd><p>Get separator, gets from root node.</p>
-</dd>
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">siblings</span></code></dt><dd><p>Get the siblings nodes.</p>
-</dd>
-</dl>
-</dd>
-</dl>
+<p class="rubric">Attributes</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">ancestors</span></code></p></td>
+<td><p>Get the ancestors nodes.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">children</span></code></p></td>
+<td><p>Get the children nodes.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">depth</span></code></p></td>
+<td><p>Get the depth of the node.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">descendants</span></code></p></td>
+<td><p>Get the descendants nodes.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">diameter</span></code></p></td>
+<td><p>Get the diameter of the tree.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_leaf</span></code></p></td>
+<td><p>Check if the node is leaf.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_root</span></code></p></td>
+<td><p>Check if the node is root.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">leaves</span></code></p></td>
+<td><p>Get the leaves nodes.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">left_sibling</span></code></p></td>
+<td><p>Get the left sibling node.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#ia.tree.node.Node.node_name" title="ia.tree.node.Node.node_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">node_name</span></code></a></p></td>
+<td><p>Get node name.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">node_path</span></code></p></td>
+<td><p>Get the node path.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">parent</span></code></p></td>
+<td><p>Get the parent node.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ia.tree.node.Node.path_name" title="ia.tree.node.Node.path_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">path_name</span></code></a></p></td>
+<td><p>Get path name.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">right_sibling</span></code></p></td>
+<td><p>Get the right sibling node.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">root</span></code></p></td>
+<td><p>Get the root node.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#ia.tree.node.Node.separator" title="ia.tree.node.Node.separator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">separator</span></code></a></p></td>
+<td><p>Get separator, gets from root node.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">siblings</span></code></p></td>
+<td><p>Get the siblings nodes.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 <p class="rubric">Methods</p>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="ia.tree.node.Node.append.html#ia.tree.node.Node.append" title="ia.tree.node.Node.append"><code class="xref py py-obj docutils literal notranslate"><span class="pre">append</span></code></a>(other)</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">append</span></code>(other)</p></td>
 <td><p>Append other as child of self.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="ia.tree.node.Node.copy.html#ia.tree.node.Node.copy" title="ia.tree.node.Node.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code></a>()</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code>()</p></td>
 <td><p>Copy the node.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="ia.tree.node.Node.describe.html#ia.tree.node.Node.describe" title="ia.tree.node.Node.describe"><code class="xref py py-obj docutils literal notranslate"><span class="pre">describe</span></code></a>([exclude_attributes, exclude_prefix])</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">describe</span></code>([exclude_attributes, exclude_prefix])</p></td>
 <td><p>Describe the node.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="ia.tree.node.Node.extend.html#ia.tree.node.Node.extend" title="ia.tree.node.Node.extend"><code class="xref py py-obj docutils literal notranslate"><span class="pre">extend</span></code></a>(other)</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">extend</span></code>(other)</p></td>
 <td><p>Extend children of self with other.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="ia.tree.node.Node.from_dict.html#ia.tree.node.Node.from_dict" title="ia.tree.node.Node.from_dict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_dict</span></code></a>(input_dict)</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_dict</span></code>(input_dict)</p></td>
 <td><p>Create a tree from a dictionary.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="ia.tree.node.Node.get_attribute.html#ia.tree.node.Node.get_attribute" title="ia.tree.node.Node.get_attribute"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_attribute</span></code></a>(attribute_name[, default_value])</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_attribute</span></code>(attribute_name[, default_value])</p></td>
 <td><p>Get the attribute value.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="ia.tree.node.Node.set_attribute.html#ia.tree.node.Node.set_attribute" title="ia.tree.node.Node.set_attribute"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_attribute</span></code></a>(attributes)</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_attribute</span></code>(attributes)</p></td>
 <td><p>Set the attribute value.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="ia.tree.node.Node.sort.html#ia.tree.node.Node.sort" title="ia.tree.node.Node.sort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sort</span></code></a>(**kwargs)</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">sort</span></code>(**kwargs)</p></td>
 <td><p>Sort the children nodes.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="ia.tree.node.Node.append.html#ia.tree.node.Node.append" title="ia.tree.node.Node.append"><code class="xref py py-obj docutils literal notranslate"><span class="pre">append</span></code></a>(other)</p></td>
-<td><p>Append other as child of self.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="ia.tree.node.Node.copy.html#ia.tree.node.Node.copy" title="ia.tree.node.Node.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code></a>()</p></td>
-<td><p>Copy the node.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="ia.tree.node.Node.describe.html#ia.tree.node.Node.describe" title="ia.tree.node.Node.describe"><code class="xref py py-obj docutils literal notranslate"><span class="pre">describe</span></code></a>([exclude_attributes, exclude_prefix])</p></td>
-<td><p>Describe the node.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="ia.tree.node.Node.extend.html#ia.tree.node.Node.extend" title="ia.tree.node.Node.extend"><code class="xref py py-obj docutils literal notranslate"><span class="pre">extend</span></code></a>(other)</p></td>
-<td><p>Extend children of self with other.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="ia.tree.node.Node.from_dict.html#ia.tree.node.Node.from_dict" title="ia.tree.node.Node.from_dict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_dict</span></code></a>(input_dict)</p></td>
-<td><p>Create a tree from a dictionary.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="ia.tree.node.Node.get_attribute.html#ia.tree.node.Node.get_attribute" title="ia.tree.node.Node.get_attribute"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_attribute</span></code></a>(attribute_name[, default_value])</p></td>
-<td><p>Get the attribute value.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="ia.tree.node.Node.set_attribute.html#ia.tree.node.Node.set_attribute" title="ia.tree.node.Node.set_attribute"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_attribute</span></code></a>(attributes)</p></td>
-<td><p>Set the attribute value.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="ia.tree.node.Node.sort.html#ia.tree.node.Node.sort" title="ia.tree.node.Node.sort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sort</span></code></a>(**kwargs)</p></td>
-<td><p>Sort the children nodes.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
+<dl class="py property">
+<dt class="sig sig-object py" id="ia.tree.node.Node.node_name">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">node_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ia.tree.node.Node.node_name" title="Link to this definition">#</a></dt>
+<dd><p>Get node name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt>(str)</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ia.tree.node.Node.path_name">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">path_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ia.tree.node.Node.path_name" title="Link to this definition">#</a></dt>
+<dd><p>Get path name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt>(str)</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ia.tree.node.Node.separator">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">separator</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ia.tree.node.Node.separator" title="Link to this definition">#</a></dt>
+<dd><p>Get separator, gets from root node.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt>(str)</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
 </dd></dl>
 
 </section>
@@ -514,20 +524,20 @@ Nodes can be linked to each other with <code class="xref py py-obj docutils lite
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="generated/ia.graph.undirected.UndirectedGraph.traverse.html"
+       href="ia.graph.undirected.UndirectedGraph.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">ia.graph.undirected.UndirectedGraph.traverse</p>
+        <p class="prev-next-title">ia.graph.undirected.UndirectedGraph</p>
       </div>
     </a>
     <a class="right-next"
-       href="ia.tree.node.Node.append.html"
+       href="../informed.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">ia.tree.node.Node.append</p>
+        <p class="prev-next-title">Informed Search Algorithms</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -549,7 +559,12 @@ Nodes can be linked to each other with <code class="xref py py-obj docutils lite
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.node.Node"><code class="docutils literal notranslate"><span class="pre">Node</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.node.Node"><code class="docutils literal notranslate"><span class="pre">Node</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.node.Node.node_name"><code class="docutils literal notranslate"><span class="pre">Node.node_name</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.node.Node.path_name"><code class="docutils literal notranslate"><span class="pre">Node.path_name</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.tree.node.Node.separator"><code class="docutils literal notranslate"><span class="pre">Node.separator</span></code></a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

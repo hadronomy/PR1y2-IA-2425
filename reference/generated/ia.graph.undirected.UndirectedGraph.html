@@ -47,8 +47,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'reference/generated/ia.graph.undirected.UndirectedGraph';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="ia.graph.undirected.UndirectedGraph.add_edge" href="ia.graph.undirected.UndirectedGraph.add_edge.html" />
-    <link rel="prev" title="ia.graph.UndirectedGraph.dfs" href="ia.graph.UndirectedGraph.dfs.html" />
+    <link rel="next" title="ia.tree.node.Node" href="ia.tree.node.Node.html" />
+    <link rel="prev" title="ia.graph.undirected.UndirectedGraph.dfs" href="ia.graph.undirected.UndirectedGraph.dfs.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
     <meta name="docbuild:last-update" content="Oct 16, 2024"/>
@@ -307,25 +307,9 @@ document.write(`
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../uninformed.html">Uninformed Search Algorithms</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="ia.graph.UndirectedGraph.bfs.html">ia.graph.UndirectedGraph.bfs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ia.graph.UndirectedGraph.dfs.html">ia.graph.UndirectedGraph.dfs</a></li>
-<li class="toctree-l2 current active has-children"><a class="current reference internal" href="#">ia.graph.undirected.UndirectedGraph</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="ia.graph.undirected.UndirectedGraph.add_edge.html">ia.graph.undirected.UndirectedGraph.add_edge</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ia.graph.undirected.UndirectedGraph.bfs.html">ia.graph.undirected.UndirectedGraph.bfs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ia.graph.undirected.UndirectedGraph.dfs.html">ia.graph.undirected.UndirectedGraph.dfs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ia.graph.undirected.UndirectedGraph.remove_edge.html">ia.graph.undirected.UndirectedGraph.remove_edge</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ia.graph.undirected.UndirectedGraph.remove_vertex.html">ia.graph.undirected.UndirectedGraph.remove_vertex</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ia.graph.undirected.UndirectedGraph.to_networkx.html">ia.graph.undirected.UndirectedGraph.to_networkx</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ia.graph.undirected.UndirectedGraph.traverse.html">ia.graph.undirected.UndirectedGraph.traverse</a></li>
-<li class="toctree-l3"><a class="reference internal" href="generated/ia.graph.undirected.UndirectedGraph.add_edge.html">ia.graph.undirected.UndirectedGraph.add_edge</a></li>
-<li class="toctree-l3"><a class="reference internal" href="generated/ia.graph.undirected.UndirectedGraph.bfs.html">ia.graph.undirected.UndirectedGraph.bfs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="generated/ia.graph.undirected.UndirectedGraph.dfs.html">ia.graph.undirected.UndirectedGraph.dfs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="generated/ia.graph.undirected.UndirectedGraph.remove_edge.html">ia.graph.undirected.UndirectedGraph.remove_edge</a></li>
-<li class="toctree-l3"><a class="reference internal" href="generated/ia.graph.undirected.UndirectedGraph.remove_vertex.html">ia.graph.undirected.UndirectedGraph.remove_vertex</a></li>
-<li class="toctree-l3"><a class="reference internal" href="generated/ia.graph.undirected.UndirectedGraph.to_networkx.html">ia.graph.undirected.UndirectedGraph.to_networkx</a></li>
-<li class="toctree-l3"><a class="reference internal" href="generated/ia.graph.undirected.UndirectedGraph.traverse.html">ia.graph.undirected.UndirectedGraph.traverse</a></li>
-</ul>
-</details></li>
+<li class="toctree-l2"><a class="reference internal" href="ia.graph.undirected.UndirectedGraph.bfs.html">ia.graph.undirected.UndirectedGraph.bfs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ia.graph.undirected.UndirectedGraph.dfs.html">ia.graph.undirected.UndirectedGraph.dfs</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">ia.graph.undirected.UndirectedGraph</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ia.tree.node.Node.html">ia.tree.node.Node</a></li>
 </ul>
 </details></li>
@@ -395,86 +379,173 @@ document.write(`
 <dl class="py class">
 <dt class="sig sig-object py" id="ia.graph.undirected.UndirectedGraph">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ia.graph.undirected.</span></span><span class="sig-name descname"><span class="pre">UndirectedGraph</span></span><a class="reference internal" href="../../_modules/ia/graph/undirected.html#UndirectedGraph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ia.graph.undirected.UndirectedGraph" title="Link to this definition">#</a></dt>
-<dd><p>Undirected graph class.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Attributes<span class="colon">:</span></dt>
-<dd class="field-odd"><dl class="simple">
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">adjacency</span></code></dt><dd><p>Get the adjacency list of the graph.</p>
-</dd>
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">adjacency_list</span></code></dt><dd><p>Get the adjacency list of the graph.</p>
-</dd>
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">adjacency_matrix</span></code></dt><dd><p>Get the adjacency matrix of the graph.</p>
-</dd>
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">degree</span></code></dt><dd><p>Get the degree of a vertex.</p>
-</dd>
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">edges</span></code></dt><dd><p>Get the edges of the graph.</p>
-</dd>
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">incidence_list</span></code></dt><dd><p>Get the incidence list of the graph.</p>
-</dd>
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">incidence_matrix</span></code></dt><dd><p>Get the incidence matrix of the graph.</p>
-</dd>
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">neighbors</span></code></dt><dd><p>Get the neighbors of a vertex.</p>
-</dd>
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">vertices</span></code></dt><dd><p>Get the vertices of the graph.</p>
-</dd>
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">weights</span></code></dt><dd><p>Get the weights of the graph.</p>
-</dd>
-</dl>
-</dd>
-</dl>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Undirected graph class.</p>
+<p class="rubric">Attributes</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ia.graph.undirected.UndirectedGraph.adjacency" title="ia.graph.undirected.UndirectedGraph.adjacency"><code class="xref py py-obj docutils literal notranslate"><span class="pre">adjacency</span></code></a></p></td>
+<td><p>Get the adjacency list of the graph.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#ia.graph.undirected.UndirectedGraph.adjacency_list" title="ia.graph.undirected.UndirectedGraph.adjacency_list"><code class="xref py py-obj docutils literal notranslate"><span class="pre">adjacency_list</span></code></a></p></td>
+<td><p>Get the adjacency list of the graph.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ia.graph.undirected.UndirectedGraph.adjacency_matrix" title="ia.graph.undirected.UndirectedGraph.adjacency_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">adjacency_matrix</span></code></a></p></td>
+<td><p>Get the adjacency matrix of the graph.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#ia.graph.undirected.UndirectedGraph.degree" title="ia.graph.undirected.UndirectedGraph.degree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">degree</span></code></a></p></td>
+<td><p>Get the degree of a vertex.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ia.graph.undirected.UndirectedGraph.edges" title="ia.graph.undirected.UndirectedGraph.edges"><code class="xref py py-obj docutils literal notranslate"><span class="pre">edges</span></code></a></p></td>
+<td><p>Get the edges of the graph.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#ia.graph.undirected.UndirectedGraph.incidence_list" title="ia.graph.undirected.UndirectedGraph.incidence_list"><code class="xref py py-obj docutils literal notranslate"><span class="pre">incidence_list</span></code></a></p></td>
+<td><p>Get the incidence list of the graph.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ia.graph.undirected.UndirectedGraph.incidence_matrix" title="ia.graph.undirected.UndirectedGraph.incidence_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">incidence_matrix</span></code></a></p></td>
+<td><p>Get the incidence matrix of the graph.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#ia.graph.undirected.UndirectedGraph.neighbors" title="ia.graph.undirected.UndirectedGraph.neighbors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">neighbors</span></code></a></p></td>
+<td><p>Get the neighbors of a vertex.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ia.graph.undirected.UndirectedGraph.vertices" title="ia.graph.undirected.UndirectedGraph.vertices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">vertices</span></code></a></p></td>
+<td><p>Get the vertices of the graph.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#ia.graph.undirected.UndirectedGraph.weights" title="ia.graph.undirected.UndirectedGraph.weights"><code class="xref py py-obj docutils literal notranslate"><span class="pre">weights</span></code></a></p></td>
+<td><p>Get the weights of the graph.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 <p class="rubric">Methods</p>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="ia.graph.undirected.UndirectedGraph.add_edge.html#ia.graph.undirected.UndirectedGraph.add_edge" title="ia.graph.undirected.UndirectedGraph.add_edge"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_edge</span></code></a>(start, end, *[, weight])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ia.graph.undirected.UndirectedGraph.add_edge" title="ia.graph.undirected.UndirectedGraph.add_edge"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_edge</span></code></a>(start, end, *[, weight])</p></td>
 <td><p>Add an edge to the graph.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="ia.graph.undirected.UndirectedGraph.bfs.html#ia.graph.undirected.UndirectedGraph.bfs" title="ia.graph.undirected.UndirectedGraph.bfs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bfs</span></code></a>(*, start, end[, sort_generated])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#ia.graph.undirected.UndirectedGraph.bfs" title="ia.graph.undirected.UndirectedGraph.bfs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bfs</span></code></a>(*, start, end[, sort_generated])</p></td>
 <td><p>Breadth-first search.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="ia.graph.undirected.UndirectedGraph.dfs.html#ia.graph.undirected.UndirectedGraph.dfs" title="ia.graph.undirected.UndirectedGraph.dfs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dfs</span></code></a>(*, start, end[, sort_generated])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ia.graph.undirected.UndirectedGraph.dfs" title="ia.graph.undirected.UndirectedGraph.dfs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dfs</span></code></a>(*, start, end[, sort_generated])</p></td>
 <td><p>Depth-first search.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="ia.graph.undirected.UndirectedGraph.remove_edge.html#ia.graph.undirected.UndirectedGraph.remove_edge" title="ia.graph.undirected.UndirectedGraph.remove_edge"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_edge</span></code></a>(start, end)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#ia.graph.undirected.UndirectedGraph.remove_edge" title="ia.graph.undirected.UndirectedGraph.remove_edge"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_edge</span></code></a>(start, end)</p></td>
 <td><p>Remove an edge from the graph.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="ia.graph.undirected.UndirectedGraph.remove_vertex.html#ia.graph.undirected.UndirectedGraph.remove_vertex" title="ia.graph.undirected.UndirectedGraph.remove_vertex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_vertex</span></code></a>(vertex)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ia.graph.undirected.UndirectedGraph.remove_vertex" title="ia.graph.undirected.UndirectedGraph.remove_vertex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_vertex</span></code></a>(vertex)</p></td>
 <td><p>Remove a vertex from the graph.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="ia.graph.undirected.UndirectedGraph.to_networkx.html#ia.graph.undirected.UndirectedGraph.to_networkx" title="ia.graph.undirected.UndirectedGraph.to_networkx"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_networkx</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#ia.graph.undirected.UndirectedGraph.to_networkx" title="ia.graph.undirected.UndirectedGraph.to_networkx"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_networkx</span></code></a>()</p></td>
 <td><p>Convert the graph to a NetworkX graph.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="ia.graph.undirected.UndirectedGraph.traverse.html#ia.graph.undirected.UndirectedGraph.traverse" title="ia.graph.undirected.UndirectedGraph.traverse"><code class="xref py py-obj docutils literal notranslate"><span class="pre">traverse</span></code></a>(*, start, end, algorithm)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ia.graph.undirected.UndirectedGraph.traverse" title="ia.graph.undirected.UndirectedGraph.traverse"><code class="xref py py-obj docutils literal notranslate"><span class="pre">traverse</span></code></a>(*, start, end, algorithm)</p></td>
 <td><p>Traverse the graph.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="ia.graph.undirected.UndirectedGraph.add_edge.html#ia.graph.undirected.UndirectedGraph.add_edge" title="ia.graph.undirected.UndirectedGraph.add_edge"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_edge</span></code></a>(start, end, *[, weight])</p></td>
-<td><p>Add an edge to the graph.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="ia.graph.undirected.UndirectedGraph.bfs.html#ia.graph.undirected.UndirectedGraph.bfs" title="ia.graph.undirected.UndirectedGraph.bfs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bfs</span></code></a>(*, start, end[, sort_generated])</p></td>
-<td><p>Breadth-first search.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="ia.graph.undirected.UndirectedGraph.dfs.html#ia.graph.undirected.UndirectedGraph.dfs" title="ia.graph.undirected.UndirectedGraph.dfs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dfs</span></code></a>(*, start, end[, sort_generated])</p></td>
-<td><p>Depth-first search.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="ia.graph.undirected.UndirectedGraph.remove_edge.html#ia.graph.undirected.UndirectedGraph.remove_edge" title="ia.graph.undirected.UndirectedGraph.remove_edge"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_edge</span></code></a>(start, end)</p></td>
-<td><p>Remove an edge from the graph.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="ia.graph.undirected.UndirectedGraph.remove_vertex.html#ia.graph.undirected.UndirectedGraph.remove_vertex" title="ia.graph.undirected.UndirectedGraph.remove_vertex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_vertex</span></code></a>(vertex)</p></td>
-<td><p>Remove a vertex from the graph.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="ia.graph.undirected.UndirectedGraph.to_networkx.html#ia.graph.undirected.UndirectedGraph.to_networkx" title="ia.graph.undirected.UndirectedGraph.to_networkx"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_networkx</span></code></a>()</p></td>
-<td><p>Convert the graph to a NetworkX graph.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="ia.graph.undirected.UndirectedGraph.traverse.html#ia.graph.undirected.UndirectedGraph.traverse" title="ia.graph.undirected.UndirectedGraph.traverse"><code class="xref py py-obj docutils literal notranslate"><span class="pre">traverse</span></code></a>(*, start, end, algorithm)</p></td>
-<td><p>Traverse the graph.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.graph.undirected.UndirectedGraph.add_edge">
+<span class="sig-name descname"><span class="pre">add_edge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../_modules/ia/graph/undirected.html#UndirectedGraph.add_edge"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ia.graph.undirected.UndirectedGraph.add_edge" title="Link to this definition">#</a></dt>
+<dd><p>Add an edge to the graph.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ia.graph.undirected.UndirectedGraph.adjacency">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">adjacency</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#ia.graph.undirected.UndirectedGraph.adjacency" title="Link to this definition">#</a></dt>
+<dd><p>Get the adjacency list of the graph.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ia.graph.undirected.UndirectedGraph.adjacency_list">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">adjacency_list</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#ia.graph.undirected.UndirectedGraph.adjacency_list" title="Link to this definition">#</a></dt>
+<dd><p>Get the adjacency list of the graph.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ia.graph.undirected.UndirectedGraph.adjacency_matrix">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">adjacency_matrix</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#ia.graph.undirected.UndirectedGraph.adjacency_matrix" title="Link to this definition">#</a></dt>
+<dd><p>Get the adjacency matrix of the graph.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.graph.undirected.UndirectedGraph.bfs">
+<span class="sig-name descname"><span class="pre">bfs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort_generated</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">TraversalResult</span></span></span><a class="reference internal" href="../../_modules/ia/graph/undirected.html#UndirectedGraph.bfs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ia.graph.undirected.UndirectedGraph.bfs" title="Link to this definition">#</a></dt>
+<dd><p>Breadth-first search.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ia.graph.undirected.UndirectedGraph.degree">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">degree</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#ia.graph.undirected.UndirectedGraph.degree" title="Link to this definition">#</a></dt>
+<dd><p>Get the degree of a vertex.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.graph.undirected.UndirectedGraph.dfs">
+<span class="sig-name descname"><span class="pre">dfs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort_generated</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">TraversalResult</span></span></span><a class="reference internal" href="../../_modules/ia/graph/undirected.html#UndirectedGraph.dfs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ia.graph.undirected.UndirectedGraph.dfs" title="Link to this definition">#</a></dt>
+<dd><p>Depth-first search.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ia.graph.undirected.UndirectedGraph.edges">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">edges</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#ia.graph.undirected.UndirectedGraph.edges" title="Link to this definition">#</a></dt>
+<dd><p>Get the edges of the graph.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ia.graph.undirected.UndirectedGraph.incidence_list">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">incidence_list</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#ia.graph.undirected.UndirectedGraph.incidence_list" title="Link to this definition">#</a></dt>
+<dd><p>Get the incidence list of the graph.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ia.graph.undirected.UndirectedGraph.incidence_matrix">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">incidence_matrix</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#ia.graph.undirected.UndirectedGraph.incidence_matrix" title="Link to this definition">#</a></dt>
+<dd><p>Get the incidence matrix of the graph.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ia.graph.undirected.UndirectedGraph.neighbors">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">neighbors</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#ia.graph.undirected.UndirectedGraph.neighbors" title="Link to this definition">#</a></dt>
+<dd><p>Get the neighbors of a vertex.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.graph.undirected.UndirectedGraph.remove_edge">
+<span class="sig-name descname"><span class="pre">remove_edge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../_modules/ia/graph/undirected.html#UndirectedGraph.remove_edge"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ia.graph.undirected.UndirectedGraph.remove_edge" title="Link to this definition">#</a></dt>
+<dd><p>Remove an edge from the graph.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.graph.undirected.UndirectedGraph.remove_vertex">
+<span class="sig-name descname"><span class="pre">remove_vertex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vertex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../_modules/ia/graph/undirected.html#UndirectedGraph.remove_vertex"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ia.graph.undirected.UndirectedGraph.remove_vertex" title="Link to this definition">#</a></dt>
+<dd><p>Remove a vertex from the graph.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.graph.undirected.UndirectedGraph.to_networkx">
+<span class="sig-name descname"><span class="pre">to_networkx</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ia/graph/undirected.html#UndirectedGraph.to_networkx"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ia.graph.undirected.UndirectedGraph.to_networkx" title="Link to this definition">#</a></dt>
+<dd><p>Convert the graph to a NetworkX graph.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.graph.undirected.UndirectedGraph.traverse">
+<span class="sig-name descname"><span class="pre">traverse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">algorithm</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">UninformedTraversalAlgorithm</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">TraversalResult</span></span></span><a class="reference internal" href="../../_modules/ia/graph/undirected.html#UndirectedGraph.traverse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ia.graph.undirected.UndirectedGraph.traverse" title="Link to this definition">#</a></dt>
+<dd><p>Traverse the graph.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ia.graph.undirected.UndirectedGraph.vertices">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">vertices</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#ia.graph.undirected.UndirectedGraph.vertices" title="Link to this definition">#</a></dt>
+<dd><p>Get the vertices of the graph.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ia.graph.undirected.UndirectedGraph.weights">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">weights</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#ia.graph.undirected.UndirectedGraph.weights" title="Link to this definition">#</a></dt>
+<dd><p>Get the weights of the graph.</p>
+</dd></dl>
+
 </dd></dl>
 
 </section>
@@ -490,20 +561,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="ia.graph.UndirectedGraph.dfs.html"
+       href="ia.graph.undirected.UndirectedGraph.dfs.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">ia.graph.UndirectedGraph.dfs</p>
+        <p class="prev-next-title">ia.graph.undirected.UndirectedGraph.dfs</p>
       </div>
     </a>
     <a class="right-next"
-       href="ia.graph.undirected.UndirectedGraph.add_edge.html"
+       href="ia.tree.node.Node.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">ia.graph.undirected.UndirectedGraph.add_edge</p>
+        <p class="prev-next-title">ia.tree.node.Node</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -525,7 +596,26 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.graph.undirected.UndirectedGraph"><code class="docutils literal notranslate"><span class="pre">UndirectedGraph</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.graph.undirected.UndirectedGraph"><code class="docutils literal notranslate"><span class="pre">UndirectedGraph</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.graph.undirected.UndirectedGraph.add_edge"><code class="docutils literal notranslate"><span class="pre">UndirectedGraph.add_edge</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.graph.undirected.UndirectedGraph.adjacency"><code class="docutils literal notranslate"><span class="pre">UndirectedGraph.adjacency</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.graph.undirected.UndirectedGraph.adjacency_list"><code class="docutils literal notranslate"><span class="pre">UndirectedGraph.adjacency_list</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.graph.undirected.UndirectedGraph.adjacency_matrix"><code class="docutils literal notranslate"><span class="pre">UndirectedGraph.adjacency_matrix</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.graph.undirected.UndirectedGraph.bfs"><code class="docutils literal notranslate"><span class="pre">UndirectedGraph.bfs</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.graph.undirected.UndirectedGraph.degree"><code class="docutils literal notranslate"><span class="pre">UndirectedGraph.degree</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.graph.undirected.UndirectedGraph.dfs"><code class="docutils literal notranslate"><span class="pre">UndirectedGraph.dfs</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.graph.undirected.UndirectedGraph.edges"><code class="docutils literal notranslate"><span class="pre">UndirectedGraph.edges</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.graph.undirected.UndirectedGraph.incidence_list"><code class="docutils literal notranslate"><span class="pre">UndirectedGraph.incidence_list</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.graph.undirected.UndirectedGraph.incidence_matrix"><code class="docutils literal notranslate"><span class="pre">UndirectedGraph.incidence_matrix</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.graph.undirected.UndirectedGraph.neighbors"><code class="docutils literal notranslate"><span class="pre">UndirectedGraph.neighbors</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.graph.undirected.UndirectedGraph.remove_edge"><code class="docutils literal notranslate"><span class="pre">UndirectedGraph.remove_edge</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.graph.undirected.UndirectedGraph.remove_vertex"><code class="docutils literal notranslate"><span class="pre">UndirectedGraph.remove_vertex</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.graph.undirected.UndirectedGraph.to_networkx"><code class="docutils literal notranslate"><span class="pre">UndirectedGraph.to_networkx</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.graph.undirected.UndirectedGraph.traverse"><code class="docutils literal notranslate"><span class="pre">UndirectedGraph.traverse</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.graph.undirected.UndirectedGraph.vertices"><code class="docutils literal notranslate"><span class="pre">UndirectedGraph.vertices</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.graph.undirected.UndirectedGraph.weights"><code class="docutils literal notranslate"><span class="pre">UndirectedGraph.weights</span></code></a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

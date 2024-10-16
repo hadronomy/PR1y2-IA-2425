@@ -48,7 +48,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="ia.maze.maze.Maze.a_star" href="generated/ia.maze.maze.Maze.a_star.html" />
-    <link rel="prev" title="ia.tree.node.Node.sort" href="generated/generated/ia.tree.node.Node.sort.html" />
+    <link rel="prev" title="ia.tree.node.Node" href="generated/ia.tree.node.Node.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
     <meta name="docbuild:last-update" content="Oct 16, 2024"/>
@@ -382,7 +382,7 @@ These algorithms are used when the search space is known and when the search spa
 </ul>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
 <tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">ia.maze.maze.Maze.a_star</span></code>([start, goal, ...])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ia.maze.maze.Maze.html#ia.maze.maze.Maze.a_star" title="ia.maze.maze.Maze.a_star"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Maze.a_star</span></code></a>([start, goal, euristic_func, ...])</p></td>
 <td><p>Find the shortest path between the start and goal positions using the A* algorithm.</p></td>
 </tr>
 </tbody>
@@ -395,7 +395,7 @@ These algorithms are used when the search space is known and when the search spa
 a <code class="xref py py-mod docutils literal notranslate"><span class="pre">Maze</span></code> class that represents a maze.</p>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/ia.maze.maze.Maze.html#ia.maze.maze.Maze" title="ia.maze.maze.Maze"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ia.maze.maze.Maze</span></code></a>(*, rows, cols[, start, goal])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ia.maze.maze.Maze.html#ia.maze.maze.Maze" title="ia.maze.maze.Maze"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Maze</span></code></a>(*, rows, cols[, start, goal])</p></td>
 <td><p>Maze data structure.</p></td>
 </tr>
 </tbody>
@@ -404,11 +404,11 @@ a <code class="xref py py-mod docutils literal notranslate"><span class="pre">Ma
 </section>
 <section id="mazetile">
 <h2>MazeTile<a class="headerlink" href="#mazetile" title="Link to this heading">#</a></h2>
-<p>Maze uses a <code class="xref py py-class docutils literal notranslate"><span class="pre">MazeTile</span></code> class to represent the
+<p>Maze uses a <a class="reference internal" href="generated/ia.maze.maze.MazeTile.html#ia.maze.maze.MazeTile" title="ia.maze.maze.MazeTile"><code class="xref py py-class docutils literal notranslate"><span class="pre">MazeTile</span></code></a> class to represent the
 tiles of the maze.</p>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/ia.maze.maze.MazeTile.html#ia.maze.maze.MazeTile" title="ia.maze.maze.MazeTile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ia.maze.maze.MazeTile</span></code></a>(value[, names, ...])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ia.maze.maze.MazeTile.html#ia.maze.maze.MazeTile" title="ia.maze.maze.MazeTile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MazeTile</span></code></a>(value[, names, module, qualname, ...])</p></td>
 <td><p>Maze tile class.</p></td>
 </tr>
 </tbody>
@@ -421,7 +421,7 @@ tiles of the maze.</p>
 a matrix and implements all the necessary operations.</p>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/ia.maze.matrix.Matrix.html#ia.maze.matrix.Matrix" title="ia.maze.matrix.Matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ia.maze.matrix.Matrix</span></code></a>(*, rows, cols, default)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ia.maze.matrix.Matrix.html#ia.maze.matrix.Matrix" title="ia.maze.matrix.Matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Matrix</span></code></a>(*, rows, cols, default)</p></td>
 <td><p>Matrix data structure.</p></td>
 </tr>
 </tbody>
@@ -434,7 +434,7 @@ a matrix and implements all the necessary operations.</p>
 search tree.</p>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/ia.tree.node.Node.html#ia.tree.node.Node" title="ia.tree.node.Node"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ia.tree.node.Node</span></code></a>([name, separator, compare_by])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ia.tree.node.Node.html#ia.tree.node.Node" title="ia.tree.node.Node"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Node</span></code></a>([name, separator, compare_by])</p></td>
 <td><p>Node is an extension of BaseNode, and is able to extend any Python class.</p></td>
 </tr>
 </tbody>
@@ -454,12 +454,12 @@ search tree.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="generated/generated/ia.tree.node.Node.sort.html"
+       href="generated/ia.tree.node.Node.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">ia.tree.node.Node.sort</p>
+        <p class="prev-next-title">ia.tree.node.Node</p>
       </div>
     </a>
     <a class="right-next"

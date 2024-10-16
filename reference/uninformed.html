@@ -47,7 +47,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'reference/uninformed';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="ia.graph.UndirectedGraph.bfs" href="generated/ia.graph.UndirectedGraph.bfs.html" />
+    <link rel="next" title="ia.graph.undirected.UndirectedGraph.bfs" href="generated/ia.graph.undirected.UndirectedGraph.bfs.html" />
     <link rel="prev" title="API Reference" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -307,8 +307,8 @@ document.write(`
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Uninformed Search Algorithms</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="generated/ia.graph.UndirectedGraph.bfs.html">ia.graph.UndirectedGraph.bfs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="generated/ia.graph.UndirectedGraph.dfs.html">ia.graph.UndirectedGraph.dfs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/ia.graph.undirected.UndirectedGraph.bfs.html">ia.graph.undirected.UndirectedGraph.bfs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/ia.graph.undirected.UndirectedGraph.dfs.html">ia.graph.undirected.UndirectedGraph.dfs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="generated/ia.graph.undirected.UndirectedGraph.html">ia.graph.undirected.UndirectedGraph</a></li>
 <li class="toctree-l2"><a class="reference internal" href="generated/ia.tree.node.Node.html">ia.tree.node.Node</a></li>
 </ul>
@@ -381,7 +381,7 @@ These algorithms are used when the search space is not known or when the search 
 </ul>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
 <tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">ia.graph.UndirectedGraph.bfs</span></code>(*, start, end)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ia.graph.undirected.UndirectedGraph.html#ia.graph.undirected.UndirectedGraph.bfs" title="ia.graph.undirected.UndirectedGraph.bfs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UndirectedGraph.bfs</span></code></a>(*, start, end[, ...])</p></td>
 <td><p>Breadth-first search.</p></td>
 </tr>
 </tbody>
@@ -392,7 +392,7 @@ These algorithms are used when the search space is not known or when the search 
 </ul>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
 <tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">ia.graph.UndirectedGraph.dfs</span></code>(*, start, end)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ia.graph.undirected.UndirectedGraph.html#ia.graph.undirected.UndirectedGraph.dfs" title="ia.graph.undirected.UndirectedGraph.dfs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UndirectedGraph.dfs</span></code></a>(*, start, end[, ...])</p></td>
 <td><p>Depth-first search.</p></td>
 </tr>
 </tbody>
@@ -405,7 +405,7 @@ These algorithms are used when the search space is not known or when the search 
 an <code class="xref py py-mod docutils literal notranslate"><span class="pre">UndirectedGraph</span></code> class that represents an undirected graph.</p>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/ia.graph.undirected.UndirectedGraph.html#ia.graph.undirected.UndirectedGraph" title="ia.graph.undirected.UndirectedGraph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ia.graph.undirected.UndirectedGraph</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ia.graph.undirected.UndirectedGraph.html#ia.graph.undirected.UndirectedGraph" title="ia.graph.undirected.UndirectedGraph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UndirectedGraph</span></code></a>()</p></td>
 <td><p>Undirected graph class.</p></td>
 </tr>
 </tbody>
@@ -418,7 +418,7 @@ an <code class="xref py py-mod docutils literal notranslate"><span class="pre">U
 search tree.</p>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/ia.tree.node.Node.html#ia.tree.node.Node" title="ia.tree.node.Node"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ia.tree.node.Node</span></code></a>([name, separator, compare_by])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/ia.tree.node.Node.html#ia.tree.node.Node" title="ia.tree.node.Node"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Node</span></code></a>([name, separator, compare_by])</p></td>
 <td><p>Node is an extension of BaseNode, and is able to extend any Python class.</p></td>
 </tr>
 </tbody>
@@ -447,11 +447,11 @@ search tree.</p>
       </div>
     </a>
     <a class="right-next"
-       href="generated/ia.graph.UndirectedGraph.bfs.html"
+       href="generated/ia.graph.undirected.UndirectedGraph.bfs.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">ia.graph.UndirectedGraph.bfs</p>
+        <p class="prev-next-title">ia.graph.undirected.UndirectedGraph.bfs</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

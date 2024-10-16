@@ -47,8 +47,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'reference/generated/ia.maze.matrix.Matrix';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="ia.maze.matrix.Matrix.is_valid" href="ia.maze.matrix.Matrix.is_valid.html" />
-    <link rel="prev" title="ia.maze.maze.MazeTile.maketrans" href="generated/ia.maze.maze.MazeTile.maketrans.html" />
+    <link rel="prev" title="ia.maze.maze.MazeTile" href="ia.maze.maze.MazeTile.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
     <meta name="docbuild:last-update" content="Oct 16, 2024"/>
@@ -311,15 +310,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="ia.maze.maze.Maze.a_star.html">ia.maze.maze.Maze.a_star</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ia.maze.maze.Maze.html">ia.maze.maze.Maze</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ia.maze.maze.MazeTile.html">ia.maze.maze.MazeTile</a></li>
-<li class="toctree-l2 current active has-children"><a class="current reference internal" href="#">ia.maze.matrix.Matrix</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="ia.maze.matrix.Matrix.is_valid.html">ia.maze.matrix.Matrix.is_valid</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ia.maze.matrix.Matrix.is_valid_position.html">ia.maze.matrix.Matrix.is_valid_position</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ia.maze.matrix.Matrix.neighbors.html">ia.maze.matrix.Matrix.neighbors</a></li>
-<li class="toctree-l3"><a class="reference internal" href="generated/ia.maze.matrix.Matrix.is_valid.html">ia.maze.matrix.Matrix.is_valid</a></li>
-<li class="toctree-l3"><a class="reference internal" href="generated/ia.maze.matrix.Matrix.is_valid_position.html">ia.maze.matrix.Matrix.is_valid_position</a></li>
-<li class="toctree-l3"><a class="reference internal" href="generated/ia.maze.matrix.Matrix.neighbors.html">ia.maze.matrix.Matrix.neighbors</a></li>
-</ul>
-</details></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">ia.maze.matrix.Matrix</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ia.tree.node.Node.html">ia.tree.node.Node</a></li>
 </ul>
 </details></li>
@@ -388,48 +379,124 @@ document.write(`
 <dl class="py class">
 <dt class="sig sig-object py" id="ia.maze.matrix.Matrix">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ia.maze.matrix.</span></span><span class="sig-name descname"><span class="pre">Matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rows</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cols</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">TContent</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ia/maze/matrix.html#Matrix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ia.maze.matrix.Matrix" title="Link to this definition">#</a></dt>
-<dd><p>Matrix data structure.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Attributes<span class="colon">:</span></dt>
-<dd class="field-odd"><dl class="simple">
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">cols</span></code></dt><dd><p>Get the number of columns.</p>
-</dd>
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">default</span></code></dt><dd><p>Get the default value.</p>
-</dd>
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">rows</span></code></dt><dd><p>Get the number of rows.</p>
-</dd>
-</dl>
-</dd>
-</dl>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Matrix data structure.</p>
+<p class="rubric">Attributes</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ia.maze.matrix.Matrix.cols" title="ia.maze.matrix.Matrix.cols"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cols</span></code></a></p></td>
+<td><p>Get the number of columns.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#ia.maze.matrix.Matrix.default" title="ia.maze.matrix.Matrix.default"><code class="xref py py-obj docutils literal notranslate"><span class="pre">default</span></code></a></p></td>
+<td><p>Get the default value.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ia.maze.matrix.Matrix.rows" title="ia.maze.matrix.Matrix.rows"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rows</span></code></a></p></td>
+<td><p>Get the number of rows.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 <p class="rubric">Methods</p>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="ia.maze.matrix.Matrix.is_valid.html#ia.maze.matrix.Matrix.is_valid" title="ia.maze.matrix.Matrix.is_valid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_valid</span></code></a>(row, col)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ia.maze.matrix.Matrix.is_valid" title="ia.maze.matrix.Matrix.is_valid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_valid</span></code></a>(row, col)</p></td>
 <td><p>Check if the position is valid.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="ia.maze.matrix.Matrix.is_valid_position.html#ia.maze.matrix.Matrix.is_valid_position" title="ia.maze.matrix.Matrix.is_valid_position"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_valid_position</span></code></a>(position)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#ia.maze.matrix.Matrix.is_valid_position" title="ia.maze.matrix.Matrix.is_valid_position"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_valid_position</span></code></a>(position)</p></td>
 <td><p>Check if the position is valid.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="ia.maze.matrix.Matrix.neighbors.html#ia.maze.matrix.Matrix.neighbors" title="ia.maze.matrix.Matrix.neighbors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">neighbors</span></code></a>(row, col[, offsets])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ia.maze.matrix.Matrix.neighbors" title="ia.maze.matrix.Matrix.neighbors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">neighbors</span></code></a>(row, col[, offsets])</p></td>
 <td><p>Get the adjacent cells.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="ia.maze.matrix.Matrix.is_valid.html#ia.maze.matrix.Matrix.is_valid" title="ia.maze.matrix.Matrix.is_valid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_valid</span></code></a>(row, col)</p></td>
-<td><p>Check if the position is valid.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="ia.maze.matrix.Matrix.is_valid_position.html#ia.maze.matrix.Matrix.is_valid_position" title="ia.maze.matrix.Matrix.is_valid_position"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_valid_position</span></code></a>(position)</p></td>
-<td><p>Check if the position is valid.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="ia.maze.matrix.Matrix.neighbors.html#ia.maze.matrix.Matrix.neighbors" title="ia.maze.matrix.Matrix.neighbors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">neighbors</span></code></a>(row, col[, offsets])</p></td>
-<td><p>Get the adjacent cells.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
+<dl class="py property">
+<dt class="sig sig-object py" id="ia.maze.matrix.Matrix.cols">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cols</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#ia.maze.matrix.Matrix.cols" title="Link to this definition">#</a></dt>
+<dd><p>Get the number of columns.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ia.maze.matrix.Matrix.default">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">default</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">TContent</span></em><a class="headerlink" href="#ia.maze.matrix.Matrix.default" title="Link to this definition">#</a></dt>
+<dd><p>Get the default value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.maze.matrix.Matrix.is_valid">
+<span class="sig-name descname"><span class="pre">is_valid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="../../_modules/ia/maze/matrix.html#Matrix.is_valid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ia.maze.matrix.Matrix.is_valid" title="Link to this definition">#</a></dt>
+<dd><p>Check if the position is valid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>row</strong><span class="classifier">(int)</span></dt><dd><p>The row of the cell.</p>
+</dd>
+<dt><strong>col</strong><span class="classifier">(int)</span></dt><dd><p>The column of the cell.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>(bool)</dt><dd><p>True if the position is valid, False otherwise.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.maze.matrix.Matrix.is_valid_position">
+<span class="sig-name descname"><span class="pre">is_valid_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">MatrixPosition</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="../../_modules/ia/maze/matrix.html#Matrix.is_valid_position"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ia.maze.matrix.Matrix.is_valid_position" title="Link to this definition">#</a></dt>
+<dd><p>Check if the position is valid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>position</strong><span class="classifier">(MatrixPosition)</span></dt><dd><p>The position to check.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>(bool)</dt><dd><p>True if the position is valid, False otherwise.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.maze.matrix.Matrix.neighbors">
+<span class="sig-name descname"><span class="pre">neighbors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offsets</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">MatrixPosition</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">MatrixPosition</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">MatrixPosition</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/ia/maze/matrix.html#Matrix.neighbors"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ia.maze.matrix.Matrix.neighbors" title="Link to this definition">#</a></dt>
+<dd><p>Get the adjacent cells.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>row</strong><span class="classifier">(int)</span></dt><dd><p>The row of the cell.</p>
+</dd>
+<dt><strong>col</strong><span class="classifier">(int)</span></dt><dd><p>The column of the cell.</p>
+</dd>
+<dt><strong>offsets</strong><span class="classifier">(list[MatrixPosition])</span></dt><dd><p>The offsets to check.
+By default, it checks the 4 cardinal directions and the 4 diagonals.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>(dict[MatrixPosition, MatrixPosition])</dt><dd><p>Dictionary with the adjacent cells, where the key is the offset
+and the value is the position.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ia.maze.matrix.Matrix.rows">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">rows</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#ia.maze.matrix.Matrix.rows" title="Link to this definition">#</a></dt>
+<dd><p>Get the number of rows.</p>
+</dd></dl>
+
 </dd></dl>
 
 </section>
@@ -445,22 +512,13 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="generated/ia.maze.maze.MazeTile.maketrans.html"
+       href="ia.maze.maze.MazeTile.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">ia.maze.maze.MazeTile.maketrans</p>
+        <p class="prev-next-title">ia.maze.maze.MazeTile</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="ia.maze.matrix.Matrix.is_valid.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">ia.maze.matrix.Matrix.is_valid</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -480,7 +538,15 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.maze.matrix.Matrix"><code class="docutils literal notranslate"><span class="pre">Matrix</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.maze.matrix.Matrix"><code class="docutils literal notranslate"><span class="pre">Matrix</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.maze.matrix.Matrix.cols"><code class="docutils literal notranslate"><span class="pre">Matrix.cols</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.maze.matrix.Matrix.default"><code class="docutils literal notranslate"><span class="pre">Matrix.default</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.maze.matrix.Matrix.is_valid"><code class="docutils literal notranslate"><span class="pre">Matrix.is_valid</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.maze.matrix.Matrix.is_valid_position"><code class="docutils literal notranslate"><span class="pre">Matrix.is_valid_position</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.maze.matrix.Matrix.neighbors"><code class="docutils literal notranslate"><span class="pre">Matrix.neighbors</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ia.maze.matrix.Matrix.rows"><code class="docutils literal notranslate"><span class="pre">Matrix.rows</span></code></a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

@@ -488,6 +488,8 @@ document.write(`
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the default value.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__default</span>
 
+<div class="viewcode-block" id="Matrix.neighbors">
+<a class="viewcode-back" href="../../../reference/generated/ia.maze.matrix.Matrix.html#ia.maze.matrix.Matrix.neighbors">[docs]</a>
     <span class="k">def</span> <span class="nf">neighbors</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">row</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">col</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">offsets</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">MatrixPosition</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="n">MatrixPosition</span><span class="p">,</span> <span class="n">MatrixPosition</span><span class="p">]:</span>
@@ -531,8 +533,11 @@ document.write(`
                         <span class="p">)</span>
                     <span class="p">}</span>
                 <span class="p">)</span>
-        <span class="k">return</span> <span class="n">adjacent</span>
+        <span class="k">return</span> <span class="n">adjacent</span></div>
 
+
+<div class="viewcode-block" id="Matrix.is_valid">
+<a class="viewcode-back" href="../../../reference/generated/ia.maze.matrix.Matrix.html#ia.maze.matrix.Matrix.is_valid">[docs]</a>
     <span class="k">def</span> <span class="nf">is_valid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">row</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">col</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Check if the position is valid.</span>
 
@@ -548,8 +553,11 @@ document.write(`
 <span class="sd">            (bool)</span>
 <span class="sd">                True if the position is valid, False otherwise.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">row</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">__rows</span> <span class="ow">and</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">col</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">__cols</span>
+        <span class="k">return</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">row</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">__rows</span> <span class="ow">and</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">col</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">__cols</span></div>
 
+
+<div class="viewcode-block" id="Matrix.is_valid_position">
+<a class="viewcode-back" href="../../../reference/generated/ia.maze.matrix.Matrix.html#ia.maze.matrix.Matrix.is_valid_position">[docs]</a>
     <span class="k">def</span> <span class="nf">is_valid_position</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">position</span><span class="p">:</span> <span class="n">MatrixPosition</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Check if the position is valid.</span>
 
@@ -563,7 +571,8 @@ document.write(`
 <span class="sd">            (bool)</span>
 <span class="sd">                True if the position is valid, False otherwise.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_valid</span><span class="p">(</span><span class="n">position</span><span class="o">.</span><span class="n">row</span><span class="p">,</span> <span class="n">position</span><span class="o">.</span><span class="n">col</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_valid</span><span class="p">(</span><span class="n">position</span><span class="o">.</span><span class="n">row</span><span class="p">,</span> <span class="n">position</span><span class="o">.</span><span class="n">col</span><span class="p">)</span></div>
+
 
     <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the number of elements in the matrix.&quot;&quot;&quot;</span>
