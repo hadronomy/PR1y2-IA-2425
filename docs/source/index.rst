@@ -44,7 +44,7 @@ The project is hosted on GitHub at the following URL:
 
         +++
 
-        .. button-ref:: installation
+        .. button-ref:: /installation
             :expand:
             :color: secondary
             :click-parent:
@@ -61,7 +61,7 @@ The project is hosted on GitHub at the following URL:
 
         +++
 
-        .. button-ref:: guide_basic_usage
+        .. button-ref:: /usage
             :expand:
             :color: secondary
             :click-parent:

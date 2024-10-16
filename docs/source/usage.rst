@@ -4,7 +4,7 @@
 Basic Usage
 ###########
 
-See the :ref:`_guide_installation` guide to install the package.
+See the :ref:`installation` guide to install the package.
 
 .. note::
 
