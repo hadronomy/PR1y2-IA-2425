@@ -105,7 +105,7 @@ commit_parsers = [
   { message = "(?i)^upgrade", group = "<!-- 9 -->⬆️ Upgrades" },
   { message = "(?i)^downgrade", group = "<!-- 10 -->⬇️ Downgrades" },
   { message = "(?i)^revert", group = "<!-- 11 -->⏪ Reverts" },
-  { message = "(?i)^release", group = "<!-- 12 -->🔖 Releases" },
+  # { message = "(?i)^release", group = "<!-- 12 -->🔖 Releases" },
   { message = "(?i)^bump", group = "<!-- 13 -->📦 Bumps" },
   { message = "(?i)^initial", group = "<!-- 14 -->🎉 Initial Commit" },
   { message = "(?i)^init", group = "<!-- 15 -->🎉 Initial Commit" },
@@ -131,7 +131,7 @@ commit_parsers = [
   { message = "(?i)^merge", group = "<!-- 31 -->🔀 Merges" },
 ]
 # filter out the commits that are not matched by commit parsers
-filter_commits = false
+filter_commits = true
 # sort the tags topologically
 topo_order = false
 # sort the commits inside sections by oldest/newest order
