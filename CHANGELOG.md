@@ -2,6 +2,100 @@
 
 All notable changes to this project will be documented in this file.
 
+## Whats Changed in [1.2.3](https://github.com/hadronomy/PR1-IA-2425/compare/v1.2.2...v1.2.3) 🔄
+
+### 🐛 Bug Fixes
+
+- Table wrapping when it shouldnt in some devices - ([ff67ee8](https://github.com/hadronomy/PR1-IA-2425/commit/ff67ee8e3b641a22e253d7ce9cf1cb8db52df5f9))
+- Remove greater_diagonal_score from `Euristic` - ([549e03f](https://github.com/hadronomy/PR1-IA-2425/commit/549e03ff2feb69947655d229ea13ea357f1c4b0a))
+
+### 📚 Documentation
+
+- Fix alt text in `README` - ([d04d36c](https://github.com/hadronomy/PR1-IA-2425/commit/d04d36cce678d7c23eb6cd80275354995c1b02b7))
+- Make WindowBarSize in gif bigger - ([56caa21](https://github.com/hadronomy/PR1-IA-2425/commit/56caa2123a0c6e8d708700e73c902c4b281a0cf1))
+- Fix mobile view - ([fb2dd4e](https://github.com/hadronomy/PR1-IA-2425/commit/fb2dd4e700861de1bf1a58df63abddd324a54217))
+- Fix missing links - ([8245034](https://github.com/hadronomy/PR1-IA-2425/commit/82450344c2c5ebeeb334d88c12433ab19ad3a0ee))
+- Add execution gif to README.md - ([5bd5696](https://github.com/hadronomy/PR1-IA-2425/commit/5bd569622db65d385186b0b7f947399a84d63c5a))
+- Improve everything :tada: - ([4a40ebe](https://github.com/hadronomy/PR1-IA-2425/commit/4a40ebe703ea01fcb1fd9555fe514020882a9823))
+
+### 🎨 Styling
+
+- Sort imports - ([bfbfd2e](https://github.com/hadronomy/PR1-IA-2425/commit/bfbfd2ed050449f0878cc3b070a2a77d18a363e0))
+
+### ⚙️ Miscellaneous Tasks
+
+- Move out of `poetry` into `uv` and `hatch` - ([70610c6](https://github.com/hadronomy/PR1-IA-2425/commit/70610c6678ddbfcf44a1e2024a1e830c8f3fa8bd))
+- Update dependencies - ([bb17b6b](https://github.com/hadronomy/PR1-IA-2425/commit/bb17b6b1cc309108af1e021e05eb3685c8be6651))
+
+## Whats Changed in [1.2.2](https://github.com/hadronomy/PR1-IA-2425/compare/v1.2.1...v1.2.2) 🔄
+
+### 🔖 Releases
+
+- Version `1.2.2` - ([fb174a1](https://github.com/hadronomy/PR1-IA-2425/commit/fb174a19a544277dd80503bb17182609677456ef))
+
+### 📚 Documentation
+
+- Fix title numbering - ([79c1406](https://github.com/hadronomy/PR1-IA-2425/commit/79c1406a0cda6d1fd14af28e22b63f161bad8efd))
+- Move attributes to the end of the page in docs - ([6edc99a](https://github.com/hadronomy/PR1-IA-2425/commit/6edc99ace63fdc5b3e422115b8d0b5f64da4e266))
+- Add special members to class docs - ([c5c9af4](https://github.com/hadronomy/PR1-IA-2425/commit/c5c9af4e403f6c903813b2ee04d7c809ed405f55))
+
+## Whats Changed in [1.2.1](https://github.com/hadronomy/PR1-IA-2425/compare/v1.2.0...v1.2.1) 🔄
+
+### 🔖 Releases
+
+- Version `1.2.1` - ([df328bb](https://github.com/hadronomy/PR1-IA-2425/commit/df328bb32f1029abb4af89da8cf0c9b3541ee2e3))
+
+### 📚 Documentation
+
+- Fix extra linebreaks in report - ([3856e0c](https://github.com/hadronomy/PR1-IA-2425/commit/3856e0cc5fe0af0efe9fee81067b29eb3e0c6045))
+
+## Whats Changed in [1.2.0](https://github.com/hadronomy/PR1-IA-2425/compare/v1.1.0...v1.2.0) 🔄
+
+### 🚀 Features
+
+- Add `--suffix` option to cli - ([4f7a47a](https://github.com/hadronomy/PR1-IA-2425/commit/4f7a47a0fe449b749b431a7a003cfc4671fa134b))
+- Add `--euristic` option to cli - ([a333a20](https://github.com/hadronomy/PR1-IA-2425/commit/a333a20ce35b64804986807b0d6c7e3ee025c0cc))
+
+### 🔖 Releases
+
+- Version `1.2.0` - ([38bc0bb](https://github.com/hadronomy/PR1-IA-2425/commit/38bc0bbbf3cfa6e824206952b1ed0a422d57f732))
+
+### 📚 Documentation
+
+- Fix broken link - ([24fe0d2](https://github.com/hadronomy/PR1-IA-2425/commit/24fe0d26eda4544df94201ca28d18942715b70b8))
+- Add usage page to docs - ([a1ad772](https://github.com/hadronomy/PR1-IA-2425/commit/a1ad7729a1499709f4d1872fbd31d881b45cbe0c))
+- Update `README.md` to point to online docs - ([ddfb3d8](https://github.com/hadronomy/PR1-IA-2425/commit/ddfb3d84d454de471e9297bda7ec34e0c6e67079))
+- Fix bad link in installation page - ([e3ba997](https://github.com/hadronomy/PR1-IA-2425/commit/e3ba9977a8c2fa3af57d83cd04d781521fe756e2))
+
+### ⚙️ Miscellaneous Tasks
+
+- Make linter ignore `docs/` - ([59f0e93](https://github.com/hadronomy/PR1-IA-2425/commit/59f0e93d000eb874a9b9b5a583d96ab46c50f840))
+
+## Whats Changed in [1.1.0](https://github.com/hadronomy/PR1-IA-2425/compare/v1.0.0...v1.1.0) 🔄
+
+### 🐛 Bug Fixes
+
+- Add missing adjustment factor to euclidean euristic - ([8677019](https://github.com/hadronomy/PR1-IA-2425/commit/867701974005c17c40cc24df00ca0bb8db5c8d16))
+
+### 🔖 Releases
+
+- Version `1.1.0` - ([75926eb](https://github.com/hadronomy/PR1-IA-2425/commit/75926eb3afeeda0a5364a756fb77a4f6bb9c43b6))
+
+### 👷 CI/CD
+
+- Add report compilation to `cd` - ([ba540e2](https://github.com/hadronomy/PR1-IA-2425/commit/ba540e2ddf48c945bbb91870371d754320fc7d55))
+
+### 📚 Documentation
+
+- Fix return value in documentation - ([6abb7dc](https://github.com/hadronomy/PR1-IA-2425/commit/6abb7dca1542705828d3ff1bd0e649ef18dd61f1))
+- Add report - ([c40aec3](https://github.com/hadronomy/PR1-IA-2425/commit/c40aec375a9f1176843b55d5f400c5bb3e5a54fe))
+- Replace repository urls to match - ([f78c2cd](https://github.com/hadronomy/PR1-IA-2425/commit/f78c2cdd9f4d5fd6c295b18c64805d75826fafea))
+- Add `sphinx` documentation and add missing docstrings - ([2aaa801](https://github.com/hadronomy/PR1-IA-2425/commit/2aaa8018fd565d397f09a4dbedf847189e8577b1))
+
+### ⚙️ Miscellaneous Tasks
+
+- Remove `nuitka` dependency - ([5c1f795](https://github.com/hadronomy/PR1-IA-2425/commit/5c1f79503d8ec8f8a02b214b213e4053570a4072))
+
 ## Whats Changed in [1.0.0](https://github.com/hadronomy/PR1-IA-2425/compare/v0.2.0...v1.0.0) 🔄
 
 ### 🚀 Features
@@ -38,6 +132,10 @@ All notable changes to this project will be documented in this file.
 - Bad global command description - ([5e1cacf](https://github.com/hadronomy/PR1-IA-2425/commit/5e1cacff8732cd8cd11fb05083db2331d37d8ef9))
 - `--version` not in global command - ([db274ef](https://github.com/hadronomy/PR1-IA-2425/commit/db274efbfacc34615df7a6a0e782582f332c800d))
 - Invalid access to `MatrixPosition` - ([57e7032](https://github.com/hadronomy/PR1-IA-2425/commit/57e703252f20e2e93b330882f4070607bf59e376))
+
+### 🔖 Releases
+
+- Version `1.0.0` - ([60aea8d](https://github.com/hadronomy/PR1-IA-2425/commit/60aea8d901c4778d15ca01beb65b8ecef1538d1f))
 
 ### 🚜 Refactor
 

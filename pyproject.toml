@@ -1,6 +1,6 @@
 [project]
 name = "ia"
-version = "1.2.2"
+version = "1.2.3"
 description = "A simple CLI for tinkering with graph algorithms"
 authors = [{ name = "Pablo Hernández", email = "noreply@hadronomy.com" }]
 license = { file = "LICENSE" }
